@@ -1,0 +1,955 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Attributs &amp; méthodes &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Les structures de contrôle" href="structures_de_controle.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="attributs-methodes">
+<h1>Attributs &amp; méthodes<a class="headerlink" href="#attributs-methodes" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Dans ce chapitre, nous allons revenir sur la déclaration d’une classe en Java
+et détailler les notions d’attributs et de méthodes.</p>
+<div class="section" id="les-attributs">
+<h2>Les attributs<a class="headerlink" href="#les-attributs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les attributs représentent l’état interne d’un objet. Nous avons vu précédemment
+qu’un attribut a une portée, un type et un identifiant :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>La classe ci-dessus ne contient que des attributs, elle s’apparente à une simple
+structure de données. Il est possible de créer une instance de cette classe
+avec l’opérateur <strong>new</strong> et d’accéder aux attributs de l’objet créé avec
+l’opérateur <strong>.</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<span class="n">v</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="s">&quot;DeLorean&quot;</span><span class="o">;</span>
+<span class="n">v</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="mf">88.0f</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="section" id="la-portee">
+<h3>La portée<a class="headerlink" href="#la-portee" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Jusqu’à présent, nous avons vu qu’il existe deux portées différentes : <em>public</em> et <em>private</em>.
+Java est un langage qui supporte l’encapsulation de données. Cela signifie que lorsque
+nous créons une classe nous avons le choix de laisser accessible ou non au reste du programme
+des attributs (mais aussi des méthodes). Le mécanisme d’encapsulation permet notamment
+d’implémenter en Java le principe du <em>ouvert/fermé</em> qui est un des cinq principes <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a>
+de la conception objet.</p>
+<p>Pour l’instant nous distinguerons les portées :</p>
+<dl class="docutils">
+<dt><strong>public</strong></dt>
+<dd>Signale que l’attribut est visible de n’importe quelle partie de l’application.</dd>
+<dt><strong>private</strong></dt>
+<dd>Signale que l’attribut n’est accessible que par l’objet lui-même ou par un objet du même type.
+Donc seules les méthodes de la classe déclarant cet attribut peuvent accéder à cet attribut.</dd>
+</dl>
+<p>Lorsque nous parlerons de l’encapsulation et du principe du <em>ouvert/fermé</em>, nous verrons qu’il
+est très souvent préférable qu’un attribut ait une portée <em>private</em>.</p>
+</div>
+<div class="section" id="l-initialisation">
+<h3>L’initialisation<a class="headerlink" href="#l-initialisation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En Java, on peut indiquer la valeur d’initialisation d’un attribut pour chaque
+nouvel objet.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span> <span class="o">=</span> <span class="s">&quot;DeLorean&quot;</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span> <span class="o">=</span> <span class="mf">88.0f</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>En fait, un attribut possède nécessairement une valeur par défaut qui dépend de son type :</p>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">Initialisation par défaut des attributs</span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Valeur par défaut</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>boolean</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>char</td>
+<td><code class="docutils literal"><span class="pre">'\0'</span></code></td>
+</tr>
+<tr class="row-even"><td>byte</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>short</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>int</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>long</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>float</td>
+<td>0.0</td>
+</tr>
+<tr class="row-odd"><td>double</td>
+<td>0.0</td>
+</tr>
+<tr class="row-even"><td>Object</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>Donc, écrire ceci :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>ou ceci</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>est strictement identique en Java.</p>
+</div>
+<div class="section" id="attributs-finaux">
+<h3>attributs finaux<a class="headerlink" href="#attributs-finaux" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un attribut peut être déclaré comme <strong>final</strong>. Cela signifie qu’il n’est plus possible
+de modifier la valeur de cet attribut une fois qu’il a été initialisé.
+Dans cas, le compilateur exige que l’attribut soit initialisé <em>explicitement</em>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nombreDeRoues</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>L’attribut <em>Voiture.nombreDeRoues</em> sera initialisé avec la valeur 4 pour chaque instance
+et ne pourra plus être modifié.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<span class="hll"><span class="n">v</span><span class="o">.</span><span class="na">nombreDeRoues</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span></pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Prudence</p>
+<p><strong>final</strong> porte sur l’attribut et empêche sa modification. Par contre si l’attribut
+est du type d’un objet, rien n’empêche de modifier des attributs ou d’appeler des méthodes
+qui vont modifier l’état de l’objet si ce dernier le permet.</p>
+<p>Pour une application d’un concessionnaire automobile, nous pouvons créer un objet <em>Facture</em>
+qui contient un attribut de type <em>Voiture</em> et le déclarer <strong>final</strong>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Facture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">final</span> <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Sur une instance de <em>Facture</em>, on ne pourra plus modifier la référence de l’attribut
+<em>voiture</em> par contre, on pourra toujours modifier les attributs de l’objet référencé</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="n">Facture</span> <span class="n">facture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Facture</span><span class="o">();</span>
+<span class="n">facture</span><span class="o">.</span><span class="na">voiture</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="s">&quot;DeLorean&quot;</span><span class="o">;</span> <span class="c1">// OK</span>
+<span class="hll"><span class="n">facture</span><span class="o">.</span><span class="na">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">()</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span></pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="attributs-de-classe">
+<h3>Attributs de classe<a class="headerlink" href="#attributs-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Jusqu’à présent, nous avons vu comment déclarer des attributs d’objet. C’est-à-dire
+que chaque instance d’une classe aura ses propres attributs avec ses propres valeurs
+représentant l’état interne de l’objet et qui peut évoluer au fur et à mesure de
+l’exécution de l’application.</p>
+<p>Mais il est également possible de créer des <em>attributs de classe</em>. La valeur de ces attributs
+est partagée par l’ensemble des instances de cette classe. Cela signifie que si on modifie
+la valeur d’un attribut de classe dans un objet, la modification sera visible dans
+les autres objets. Cela signifie également que cet attribut existe au niveau de la classe
+et est donc accessible même si on ne crée aucune instance de cette classe.</p>
+<p>Pour déclarer un attribut de classe, on utilise le mot-clé <strong>static</strong>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">nombreDeRoues</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus, l’attribut <em>nombreDeRoues</em> est maintenant un attribut de classe.
+C’est une façon de suggérer que toutes les voitures de notre application ont le même nombre
+de roues. Cette caractéristique appartient donc à la classe plutôt qu’à chacune de ses instances.
+Il est donc possible d’accéder directement à cet attribut depuis la classe :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Notez que dans l’exemple précédent, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est également un attribut de la classe <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html">System</a>. Si
+vous vous rendez sur la documentation de cette classe, vous constaterez que <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est déclaré
+comme <strong>static</strong> dans cette classe. Il s’agit d’une autre utilisation des attributs de classe :
+lorsqu’il n’existe qu’une seule instance d’un objet pour toute une application, cette instance
+est généralement accessible grâce à un attribut <strong>static</strong>. C’est une des façons
+d’implémenter le design pattern <a class="reference external" href="https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)">singleton</a> en Java. Dans notre exemple, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est l’objet
+qui représente la sortie standard de notre application. Cet objet est unique pour toute l’application
+et nous n’avons pas à le créer car il existe dès le lancement de l’application.</p>
+<p>Si le programme modifie un attribut de classe, alors la modification est visible depuis toutes
+les instances :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<span class="n">Voiture</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v1</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 4</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v2</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 4</span>
+
+<span class="c1">// modification d&#39;un attribut de classe</span>
+<span class="n">v1</span><span class="o">.</span><span class="na">nombreDeRoues</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+
+<span class="n">Voiture</span> <span class="n">v3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v1</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 5</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v2</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 5</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v3</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 5</span>
+</pre></div>
+</div>
+<p>Le code ci-dessus, même s’il est parfaitement correct, peut engendrer des difficultés de compréhension.
+Si on ne sait pas que <em>nombreDeRoues</em> est un attribut de classe on peut le modifier en pensant que
+cela n’aura pas d’impact sur les autres instances. C’est notamment pour cela que Eclipse émet un
+avertissement si on accède ou si on modifie un attribut de classe à travers un objet.
+Même si l’effet est identique, il est plus lisible d’accéder à un tel attribut à travers le nom de la classe uniquement :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 4</span>
+
+<span class="n">Voiture</span><span class="o">.</span><span class="na">nombreDeRoues</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span> <span class="c1">// 5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attributs-de-classe-finaux">
+<h3>Attributs de classe finaux<a class="headerlink" href="#attributs-de-classe-finaux" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il n’existe pas de mot-clés pour déclarer une constante en Java. Même si <strong>const</strong>
+est un mot-clé, il n’a aucune signification dans le langage. On utilise donc
+la combinaison des mots clés <strong>static</strong> et <strong>final</strong> pour déclarer une constante.
+Pour les distinguer des autres attributs, on écrit leur nom en majuscules et
+les mots sont séparés par _.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NOMBRE_DE_ROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Prudence</p>
+<p class="last">Rappelez-vous que si l’attribut référence un objet, <strong>final</strong> n’empêche pas d’appeler des méthodes
+qui vont modifier l’état interne de l’objet. On ne peut vraiment parler de constantes que pour les
+attributs de type primitif.</p>
+</div>
+</div>
+</div>
+<div class="section" id="les-methodes">
+<h2>Les méthodes<a class="headerlink" href="#les-methodes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les méthodes permettent de définir le comportement des objets. nous avons vu précédemment
+qu’une méthode est définie pas sa <strong>signature</strong> qui spécifie sa portée, son type
+de retour, son nom et ses paramètres. La signature est suivie d’un bloc de code
+que l’on appelle le <strong>corps</strong> de méthode. Dans ce corps de méthode, il est possible
+d’avoir accès au attribut de l’objet. Si la méthode modifie la valeur des attributs
+de l’objet, elle a un <em>effet de bord</em> qui change l’état interne de l’objet. C’est le
+cas dans l’exemple ci-dessous pour la méthode <em>accelerer</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * @return La vitesse en km/h de la voiture</span>
+<span class="cm">   */</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * Pour accélérer la voiture</span>
+<span class="cm">   * @param deltaVitesse Le vitesse supplémentaire</span>
+<span class="cm">   */</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="n">deltaVitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il est possible de créer une instance de la classe ci-dessus avec l’opérateur <strong>new</strong>
+et d’exécuter les méthodes de l’objet créé avec l’opérateur <strong>.</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<span class="n">v</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mf">88.0f</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h3>La portée<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Comme pour les attributs, les méthodes ont une portée, c’est-à-dire que le développeur
+de la classe peut décider si une méthode est accessible ou non au reste du programme.
+Pour l’instant, nous distinguons les portées :</p>
+<dl class="docutils">
+<dt><strong>public</strong></dt>
+<dd>Signale que la méthode est appelable de n’importe quelle partie de l’application.
+Les méthodes publiques définissent le contrat de la classe, c’est-à-dire les opérations
+qui peuvent être demandées par son environnement.</dd>
+<dt><strong>private</strong></dt>
+<dd>Signale que la méthode n’est appelable que par l’objet lui-même ou par un objet du même type.
+Les méthode privées sont des méthodes utilitaires pour un objet. Elles sont créées pour
+mutualiser du code ou pour simplifier un algorithme en le fractionnant en un ou
+plusieurs appels de méthodes.</dd>
+</dl>
+</div>
+<div class="section" id="la-valeur-de-retour">
+<h3>La valeur de retour<a class="headerlink" href="#la-valeur-de-retour" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Une méthode peut avoir au plus un type de retour. Le compilateur signalera une erreur
+s’il existe un chemin d’exécution dans la méthode qui ne renvoie pas le bon type de valeur
+en retour. Pour retourner une valeur, on utilise le mot-clé <strong>return</strong>. Si le type
+de retour est un objet, la méthode peut toujours retourner la valeur spéciale <strong>null</strong>,
+c’est-à-dire l’absence d’objet. Une méthode qui ne retourne aucune valeur,
+le signale avec le mot-clé <strong>void</strong>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMarque</span><span class="o">(</span><span class="n">String</span> <span class="n">nouvelleMarque</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">nouvelleMarque</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">marque</span> <span class="o">=</span> <span class="n">nouvelleMarque</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-parametres">
+<h3>Les paramètres<a class="headerlink" href="#les-parametres" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un méthode peut éventuellement avoir des paramètres (ou arguments). Chaque paramètre
+est défini par son type et par son nom.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// implémentation ici</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// implémentation ici</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remplirReservoir</span><span class="o">(</span><span class="kt">float</span> <span class="n">quantite</span><span class="o">,</span> <span class="n">TypeEssence</span> <span class="n">typeEssence</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// implémentation ici</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il est également possible de créer une méthode avec un nombre variable de paramètres.
+On utilise pour le cela trois points après le type du paramètre.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Le paramètre variable est vu comme un tableau dans le corps de la méthode. Par contre,
+il s’agit bien d’une liste de paramètre au moment de l’appel :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span> <span class="n">calculatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculatrice</span><span class="o">();</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span> <span class="c1">// 1</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">));</span> <span class="c1">// 6</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span> <span class="c1">// 10</span>
+</pre></div>
+</div>
+<p>L’utilisation d’un paramètre variable obéit à certaines règles :</p>
+<ol class="arabic simple">
+<li>Le paramètre variable doit être le dernier paramètre</li>
+<li>Il n’est pas possible de déclarer un paramètre variable acceptant plusieurs type</li>
+</ol>
+<p>Par contre, le paramètre variable peut être omis. Dans ce cas le tableau passé
+au corps de la méthode est un tableau vide.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span> <span class="n">calculatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculatrice</span><span class="o">();</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">());</span> <span class="c1">// 0</span>
+</pre></div>
+</div>
+<p>Ainsi, il est possible d’utiliser un tableau pour passer des valeurs à un paramètre
+variable. Cela permet notamment d’utiliser un paramètre variable dans le corps d’une
+méthode comme paramètre variable à l’appel d’une autre méthode.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span> <span class="n">calculatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculatrice</span><span class="o">();</span>
+
+<span class="kt">int</span><span class="o">[]</span> <span class="n">valeurs</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="n">valeurs</span><span class="o">));</span> <span class="c1">// 6</span>
+</pre></div>
+</div>
+<p>Pour l’exemple de la calculatrice, il peut sembler <em>naturel</em> d’obliger à passer au moins
+deux paramètres à la méthode <em>additionner</em>. Dans ce cas, il faut créer une méthode à trois
+paramètres :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span> <span class="n">valeur1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">valeur2</span><span class="o">,</span> <span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">valeur1</span> <span class="o">+</span> <span class="n">valeur2</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parametre-final">
+<h3>Paramètre final<a class="headerlink" href="#parametre-final" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un paramètre peut être déclaré <strong>final</strong>. Cela signifie qu’il n’est pas possible
+d’assigner une nouvelle valeur à ce paramètre.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kd">final</span> <span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">    <span class="n">deltaVitesse</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="o">;</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Rappelez-vous que <strong>final</strong> ne signifie pas réellement constant. En effet si
+le type d’un paramètre <strong>final</strong> est un objet, la méthode pourra tout de même appeler
+des méthodes sur cet objet qui modifient son état interne.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Java n’autorise que le passage de paramètre par copie. Assigner une nouvelle
+valeur à un paramètre n’a donc un impact que dans les limites de la méthode.
+Cette pratique est généralement considérée comme mauvaise car cela peut rendre
+la compréhension du code de la méthode plus difficile. <strong>final</strong> est donc
+un moyen de nous aider à vérifier au moment de la compilation que nous n’assignons
+pas par erreur une nouvelle valeur à un paramètre. Son utilisation est tout de
+même très limitée. Nous reviendrons plus tard sur l’intérêt principal de déclarer
+un paramètre <strong>final</strong> : la déclaration de classes anonymes.</p>
+</div>
+</div>
+<div class="section" id="les-variables">
+<h3>Les variables<a class="headerlink" href="#les-variables" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il est possible de déclarer des variables où l’on souhaite dans une méthode.
+Par contre, contrairement aux attributs, les variables de méthode n’ont pas de valeur
+par défaut. Cela signifie qu’il est obligatoire d’initialiser les variables.
+Il n’est pas nécessaire de les initialiser dès la déclaration, par contre, elles
+doivent être initialisées avant d’être lues.</p>
+</div>
+<div class="section" id="methodes-de-classe">
+<h3>Méthodes de classe<a class="headerlink" href="#methodes-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les méthodes définissent un comportement d’un objet et peuvent accéder aux attributs
+de l’instance. À l’instar des attributs, il est également possible de déclarer
+des <em>méthodes de classe</em>. Une méthode de classe ne peut pas accéder aux attributs
+d’un objet mais elle peut toujours accéder aux éventuels attributs de classe.</p>
+<p>Pour déclarer une méthode de classe, on utilise le mot clé <strong>static</strong>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Comme pour l’exemple précédent, les méthodes de classe sont souvent des méthodes
+utilitaires qui peuvent s’exécuter sans nécessiter le contexte d’un objet. Dans
+un autre langage de programmation, il s’agirait de simples fonctions.</p>
+<p>Les méthodes de classe peuvent être invoquées directement à partir de la classe.
+Donc il n’est pas nécessaire de créer une instance.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">Calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Certaines classes de l’API Java ne contiennent que des méthodes de classe.
+On parle de classes utilitaires ou de classes outils puisqu’elles s’apparentent à
+une collection de fonctions. Parmi les plus utilisées, on trouve les classes
+<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html">java.lang.System</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> et <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">java.util.Collections</a>.</p>
+</div>
+<p>Il est tout à fait possible d’invoquer une méthode de classe à travers une variable
+pointant sur une instance de cette classe :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculatrice</span><span class="o">();</span>
+<span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Cependant, cela peut engendrer des difficultés de compréhension puisque l’on
+peut penser, à tord, que la méthode <em>additionner</em> peut avoir un effet sur l’objet.
+C’est notamment pour cela que Eclipse émet un avertissement si on invoque une méthode
+de classe à travers un objet. Même si l’effet est identique, il est plus lisible
+d’invoquer une méthode de classe à partir de la classe elle-même.</p>
+<p>La méthode de classe la plus célèbre en Java est sans doute <strong>main</strong>. Elle permet
+de définir le point d’entrée d’une application dans une classe :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Les paramètres <em>args</em> correspondent aux paramètres passés en ligne de commande
+au programme <strong>java</strong> après le nom de la classe :</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>$ java MaClasse arg1 arg2 arg3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="redefinition-de-methode-overloading">
+<h2>Redéfinition de méthode : overloading<a class="headerlink" href="#redefinition-de-methode-overloading" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est possible de déclarer dans une classe plusieurs méthodes ayant le même nom.
+Dans les méthodes doivent obligatoirement avoir des paramètres différents (le type et/ou le nombre).
+Il est également possible de déclarer des types de retour différents pour ces méthodes.
+On parle de redéfinition de méthode (<strong>method overloading</strong>). La redéfinition
+de méthode n’a réellement de sens que si les méthodes portant le même nom ont un
+comportement que l’utilisateur de la classe jugera proche. Java permet
+également la redéfinition de méthode de classe.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">float</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">float</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">float</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">float</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus, la redéfinition de méthode permet supporter l’addition
+pour le type entier et pour le type à virgule flottante. Selon le type de paramètre
+passé à l’appel, le compilateur déterminera laquelle des deux méthodes doit
+être appelée.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">resultatEntier</span> <span class="o">=</span> <span class="n">Calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">);</span>
+<span class="kt">float</span> <span class="n">resultat</span> <span class="o">=</span> <span class="n">Calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mf">1f</span><span class="o">,</span><span class="mf">2.3f</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Prudence</p>
+<p class="last">N’utilisez pas la redéfinition de méthode pour implémenter des méthodes qui
+ont des comportements trop différents. Cela rendra vos objets difficiles à
+comprendre et donc à utiliser.</p>
+</div>
+<p>Si on redéfinit une méthode avec un paramètre variable, cela peut créer une
+ambiguïté de choix. Par exemple :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span> <span class="n">v1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">v2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Si on fait appel à la méthode <em>additionner</em> de cette façon :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Alors les deux méthodes <em>additionner</em> peuvent satisfaire cet appel. La règle
+appliquée par le compilateur est de chercher d’abord une correspondance parmi
+les méthodes qui n’ont pas de paramètre variable. Donc pour notre exemple ci-dessus,
+la méthode <em>additionner(int, int)</em> sera forcément choisie par le compilateur.</p>
+</div>
+<div class="section" id="portee-des-noms-et-this">
+<h2>Portée des noms et this<a class="headerlink" href="#portee-des-noms-et-this" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsqu’on déclare un identifiant, qu’il s’agisse du nom d’une classe, d’un
+attribut, d’un paramètre, d’une variable…, il se pose toujours la question
+de sa portée : dans quel contexte ce nom sera-t-il compris par le compilateur ?</p>
+<p>Pour les paramètres et les variables, la portée de leur nom est limitée à la
+méthode qui les déclare. Cela signifie que vous pouvez réutiliser les mêmes noms
+de paramètres et de variables dans deux méthodes différentes pour désigner des choses
+différentes.</p>
+<p>Plus précisément, le nom d’une variable est limité au bloc de code (délimité par
+des accolades) dans lequel il a été déclaré. En dehors de ce bloc, le nom est
+inaccessible.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">int</span> <span class="n">valeurMax</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+  <span class="c1">// la variable i n&#39;est accessible que dans la boucle for</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="c1">// la variable k n&#39;est accessible que dans la boucle for</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// la variable m n&#39;est accessible que dans ce bloc</span>
+      <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">resultat</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">k</span><span class="o">;</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="n">valeurMax</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">valeurMax</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">resultat</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>En Java, le masquage de nom de variable ou de nom de paramètre est interdit.
+Cela signifie qu’il est impossible de déclarer une variable ayant le même
+nom qu’un paramètre ou qu’une autre variable accessible dans le bloc de code courant.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">int</span> <span class="n">valeurMax</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">  <span class="kt">int</span> <span class="n">valeurMax</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span><span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">int</span> <span class="n">valeurMax</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">resultat</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">resultat</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">      <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span>      <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Par contre, il est tout à fait possible de réutiliser un nom de variable dans
+deux blocs de code successifs. Cette pratique n’est vraiment utile que pour les
+variables temporaires (comme pour une boucle <strong>for</strong> contrôlée par un index).
+Sinon, cela gène généralement la lecture.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="kt">int</span> <span class="n">valeurMin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">valeurMax</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeurMax</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// implémentation</span>
+  <span class="o">}</span>
+
+  <span class="c1">// on peut réutiliser le nom de variable i car il est déclaré</span>
+  <span class="c1">// dans deux blocs for différents</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">valeurMin</span><span class="o">;</span> <span class="o">--</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// implémentation</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>En Java, le masquage du nom d’un attribut par un paramètre ou une variable
+est autorisé car les attributs sont toujours accessibles à travers le mot-clé
+<strong>this</strong>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMarque</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">marque</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>this</strong> désigne l’instance courante de l’objet dans une méthode.
+On peut l’envisager comme une variable implicite accessible à un objet pour le désigner lui-même.
+Avec <strong>this</strong>, on peut accéder aux attributs et aux méthodes de l’objet. Il est
+même possible de retourner la valeur <strong>this</strong> ou la passer en paramètre pour
+indiquer une référence de l’objet courant :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="n">Voiture</span> <span class="nf">getPlusRapide</span><span class="o">(</span><span class="n">Voiture</span> <span class="n">voiture</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">&gt;=</span> <span class="n">voiture</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">?</span> <span class="k">this</span> <span class="o">:</span> <span class="n">voiture</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>S’il n’y a pas d’ambiguïté de nom, l’utilisation du mot-clé <strong>this</strong> est inutile.
+Cependant, certains développeurs préfèrent l’utiliser systématiquement pour indiquer
+explicitement l’accès à un attribut.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Prudence</p>
+<p class="last"><strong>this</strong> désignant l’objet courant, ce mot-clé n’est pas disponible dans une méthode
+de classe (méthode <strong>static</strong>). Pour résoudre le problème du masquage des attributs
+de classe dans ces méthodes, il suffit d’accéder au nom à travers le nom de la classe.</p>
+</div>
+</div>
+<div class="section" id="principe-d-encapsulation">
+<h2>Principe d’encapsulation<a class="headerlink" href="#principe-d-encapsulation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un objet est constitué d’un état interne (l’ensemble de ses attributs) et d’une
+liste d’opérations disponibles pour ses clients (l’ensemble de ses méthodes publiques).
+En programmation objet, il est important que les clients d’un objet en connaissent
+le moins possible sur son état interne. Nous verrons plus tard avec les mécanismes
+d’héritage et d’interface qu’un client demande des services à un objet sans même
+parfois connaître le type exact de l’objet. La programmation objet introduit
+un niveau d’abstraction important et cette abstraction devient un atout pour
+la réutilisation et l’évolutivité.</p>
+<p>Prenons l’exemple d’une classe permettant d’effectuer une connexion FTP et de récupérer
+une fichier distant. Les clients d’une telle classe n’ont sans doute aucun intérêt à
+comprendre les mécanismes compliqués du protocole FTP. Ils veulent simplement qu’on leur
+rende un service. Notre classe FTP pourrait très grossièrement ressembler à ceci :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClientFtp</span> <span class="o">{</span>
+
+  <span class="cm">/**</span>
+<span class="cm">  * @param uri l&#39;adresse FTP du fichier</span>
+<span class="cm">  *            par exemple ftp://monserveur/monfichier.txt</span>
+<span class="cm">  * @return le fichier sous la forme d&#39;un tableau d&#39;octets</span>
+<span class="cm">  */</span>
+  <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">getFile</span><span class="o">(</span><span class="n">String</span> <span class="n">uri</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// implémentation</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Cette classe a peut-être des attributs pour connaître l’état du réseau et maintenir
+des connexions ouvertes vers des serveurs pour améliorer les performances. Mais tout
+ceci n’est pas de la responsabilité du client de cette classe qui veut simplement
+récupérer un ficher. Il est donc intéressant de cacher aux clients l’état interne
+de l’objet pour assurer un <em>couplage faible de l’implémentation</em>. Ainsi, si les
+développeurs de la classe <em>ClientFtp</em> veulent modifier son implémentation, ils
+doivent juste s’assurer que les méthodes publiques fonctionneront toujours comme attendues
+par les clients.</p>
+<p>En programmation objet, le <a class="reference external" href="https://fr.wikipedia.org/wiki/Encapsulation_(programmation)">principe d’encapsulation</a> nous incite à contrôler
+et limiter l’accès au contenu de nos classes au strict nécessaire afin de permettre
+le couplage le plus faible possible. L’encapsulation en Java est permise grâce aux portées
+<strong>public</strong> et <strong>private</strong>.</p>
+<p>On considère que tous les attributs d’une classe <strong>doivent</strong> être déclarés <strong>private</strong>
+afin de satisfaire le <a class="reference external" href="https://fr.wikipedia.org/wiki/Encapsulation_(programmation)">principe d’encapsulation</a>.</p>
+<p>Cependant, il est parfois utile pour le client d’une classe d’avoir accès à une information
+qui correspond à un attribut de l’état interne de l’objet. Plutôt que de déclarer
+cet attribut <strong>public</strong>, il existe en Java des méthodes dont la signature est facilement
+identifiable et que l’on nomme <strong>getters</strong> et <strong>setters</strong>. Ces méthodes permettent
+d’accéder aux <strong>propriétés</strong> d’un objet ou d’une classe.</p>
+<dl class="docutils">
+<dt><strong>getter</strong></dt>
+<dd><p class="first">Permet l’accès en lecture à une propriété.
+La signature de la méthode se présente sous la forme :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">type</span> <span class="nf">getNomPropriete</span><span class="o">()</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Pour un type booléen, on peut aussi écrire :</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isNomPropriete</span><span class="o">()</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>setter</strong></dt>
+<dd><p class="first">Permet l’accès en écriture à une propriété.
+La signature de la méthode se présente sous la forme :</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNomPropriete</span><span class="o">(</span><span class="n">type</span> <span class="n">arg</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>Ce qui donnera pour notre classe <em>Voiture</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="c1">// La vitesse en km/h</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="cm">/**</span>
+<span class="cm">  * @return La vitesse en km/h</span>
+<span class="cm">  */</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">  * @param vitesse La vitesse en km/h</span>
+<span class="cm">  */</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">float</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Les <em>getters/setters</em> introduisent une abstraction supplémentaire : la <strong>propriété</strong>.
+Une propriété peut correspondre à un attribut ou à une expression. Du point de vue
+du client de la classe, cela n’a pas d’importance. Dans l’exemple ci-dessus, les développeurs
+de la classe <em>Voiture</em> peuvent très bien décider que l’état interne de la vitesse
+sera exprimé en mètres par seconde. Il devient possible de conserver la cohérence de notre
+classe en effectuant les conversions nécessaires pour passer de la propriété en
+km/s à l’attribut en m/s et inversement.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="c1">// vitesse en m/s</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="nf">convertirEnMetresSeconde</span><span class="o">(</span><span class="kt">float</span> <span class="n">valeur</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeur</span> <span class="o">*</span> <span class="mi">1000</span><span class="n">f</span> <span class="o">/</span> <span class="mi">3600</span><span class="n">f</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="nf">convertirEnKilometresHeure</span><span class="o">(</span><span class="kt">float</span> <span class="n">valeur</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeur</span> <span class="o">/</span> <span class="mi">1000</span><span class="n">f</span> <span class="o">*</span> <span class="mi">3600</span><span class="n">f</span>
+  <span class="o">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">  * @return La vitesse en km/h</span>
+<span class="cm">  */</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">convertirEnKilometresHeure</span><span class="o">(</span><span class="n">vitesse</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">  * @param vitesse La vitesse en km/h</span>
+<span class="cm">  */</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">float</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">convertirEnMetresSeconde</span><span class="o">(</span><span class="n">vitesse</span><span class="o">);</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Avec les <em>getters/setters</em>, il est également possible de contrôler si une propriété
+est consultable et/ou modifiable. Si une propriété n’est pas consultable, il ne faut
+pas déclarer de <em>getter</em> pour cette propriété. Si une propriété n’est pas modifiable,
+il ne faut pas déclarer de <em>setter</em> pour cette propriété.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Les <em>getters/setters</em> sont très utilisés en Java mais leur écriture peut être
+fastidieuse. Les IDE comme Eclipse introduisent un système de génération automatique.
+Dans Eclipse, faites un clic droit dans votre fichier de classe et choisissez
+<em>Source &gt; Generate Getters and Setters…</em></p>
+</div>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">À faire</p>
+<p class="last">Exercices du chapitre</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Attributs &amp; méthodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-attributs">Les attributs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-methodes">Les méthodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redefinition-de-methode-overloading">Redéfinition de méthode : overloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#portee-des-noms-et-this">Portée des noms et this</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#principe-d-encapsulation">Principe d’encapsulation</a></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,527 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Les types primitifs &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les opérateurs" href="operateurs.html" />
+    <link rel="prev" title="Une première classe" href="premiere_classe.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="les-types-primitifs">
+<h1>Les types primitifs<a class="headerlink" href="#les-types-primitifs" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Java n’est pas complètement un langage orienté objet dans la mesure où il supporte
+ce l’on nomme les <em>types primitifs</em>. Chaque type primitif est représenté par un mot-clé :</p>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text">Types primitifs</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Français</th>
+<th class="head">Anglais</th>
+<th class="head">Mot-clé</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Booléen</td>
+<td>Boolean</td>
+<td><strong>boolean</strong></td>
+</tr>
+<tr class="row-odd"><td>Caractère</td>
+<td>Character</td>
+<td><strong>char</strong></td>
+</tr>
+<tr class="row-even"><td>Entier</td>
+<td>Integer</td>
+<td><strong>int</strong></td>
+</tr>
+<tr class="row-odd"><td>Octet</td>
+<td>Byte</td>
+<td><strong>byte</strong></td>
+</tr>
+<tr class="row-even"><td>Entier court</td>
+<td>Short integer</td>
+<td><strong>short</strong></td>
+</tr>
+<tr class="row-odd"><td>Entier long</td>
+<td>Long integer</td>
+<td><strong>long</strong></td>
+</tr>
+<tr class="row-even"><td>Nombre à virgule flottante</td>
+<td>Float number</td>
+<td><strong>float</strong></td>
+</tr>
+<tr class="row-odd"><td>Nombre à virgule flottante en double précision</td>
+<td>Double precision float number</td>
+<td><strong>double</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Une variable de type primitif représente juste une valeur stockée dans un espace mémoire
+dont la taille dépend du type. À la différence des langages comme C ou C++, l’espace
+mémoire occupé par un primitif est fixé par le spécification du langage et non par la machine cible.</p>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Taille mémoire</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Espace mémoire</th>
+<th class="head">Signé</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>boolean</strong></td>
+<td>indéterminé</td>
+<td>non</td>
+</tr>
+<tr class="row-odd"><td><strong>char</strong></td>
+<td>2 octets (16 bits)</td>
+<td>non</td>
+</tr>
+<tr class="row-even"><td><strong>int</strong></td>
+<td>4 octets (32 bits)</td>
+<td>oui</td>
+</tr>
+<tr class="row-odd"><td><strong>byte</strong></td>
+<td>1 octet (8 bits)</td>
+<td>oui</td>
+</tr>
+<tr class="row-even"><td><strong>short</strong></td>
+<td>2 octets (16 bits)</td>
+<td>oui</td>
+</tr>
+<tr class="row-odd"><td><strong>long</strong></td>
+<td>8 octets (64 bits)</td>
+<td>oui</td>
+</tr>
+<tr class="row-even"><td><strong>float</strong></td>
+<td>4 octets (32 bits <a class="reference external" href="https://fr.wikipedia.org/wiki/IEEE_754">IEEE 754</a> floating point)</td>
+<td>oui</td>
+</tr>
+<tr class="row-odd"><td><strong>double</strong></td>
+<td>8 octets (64 bits <a class="reference external" href="https://fr.wikipedia.org/wiki/IEEE_754">IEEE 754</a> floating point)</td>
+<td>oui</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="le-type-booleen-boolean">
+<h2>Le type booléen : boolean<a class="headerlink" href="#le-type-booleen-boolean" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les variables de type booléen ne peuvent prendre que deux valeurs : <strong>true</strong> ou <strong>false</strong>.
+Par défaut, un attribut de type <strong>boolean</strong> vaut <strong>false</strong>.</p>
+<p>On ne peut utiliser que des opérateurs booléens comme <strong>==</strong> <strong>!=</strong> <strong>!</strong> sur des variables
+de type booléen (pas d’opération arithmétique autorisée).</p>
+</div>
+<div class="section" id="le-type-caractere-char">
+<h2>Le type caractère : char<a class="headerlink" href="#le-type-caractere-char" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les variables de type <strong>char</strong> sont codées sur 2 octets non signés car la représentation
+interne des caractères est UTF-16. Cela signifie que la valeur va de 0 à 2^16 - 1.
+Par défaut, un attribut de type <strong>char</strong> vaut <strong>0</strong> (c’est-à-dire le caractère de terminaison).</p>
+<p>Pour représenter un littéral, on utilise l’apostrophe (<strong>simple quote</strong>) :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Même si les caractères ne sont pas des nombres, Java autorise les opérations
+arithmétiques sur les caractères en se basant sur le code caractère. Cela peut
+être pratique si l’on veut parcourir l’alphabet par exemple :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>On peut également affecter un nombre à une variable caractère. Ce nombre représente
+alors le code caractère :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">97</span><span class="o">;</span> <span class="c1">// 97 est le code caractère de la lettre a en UTF-16</span>
+</pre></div>
+</div>
+<p>Affecter une variable de type entier à un variable de type <strong>char</strong> conduit à une erreur
+de compilation. En effet, le type <strong>char</strong> est un nombre signé sur 2 octets. Pour passer
+la compilation, il faut trans-typer (<strong>cast</strong>) la variable :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">97</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// cast vers char obligatoire pour la compilation</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-types-entiers-byte-short-int-long">
+<h2>Les types entiers : byte, short, int, long<a class="headerlink" href="#les-types-entiers-byte-short-int-long" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les types entiers différent entre-eux uniquement
+par l’espace de stockage mémoire qui leur est alloué.
+Ils sont tous des types signés.
+Par défaut, un attribut de type <strong>byte</strong>, <strong>short</strong>, <strong>int</strong> ou <strong>long</strong> vaut 0.</p>
+<p>La règle de conversion implicite est simple : on peut affecter une variable d’un type
+à une variable d’un autre type que si la taille mémoire est au moins assez grande.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">i</span>   <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span>  <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+
+<span class="c1">// conversion implicite ok</span>
+<span class="c1">// car la variable à droite de l&#39;expression</span>
+<span class="c1">// est d&#39;une taille mémoire inférieure</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Dans tous les autres cas, il faut réaliser un trans-typage avec un risque de perte
+de valeur :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="n">s</span><span class="o">;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">i</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">l</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Lorsque vous affectez une valeur littérale à une variable, le compilateur contrôlera
+que la valeur est acceptable pour ce type :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">127</span><span class="o">;</span> <span class="c1">// ok</span>
+<span class="hll"><span class="n">b</span> <span class="o">=</span> <span class="mi">128</span><span class="o">;</span> <span class="c1">// ko car le type byte accepte des valeurs entre -128 et 127</span>
+</span></pre></div>
+</div>
+<p>Les valeurs littérales peuvent s’écrire suivant plusieurs bases :</p>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">Écriture des valeurs entières littérales</span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Base</th>
+<th class="head">Exemple</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2 (binaire)</td>
+<td>0b0010 ou 0B0010</td>
+</tr>
+<tr class="row-odd"><td>8 (octal)</td>
+<td>0174</td>
+</tr>
+<tr class="row-even"><td>10 (décimal)</td>
+<td>129</td>
+</tr>
+<tr class="row-odd"><td>16 (hexadécimal)</td>
+<td>0x12af ou 0X12AF</td>
+</tr>
+</tbody>
+</table>
+<p>On peut forcer une valeur littérale à être interprétée comme un entier long en suffixant
+la valeur par <strong>L</strong> ou <strong>l</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">100L</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Pour plus de lisibilité, il est également possible de séparer les milliers par _ :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Les opérations arithmétiques entre des valeurs littérales sont effectuées à la compilation.
+Il est souvent plus lisible de faire apparaître l’opération plutôt que le résultat :</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">hourInMilliseconds</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1">// plutôt que 3_600_000</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">La représentation interne des nombres entiers fait qu’il est possible d’aboutir
+à un dépassement des valeurs maximales ou minimales (<em>buffer overflow</em> ou <em>buffer underflow</em>) .
+Il n’est donc pas judicieux d’utiliser ces types pour représenter
+des valeurs qui peuvent croître ou décroître sur une très grande échelle.
+Pour ces cas-là, on peut utiliser la classe <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html">BigInteger</a> qui utilise une représentation
+interne plus complexe.</p>
+</div>
+</div>
+<div class="section" id="les-types-a-virgule-flottante-float-double">
+<h2>Les types à virgule flottante : float, double<a class="headerlink" href="#les-types-a-virgule-flottante-float-double" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les types <strong>float</strong> et <strong>double</strong> permettent de représenter les nombres à virgule
+selon le format <a class="reference external" href="https://fr.wikipedia.org/wiki/IEEE_754">IEEE 754</a>. Ce format stocke le signe sur un bit puis le nombre sous
+une forme entière (la mantisse) et l’exposant en base 2 pour positionner la virgule.
+Par défaut, un attribut de type <strong>float</strong> ou <strong>double</strong> vaut 0.</p>
+<p><strong>float</strong> est dit en simple précision et est codé sur 4 octets (32 bits) tandis que
+<strong>double</strong> est dit en double précision et est codé sur 8 octets (64 bits).</p>
+<p>Il est possible d’ajouter une valeur entière à un type à virgule flottante mais l’inverse
+nécessite une trans-typage (<strong>cast</strong>) avec une perte éventuelle de valeur.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">5.0</span><span class="o">;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Les valeurs littérales peuvent s’écrire avec un <strong>.</strong> pour signifier la virgule et/ou avec une
+notation scientifique en donnant l’exposant en base 10 :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">d1</span> <span class="o">=</span> <span class="mf">.0</span><span class="o">;</span> <span class="c1">// le 0 peut être omis à gauche de la virgule</span>
+<span class="kt">double</span> <span class="n">d2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d3</span> <span class="o">=</span> <span class="mf">1.5E1</span><span class="o">;</span> <span class="c1">// 1.5 * 10, c&#39;est-à-dire 15.0</span>
+<span class="kt">double</span> <span class="n">d4</span> <span class="o">=</span> <span class="mf">0.1234E-15</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Une valeur littérale est toujours considérée en double précision. Pour l’affecter à une variable
+de type <strong>float</strong>, il faut suffixer la valeur par <strong>F</strong> ou <strong>f</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">0.5f</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p>La représentation interne des nombres à virgule flottante fait qu’il est possible d’aboutir
+à des imprécisions de calcul. Il n’est donc pas judicieux d’utiliser ces types pour représenter
+des valeurs pour lesquelles les approximations de calcul ne sont pas acceptables.</p>
+<p class="last">Par exemple, les applications qui réalisent des calculs sur des montants financiers ne devraient
+<strong>jamais</strong> utiliser des nombres à virgule flottante. Soit il faut représenter l’information
+en interne toujours en entier (par exemple en centimes d’euro) soit il faut utiliser la classe <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">BigDecimal</a>
+qui utilise une représentation interne plus complexe mais sans approximation.</p>
+</div>
+</div>
+<div class="section" id="les-classes-enveloppes">
+<h2>Les classes enveloppes<a class="headerlink" href="#les-classes-enveloppes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme les types primitifs ne sont pas des classes, l’API standard de Java fournit également des classes
+qui permettent d’envelopper la valeur d’un type primitif : on parle de <strong>wrapper classes</strong>.</p>
+<table border="1" class="colwidths-given docutils" id="id4">
+<caption><span class="caption-text">Wrapper classes</span><a class="headerlink" href="#id4" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Classe associée</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>boolean</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html">java.lang.Boolean</a></td>
+</tr>
+<tr class="row-odd"><td><strong>char</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html">java.lang.Character</a></td>
+</tr>
+<tr class="row-even"><td><strong>int</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">java.lang.Integer</a></td>
+</tr>
+<tr class="row-odd"><td><strong>byte</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html">java.lang.Byte</a></td>
+</tr>
+<tr class="row-even"><td><strong>short</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Short.html">java.lang.Short</a></td>
+</tr>
+<tr class="row-odd"><td><strong>long</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html">java.lang.Long</a></td>
+</tr>
+<tr class="row-even"><td><strong>float</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Float.html">java.lang.Float</a></td>
+</tr>
+<tr class="row-odd"><td><strong>double</strong></td>
+<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">java.lang.Double</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Le tableau ci-dessus donne le nom complet des classes, c’est-à-dire en incluant
+le nom du package (<em>java.lang</em>).</p>
+</div>
+<p>Il est possible de créer une instance d’une classe enveloppe soit en utilisant
+son constructeur soit en utilisant la méthode de classe <strong>valueOf</strong> (il s’agit
+de la méthode recommandée).</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Pour obtenir la valeur enveloppée, on fait appel à la méthode <em>xxxValue()</em>, xxx étant
+le type sous-jacent :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Pourquoi avoir créé ces classes ? Cela permet d’offrir un emplacement facile à mémoriser
+à des méthodes utilitaires. Par exemple, toutes les classes enveloppes définissent une méthode
+de classe de la forme <em>parseXXX</em> qui permet de convertir une chaîne de caractères en un type
+primitif :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Boolean</span><span class="o">.</span><span class="na">parseBoolean</span><span class="o">(</span><span class="s">&quot;true&quot;</span><span class="o">);</span>
+<span class="kt">byte</span> <span class="n">by</span> <span class="o">=</span> <span class="n">Byte</span><span class="o">.</span><span class="na">parseByte</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Short</span><span class="o">.</span><span class="na">parseShort</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Float</span><span class="o">.</span><span class="na">parseFloat</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<span class="c1">// enfin presque toutes car Character n&#39;a pas cette méthode</span>
+</pre></div>
+</div>
+<p>Une variable de type d’une des classes enveloppes référence un objet donc elle peut avoir la valeur spéciale <strong>null</strong>.
+Ce cas permet de signifier l’absence de valeur. Enfin les classes enveloppes sont conçues pour être
+non modifiables. Cela signifie que l’on ne peut pas modifier la valeur qu’elles enveloppent après
+leur création.</p>
+</div>
+<div class="section" id="l-autoboxing">
+<h2>L’autoboxing<a class="headerlink" href="#l-autoboxing" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il n’est pas rare dans une application Java de devoir convertir des types primitifs vers
+des instances de leur classe enveloppe et réciproquement. Afin d’alléger la syntaxe,
+on peut se contenter d’affecter une variable à une autre et le compilateur se chargera
+d’ajouter le code manquant. L’opération qui permet de passer d’un type primitif
+à une instance de sa classe enveloppe s’appelle le <strong>boxing</strong> et l’opération inverse
+s’appelle <strong>l’unboxing</strong>.</p>
+<p>Le code suivant</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>est accepté par le compilateur et ce dernier lira à la place</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// boxing</span>
+</pre></div>
+</div>
+<p>De même, le code suivant</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>est également accepté par le compilateur et ce dernier lira à la place</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// boxing</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span> <span class="c1">// unboxing</span>
+</pre></div>
+</div>
+<p>On peut ainsi réaliser des opérations arithmétiques sur des instances de classes enveloppes</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="n">Integer</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+<span class="n">Integer</span> <span class="n">k</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Il faut bien comprendre que le code ci-dessus manipule en fait des objets et qu’il implique
+plusieurs opérations de boxing et de unboxing. Si cela n’est pas strictement nécessaire, alors
+il vaut mieux utiliser des types primitifs.</p>
+<p>L’autoboxing fonctionne à chaque fois qu’une affectation à lieu. Il s’applique donc
+à la déclaration de variable, à l’affection de variable et au passage de paramètre.</p>
+<p>L’autoboxing est parfois difficile à utiliser car il conduit à des expressions
+qui peuvent être ambiguës.
+Par exemple, alors que le code suivant utilisant des primitives compile :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="kt">float</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Ce code faisant appelle à l’autoboxing ne compile pas en l’état :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="hll"><span class="n">Float</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// ERREUR : i est de type Integer</span>
+</span></pre></div>
+</div>
+<p>Pire, l’autoboxing peut être source de bug. Le plus évident est l’unboxing d’une variable nulle :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="hll"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// ERREUR : unboxing de null !</span>
+</span></pre></div>
+</div>
+<p>Une variable de type <strong>Integer</strong> peut être <strong>null</strong>. Dans ce cas l’unboxing
+n’est pas possible et aboutira à une erreur (NullPointerException). Si cet exemple
+est trivial, il peut être beaucoup plus subtil et difficile à comprendre pour un projet
+de plusieurs centaines (milliers) de lignes de code.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les types primitifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#le-type-booleen-boolean">Le type booléen : boolean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-type-caractere-char">Le type caractère : char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-types-entiers-byte-short-int-long">Les types entiers : byte, short, int, long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-types-a-virgule-flottante-float-double">Les types à virgule flottante : float, double</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-classes-enveloppes">Les classes enveloppes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-autoboxing">L’autoboxing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

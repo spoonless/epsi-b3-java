@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Compilation &amp; exécution" href="compilation.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Pour suivre ce cours, vous aurez besoin d’un environnement de développement Java.
+L’installation du JDK dépend de votre plate-forme : il est distribué sous la forme d’un installeur
+pour Windows et MacOS, et sous la forme d’un package ou d’une archive sous Linux.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Votre machine dispose déjà très certainement d’un environnement d’exécution
+Java (<strong>JRE</strong>) qui ne contient pas les outils nécessaires pour développer en Java. Vous
+devez donc installer un JDK.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Téléchargement du JDK 1.8</p>
+<p><a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+</div>
+<p>Vous aurez également besoin d’un environnement de développement intégré (<strong>IDE</strong>) pour Java.
+Il en existe plusieurs. Dans le cadre de cette formation, nous utiliserons <a class="reference external" href="https://www.eclipse.org">Eclipse</a></p>
+<p>Il existe plusieurs <em>packages</em> d’Eclipse visant des publics différents. Si vous voulez
+uniquement faire du développement d’application Java, vous pouvez télécharger
+le package <em>Eclipse IDE for Java Developers</em>. Si par contre, vous voulez réaliser des
+développements d’application Web alors peut-être devriez-vous télécharger le package
+<em>Eclipse IDE for Java EE Developers</em>. Cette dernière version offre des fonctionnalités
+supplémentaires pour le développement d’applications serveur.</p>
+<p>Eclipse est distribué sous la forme d’une archive (tar.gz pour Linux et MacOS et zip pour Windows)
+que vous pouvez décompresser où vous le souhaitez.</p>
+<div class="topic">
+<p class="topic-title first">Téléchargement de l’IDE Eclipse</p>
+<p><a class="reference external" href="https://www.eclipse.org/downloads/eclipse-packages/">https://www.eclipse.org/downloads/eclipse-packages/</a></p>
+</div>
+<div class="section" id="configuration-d-eclipse">
+<h2>Configuration d’Eclipse<a class="headerlink" href="#configuration-d-eclipse" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Après avoir lancé Eclipse, il va falloir vérifier la version de Java utilisée par l’IDE
+et la modifier si nécessaire.</p>
+<p>Pour vérifier les versions de Java disponibles dans Eclipse, ouvrez les préférences
+utilisateur : menu «&nbsp;Window &gt; Preferences&nbsp;». Dans la zone de filtre en haut à gauche,
+saisissez «&nbsp;jre&nbsp;» (pour Java Runtime Environment) et sélectionnez dans l’arbre
+«&nbsp;Installed JREs&nbsp;» comme ci-dessous :</p>
+<img alt="_images/eclipse_installed_jre.png" src="_images/eclipse_installed_jre.png" />
+<p>Vérifiez que le JDK que vous avez installé se trouve bien dans la liste des JRE détectés
+par Eclipse. De plus le JDK doit être coché pour indiquer à Eclipse qu’il s’agit de
+l’environnement d’exécution à utiliser par défaut pour tous les projets.</p>
+<p>Si vous ne trouvez pas le JDK installé dans la liste, utilisez le bouton «&nbsp;Add…&nbsp;»
+pour l’ajouter manuellement :</p>
+<ol class="arabic simple">
+<li>Pour le choix du type de JRE, choisissez «&nbsp;Standard VM&nbsp;» et cliquez sur «&nbsp;Next&nbsp;»</li>
+<li>Dans la boîte de dialogue «&nbsp;Add JRE&nbsp;», cliquez sur le bouton «&nbsp;Directory…&nbsp;» pour sélectionner le répertoire d’installation du JDK</li>
+<li>Eclipse s’occupe ensuite de remplir les champs nécessaires et vous n’avez plus qu’à cliquer sur «&nbsp;Finish&nbsp;»</li>
+</ol>
+<img alt="_images/eclipse_jre_definition.png" src="_images/eclipse_jre_definition.png" />
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">N’oubliez pas de cocher la ligne de votre JDK dans l’écran «&nbsp;Installed JREs&nbsp;» pour
+qu’il devienne l’environnement d’exécution par défaut.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-d-eclipse">Configuration d’Eclipse</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

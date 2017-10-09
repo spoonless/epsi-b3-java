@@ -1,0 +1,332 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>La structure fondamentale du langage &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Une première classe" href="premiere_classe.html" />
+    <link rel="prev" title="Compilation &amp; exécution" href="compilation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="la-structure-fondamentale-du-langage">
+<h1>La structure fondamentale du langage<a class="headerlink" href="#la-structure-fondamentale-du-langage" title="Lien permanent vers ce titre">¶</a></h1>
+<p>La syntaxe du langage Java est à l’origine très inspirée du C et du C++. Ces
+deux langages de programmation ont également servi de base au C#. Donc si vous
+connaissez C, C++ ou C# vous retrouverez en Java des structures de langage qui vous
+sont familières.</p>
+<div class="section" id="les-instructions">
+<h2>Les instructions<a class="headerlink" href="#les-instructions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Java est un <a class="reference external" href="https://fr.wikipedia.org/wiki/Programmation_imp%C3%A9rative">langage de programmation impératif</a>. Cela signifie qu’un programme
+Java se compose d’instructions (<strong>statements</strong>) décrivant les opérations que la machine
+doit exécuter. En Java une instruction est délimitée par un <strong>point-virgule</strong>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-blocs-de-code">
+<h2>Les blocs de code<a class="headerlink" href="#les-blocs-de-code" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Java permet de structurer le code en bloc. Un bloc est délimité par des <strong>accolades</strong>.
+Un bloc permet d’isoler par exemple le code conditionnel à la suite d’un <strong>if</strong> mais
+il est également possible de créer des blocs anonymes.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">i</span> <span class="o">=</span>  <span class="o">-</span><span class="n">i</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="o">{</span>
+  <span class="kt">double</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Un bloc de code n’a pas besoin de se terminer par un point-virgule. Certains outils
+émettent un avertissement si vous le faites.</p>
+</div>
+<div class="section" id="les-commentaires">
+<h2>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un commentaire sur une ligne commence par <strong>//</strong> et continue jusqu’à la fin de la ligne :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// ceci est un commentaire</span>
+<span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span> <span class="c1">// ceci est également un commentaire</span>
+</pre></div>
+</div>
+<p>Un commentaire sur plusieurs lignes commence par <strong>/*</strong> et se termine par <strong>*/</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/* ceci est un commentaire</span>
+<span class="cm">   sur plusieurs lignes */</span>
+<span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Il existe un type spécial de commentaires utilisé par l’utilitaire <a class="reference external" href="https://en.wikipedia.org/wiki/Javadoc">javadoc</a>. Ces commentaires
+servent à générer la documentation au format HTML de son code. Ces commentaires,
+appelés <strong>commentaires javadoc</strong>, commencent par <strong>/**</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm">* Une classe d&#39;exemple.</span>
+<span class="cm">*</span>
+<span class="cm">* Cette classe ne fait rien. Elle sert juste à donner un exemple de</span>
+<span class="cm">* commentaire javadoc.</span>
+<span class="cm">*</span>
+<span class="cm">* @author David Gayerie</span>
+<span class="cm">* @version 1.0</span>
+<span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="le-formatage-du-code">
+<h2>Le formatage du code<a class="headerlink" href="#le-formatage-du-code" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le compilateur Java n’impose pas de formatage particulier du code. Dans la mesure
+où une instruction se termine par un point-virgule et que les blocs sont délimités
+par des accolades, il est possible de présenter du code de façon différente. Ainsi,
+le code suivant :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>est strictement identique pour le compilateur à celui-ci :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span><span class="o">=</span><span class="mf">0.0</span><span class="o">;</span><span class="n">i</span><span class="o">=</span><span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span><span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">){</span><span class="n">i</span><span class="o">=-</span><span class="n">i</span><span class="o">;}</span>
+</pre></div>
+</div>
+<p>Cependant, le code source est très souvent relu par les développeurs, il faut
+donc en assurer la meilleure lisibilité. Les développeurs Java utilisent une
+convention de formatage qu’il <strong>faut</strong> respecter. Des outils comme Eclipse
+permettent d’ailleurs de reformater le code
+(sous Eclipse avec le raccourci clavier <em>MAJ + CTRL + F</em>).
+Rappelez-vous des conventions suivantes :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// On revient à la ligne après une accolade (mais pas avant)</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+
+<span class="c1">// On revient systématiquement à la ligne après un point virgule</span>
+<span class="c1">// (sauf) dans le cas de l&#39;instruction for</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// Dans un bloc de code, on utilise une tabulation ou des espaces</span>
+<span class="c1">// pour mettre en valeur le bloc</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// On sépare les variables des opérateurs par des espaces</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// plutôt que i=i+10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-conventions-de-nommage">
+<h2>Les conventions de nommage<a class="headerlink" href="#les-conventions-de-nommage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Chaque langage de programmation et chaque communauté de développeurs définissent
+des conventions sur la façon de nommer les identifiants dans un programme. Comme
+pour le formatage de code, cela n’a pas d’impact sur le compilateur mais permet
+de garantir un bonne lisibilité et donc une bonne compréhension de son code
+par ses pairs. Les développeurs Java sont particulièrement attachés au respect
+des conventions de nommage.</p>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text">Convention de nommage</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Convention</th>
+<th class="head">Exemple</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Packages</td>
+<td>Un nom de package s’écrit toujours en minuscule. L’utilisation d’un _ est toléré
+pour représenter une séparation.</td>
+<td>java.utils
+com.company.extra_utils</td>
+</tr>
+<tr class="row-odd"><td>Classes et interfaces</td>
+<td>Le nom des classes et des interfaces ne doivent pas être des verbes. La première
+lettre de chaque mot doit être en majuscule (écriture dromadaire).</td>
+<td>MyClass
+SuppressionClientOperateur</td>
+</tr>
+<tr class="row-even"><td>Annotations</td>
+<td>La première lettre de chaque mot doit être une majuscule (écriture dromadaire).
+Il est toléré d’écrire des sigles intégralement en majuscules.</td>
+<td>&#64;InjectIn
+&#64;EJB</td>
+</tr>
+<tr class="row-odd"><td>Méthodes</td>
+<td>Le nom d’une méthode est le plus souvent un verbe. La première lettre doit être en minuscule
+et les mots sont séparés par l’utilisation d’une majuscule (écriture dromadaire).</td>
+<td>run()
+runFast()
+getWidthInPixels()</td>
+</tr>
+<tr class="row-even"><td>Variables</td>
+<td><p class="first">La première lettre doit être en minuscule et les mots sont séparés par l’utilisation
+d’une majuscule (écriture dromadaire). Même si cela est autorisé par le compilateur,
+le nom d’une variable ne doit pas commencer par _ ou $. En Java, les développeurs n’ont
+pas pour habitude d’utiliser une convention de nom pour différencier les variables locales
+des paramètres ou même des attributs d’une classe.</p>
+<p class="last">Le nom des variables doit être explicite sans utiliser d’abréviation. Pour les variables «&nbsp;jetables&nbsp;»,
+l’utilisation d’une lettre est d’usage (par exemple i, j ou k)</p>
+</td>
+<td>widthInPixels
+clientsInscrits
+total</td>
+</tr>
+<tr class="row-odd"><td>Constantes</td>
+<td>Le nom d’une constante s’écrit intégralement en lettres majuscules et les mots sont séparés par _.</td>
+<td>LARGEUR_MAX
+INSCRIPTIONS_PAR_ANNEE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="le-mots-cles">
+<h2>Le mots-clés<a class="headerlink" href="#le-mots-cles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme pour la plupart des langages de programmation, il n’est pas possible d’utiliser
+comme nom dans un programme un mot-clé du langage. La liste des mots-clés en Java est :</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>abstract   continue   for          new         switch
+assert     default    if           package     synchronized
+boolean    do         goto         private     this
+break      double     implements   protected   throw
+byte       else       import       public      throws
+case       enum       instanceof   return      transient
+catch      extends    int          short       try
+char       final      interface    static      void
+class      finally    long         strictfp    volatile
+const      float      native       super       while
+_ (underscore)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>goto</strong> et <strong>const</strong> sont des mots-clés réservés mais qui n’ont pas de signification
+dans le langage Java.</p>
+</div>
+<p>Il existe également des mots réservés qui ne sont pas strictement des mots-clés du langage :</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>true   false   null
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">La structure fondamentale du langage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-instructions">Les instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-blocs-de-code">Les blocs de code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-commentaires">Les commentaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-formatage-du-code">Le formatage du code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-conventions-de-nommage">Les conventions de nommage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-mots-cles">Le mots-clés</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
