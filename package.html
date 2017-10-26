@@ -1,0 +1,420 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Les packages &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les relations entre objets" href="relations_entre_objets.html" />
+    <link rel="prev" title="Cycle de vie d’un objet" href="cycle_de_vie.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="les-packages">
+<h1>Les packages<a class="headerlink" href="#les-packages" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Un problème courant dans les langages de programmation est celui de la collision
+de noms. Si par exemple, je veux créer une classe <em>TextEditor</em> pour représenter
+une composant graphique complexe pour éditer un texte, un autre développeur
+peut également le faire. Si nous distribuons nos classes, cela signifie qu’une
+application peut se retrouver avec deux classes dans son <em>classpath</em> qui
+portent exactement le même nom mais qui ont des méthodes et des comportements
+différents.</p>
+<p>Dans la pratique, la JVM chargera la première classe qu’elle peut trouver et ignorera
+la seconde. Ce comportement n’est pas acceptable. Pour cela, il faut pouvoir
+différencier ma classe <em>TextEditor</em> d’une autre.</p>
+<p>Le moyen le plus efficace est d’introduire un espace de noms qui me soit réservé.
+Dans cet espace, <em>TextEditor</em> ne désignerait que ma classe. En Java, les <strong>packages</strong>
+servent à délimiter des espaces de noms.</p>
+<div class="section" id="declaration-d-un-package">
+<h2>Déclaration d’un package<a class="headerlink" href="#declaration-d-un-package" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour qu’une classe appartienne à un package, il faut que son fichier source
+commence par l’instruction :</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>package [nom du package];
+</pre></div>
+</div>
+<p>Une classe ne peut appartenir qu’à un seul package. Les packages sont également
+représentés sur le disque par des répertoires. Donc pour la classe suivante :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">monapplication</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Cette classe doit se trouver dans le fichier <em>TextEditor.java</em> et ce fichier
+doit lui-même se trouver dans un répertoire nommé <em>monapplication</em>. Pour les fichiers
+<em>class</em> résultants de la compilation, l’organisation des répertoires doit être
+conservée (c’est d’ailleurs ce que fait le compilateur). Ainsi, si deux classes
+portent le même nom, elles se trouveront chacune dans un fichier avec le
+même nom mais dans des répertoires différents puisque ces classes appartiendront
+à des packages différents.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Quand on spécifie le <strong>classpath</strong> à la compilation ou au lancement d’un
+programme, on spécifie le ou les répertoires à partir desquels se trouvent
+les packages.</p>
+</div>
+<p>Si une classe ne déclare pas d’instruction <strong>package</strong> au début du fichier,
+on dit qu’elle appartient au package par défaut (qui n’a pas de nom). Même
+si le langage l’autorise, c’est quasiment toujours une mauvaise idée. Les IDE
+comme Eclipse signalent d’ailleurs un avertissement si vous voulez créer une classe
+dans le package par défaut. Jusqu’à présent, les exemples donnés ne mentionnaient
+pas de package. Mais maintenant que cette notion a été introduite, les exemples
+à venir préciseront toujours un package.</p>
+</div>
+<div class="section" id="sous-package">
+<h2>Sous package<a class="headerlink" href="#sous-package" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme pour les répertoires, les packages suivent une organisation arborescente.
+Un package contenu dans un autre package est appelé un <strong>sous package</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">monapplication.monsouspackage</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Sur le système de fichiers, on trouvera donc un répertoire <em>monapplication</em> avec
+à l’intérieur un sous répertoire <em>monsouspackage</em>.</p>
+</div>
+<div class="section" id="nom-d-un-package">
+<h2>Nom d’un package<a class="headerlink" href="#nom-d-un-package" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme le mécanisme des packages a été introduit pour éviter la collision de noms,
+il est conseillé de suivre une convention de nommage de ses packages. Pour une
+organisation, on utilise le nom de domaine inversé comme base de l’arborescence
+de packages : par exemple <em>fr.epsi.b3</em>. On ajoute généralement ensuite le nom de
+l’application ou de la bibliothèque.</p>
+<p>Les noms de package contenant mot <em>java</em> sont réservés pour la bibliothèque standard.
+On trouve ainsi des packages <em>java</em> ou <em>javax</em> (pour indiquer une extension de Java)
+dans la bibliothèque standard fournie avec le JDK.</p>
+</div>
+<div class="section" id="nom-complet-d-une-classe">
+<h2>Nom complet d’une classe<a class="headerlink" href="#nom-complet-d-une-classe" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une classe est normalement désignée par son <em>nom complet</em>, c’est-à-dire par le
+chemin de packages suivi d’un <strong>.</strong> suivi du nom de la classe.</p>
+<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> s’appelle en fait <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a> car elle se
+trouve dans le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité si je le souhaite
+de créer ma propre classe String par exemple dans le package <em>fr.epsi.b3</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">String</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il est possible d’accèder à une classe en spécifiant son nom complet. Par
+exemple, pour accèder à la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
+    <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Par défaut, une classe a accès à l’espace de nom de son propre package et du
+package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a>. Voilà pourquoi, il est possible d’utiliser directement
+les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math</a> sans avoir à donner leur nom complet :
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>.</p>
+<p>Si nous créons deux classes : <em>Voiture</em> et <em>Conducteur</em>, toutes deux dans le
+package <em>fr.epsi.b3</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Conducteur</span> <span class="o">{</span>
+
+  <span class="c1">// ...</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">Conducteur</span> <span class="n">conducteur</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setConducteur</span><span class="o">(</span><span class="n">Conducteur</span> <span class="n">conducteur</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">conducteur</span> <span class="o">=</span> <span class="n">conducteur</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>La classe <em>Voiture</em> et la classe <em>Conducteur</em> appartiennent toutes les deux
+au package <em>fr.epsi.b3</em>. La classe <em>Voiture</em> peut donc référencer la classe
+<em>Conducteur</em> sans préciser le package.</p>
+</div>
+<div class="section" id="import-de-noms">
+<h2>Import de noms<a class="headerlink" href="#import-de-noms" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour éviter de préfixer systématiquement une classe par son nom de package,
+il est possible d’importer son nom dans l’espace de noms courant grâce au
+mot-clé <strong>import</strong>. Une instruction <strong>import</strong> <strong>doit</strong> se situer juste après
+la déclaration de <strong>package</strong> (si cette dernière est présente). Donc, il n’est pas
+possible d’importer un nom en cours de déclaration d’une classe ou d’une
+méthode.</p>
+<p>Le mot-clé <em>import</em> permet d’importer :</p>
+<ul>
+<li><p class="first">Un nom de classe particulier</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Un nom de méthode de classe ou d’attribut de classe</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.abs</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Un nom de classe interne (inner class)</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Map.Entry</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Tous les noms d’un package</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Tous les noms des méthodes et des attributs de classe</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.*</span><span class="o">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Le caractère <strong>*</strong> permet d’importer tous les noms d’un package dans l’espace
+de nom courant. Même si cela peut sembler très pratique, il est pourtant
+déconseillé de le faire. Tous les IDE Java savent gérer automatiquement les
+importations. Dans Eclipse, lorsque l’on saisit le nom d’une classe qui ne fait
+pas partie de l’espace de nom, il suffit de demander la complétion de code
+(<em>CTRL + espace</em>) et de choisir dans la liste la classe appartenant au package
+voulu et Eclipse génère automatiquement l’instruction <strong>import</strong> pour ce nom de
+classe. De plus, on peut demander à Eclipse à tout moment de réorganiser les
+importations (<em>CTRL + MAJ + O</em>). Ainsi, la gestion des importations est
+grandement automatisée et le recours à <strong>*</strong> comme facilité d’écriture n’est
+plus vraiment utile.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import static</span> <span class="nn">java.lang.Math.random</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">java.util.Arrays.sort</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BenchmarkTriTableau</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">1_000_000</span><span class="o">];</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tableau</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">tableau</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">random</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="n">Instant</span> <span class="n">start</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+    <span class="n">sort</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
+    <span class="n">Duration</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">());</span>
+
+    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Durée de l&#39;opération de tri du tableau : &quot;</span> <span class="o">+</span> <span class="n">duration</span><span class="o">);</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Si vous importez un nom qui est déjà défini dans l’espace courant, alors l’import
+n’aura aucun effet. Dans ce cas, vous serez obligé d’accéder à un nom de classe
+avec son nom long afin d’éviter toute ambiguïté.</p>
+</div>
+</div>
+<div class="section" id="la-portee-de-niveau-package">
+<h2>La portée de niveau package<a class="headerlink" href="#la-portee-de-niveau-package" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous avons vu précédemment que les classes, les méthodes et les attributs
+peuvent avoir une portée <strong>public</strong> ou <strong>private</strong>. Il existe également une
+portée de niveau package. Une classe, une méthode ou un attribut avec cette
+portée n’est accessible qu’aux membres du même package. Cela permet notamment
+de créer des classes nécessaires au fonctionnement du package tout en les
+dissimulant aux éléments qui ne sont pas membres du package.</p>
+<p>Il n’y a pas de mot-clé pour désigner la portée de niveau package. Il suffit
+simplement d’omettre l’information de portée.</p>
+<p>Imaginons que nous voulions créer une bibliothèque de cryptographie. Nous pouvons
+créer une classe pour chaque algorithme. Par contre, pour simplifier l’utilisation,
+nous pouvons fournir une classe outil de chiffrement. Dans ce cas, il n’est
+pas nécessaire de rendre accessible à l’extérieur du package les classes
+représentant les algorithmes : on les déclare alors avec la portée package.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">CypherAlgorithm.java</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.cypher</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">CypherAlgorithm</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="nf">CypherAlgorithm</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">CypherLibrary.java</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.cypher</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CypherLibrary</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="nf">CypherLibrary</span><span class="o">()</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">cypher</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">CypherAlgorithm</span> <span class="n">algo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CypherAlgorithm</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">algo</span><span class="o">.</span><span class="na">cypher</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>La classe <em>CypherAlgorithm</em> est de portée package, elle est donc invisible
+pour les classes qui ne sont pas membres de son package. Par contre, elle est
+utilisée par la classe <em>CypherLibrary</em>.</p>
+<p>La portée de niveau package est souvent utilisée pour dissimuler la complexité
+de l’implémentation en ne laissant voir que les classes et/ou les méthodes
+réellement utiles aux utilisateurs.</p>
+</div>
+<div class="section" id="le-fichier-package-info-java">
+<h2>Le fichier package-info.java<a class="headerlink" href="#le-fichier-package-info-java" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est possible de créer un fichier spécial dans un package nommé <em>package-info.java</em>.
+Au minimum, ce fichier doit contenir une instruction <strong>package</strong>. Ce fichier
+particulier permet d’ajouter un commentaire Javadoc pour documenter le package
+lui-même. Il peut également contenir des annotations pour le package.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">contenu du fichier package-info.java pour <em>fr.epsi.b3</em></span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Ceci est le commentaire pour le package.</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#declaration-d-un-package">Déclaration d’un package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sous-package">Sous package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nom-d-un-package">Nom d’un package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nom-complet-d-une-classe">Nom complet d’une classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-de-noms">Import de noms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#la-portee-de-niveau-package">La portée de niveau package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-fichier-package-info-java">Le fichier package-info.java</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

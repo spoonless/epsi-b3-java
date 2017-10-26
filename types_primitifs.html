@@ -44,7 +44,7 @@
   <div class="section" id="les-types-primitifs">
 <h1>Les types primitifs<a class="headerlink" href="#les-types-primitifs" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Java n’est pas complètement un langage orienté objet dans la mesure où il supporte
-ce l’on nomme les <em>types primitifs</em>. Chaque type primitif est représenté par un mot-clé :</p>
+ce que l’on nomme les <em>types primitifs</em>. Chaque type primitif est représenté par un mot-clé :</p>
 <table border="1" class="colwidths-given docutils" id="id1">
 <caption><span class="caption-text">Types primitifs</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
@@ -95,7 +95,7 @@ ce l’on nomme les <em>types primitifs</em>. Chaque type primitif est représen
 </table>
 <p>Une variable de type primitif représente juste une valeur stockée dans un espace mémoire
 dont la taille dépend du type. À la différence des langages comme C ou C++, l’espace
-mémoire occupé par un primitif est fixé par le spécification du langage et non par la machine cible.</p>
+mémoire occupé par un primitif est fixé par la spécification du langage et non par la machine cible.</p>
 <table border="1" class="colwidths-given docutils" id="id2">
 <caption><span class="caption-text">Taille mémoire</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
@@ -148,13 +148,13 @@ mémoire occupé par un primitif est fixé par le spécification du langage et n
 <h2>Le type booléen : boolean<a class="headerlink" href="#le-type-booleen-boolean" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les variables de type booléen ne peuvent prendre que deux valeurs : <strong>true</strong> ou <strong>false</strong>.
 Par défaut, un attribut de type <strong>boolean</strong> vaut <strong>false</strong>.</p>
-<p>On ne peut utiliser que des opérateurs booléens comme <strong>==</strong> <strong>!=</strong> <strong>!</strong> sur des variables
+<p>On ne peut utiliser que des opérateurs booléens comme <strong>==</strong>, <strong>!=</strong> et <strong>!</strong> sur des variables
 de type booléen (pas d’opération arithmétique autorisée).</p>
 </div>
 <div class="section" id="le-type-caractere-char">
 <h2>Le type caractère : char<a class="headerlink" href="#le-type-caractere-char" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les variables de type <strong>char</strong> sont codées sur 2 octets non signés car la représentation
-interne des caractères est UTF-16. Cela signifie que la valeur va de 0 à 2^16 - 1.
+interne des caractères est l’UTF-16. Cela signifie que la valeur va de 0 à 2^16 - 1.
 Par défaut, un attribut de type <strong>char</strong> vaut <strong>0</strong> (c’est-à-dire le caractère de terminaison).</p>
 <p>Pour représenter un littéral, on utilise l’apostrophe (<strong>simple quote</strong>) :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span>
@@ -269,7 +269,7 @@ Il est souvent plus lisible de faire apparaître l’opération plutôt que le r
 à un dépassement des valeurs maximales ou minimales (<em>buffer overflow</em> ou <em>buffer underflow</em>) .
 Il n’est donc pas judicieux d’utiliser ces types pour représenter
 des valeurs qui peuvent croître ou décroître sur une très grande échelle.
-Pour ces cas-là, on peut utiliser la classe <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html">BigInteger</a> qui utilise une représentation
+Pour ces cas-là, on peut utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html">BigInteger</a> qui utilise une représentation
 interne plus complexe.</p>
 </div>
 </div>
@@ -309,7 +309,7 @@ de type <strong>float</strong>, il faut suffixer la valeur par <strong>F</strong
 des valeurs pour lesquelles les approximations de calcul ne sont pas acceptables.</p>
 <p class="last">Par exemple, les applications qui réalisent des calculs sur des montants financiers ne devraient
 <strong>jamais</strong> utiliser des nombres à virgule flottante. Soit il faut représenter l’information
-en interne toujours en entier (par exemple en centimes d’euro) soit il faut utiliser la classe <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">BigDecimal</a>
+en interne toujours en entier (par exemple en centimes d’euro) soit il faut utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html">BigDecimal</a>
 qui utilise une représentation interne plus complexe mais sans approximation.</p>
 </div>
 </div>
@@ -330,28 +330,28 @@ qui permettent d’envelopper la valeur d’un type primitif : on parle de <stro
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><strong>boolean</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html">java.lang.Boolean</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html">java.lang.Boolean</a></td>
 </tr>
 <tr class="row-odd"><td><strong>char</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html">java.lang.Character</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html">java.lang.Character</a></td>
 </tr>
 <tr class="row-even"><td><strong>int</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">java.lang.Integer</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">java.lang.Integer</a></td>
 </tr>
 <tr class="row-odd"><td><strong>byte</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html">java.lang.Byte</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html">java.lang.Byte</a></td>
 </tr>
 <tr class="row-even"><td><strong>short</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Short.html">java.lang.Short</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html">java.lang.Short</a></td>
 </tr>
 <tr class="row-odd"><td><strong>long</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Long.html">java.lang.Long</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html">java.lang.Long</a></td>
 </tr>
 <tr class="row-even"><td><strong>float</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Float.html">java.lang.Float</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html">java.lang.Float</a></td>
 </tr>
 <tr class="row-odd"><td><strong>double</strong></td>
-<td><a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">java.lang.Double</a></td>
+<td><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">java.lang.Double</a></td>
 </tr>
 </tbody>
 </table>
@@ -387,7 +387,12 @@ primitif :</p>
 </pre></div>
 </div>
 <p>Une variable de type d’une des classes enveloppes référence un objet donc elle peut avoir la valeur spéciale <strong>null</strong>.
-Ce cas permet de signifier l’absence de valeur. Enfin les classes enveloppes sont conçues pour être
+Ce cas permet de signifier l’absence de valeur.</p>
+<p>Les classes enveloppes contiennent des constantes pour donner des informations
+utiles. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">java.lang.Integer</a> déclare les constantes
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#MIN_VALUE">MIN_VALUE</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#MAX_VALUE">MAX_VALUE</a> qui donnent respectivement la plus petite valeur
+et la plus grande valeur représentables par la primitive associée.</p>
+<p>Enfin les classes enveloppes sont conçues pour être
 non modifiables. Cela signifie que l’on ne peut pas modifier la valeur qu’elles enveloppent après
 leur création.</p>
 </div>
@@ -426,7 +431,7 @@ s’appelle <strong>l’unboxing</strong>.</p>
 <p>Il faut bien comprendre que le code ci-dessus manipule en fait des objets et qu’il implique
 plusieurs opérations de boxing et de unboxing. Si cela n’est pas strictement nécessaire, alors
 il vaut mieux utiliser des types primitifs.</p>
-<p>L’autoboxing fonctionne à chaque fois qu’une affectation à lieu. Il s’applique donc
+<p>L’autoboxing fonctionne à chaque fois qu’une affectation a lieu. Il s’applique donc
 à la déclaration de variable, à l’affection de variable et au passage de paramètre.</p>
 <p>L’autoboxing est parfois difficile à utiliser car il conduit à des expressions
 qui peuvent être ambiguës.
@@ -445,7 +450,7 @@ Par exemple, alors que le code suivant utilisant des primitives compile :</p>
 <span class="hll"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// ERREUR : unboxing de null !</span>
 </span></pre></div>
 </div>
-<p>Une variable de type <strong>Integer</strong> peut être <strong>null</strong>. Dans ce cas l’unboxing
+<p>Une variable de type <strong>Integer</strong> peut être <strong>null</strong>. Dans ce cas, l’unboxing
 n’est pas possible et aboutira à une erreur (NullPointerException). Si cet exemple
 est trivial, il peut être beaucoup plus subtil et difficile à comprendre pour un projet
 de plusieurs centaines (milliers) de lignes de code.</p>
@@ -486,6 +491,17 @@ de plusieurs centaines (milliers) de lignes de code.</p>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 </ul>
 
 
@@ -515,7 +531,7 @@ de plusieurs centaines (milliers) de lignes de code.</p>
     <div class="footer">
       &copy;
 <a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
 .
       
     </div>

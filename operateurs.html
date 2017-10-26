@@ -44,13 +44,14 @@
   <div class="section" id="les-operateurs">
 <h1>Les opérateurs<a class="headerlink" href="#les-operateurs" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Un opérateur prend un ou plusieurs opérandes et produit une nouvelle valeur.
-Les opérateurs en Java sont très proches des langages C et C++ qui l’ont inspiré.</p>
+Les opérateurs en Java sont très proches de ceux des langages C et C++ qui
+les ont inspirés.</p>
 <div class="section" id="l-operateur-d-affectation">
 <h2>L’opérateur d’affectation<a class="headerlink" href="#l-operateur-d-affectation" title="Lien permanent vers ce titre">¶</a></h2>
-<p>L’assignation est réalisée grâce à l’opérateur <strong>=</strong>. Cet opérateur, copie
+<p>L’affectation est réalisée grâce à l’opérateur <strong>=</strong>. Cet opérateur, copie
 la valeur du paramètre de droite (appelé <em>rvalue</em>) dans le paramètre de gauche
-(appelé <em>lvalue</em>). Java opère donc pas copie. Cela signifie que si l’on change
-plus tard la valeur d’un des opérandes, l’autre ne sera pas affecté.</p>
+(appelé <em>lvalue</em>). Java opère donc par copie. Cela signifie que si l’on change
+plus tard la valeur d’un des opérandes, la valeur de l’autre ne sera pas affectée.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// j reçoit la copie de la valeur de i</span>
 
@@ -60,13 +61,13 @@ plus tard la valeur d’un des opérandes, l’autre ne sera pas affecté.</p>
 <p>Pour les variables de type objet, on appelle ces variables des <strong>handlers</strong>
 car la variable ne contient pas à proprement parler un objet mais
 la <em>référence d’un objet</em>. On peut dire aussi qu’elle pointe vers la zone mémoire
-de cet objet. Cela à plusieurs conséquences importantes :</p>
+de cet objet. Cela a plusieurs conséquences importantes.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
 <span class="n">Voiture</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">v1</span><span class="o">;</span>
 </pre></div>
 </div>
 <p>Dans, l’exemple ci-dessus, <strong>v2</strong> reçoit la copie de l’adresse de l’objet
-contenu dans <strong>v1</strong>. Donc ces deux variables référencent bien le même objet
+contenue dans <strong>v1</strong>. Donc ces deux variables référencent bien le même objet
 et nous pouvons le manipuler à travers l’une ou l’autre de ces variables.
 Si plus loin dans le programme, on écrit :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
@@ -78,12 +79,29 @@ Si plus loin dans le programme, on écrit :</p>
 </pre></div>
 </div>
 <p>Maintenant, la variable <strong>v2</strong> contient la valeur spéciale <strong>null</strong> qui indique
-qu’elle ne référence rien. Mais l’instance de voiture que la variable
-<strong>v2</strong> référencée précédemment, n’a pas disparue pour autant.
+qu’elle ne référence rien. Mais l’instance de <em>Voiture</em> que la variable
+<strong>v2</strong> référençait précédemment, n’a pas disparue pour autant.
 Elle existe toujours quelque part en mémoire. On dit que cette instance n’est plus référencée.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">Le passage par copie de la référence vaut également pour les paramètres des méthodes.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>=</strong> est plus précisément l’opérateur d’initialisation et d’affectation.
+Pour une variable, l’initialisation se fait au moment de sa déclaration
+et pour un attribut, au moment de la création de l’objet.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Initialisation</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>L’affectation est une opération qui se fait, pour une variable, après sa déclaration
+et, pour un attribut, après la construction de l’objet.</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span><span class="o">;</span>
+<span class="c1">// Affectation</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="les-operateurs-arithmetiques">
@@ -195,7 +213,7 @@ la classe enveloppe pour un type primitif.</p>
 <p>L’opérateur de concaténation correspond plus à du sucre syntaxique qu’à un
 véritable opérateur. En effet, il existe la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> dont la tâche
 consiste justement à nous aider à construire des chaînes de caractères. Le compilateur
-remplacera en fait notre code par quelque chose dans ce genre :</p>
+remplacera en fait notre code précédent par quelque chose dans ce genre :</p>
 <div class="last highlight-java"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Hello &quot;</span><span class="o">;</span>
 
 <span class="n">StringBuilder</span> <span class="n">sb1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
@@ -210,6 +228,16 @@ remplacera en fait notre code par quelque chose dans ce genre :</p>
 <span class="n">sb2</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">s3</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">s4</span> <span class="o">=</span> <span class="n">sb2</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Concaténer une chaîne de caractères avec une variable nulle ajoute la chaîne
+«&nbsp;null&nbsp;» :</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;test &quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="o">;</span> <span class="c1">// &quot;test null&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -270,7 +298,7 @@ des chaînes de caractères.</p>
 <span class="kt">boolean</span> <span class="n">resultat</span> <span class="o">=</span> <span class="o">(</span><span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>La bonne façon de faire est d’utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">Object.equals</a> pour comparer
+<p>La bonne façon de faire est d’utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a> pour comparer
 des objets :</p>
 <div class="last highlight-java"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;une chaîne&quot;</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;une chaîne&quot;</span><span class="o">;</span>
@@ -385,7 +413,7 @@ Elles seront toutes appelées puis ensuite le résultat de l’expression sera �
 <div class="section" id="les-operateurs-de-decalage">
 <h2>Les opérateurs de décalage<a class="headerlink" href="#les-operateurs-de-decalage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les opérateurs de décalage s’utilisent sur des entiers et permettent de déplacer les bits vers la gauche ou vers la droite.
-Par convention, Java place le bit de poids fort à gauche quelque soit la représentation physique de l’information.
+Par convention, Java place le bit de poids fort à gauche quelle que soit la représentation physique de l’information.
 Il est possible de conserver ou non la valeur du bit de poids fort qui représente le signe pour un décalage à droite.</p>
 <table border="1" class="colwidths-given docutils" id="id7">
 <caption><span class="caption-text">Opérateurs de décalage</span><a class="headerlink" href="#id7" title="Lien permanent vers ce tableau">¶</a></caption>
@@ -405,7 +433,7 @@ Il est possible de conserver ou non la valeur du bit de poids fort qui représen
 </tr>
 </tbody>
 </table>
-<p>Puisque nous manipulons des nombres en base 2, un décalage vers la gauche équivaut
+<p>Puisque la machine stocke les nombres en base 2, un décalage vers la gauche équivaut
 à multiplier par 2 et un décalage vers la droite équivaut à diviser par 2 :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span> <span class="c1">// i vaut 2</span>
@@ -420,8 +448,8 @@ Il est possible de conserver ou non la valeur du bit de poids fort qui représen
 au moment de l’affectation. Java étant un langage fortement typé, il autorise par défaut
 uniquement les opérations de trans-typage qui sont sûres. Par exemple : passer d’un entier
 à un entier long puisqu’il n’y aura de perte de données.</p>
-<p>Si on le désire, il possible de forcer un trans-typage en indiquant explicitement
-le type attendu entre parenthèse :</p>
+<p>Si on le désire, il est possible de forcer un trans-typage en indiquant explicitement
+le type attendu entre parenthèses :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
 <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// Ok</span>
 <span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">l</span><span class="o">;</span> <span class="c1">// cast obligatoire</span>
@@ -434,7 +462,7 @@ que les classes aient un lien d’héritage entre elles.</p>
 <p class="last">Si Java impose de spécifier explicitement le trans-typage dans certaines situations alors
 c’est qu’il s’agit de situations qui peuvent être problématiques (perte de données possible
 ou mauvais type d’objet). Il ne faut pas interpréter cela comme une limite du langage : il s’agit
-peut-être du symptôme d’un bug ou d’une mauvaise conception.</p>
+peut-être du symptôme d’une erreur de programmation ou d’une mauvaise conception.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -583,6 +611,17 @@ et l’utilisation de l’opérateur virgule dans ce contexte est donc très rar
 </li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 </ul>
 
 
@@ -612,7 +651,7 @@ et l’utilisation de l’opérateur virgule dans ce contexte est donc très rar
     <div class="footer">
       &copy;
 <a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
 .
       
     </div>

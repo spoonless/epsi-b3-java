@@ -87,8 +87,7 @@ les accolades.</p>
 </div>
 <div class="section" id="return">
 <h2>return<a class="headerlink" href="#return" title="Lien permanent vers ce titre">¶</a></h2>
-<blockquote>
-<div><p><strong>return</strong> est un mot clé permettant d’arrêter immédiatement le traitement
+<p><strong>return</strong> est un mot clé permettant d’arrêter immédiatement le traitement
 d’une méthode et de retourner la valeur de l’expression spécifiée après ce mot-clé. Si la méthode
 ne retourne pas de valeur (<strong>void</strong>), alors on utilise le mot-clé <strong>return</strong> seul.
 L’exécution d’un <strong>return</strong> entraîne la fin d’une structure de contrôle.</p>
@@ -105,7 +104,6 @@ ne seront jamais exécutées. Le compilateur Java le signalera par une erreur <e
 <span class="o">}</span>
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="while">
 <h2>while<a class="headerlink" href="#while" title="Lien permanent vers ce titre">¶</a></h2>
@@ -195,7 +193,7 @@ qui permet d’exprimer plus succinctement un parcours d’une collection d’é
 </pre></div>
 </div>
 <p>Pour que cette expression compile, il faut que la variable désignant la collection
-à droite de <strong>:</strong> implémente le type <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a> ou qu’il s’agisse d’un tableau.
+à droite de <strong>:</strong> implémente le type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a> ou qu’il s’agisse d’un tableau.
 Il faut également que la variable à gauche de <strong>:</strong> soit compatible pour l’assignation
 d’un élément de la collection.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">short</span> <span class="n">arrayOfShort</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
@@ -414,7 +412,13 @@ ci-dessous utilise un décalage de 23. Cela donne comme équivalence :</p>
 </tr>
 </tbody>
 </table>
-<p>Le programme vérifie que le résultat du chiffrement est bien conforme au ce qui est attendu.
+<p>Ainsi la phrase :</p>
+<blockquote>
+<div>In cryptography, a Caesar cipher is one of the simplest and most widely known encryption techniques.</div></blockquote>
+<p>sera encodée avec un décalage de 23 comme ceci :</p>
+<blockquote>
+<div>Fk zovmqldoxmev, x Zxbpxo zfmebo fp lkb lc qeb pfjmibpq xka jlpq tfabiv hkltk bkzovmqflk qbzekfnrbp.</div></blockquote>
+<p>Le programme suivant vérifie que le résultat du chiffrement est bien conforme au ce qui est attendu.
 Dans ce cas, il affichera <em>true</em> sur la sortie standard.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * Un exemple d&#39;implémentation du Code César.</span>
@@ -517,6 +521,17 @@ algorithme fonctionne correctement.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 </ul>
 
 
@@ -546,7 +561,7 @@ algorithme fonctionne correctement.</p>
     <div class="footer">
       &copy;
 <a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
 .
       
     </div>

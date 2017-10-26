@@ -69,7 +69,7 @@ contenant ce code.</p>
 <div class="section" id="la-compilation">
 <h2>La compilation<a class="headerlink" href="#la-compilation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour pouvoir exécuter ce programme, nous allons devoir le compiler. Pour cela,
-nous devons utiliser le programme <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a> (Java Compiler) dont c’est la fonction.
+nous devons utiliser le programme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a> (Java Compiler) dont c’est la fonction.
 Dans un terminal, il suffit de se rendre dans le répertoire où se situe le fichier
 et de lancer la commande de compilation :</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /home/david/Workspace/workspace-java/exemple
@@ -78,14 +78,14 @@ $ javac PremierProgramme.java
 </div>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
-<p>Si votre système ne connaît pas la commande <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a> cela signifie simplement
+<p>Si votre système ne connaît pas la commande <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a> cela signifie simplement
 que le répertoire contenant ce programme n’est pas déclaré dans le chemin d’exécution
 du système. Il vous suffit de le rajouter ou de donner le chemin complet menant à
 ce programme. Par exemple :</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ /opt/bin/jdk1.8/bin/javac PremierProgramme.java
 </pre></div>
 </div>
-<p class="last">Le programme <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
+<p class="last">Le programme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
 d’installation du JDK</p>
 </div>
 <p>La compilation devrait se passer sans problème et aboutir à la création du fichier
@@ -102,23 +102,23 @@ par la JVM.</p>
 <div class="section" id="l-execution">
 <h2>L’exécution<a class="headerlink" href="#l-execution" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’exécution d’un programme se fait par l’intermédiaire de la machine virtuelle. Pour invoquer cette
-dernière, on utilise tout simplement la commande <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> suivie du nom de la classe <strong>sans l’extension</strong> :</p>
+dernière, on utilise tout simplement la commande <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> suivie du nom de la classe <strong>sans l’extension</strong> :</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ java PremierProgramme
 </pre></div>
 </div>
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
-<p>Si votre système ne connaît pas la commande <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> cela signifie simplement
+<p>Si votre système ne connaît pas la commande <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> cela signifie simplement
 que le répertoire contenant ce programme n’est pas déclaré dans le chemin d’exécution
 du système. Il vous suffit de le rajouter ou de donner le chemin complet menant à
 ce programme. Par exemple :</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ /opt/bin/jdk1.8/bin/java PremierProgramme
 </pre></div>
 </div>
-<p class="last">Le programme <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
+<p class="last">Le programme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
 d’installation du JDK</p>
 </div>
-<p>La commande <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> va chercher le fichier PremierProgramme.class pour l’exécuter.
+<p>La commande <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> va chercher le fichier PremierProgramme.class pour l’exécuter.
 Cela signifie qu’à ce stade, vous n’êtes pas obligé de disposer du fichier source
 PremierProgramme.java.</p>
 </div>
@@ -141,9 +141,9 @@ une collection de plusieurs fichiers class.</p>
 les fichiers de cette bibliothèque au moment de l’exécution.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Il est impossible d’écrire un programme Java qui n’est aucune dépendance avec d’autres
-fichiers class. Dans notre exemple, même simple, nous somme dépendant de la classe
-<strong>System</strong>. Nous sommes même dépendant de la classe <strong>Object</strong> alors que ce mot
+<p class="last">Il est impossible d’écrire un programme Java qui n’ait aucune dépendance avec d’autres
+fichiers class. Dans notre exemple, même simple, nous sommes dépendants de la classe
+<strong>System</strong>. Nous sommes même dépendants de la classe <strong>Object</strong> alors que ce mot
 n’est pas présent dans le fichier source. Heureusement, ces classes font partie
 de la bibliothèque standard de Java qui est disponible avec l’environnement d’exécution.
 Nous n’avons donc pas à nous préoccuper de comment la JVM va trouver le code pour
@@ -157,7 +157,7 @@ dynamique.</p>
 Ces fichiers peuvent se trouver à différents endroits dans le système de fichiers.
 Il faut donc un mécanisme pour permettre de les localiser. En Java, on utilise
 le <strong>classpath</strong> : le chemin des classes. On peut par exemple spécifier un
-ou plusieurs chemins avec le paramètre <strong>-classpath</strong> aux commandes <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> et <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a>
+ou plusieurs chemins avec le paramètre <strong>-classpath</strong> aux commandes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a>
 indiquant les répertoires à partir desquels il est possible de trouver des fichiers
 class.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ java -classpath /home/david/Workspace/workspace-java/exemple PremierProgramme
@@ -191,11 +191,11 @@ qu’un programme ait besoin de centaines voire de milliers de ces fichiers alor
 compte qu’il n’est pas très facile de distribuer un programme Java sous cette forme.</p>
 <p>Pour palier à ce problème, on peut utiliser des fichiers jar. JAR signifie <em>Java ARchive</em> :
 il s’agit d’un fichier zip contenant un ensemble de fichiers class mais qui a l’extension <strong>.jar</strong>.
-Java fournit l’utilitaire <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html">jar</a> pour créer une archive :</p>
+Java fournit l’utilitaire <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html">jar</a> pour créer une archive :</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ jar -cf monappli.jar PremierProgramme.class
 </pre></div>
 </div>
-<p>L’utilitaire <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html">jar</a> reprend la syntaxe de <strong>tar</strong> sous les systèmes *NIX.</p>
+<p>L’utilitaire <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jar.html">jar</a> reprend la syntaxe de <strong>tar</strong> sous les systèmes *NIX.</p>
 <p>Un fichier JAR peut être ajouté au classpath rendant ainsi disponible l’ensemble
 des fichiers qu’il contient.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>/home/david/Workspace/workspace-java/exemple/monappli.jar
@@ -207,7 +207,7 @@ Java sont disponibles sous la forme d’un fichier JAR.</p>
 </div>
 <div class="section" id="creation-d-un-projet-dans-eclipse">
 <h2>Création d’un projet dans Eclipse<a class="headerlink" href="#creation-d-un-projet-dans-eclipse" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Il est utile de comprendre le fonctionnement des outils tels que <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> ou <a class="reference external" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a>
+<p>Il est utile de comprendre le fonctionnement des outils tels que <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">java</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html">javac</a>
 mais ils ne sont pas d’une utilisation très aisée pour de vrais projets. On
 préférera utiliser un outil de build comme <a class="reference external" href="http://ant.apache.org">Ant</a>, <a class="reference external" href="http://maven.apache.org">Maven</a> ou <a class="reference external" href="https://gradle.org">Gradle</a> pour automatiser
 la compilation et un environnement de développement intégré comme <a class="reference external" href="https://eclipse.org">Eclipse</a>
@@ -309,6 +309,17 @@ et il sera créé en cliquant sur <em>Finish</em>.</p>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 </ul>
 
 
@@ -338,7 +349,7 @@ et il sera créé en cliquant sur <em>Finish</em>.</p>
     <div class="footer">
       &copy;
 <a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
 .
       
     </div>

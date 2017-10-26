@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les tableaux" href="tableau.html" />
     <link rel="prev" title="Les structures de contrôle" href="structures_de_controle.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -67,12 +68,10 @@ l’opérateur <strong>.</strong> :</p>
 </div>
 <div class="section" id="la-portee">
 <h3>La portée<a class="headerlink" href="#la-portee" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Jusqu’à présent, nous avons vu qu’il existe deux portées différentes : <em>public</em> et <em>private</em>.
+<p>Jusqu’à présent, nous avons vu qu’il existe deux portées différentes : <strong>public</strong> et <strong>private</strong>.
 Java est un langage qui supporte l’encapsulation de données. Cela signifie que lorsque
-nous créons une classe nous avons le choix de laisser accessible ou non au reste du programme
-des attributs (mais aussi des méthodes). Le mécanisme d’encapsulation permet notamment
-d’implémenter en Java le principe du <em>ouvert/fermé</em> qui est un des cinq principes <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a>
-de la conception objet.</p>
+nous créons une classe nous avons le choix de laisser accessible ou non les attributs
+et les méthodes au reste du programme.</p>
 <p>Pour l’instant nous distinguerons les portées :</p>
 <dl class="docutils">
 <dt><strong>public</strong></dt>
@@ -133,7 +132,7 @@ nouvel objet.</p>
 <tr class="row-odd"><td>double</td>
 <td>0.0</td>
 </tr>
-<tr class="row-even"><td>Object</td>
+<tr class="row-even"><td>référence d’objet</td>
 <td>null</td>
 </tr>
 </tbody>
@@ -161,7 +160,7 @@ nouvel objet.</p>
 <div class="section" id="attributs-finaux">
 <h3>attributs finaux<a class="headerlink" href="#attributs-finaux" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Un attribut peut être déclaré comme <strong>final</strong>. Cela signifie qu’il n’est plus possible
-de modifier la valeur de cet attribut une fois qu’il a été initialisé.
+d’affecter une valeur à cet attribut une fois qu’il a été initialisé.
 Dans cas, le compilateur exige que l’attribut soit initialisé <em>explicitement</em>.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
 
@@ -181,8 +180,7 @@ et ne pourra plus être modifié.</p>
 <div class="admonition caution">
 <p class="first admonition-title">Prudence</p>
 <p><strong>final</strong> porte sur l’attribut et empêche sa modification. Par contre si l’attribut
-est du type d’un objet, rien n’empêche de modifier des attributs ou d’appeler des méthodes
-qui vont modifier l’état de l’objet si ce dernier le permet.</p>
+est du type d’un objet, il est possible de modifier l’état de cet objet.</p>
 <p>Pour une application d’un concessionnaire automobile, nous pouvons créer un objet <em>Facture</em>
 qui contient un attribut de type <em>Voiture</em> et le déclarer <strong>final</strong>.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Facture</span> <span class="o">{</span>
@@ -205,7 +203,7 @@ qui contient un attribut de type <em>Voiture</em> et le déclarer <strong>final<
 <h3>Attributs de classe<a class="headerlink" href="#attributs-de-classe" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Jusqu’à présent, nous avons vu comment déclarer des attributs d’objet. C’est-à-dire
 que chaque instance d’une classe aura ses propres attributs avec ses propres valeurs
-représentant l’état interne de l’objet et qui peut évoluer au fur et à mesure de
+représentant l’état interne de l’objet et qui peuvent évoluer au fur et à mesure de
 l’exécution de l’application.</p>
 <p>Mais il est également possible de créer des <em>attributs de classe</em>. La valeur de ces attributs
 est partagée par l’ensemble des instances de cette classe. Cela signifie que si on modifie
@@ -229,14 +227,14 @@ Il est donc possible d’accéder directement à cet attribut depuis la classe :
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">nombreDeRoues</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>Notez que dans l’exemple précédent, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est également un attribut de la classe <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html">System</a>. Si
-vous vous rendez sur la documentation de cette classe, vous constaterez que <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est déclaré
+<p>Notez que dans l’exemple précédent, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est également un attribut de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html">System</a>. Si
+vous vous rendez sur la documentation de cette classe, vous constaterez que <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est déclaré
 comme <strong>static</strong> dans cette classe. Il s’agit d’une autre utilisation des attributs de classe :
 lorsqu’il n’existe qu’une seule instance d’un objet pour toute une application, cette instance
 est généralement accessible grâce à un attribut <strong>static</strong>. C’est une des façons
-d’implémenter le design pattern <a class="reference external" href="https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)">singleton</a> en Java. Dans notre exemple, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est l’objet
+d’implémenter le design pattern <a class="reference external" href="https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)">singleton</a> en Java. Dans notre exemple, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out">out</a> est l’objet
 qui représente la sortie standard de notre application. Cet objet est unique pour toute l’application
-et nous n’avons pas à le créer car il existe dès le lancement de l’application.</p>
+et nous n’avons pas à le créer car il existe dès le lancement.</p>
 <p>Si le programme modifie un attribut de classe, alors la modification est visible depuis toutes
 les instances :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
@@ -256,7 +254,7 @@ les instances :</p>
 </pre></div>
 </div>
 <p>Le code ci-dessus, même s’il est parfaitement correct, peut engendrer des difficultés de compréhension.
-Si on ne sait pas que <em>nombreDeRoues</em> est un attribut de classe on peut le modifier en pensant que
+Si on ne sait pas que <em>nombreDeRoues</em> est un attribut de classe, on peut le modifier en pensant que
 cela n’aura pas d’impact sur les autres instances. C’est notamment pour cela que Eclipse émet un
 avertissement si on accède ou si on modifie un attribut de classe à travers un objet.
 Même si l’effet est identique, il est plus lisible d’accéder à un tel attribut à travers le nom de la classe uniquement :</p>
@@ -270,10 +268,10 @@ Même si l’effet est identique, il est plus lisible d’accéder à un tel att
 </div>
 <div class="section" id="attributs-de-classe-finaux">
 <h3>Attributs de classe finaux<a class="headerlink" href="#attributs-de-classe-finaux" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Il n’existe pas de mot-clés pour déclarer une constante en Java. Même si <strong>const</strong>
+<p>Il n’existe pas de mot-clé pour déclarer une constante en Java. Même si <strong>const</strong>
 est un mot-clé, il n’a aucune signification dans le langage. On utilise donc
-la combinaison des mots clés <strong>static</strong> et <strong>final</strong> pour déclarer une constante.
-Pour les distinguer des autres attributs, on écrit leur nom en majuscules et
+la combinaison des mots-clés <strong>static</strong> et <strong>final</strong> pour déclarer une constante.
+Par convention, pour les distinguer des autres attributs, on écrit leur nom en majuscules et
 les mots sont séparés par _.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
 
@@ -394,8 +392,9 @@ est défini par son type et par son nom.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Il est également possible de créer une méthode avec un nombre variable de paramètres.
-On utilise pour le cela trois points après le type du paramètre.</p>
+<p>Il est également possible de créer une méthode avec un nombre variable de paramètres
+(<em>varargs parameter</em>).
+On le signale avec trois points après le type du paramètre.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
@@ -420,16 +419,17 @@ il s’agit bien d’une liste de paramètre au moment de l’appel :</p>
 <p>L’utilisation d’un paramètre variable obéit à certaines règles :</p>
 <ol class="arabic simple">
 <li>Le paramètre variable doit être le dernier paramètre</li>
-<li>Il n’est pas possible de déclarer un paramètre variable acceptant plusieurs type</li>
+<li>Il n’est pas possible de déclarer un paramètre variable acceptant plusieurs types</li>
 </ol>
-<p>Par contre, le paramètre variable peut être omis. Dans ce cas le tableau passé
-au corps de la méthode est un tableau vide.</p>
+<p>Au moment de l’appel, le paramètre variable peut être omis. Dans ce cas le tableau passé
+au corps de la méthode est un tableau vide. Un paramètre variable est donc également
+optionnel.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span> <span class="n">calculatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculatrice</span><span class="o">();</span>
 
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">calculatrice</span><span class="o">.</span><span class="na">additionner</span><span class="o">());</span> <span class="c1">// 0</span>
 </pre></div>
 </div>
-<p>Ainsi, il est possible d’utiliser un tableau pour passer des valeurs à un paramètre
+<p>Il est possible d’utiliser un tableau pour passer des valeurs à un paramètre
 variable. Cela permet notamment d’utiliser un paramètre variable dans le corps d’une
 méthode comme paramètre variable à l’appel d’une autre méthode.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Calculatrice</span> <span class="n">calculatrice</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calculatrice</span><span class="o">();</span>
@@ -478,8 +478,8 @@ valeur à un paramètre n’a donc un impact que dans les limites de la méthode
 Cette pratique est généralement considérée comme mauvaise car cela peut rendre
 la compréhension du code de la méthode plus difficile. <strong>final</strong> est donc
 un moyen de nous aider à vérifier au moment de la compilation que nous n’assignons
-pas par erreur une nouvelle valeur à un paramètre. Son utilisation est tout de
-même très limitée. Nous reviendrons plus tard sur l’intérêt principal de déclarer
+pas par erreur une nouvelle valeur à un paramètre. Cet usage reste tout de
+même très limité. Nous reviendrons plus tard sur l’intérêt principal de déclarer
 un paramètre <strong>final</strong> : la déclaration de classes anonymes.</p>
 </div>
 </div>
@@ -523,7 +523,7 @@ Donc il n’est pas nécessaire de créer une instance.</p>
 <p class="last">Certaines classes de l’API Java ne contiennent que des méthodes de classe.
 On parle de classes utilitaires ou de classes outils puisqu’elles s’apparentent à
 une collection de fonctions. Parmi les plus utilisées, on trouve les classes
-<a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/System.html">java.lang.System</a>, <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> et <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">java.util.Collections</a>.</p>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html">java.lang.System</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">java.util.Collections</a>.</p>
 </div>
 <p>Il est tout à fait possible d’invoquer une méthode de classe à travers une variable
 pointant sur une instance de cette classe :</p>
@@ -553,7 +553,7 @@ au programme <strong>java</strong> après le nom de la classe :</p>
 <div class="section" id="redefinition-de-methode-overloading">
 <h2>Redéfinition de méthode : overloading<a class="headerlink" href="#redefinition-de-methode-overloading" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est possible de déclarer dans une classe plusieurs méthodes ayant le même nom.
-Dans les méthodes doivent obligatoirement avoir des paramètres différents (le type et/ou le nombre).
+Ces méthodes doivent obligatoirement avoir des paramètres différents (le type et/ou le nombre).
 Il est également possible de déclarer des types de retour différents pour ces méthodes.
 On parle de redéfinition de méthode (<strong>method overloading</strong>). La redéfinition
 de méthode n’a réellement de sens que si les méthodes portant le même nom ont un
@@ -698,9 +698,6 @@ est autorisé car les attributs sont toujours accessibles à travers le mot-clé
   <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
 
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMarque</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">marque</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
     <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
   <span class="o">}</span>
 <span class="o">}</span>
@@ -741,7 +738,7 @@ parfois connaître le type exact de l’objet. La programmation objet introduit
 un niveau d’abstraction important et cette abstraction devient un atout pour
 la réutilisation et l’évolutivité.</p>
 <p>Prenons l’exemple d’une classe permettant d’effectuer une connexion FTP et de récupérer
-une fichier distant. Les clients d’une telle classe n’ont sans doute aucun intérêt à
+un fichier distant. Les clients d’une telle classe n’ont sans doute aucun intérêt à
 comprendre les mécanismes compliqués du protocole FTP. Ils veulent simplement qu’on leur
 rende un service. Notre classe FTP pourrait très grossièrement ressembler à ceci :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClientFtp</span> <span class="o">{</span>
@@ -768,14 +765,14 @@ doivent juste s’assurer que les méthodes publiques fonctionneront toujours co
 par les clients.</p>
 <p>En programmation objet, le <a class="reference external" href="https://fr.wikipedia.org/wiki/Encapsulation_(programmation)">principe d’encapsulation</a> nous incite à contrôler
 et limiter l’accès au contenu de nos classes au strict nécessaire afin de permettre
-le couplage le plus faible possible. L’encapsulation en Java est permise grâce aux portées
-<strong>public</strong> et <strong>private</strong>.</p>
+le couplage le plus faible possible. L’encapsulation en Java est permise grâce à la
+portée <strong>private</strong>.</p>
 <p>On considère que tous les attributs d’une classe <strong>doivent</strong> être déclarés <strong>private</strong>
 afin de satisfaire le <a class="reference external" href="https://fr.wikipedia.org/wiki/Encapsulation_(programmation)">principe d’encapsulation</a>.</p>
 <p>Cependant, il est parfois utile pour le client d’une classe d’avoir accès à une information
 qui correspond à un attribut de l’état interne de l’objet. Plutôt que de déclarer
 cet attribut <strong>public</strong>, il existe en Java des méthodes dont la signature est facilement
-identifiable et que l’on nomme <strong>getters</strong> et <strong>setters</strong>. Ces méthodes permettent
+identifiable et que l’on nomme <strong>getters</strong> et <strong>setters</strong> (les accesseurs). Ces méthodes permettent
 d’accéder aux <strong>propriétés</strong> d’un objet ou d’une classe.</p>
 <dl class="docutils">
 <dt><strong>getter</strong></dt>
@@ -796,7 +793,7 @@ La signature de la méthode se présente sous la forme :</p>
 <dt><strong>setter</strong></dt>
 <dd><p class="first">Permet l’accès en écriture à une propriété.
 La signature de la méthode se présente sous la forme :</p>
-<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNomPropriete</span><span class="o">(</span><span class="n">type</span> <span class="n">arg</span><span class="o">)</span> <span class="o">{</span>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNomPropriete</span><span class="o">(</span><span class="n">type</span> <span class="n">nouvelleValeur</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// ...</span>
 <span class="o">}</span>
 </pre></div>
@@ -874,9 +871,55 @@ fastidieuse. Les IDE comme Eclipse introduisent un système de génération auto
 Dans Eclipse, faites un clic droit dans votre fichier de classe et choisissez
 <em>Source &gt; Generate Getters and Setters…</em></p>
 </div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">À faire</p>
-<p class="last">Exercices du chapitre</p>
+</div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice topic">
+<p class="topic-title first">La classe Phrase</p>
+<p>Implémenter la classe <em>Phrase</em>. Cette classe permet de créer une chaîne de
+caractères en ajoutant des mots qui seront séparés par un séparateur.
+Par défaut, le séparateur est le caractère espace, mais il peut être changé.</p>
+<p>La classe <em>Phrase</em> doit permettre de :</p>
+<blockquote>
+<div><ul class="simple">
+<li>ajouter un mot</li>
+<li>ajouter une serie de mots</li>
+<li>ajouter un mot en le répétant n fois</li>
+<li>changer le séparateur qui peut être soit une chaîne de caractères soit un seul
+caractère</li>
+<li>générer la phrase terminée par un point lorsqu’on demande la représentation
+sous la forme d’une chaîne de caractères de l’objet</li>
+<li>connaître le nombre de lettres dans la phrase</li>
+</ul>
+</div></blockquote>
+<p>Le code suivant :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Phrase</span> <span class="n">phrase</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phrase</span><span class="o">();</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;Une&quot;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;classe&quot;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;pour&quot;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;ajouter&quot;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;des mots&quot;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">setSeparateur</span><span class="o">(</span><span class="s">&quot; et encore &quot;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;des mots&quot;</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">setSeparateur</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+<span class="n">phrase</span><span class="o">.</span><span class="na">ajouter</span><span class="o">(</span><span class="s">&quot;toujours&quot;</span><span class="o">,</span> <span class="s">&quot;et&quot;</span><span class="o">,</span> <span class="s">&quot;encore&quot;</span><span class="o">);</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">phrase</span><span class="o">.</span><span class="na">getNbLettres</span><span class="o">());</span>
+</pre></div>
+</div>
+<p>doit produire sur la sortie standard</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Une classe pour ajouter des mots et encore des mots et encore des mots et encore des mots toujours et encore.
+88
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Indice</p>
+<p class="last">On ne peut pas parcourir directement une chaîne de caractères, par contre
+on peut obtenir un tableau de caractères à partir d’une chaîne avec la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toCharArray--">toCharArray</a>. Pour savoir si un caractère est une lettre, on utilise la méthode
+<strong>static</strong> <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-">Character.isAlphabetic</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -912,8 +955,20 @@ Dans Eclipse, faites un clic droit dans votre fichier de classe et choisissez
 <li class="toctree-l2"><a class="reference internal" href="#redefinition-de-methode-overloading">Redéfinition de méthode : overloading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#portee-des-noms-et-this">Portée des noms et this</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#principe-d-encapsulation">Principe d’encapsulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 </ul>
 
 
@@ -943,7 +998,7 @@ Dans Eclipse, faites un clic droit dans votre fichier de classe et choisissez
     <div class="footer">
       &copy;
 <a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
 .
       
     </div>
