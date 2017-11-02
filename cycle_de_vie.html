@@ -290,7 +290,7 @@ d’initialisation dans le troisième constructeur.</p>
 est même très utile pour éviter la duplication de code et favoriser la réutilisation.
 Attention cependant au statut particulier des constructeurs. Tant qu’un constructeur
 n’a pas achevé son exécution, l’objet n’est pas totalement initialisé. Il peut
-donc y avoir des cas où l’appel à une méthode peu avoir des comportements inattendues.</p>
+donc y avoir des cas où l’appel à une méthode peut avoir des comportements inattendus.</p>
 <p>Prenons l’exemple suivant :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
@@ -322,10 +322,100 @@ mais qui compile et s’exécute sans erreur.</p>
 <p>Plus généralement, si vous souhaitez appeler des méthodes de l’objet dans un constructeur,
 il faut prendre soin de s’assurer que l’état de l’objet nécessaire à l’exécution
 de ces méthodes est correctement initialisé avant par le constructeur.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">À faire</p>
-<p class="last">dépendance d’injection par le constructeur</p>
 </div>
+</div>
+<div class="section" id="injection-de-dependances-par-le-constructeur">
+<h2>Injection de dépendances par le constructeur<a class="headerlink" href="#injection-de-dependances-par-le-constructeur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’état interne d’un objet (ses attributs) inclut souvent des références vers d’autres
+objets. Parfois, ces objets peuvent eux-même avoir une représentation interne complexe
+qui nécessite des références vers d’autres objets… Par exemple, une classe
+<em>Voiture</em> peut nécessiter une instance d’une classe <em>Moteur</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moteur</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Moteur</span><span class="o">(</span><span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nbCylindres</span> <span class="o">=</span> <span class="n">nbCylindres</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nbSoupapesParCylindre</span> <span class="o">=</span> <span class="n">nbSoupapesParCylindre</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">vitesseMax</span> <span class="o">=</span> <span class="n">vitesseMax</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>À partir de la classe <em>Moteur</em> ci-dessus, nous pouvons fournir l’implémentation
+suivante de la classe <em>Voiture</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">moteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moteur</span><span class="o">(</span><span class="n">nbCylindres</span><span class="o">,</span> <span class="n">nbSoupapesParCylindre</span><span class="o">,</span> <span class="n">vitesseMax</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Et créer une instance de la classe <em>Voiture</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">clio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;Clio Williams&quot;</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">216</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Cependant, si nous considérons le type de relation qui unit la classe <em>Voiture</em>
+à la classe <em>Moteur</em>, nous constatons que non seulement la classe <em>Voiture</em> est
+dépendante de la classe <em>Moteur</em> mais qu’en plus la classe <em>Voiture</em> crée
+l’instance de la classe <em>Moteur</em> dont elle a besoin. Donc la classe <em>Voiture</em>
+a un couplage très fort avec la classe <em>Moteur</em>. Par exemple, si le constructeur
+de la classe <em>Moteur</em> évolue alors le constructeur de la classe <em>Voiture</em> doit
+également évoluer.</p>
+<p>En programmation objet, créer une objet n’hésite souvent de disposer des
+informations nécessaires pour invoquer le constructeur de sa classe. La plupart du temps,
+les classes qui sont dépendantes d’autres classes n’ont pas vocation à les
+créer car il n’y a pas vraiment de raison à ce qu’elles connaissent les
+informations nécessaires à leur création. Dans le cas de notre classe <em>Voiture</em>
+nous pouvons proposer simplement l’implémentation :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">moteur</span> <span class="o">=</span> <span class="n">moteur</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>La création d’une instance de <em>Voiture</em> se fait maintenant en deux étapes :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Moteur</span> <span class="n">moteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moteur</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">216</span><span class="o">);</span>
+<span class="n">Voiture</span> <span class="n">clio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;Clio Williams&quot;</span><span class="o">,</span> <span class="n">moteur</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>On dit qu’une instance de la classe <em>Moteur</em> est <strong>injectée</strong> par le constructeur
+dans une instance de <em>Voiture</em>. En programmation objet, cela signifie que nous
+avons découplé l’utilisation de l’instance de la classe <em>Moteur</em> de sa création.</p>
+<p>L’injection de dépendances est une technique de programmation qui permet à une
+classe de disposer des instances d’objet dont elle a besoin sans avoir à les créer
+directement.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">L’injection de dépendance est la technique qui est à la base de <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">l’inversion
+de dépendances</a> (appelée aussi parfois inversion de contrôle) qui est un des
+principes <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a> en programmation objet. Beaucoup de frameworks Java (comme le
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Spring_(framework)">Spring framework</a>) sont basés sur ce principe.</p>
 </div>
 </div>
 <div class="section" id="le-bloc-d-initialisation">
@@ -350,7 +440,7 @@ au constructeur. Il suffit de déclarer un bloc anonyme dans la classe.</p>
 </div>
 <p>Dans l’exemple précédent, on suppose qu’il existe une classe <em>Configuration</em> et qu’il
 est possible de consulter la configuration de l’application pour connaître le nombre
-de roues par voiture. Le bloc d’initialisation accède à la configuration affecte la
+de roues par voiture. Le bloc d’initialisation accède à la configuration et affecte la
 bonne valeur à l’attribut <strong>final</strong> <em>nbRoues</em>.</p>
 <p>Le bloc d’initialisation est très rarement employé en Java. On peut systématiquement
 obtenir le même comportement en déclarant un constructeur.</p>
@@ -465,7 +555,7 @@ récupéré, il doit s’assurer que plus aucune référence n’existe vers cet
 Par exemple, il peut affecter la valeur <strong>null</strong> aux variables et aux attributs
 qui référencent cet objet.</p>
 <p>Il est également possible de forcer l’appel au ramasse-miettes gâce à la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--">java.lang.System.gc()</a>. Cependant, cet méthode ne donne aucune garantie quant au résultat.
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
 Vous ne pouvez pas vous baser sur son appel pour garantir la suppression d’un objet
 non référencé. Le ramasse-miettes utilise un algorithme complexe qui rend son
 comportement difficilement prédictible.</p>
@@ -536,10 +626,6 @@ n’a pas le temps d’appeler <em>finalize</em>. Si vous exécutez ce programme
 vous constaterez que le message «&nbsp;je vais disparaître !&nbsp;» ne s’affiche pas au même moment.
 Cela traduit bien le fait que le comportement du ramasse-miettes varie d’une exécution
 à l’autre.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">À faire</p>
-<p class="last">Les références : WeakReference, SoftReference, PhantomReference</p>
-</div>
 </div>
 </div>
 
@@ -572,6 +658,7 @@ Cela traduit bien le fait que le comportement du ramasse-miettes varie d’une e
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cycle de vie d’un objet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#le-constructeur">Le constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#injection-de-dependances-par-le-constructeur">Injection de dépendances par le constructeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-bloc-d-initialisation">Le bloc d’initialisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-bloc-d-initialisation-de-classe">Le bloc d’initialisation de classe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#memoire-heap-et-stack">Mémoire heap et stack</a></li>
@@ -583,6 +670,7 @@ Cela traduit bien le fait que le comportement du ramasse-miettes varie d’une e
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
@@ -594,9 +682,9 @@ Cela traduit bien le fait que le comportement du ramasse-miettes varie d’une e
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
     
 </ul>
 

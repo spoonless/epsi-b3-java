@@ -110,7 +110,7 @@ il est conseillé de suivre une convention de nommage de ses packages. Pour une
 organisation, on utilise le nom de domaine inversé comme base de l’arborescence
 de packages : par exemple <em>fr.epsi.b3</em>. On ajoute généralement ensuite le nom de
 l’application ou de la bibliothèque.</p>
-<p>Les noms de package contenant mot <em>java</em> sont réservés pour la bibliothèque standard.
+<p>Les noms de packages contenant le mot <em>java</em> sont réservés pour la bibliothèque standard.
 On trouve ainsi des packages <em>java</em> ou <em>javax</em> (pour indiquer une extension de Java)
 dans la bibliothèque standard fournie avec le JDK.</p>
 </div>
@@ -119,7 +119,7 @@ dans la bibliothèque standard fournie avec le JDK.</p>
 <p>Une classe est normalement désignée par son <em>nom complet</em>, c’est-à-dire par le
 chemin de packages suivi d’un <strong>.</strong> suivi du nom de la classe.</p>
 <p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> s’appelle en fait <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a> car elle se
-trouve dans le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité si je le souhaite
+trouve dans le package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité, si je le souhaite,
 de créer ma propre classe String par exemple dans le package <em>fr.epsi.b3</em> :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
 
@@ -183,7 +183,7 @@ mot-clé <strong>import</strong>. Une instruction <strong>import</strong> <stron
 la déclaration de <strong>package</strong> (si cette dernière est présente). Donc, il n’est pas
 possible d’importer un nom en cours de déclaration d’une classe ou d’une
 méthode.</p>
-<p>Le mot-clé <em>import</em> permet d’importer :</p>
+<p>Le mot-clé <strong>import</strong> permet d’importer :</p>
 <ul>
 <li><p class="first">Un nom de classe particulier</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
@@ -374,6 +374,7 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
@@ -385,9 +386,9 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
     
 </ul>
 

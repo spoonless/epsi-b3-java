@@ -45,7 +45,7 @@
 <h1>Les relations entre objets<a class="headerlink" href="#les-relations-entre-objets" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une application Java est composée d’un ensemble d’objets. Un des intérêts de la
 programmation objet réside dans les relations que ces objets entretiennent les
-uns avec les autres. Ces relations sont construitent par les développeurs et
+uns avec les autres. Ces relations sont construites par les développeurs et
 constituent ce que l’on appelle l’architecture d’une application. Il existe
 deux relations fondamentales en programmation objet :</p>
 <dl class="docutils">
@@ -248,9 +248,9 @@ la classe Vehicule et les classes <em>Voiture</em> et <em>Moto</em> en héritero
 <div class="section" id="heritage-et-constructeur">
 <h2>Héritage et constructeur<a class="headerlink" href="#heritage-et-constructeur" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Dans notre exemple précédent, l’attribut <em>marque</em> pourrait tout aussi bien être
-mutualisé dans la classe <em>Vehicule</em>. Cependant, La présence des constructeurs de
-<em>Voiture</em> et <em>Moto</em> permettent une initialisation de cet attribut à partir du
-paramètre.</p>
+mutualisé dans la classe <em>Vehicule</em>. Cependant, il va falloir tenir compte
+des constructeurs de <em>Voiture</em> et <em>Moto</em> qui garantissent une initialisation
+de cet attribut à partir du paramètre.</p>
 <p>En Java, nous avons vu qu’un constructeur peut appeler un autre constructeur
 déclaré dans la même classe grâce au mot-clé <em>this</em>. De la même manière, un
 constructeur peut appeler un constructeur de sa classe parente grâce au mot-clé
@@ -358,7 +358,7 @@ en Java de disposer d’une classe qui n’hériterait de rien. L’arbre d’h�
 en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">C’est La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a>.
+<p class="last">C’est la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a>.
 Voilà pourquoi tous les objets Java peuvent avoir par défaut une représentation
 sous forme de chaîne de caractères et qu’ils peuvent être comparés aux autres.</p>
 </div>
@@ -400,10 +400,8 @@ attribut de classe.</p>
 et la méthode de classe <em>getNbInstances</em>. L’attribut de classe est un compteur
 qui est incrémenté à chaque fois que le constructeur de <em>Vehicule</em> est appelé.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="n">voiture</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">88</span><span class="o">);</span>
 
 <span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
-<span class="n">moto</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">120</span><span class="o">);</span>
 
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span> <span class="c1">// 2</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>  <span class="c1">// 2</span>
@@ -447,7 +445,7 @@ entre un type et son sous-type et les contraintes qui en découlent pour la
 conception objet.</p>
 </div>
 <p>Le principe de substituabilité est une application du trans-typage (<em>casting</em>).
-Comme pour les types primitifs, il est possible d’affecter une instance d’un
+Comme pour les types primitifs, il est possible d’affecter une référence d’un
 objet à une variable, attribut ou paramètre d’un type différent. Pour que cette
 affectation soit possible il faut que les deux types fassent partie de la même
 hiérarchie d’héritage.</p>
@@ -804,6 +802,7 @@ classe pour représenter des pneus.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
@@ -815,9 +814,9 @@ classe pour représenter des pneus.</p>
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
     
 </ul>
 

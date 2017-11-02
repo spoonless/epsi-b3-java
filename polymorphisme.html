@@ -504,8 +504,8 @@ valeur est nulle et donc la création d’une instance de <em>VehiculeMotorise</
 des méthodes dont le comportement ne peut pas être modifié par la surcharge : soit
 des méthodes privées soit des méthodes déclarées <strong>final</strong>.</p>
 </div>
-<div class="section" id="masquage-des-attributs">
-<h2>Masquage des attributs<a class="headerlink" href="#masquage-des-attributs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="masquage-des-attributs-par-heritage">
+<h2>Masquage des attributs par héritage<a class="headerlink" href="#masquage-des-attributs-par-heritage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est possible de déclarer dans une classe fille un attribut portant
 le même nom que dans la classe parente. Cependant ceci ne correspond pas à une
 surcharge et n’a rien à voir avec le principe du polymorphisme. L’attribut de
@@ -517,20 +517,62 @@ interne de la classe parente par rapport à sa classe fille.</p>
 de la classe parente est simplement masqué dans la classe fille. Si une classe
 fille veut accéder à l’attribut de la classe parente, elle peut le faire à travers
 le mot-clé <strong>super</strong>.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">À faire</p>
-<p class="last">exemple d’accès à un attribut avec <strong>super</strong></p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Personne</span> <span class="o">{</span>
+
+  <span class="kd">protected</span> <span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Personne</span><span class="o">(</span><span class="n">String</span> <span class="n">nom</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HerosMasque</span> <span class="kd">extends</span> <span class="n">Personne</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">HerosMasque</span><span class="o">(</span><span class="n">String</span> <span class="n">nom</span><span class="o">,</span> <span class="n">String</span> <span class="n">nomHeros</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">(</span><span class="n">nom</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nomHeros</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// mmmmh ! Pas très clair</span>
+<span class="hll">    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">+</span> <span class="s">&quot; dont l&#39;identité secrète est &quot;</span> <span class="o">+</span> <span class="kd">super</span><span class="o">.</span><span class="na">nom</span><span class="o">;</span>
+</span>  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+
+<span class="o">}</span>
+</pre></div>
 </div>
 <p>En raison de la difficulté de compréhension que cela peut entraîner, il est
 préférable de ne jamais créer dans une classe fille un attribut portant le même
 nom que celui d’un attribut de portée package, <strong>protected</strong> ou <strong>public</strong> d’une
-de ces classes parentes.</p>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">À faire</p>
-<ul class="last simple">
-<li>open/close principle</li>
-</ul>
+de ses classes parentes.</p>
 </div>
+<div class="section" id="le-principe-du-ouvert-ferme">
+<h2>Le principe du ouvert/fermé<a class="headerlink" href="#le-principe-du-ouvert-ferme" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_ouvert/ferm%C3%A9">principe du ouvert/fermé</a> stipule qu’une classe doit être conçue pour être
+ouverte en extension mais fermée en modification.</p>
+<p>D’un côté, si une classe hérite
+d’une autre classe, elle doit pouvoir ajouter des nouveaux comportements avec
+de nouvelles méthodes. Par contre la surcharge de méthode ne doit pas être
+utilisée pour créer une implémentation qui a un comportement trop différent
+de celui de la classe parente.</p>
+<p>D’une autre côté, si une classe hérite d’une autre classe, elle ne doit pas
+pouvoir modifier le fonctionnement décrit par la classe parente. En Java, pour
+interdire de modifier le comportement d’une classe, on peut déclarer ses attributs
+<strong>private</strong> et les méthodes jugées les plus critiques peuvent être déclarées
+<strong>final</strong>.</p>
 </div>
 </div>
 
@@ -573,10 +615,12 @@ de ces classes parentes.</p>
 <li class="toctree-l2"><a class="reference internal" href="#les-methodes-de-classe">Les méthodes de classe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#methode-finale">Méthode finale</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#constructeur-et-polymorphisme">Constructeur et polymorphisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#masquage-des-attributs">Masquage des attributs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#masquage-des-attributs-par-heritage">Masquage des attributs par héritage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
@@ -588,9 +632,9 @@ de ces classes parentes.</p>
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
     
 </ul>
 

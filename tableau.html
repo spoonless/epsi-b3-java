@@ -152,8 +152,8 @@ mais aboutira à une erreur d’exécution avec une exception de type
 <div class="section" id="acces-aux-elements-d-un-tableau">
 <h2>Accès aux éléments d’un tableau<a class="headerlink" href="#acces-aux-elements-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’accès aux éléments d’un tableau se fait en donnant l’indice d’un élément
-entre crochets. Le premier élément d’un tableau à l’indice <strong>0</strong>. Le dernier
-élément d’un tableau à donc comme indice la taille du tableau moins un.</p>
+entre crochets. Le premier élément d’un tableau a l’indice <strong>0</strong>. Le dernier
+élément d’un tableau a donc comme indice la taille du tableau moins un.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
 
 <span class="kt">int</span> <span class="n">premierElement</span> <span class="o">=</span> <span class="n">tableau</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
@@ -308,7 +308,7 @@ des élements se fait en appelant la méthode <strong>equals</strong> de chaque 
 La classe outil <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> offrent un ensemble de méthodes de classe pour
 nous aider dans ces opérations.</p>
 <p>Tout d’abord, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html">java.util.Arrays</a> fournit plusieurs méthodes <strong>sort</strong>. Celles
-prenant un tableau de primitives en parallèle trient selon l’ordre naturel
+prenant un tableau de primitives en paramètre trient selon l’ordre naturel
 des éléments.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">};</span>
 <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
@@ -393,7 +393,7 @@ du langage. Ainsi on ne peut mettre dans un tableau que des valeurs qui peuvent
 </span></pre></div>
 </div>
 <p>De plus, les tableaux peuvent être affectés à des variables dont le type correspond
-à un tableau d’élement de type parent.</p>
+à un tableau d’éléments de type parent.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Integer</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
 <span class="n">Number</span><span class="o">[]</span> <span class="n">tableauNumber</span> <span class="o">=</span> <span class="n">tableau</span><span class="o">;</span>
 </pre></div>
@@ -475,6 +475,7 @@ et toute modification des éléments de cette liste sera répercutée sur le tab
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
@@ -486,9 +487,9 @@ et toute modification des éléments de cette liste sera répercutée sur le tab
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
     
 </ul>
 
