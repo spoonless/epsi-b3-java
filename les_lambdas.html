@@ -1,0 +1,380 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Les lambdas &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Streams" href="streams.html" />
+    <link rel="prev" title="Les classes internes" href="classe_interne.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="les-lambdas">
+<h1>Les lambdas<a class="headerlink" href="#les-lambdas" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Une lambda est une fonction anonyme (c’est-à-dire une fonction qui est déclarée
+sans être associée à un nom). Le terme <em>lambda</em> est emprunté à la méthode
+formelle du <a class="reference external" href="https://fr.wikipedia.org/wiki/Lambda-calcul">lambda-calcul</a>. Les fonctions lambda (ou plus simplement les lambdas)
+sont utilisées dans la programmation fonctionnelle. Elles permettent d’écrire
+des programmes plus conscis et elles permettent de créer des <a class="reference external" href="https://fr.wikipedia.org/wiki/Fermeture_(informatique)">closures</a> (<em>fermetures</em>).</p>
+<p>Java est uniquement un langage orienté objet. Cela signifie que les fonctions
+n’existent pas en Java. Cependant, depuis la version 8, il est possible d’écrire
+des lambdas. Nous verrons qu’il s’agit en fait d’un sucre syntaxique.</p>
+<div class="section" id="syntaxe-des-lambdas">
+<h2>Syntaxe des lambdas<a class="headerlink" href="#syntaxe-des-lambdas" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En Java, les lambdas s’écrivent sous la forme :</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>(paramètres) -&gt; { corps }
+</pre></div>
+</div>
+<p>Les parenthèses ne sont pas obligatoires si la lambda n’a qu’un seul paramètre.
+Si le compilateur peut inférer le type des paramètres alors il n’est pas
+obligatoire de déclarer le type des paramètres. Les
+accolades peuvent être omises si la lambda n’a qu’une instruction et si le contexte
+le permet. Si le corps de la lambda ne contient qu’une instruction, on peut
+omettre le point-virgule à la fin de l’instruction.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span> <span class="o">}</span>
+
+<span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span> <span class="o">}</span>
+
+<span class="o">()</span> <span class="o">-&gt;</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>Beaucoup de méthodes acceptent en paramètre une lambda. C’est notamment le cas
+de la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html#forEach-java.util.function.Consumer-">forEach</a> déclarée par l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html">Iterable</a>. On peut donc effectuer
+un traitement sur chaque élément d’une collection avec une lambda.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">collection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;un&quot;</span><span class="o">);</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;deux&quot;</span><span class="o">);</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;trois&quot;</span><span class="o">);</span>
+
+<span class="n">collection</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">));</span>
+</pre></div>
+</div>
+<p>Si une lambda doit retourner une valeur et qu’elle ne comporte qu’une instruction,
+alors le mot-clé <strong>return</strong> peut être omis. Dans ce cas, c’est le resultat de
+l’évaluation de l’expression qui sera implicitement retourné.</p>
+<p>Par exemple, la méthode de tri <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#sort-java.util.Comparator-">sort</a> déclarée par l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> peut recevoir en paramètre
+une lambda pour comparer les éléments de la liste deux à deux. Cette lambda prend
+deux paramètres correspondant à deux éléments de la liste et retourne un nombre
+négatif si le premier est plus petit que le second, zéro si les deux éléments sont identiques
+et un nombre positif si le premier est plus grand que le second.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+
+<span class="c1">// tri la liste en plaçant en premier les nombres pairs</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">sort</span><span class="o">((</span><span class="n">e1</span><span class="o">,</span> <span class="n">e2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">e1</span> <span class="o">%</span> <span class="mi">2</span><span class="o">)</span> <span class="o">-</span> <span class="o">(</span><span class="n">e2</span> <span class="o">%</span> <span class="mi">2</span><span class="o">));</span>
+
+<span class="c1">// [2, 4, 1, 3]</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">liste</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lambda-et-closure">
+<h2>Lambda et closure<a class="headerlink" href="#lambda-et-closure" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une lambda définit une <em>closure</em> (fermeture), c’est-à-dire qu’elle définit un
+environnement lexical constitué de toutes les variables et de tous les attributs
+qu’elle capture dans son environnement d’exécution. Le corps d’une lambda peut
+donc accéder au contenu d’une variable déclarée dans la méthode englobante.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">prenoms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">prenoms</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Murielle&quot;</span><span class="o">);</span>
+<span class="n">prenoms</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Jean&quot;</span><span class="o">);</span>
+<span class="n">prenoms</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Michelle&quot;</span><span class="o">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">helloList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">prenoms</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="n">helloList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;Hello &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">));</span>
+
+<span class="c1">// [Hello Murielle, Hello Jean, Hello Michelle]</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">helloList</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Comme pour la déclaration de classe anonyme,
+une lambda ne peut pas modifier le contenu d’une variable ou d’un paramètre.
+Par contre, il n’est pas nécessaire de déclarer comme <strong>final</strong> une variable ou
+un paramètre pour pouvoir y accéder dans une lambda. Le compilateur émettra
+une erreur si on tente de modifier une variable ou un paramètre
+capturé par la closure.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">liste</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">liste</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="hll"><span class="n">liste</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">e</span><span class="o">);</span> <span class="c1">// ERREUR DE COMPILATION : la variable i ne peut pas être modifiée</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="les-interfaces-fonctionnelles">
+<span id="functionalinterface"></span><h2>Les interfaces fonctionnelles<a class="headerlink" href="#les-interfaces-fonctionnelles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme Java ne supporte pas la notion de fonction, les lambdas correspondent à
+des implémentations d’interface. Une interface qui ne déclare qu’une seule
+méthode abstraite peut être implémentée par une lambda.</p>
+<p>Si nous déclarons l’interface ci-dessous :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OperationSimple</span> <span class="o">{</span>
+
+  <span class="kt">int</span> <span class="nf">calculer</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">);</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Alors partout où le programme attend une implémentation de cette interface, il
+est possible de fournir une lambda :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">OperationSimple</span> <span class="n">os</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span><span class="o">;</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">os</span><span class="o">.</span><span class="na">calculer</span><span class="o">(</span><span class="mi">10</span><span class="o">));</span> <span class="c1">// 20</span>
+</pre></div>
+</div>
+<p>Une interface qui ne déclare qu’une seule méthode abstraite est appelée <em>interface
+fonctionnelle</em>.</p>
+<p>L’annotation &#64;FunctionalInterface_ peut être utilisée lors de la déclaration de
+l’interface. Elle permet d’identifier pour le compilateur que cette interface
+peut être implémentée par des lambdas. Le compilateur peut ainsi contrôler
+que l’interface ne comporte qu’une seule méthode abstraite et signaler une erreur
+dans le cas contraire.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OperationSimple</span> <span class="o">{</span>
+
+  <span class="kt">int</span> <span class="nf">calculer</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">);</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il est donc très simple d’introduire des lambdas même avec des bibliothèques
+et des applications qui ont été développées avant puis portées vers Java 8.</p>
+<p>Afin d’éviter aux développeurs de créer systématiquement leurs interfaces, le
+package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html">java.util.function</a> déclare les interfaces fonctionnelles les plus utiles.
+Par exemple, l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/IntUnaryOperator.html">java.util.function.IntUnaryOperator</a> permet d’utiliser
+une interface fonctionnelle qui accepte un entier en paramètre et qui retourne
+un autre entier. Nous pouvons nous en servir pour définir un régulateur de vitesse
+dans une classe <em>Voiture</em>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.function.IntUnaryOperator</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">IntUnaryOperator</span> <span class="n">regulateurDeVitesse</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">int</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">regulateurDeVitesse</span><span class="o">.</span><span class="na">applyAsInt</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">+</span> <span class="n">deltaVitesse</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRegulateurDeVitesse</span><span class="o">(</span><span class="n">IntUnaryOperator</span> <span class="n">regulateur</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">regulateurDeVitesse</span> <span class="o">=</span> <span class="n">regulateur</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<span class="n">v</span><span class="o">.</span><span class="na">setRegulateurDeVitesse</span><span class="o">(</span><span class="n">vitesse</span> <span class="o">-&gt;</span> <span class="n">vitesse</span> <span class="o">&gt;</span> <span class="mi">110</span> <span class="o">?</span> <span class="mi">110</span> <span class="o">:</span> <span class="n">vitesse</span><span class="o">);</span>
+
+<span class="n">v</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">90</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getVitesse</span><span class="o">());</span> <span class="c1">// 90</span>
+
+<span class="n">v</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">90</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getVitesse</span><span class="o">());</span> <span class="c1">// 110</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="l-operateur-de-reference-de-methode">
+<h2>L’opérateur :: de référence de méthode<a class="headerlink" href="#l-operateur-de-reference-de-methode" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Plutôt que de déclarer une lambda pour implémenter une interface fonctionnelle,
+il est possible d’indiquer directement une référence de méthode si la signature
+est compatible avec la méthode de l’interface fonctionnelle.</p>
+<p>Si nous reprenons un exemple vu précédemment :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">collection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;un&quot;</span><span class="o">);</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;deux&quot;</span><span class="o">);</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;trois&quot;</span><span class="o">);</span>
+
+<span class="n">collection</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">));</span>
+</pre></div>
+</div>
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html#forEach-java.util.function.Consumer-">forEach</a> attend en paramètre une instance qui implémente l’interface
+fonctionnelle <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a>. L’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a> déclare la méthode <em>accept</em> qui prend
+un type <strong>T</strong> en paramètre et ne retourne rien. Si maintenant nous comparons
+cette signature avec celle la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#println-java.lang.Object-">println</a>, cette dernière attend un objet
+en paramètre et ne retourne rien. La signature de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#println-java.lang.Object-">println</a> est compatible avec
+celle de l’interface fonctionnelle <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html">Consumer</a>. Donc, plutôt que de déclarer
+une lambda, il est possible d’utiliser l’opérateur <strong>::</strong> pour passer la
+référence de la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#println-java.lang.Object-">println</a> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">collection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;un&quot;</span><span class="o">);</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;deux&quot;</span><span class="o">);</span>
+<span class="n">collection</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;trois&quot;</span><span class="o">);</span>
+
+<span class="n">collection</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">// passage de la référence de la méthode</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Notez que dans l’exemple ci-dessus, la référence de la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html#println-java.lang.Object-">println</a> est celle
+de l’instance de l’objet contenu dans l’attribut <em>out</em>.</p>
+</div>
+<p>Il est également possible de référencer les constucteurs d’une classe. Cela aboutira
+à la création d’un nouvel objet à chaque appel. Par exemple, nous pouvons utiliser
+l’interface fonctionnelle
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Supplier</a>. Cette interface fonctionnelle peut être implémentée en utilisant un
+constructeur sans paramètre. Ainsi, si nous définissons une classe
+<em>Voiture</em> avec un constructeur sans paramètre :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// ...</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Nous pouvons utiliser la référence de ce constructeur pour créer une implémentation
+de l’interface fonctionnelle <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Supplier</a> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">garage</span> <span class="o">=</span> <span class="n">Voiture</span><span class="o">::</span><span class="k">new</span><span class="o">;</span>
+
+<span class="n">Voiture</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">garage</span><span class="o">.</span><span class="na">get</span><span class="o">();</span> <span class="c1">// crée une nouvelle instance</span>
+<span class="n">Voiture</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">garage</span><span class="o">.</span><span class="na">get</span><span class="o">();</span> <span class="c1">// crée une nouvelle instance</span>
+</pre></div>
+</div>
+<p>Les constructeurs peuvent être référencés grâce à la syntaxe</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>NomDeLaClasse::new
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

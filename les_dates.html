@@ -1,0 +1,473 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Les dates &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les entrées/sorties" href="entrees_sorties.html" />
+    <link rel="prev" title="Les énumérations" href="enumeration.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="les-dates">
+<h1>Les dates<a class="headerlink" href="#les-dates" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Les dates et le temps sont représentés en Java par des classes. Cependant, au fil
+des versions de l’API standard, de nouvelles classes ont été proposées pour représenter
+les dates et le temps. Pour des raisons de compatibilité ascendante, les anciennes
+classes sont demeurées même si une partie de leurs méthodes ont été dépréciées.
+Ainsi, il existe plusieurs façon de représenter les dates et le temps en Java.</p>
+<div class="section" id="date-la-classe-historique">
+<h2>Date : la classe historique<a class="headerlink" href="#date-la-classe-historique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a> est la première classe a être apparue pour représenter
+une date. Elle comporte de nombreuses limitations :</p>
+<ul class="simple">
+<li>Il n’est pas possible de représenter des dates antérieures à 1900</li>
+<li>Elle ne supporte pas les fuseaux horaires</li>
+<li>Elle ne supporte que les dates pour le calendrier grégorien</li>
+<li>Elle ne permet pas d’effectuer des opérations (ajout d’un jour, d’une année…)</li>
+</ul>
+<p>La quasi totalité des constructeurs et des méthodes de cette classe ont été
+dépréciés. Cela signifie qu’il ne faut pas les utiliser. Pourtant, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>
+reste une classe largement utilisée en Java. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> est la
+classe mère des classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html">java.sql.Date</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Time.html">java.sql.Time</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/sql/Timestamp.html">java.sql.Timestamp</a> qui
+servent à représenter les types du même nom en SQL. Beaucoup de bibliothèques
+tierces utilisent directement ou indirectement la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestDate</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Date</span> <span class="n">aujourdhui</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span> <span class="c1">// crée une date au jour et à l&#39;heure d&#39;aujourd&#39;hui</span>
+    <span class="n">Date</span> <span class="n">dateAvant</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// crée une date au 1 janvier 1970 00:00:00.000</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">aujourdhui</span><span class="o">.</span><span class="na">after</span><span class="o">(</span><span class="n">dateAvant</span><span class="o">));</span> <span class="c1">// true</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateAvant</span><span class="o">.</span><span class="na">before</span><span class="o">(</span><span class="n">aujourdhui</span><span class="o">));</span> <span class="c1">// true</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">aujourdhui</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">dateAvant</span><span class="o">));</span> <span class="c1">// false</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">aujourdhui</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">dateAvant</span><span class="o">));</span> <span class="c1">// 1</span>
+
+    <span class="n">Instant</span> <span class="n">instant</span> <span class="o">=</span> <span class="n">aujourdhui</span><span class="o">.</span><span class="na">toInstant</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Actuellement, les méthodes permettant de comparer des instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>
+ne sont pas dépréciées. Pour construire une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>, on peut utiliser
+le constructeur sans paramètre pour créer une date au jour et à l’heure d’aujourd’hui.
+On peut également passer un nombre de type <strong>long</strong> représentant le nombre de millisecondes
+depuis le 1er janvier 1970 à 00:00:00.000 (<em>l’epoch</em>). Il est également possible de modifier
+une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#setTime-long-">Date.setTime</a> en fournissant le nombre de
+millisecondes depuis le 1er janvier 1970 à 00:00:00.000.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p>Pour connaître le nombre de millisecondes écoulées depuis le 1er janvier 1970
+à 00:00:00.000, il faut appeler la méthodes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--">System.currentTimeMillis</a>.</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">nbMilliSecondes</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Depuis l’introduction en Java 8 de la nouvelle API des dates,
+il est possible de convertir une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> avec
+la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#toInstant--">Date.toInstant</a>.</p>
+</div>
+</div>
+<div class="section" id="calendar">
+<h2>Calendar<a class="headerlink" href="#calendar" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Depuis Java 1.1, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">java.util.Calendar</a> a été proposée pour remplacer
+la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> pallie les nombreux désavantages
+de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> :</p>
+<ul class="simple">
+<li>Il est possible de représenter toutes les dates (y compris avant notre ère)</li>
+<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> supporte les fuseaux horaires (<em>timezone</em>)</li>
+<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> est une classe abstraite pour laquelle il est possible de
+fournir des classes concrètes pour gérer différents calendriers (le JDK ne propose
+que la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> comme implémentation concrète pour le calendrier grégorien).</li>
+</ul>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.TimeZone</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestCalendar</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Date et heure d&#39;aujourd&#39;hui en utilisant le fuseau horaire du système</span>
+    <span class="n">Calendar</span> <span class="n">date</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+    <span class="c1">// Date et heure d&#39;aujourd&#39;hui en utilisant le fuseau horaire de la France</span>
+    <span class="n">Calendar</span> <span class="n">dateFrance</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Locale</span><span class="o">.</span><span class="na">FRANCE</span><span class="o">);</span>
+    <span class="c1">// Date et heure d&#39;aujourd&#39;hui en utilisant le fuseau horaire GMT</span>
+    <span class="n">Calendar</span> <span class="n">dateGmt</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">TimeZone</span><span class="o">.</span><span class="na">getTimeZone</span><span class="o">(</span><span class="s">&quot;GMT&quot;</span><span class="o">));</span>
+
+    <span class="c1">// On positionne la date au 8 juin 2005 à 12:00:00</span>
+    <span class="n">date</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="mi">2005</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">date</span><span class="o">.</span><span class="na">toInstant</span><span class="o">());</span>
+
+    <span class="c1">// On ajoute 24 heures à la date et on passe au jour suivant</span>
+    <span class="n">date</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">HOUR</span><span class="o">,</span> <span class="mi">24</span><span class="o">);</span>
+    <span class="c1">// On décale la date de 12 mois sans passer à l&#39;année suivante</span>
+    <span class="n">date</span><span class="o">.</span><span class="na">roll</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONTH</span><span class="o">,</span> <span class="mi">12</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">date</span><span class="o">.</span><span class="na">toInstant</span><span class="o">());</span> <span class="c1">// 9 juin 2005 à 12:00:00</span>
+
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Comme pour les instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>, il est possible de comparer les instances
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> entre elles. Il est également possible de convertir une instance
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> en <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> (mais alors on perd l’information du fuseau horaire
+puisque la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a> ne contient pas cette information) grâce à la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#getTime--">Calendar.getTime</a>. Enfin, on utilise la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#toInstant--">Calendar.toInstant</a> pour convertir
+une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a>.</p>
+<p>Même si la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html">Calendar</a> est beaucoup plus complète que la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">Date</a>, son
+utilisation est restée limitée car elle est également plus difficile à manipuler.
+Son API la rend assez fastidieuse d’utilisation. Elle ne permet pas de représenter
+simplement la notion du durée. Et surtout, comme il s’agit d’une classe abstraite,
+il n’est pas possible construire une instance avec l’opérateur <strong>new</strong>. Il faut
+systématiquement utiliser une des méthodes de classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#getInstance--">Calendar.getInstance</a>.</p>
+</div>
+<div class="section" id="l-api-date-time">
+<h2>L’API Date/Time<a class="headerlink" href="#l-api-date-time" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Depuis Java 8, une nouvelle API a été introduite pour représenter les dates, le
+temps et la durée. Toutes ces classes ont été regroupées dans la package <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html">java.time</a>.</p>
+<div class="section" id="id1">
+<h3>Les Dates<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">LocalTime</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a> permettent de représenter respectivement
+une date, une heure, une date et une heure.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Month</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.temporal.ChronoUnit</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestTime</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">LocalDate</span> <span class="n">date</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">2005</span><span class="o">,</span> <span class="n">Month</span><span class="o">.</span><span class="na">JUNE</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span> <span class="c1">// 05/06/2005</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="na">plus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">);</span> <span class="c1">// 06/06/2005</span>
+    <span class="n">LocalDateTime</span> <span class="n">dateTime</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="na">atTime</span><span class="o">(</span><span class="mi">12</span><span class="o">,</span> <span class="mo">00</span><span class="o">);</span> <span class="c1">// 06/06/2005 12:00:00</span>
+    <span class="n">LocalTime</span> <span class="n">time</span> <span class="o">=</span> <span class="n">dateTime</span><span class="o">.</span><span class="na">toLocalTime</span><span class="o">();</span> <span class="c1">// 12:00:00</span>
+
+    <span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="na">minusHours</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span> <span class="c1">// 10:00:00</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>On peut facilement passer d’un type à une autre. Par exemple la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#atTime-int-int-">LocalDate.atTime</a> permet d’ajouter une heure à une date, créant ainsi une instance
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>. Toutes les instances de ces classes sont immutables.</p>
+<p>Si on veut avoir l’information de la date ou de l’heure d’aujourd’hui, on peut
+créer une instance grâce à la méthode <em>now</em>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">LocalDate</span> <span class="n">dateAujourdhui</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<span class="n">LocalTime</span> <span class="n">heureMaintenant</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<span class="n">LocalDateTime</span> <span class="n">dateHeureMaintenant</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Une instance de ces classes ne contient pas d’information de fuseau horaire.
+On peut néanmoins passer en paramètre des méthodes <em>now</em> un <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html">ZoneId</a> pour indiquer
+le fuseau horaire pour lequel on désire la date et/ou l’heure actuelle.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">LocalDate</span> <span class="n">dateAujourdhui</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&quot;GMT&quot;</span><span class="o">));</span>
+<span class="n">LocalTime</span> <span class="n">heureMaintenant</span> <span class="o">=</span> <span class="n">LocalTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&quot;Europe/Paris&quot;</span><span class="o">));</span>
+<span class="n">LocalDateTime</span> <span class="n">dateHeureMaintenant</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(</span><span class="n">ZoneId</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&quot;America/New_York&quot;</span><span class="o">));</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Si vous avez besoin de représenter des dates avec le fuseau horaire, alors il faut
+utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>.</p>
+</div>
+<p>Les classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html">YearMonth</a> permettent de manipuler les dates et d’obtenir
+des informations intéressantes à partir de l’année ou du mois et de l’année.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Month</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Year</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.YearMonth</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestYear</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Year</span> <span class="n">year</span> <span class="o">=</span> <span class="n">Year</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">2004</span><span class="o">);</span>
+
+    <span class="c1">// année bissextile ?</span>
+    <span class="kt">boolean</span> <span class="n">isLeap</span> <span class="o">=</span> <span class="n">year</span><span class="o">.</span><span class="na">isLeap</span><span class="o">();</span>
+
+    <span class="c1">// 08/2004</span>
+    <span class="n">YearMonth</span> <span class="n">yearMonth</span> <span class="o">=</span> <span class="n">year</span><span class="o">.</span><span class="na">atMonth</span><span class="o">(</span><span class="n">Month</span><span class="o">.</span><span class="na">AUGUST</span><span class="o">);</span>
+
+    <span class="c1">// 31/08/2004</span>
+    <span class="n">LocalDate</span> <span class="n">localDate</span> <span class="o">=</span> <span class="n">yearMonth</span><span class="o">.</span><span class="na">atEndOfMonth</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="la-classe-instant">
+<h3>La classe Instant<a class="headerlink" href="#la-classe-instant" title="Lien permanent vers ce titre">¶</a></h3>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> représente un point dans le temps. Contrairement aux classes
+précédentes qui permettent de représenter les dates pour les humains, la classe
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> est adaptée pour réaliser des traitements de données temporelles.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestInstant</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Instant</span> <span class="n">maintenant</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+    <span class="n">Instant</span> <span class="n">epoch</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">ofEpochSecond</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// 01/01/1970 00:00:00.000</span>
+
+    <span class="n">Instant</span> <span class="n">uneMinuteDansLeFuture</span> <span class="o">=</span> <span class="n">maintenant</span><span class="o">.</span><span class="na">plusSeconds</span><span class="o">(</span><span class="mi">60</span><span class="o">);</span>
+
+    <span class="kt">long</span> <span class="n">unixTimestamp</span> <span class="o">=</span> <span class="n">uneMinuteDansLeFuture</span><span class="o">.</span><span class="na">getEpochSecond</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Year.html">Year</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html">YearMonth</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a> implémentent toutes les interfaces <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/Temporal.html">Temporal</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>. Cela
+permet d’utiliser facilement des instances de ces classes les unes avec les autres
+puisque beaucoup de leurs méthodes attendent en paramètres des instances de type
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/Temporal.html">Temporal</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>.</p>
+</div>
+</div>
+<div class="section" id="periode-et-duree">
+<h3>Période et durée<a class="headerlink" href="#periode-et-duree" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il est possible de définir des périodes grâce à des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Period.html">Period</a>.
+Une période peut être construite directement ou à partir de la différence entre deux
+instances de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/temporal/Temporal.html">Temporal</a>. Il est ensuite possible de modifier une date en ajoutant ou soustrayant
+une période.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Month</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Period</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Year</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.YearMonth</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestPeriode</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">YearMonth</span> <span class="n">moisAnnee</span> <span class="o">=</span> <span class="n">Year</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">2000</span><span class="o">).</span><span class="na">atMonth</span><span class="o">(</span><span class="n">Month</span><span class="o">.</span><span class="na">APRIL</span><span class="o">);</span> <span class="c1">// 04/2000</span>
+
+    <span class="c1">// période de 1 an et deux mois</span>
+    <span class="n">Period</span> <span class="n">periode</span> <span class="o">=</span> <span class="n">Period</span><span class="o">.</span><span class="na">ofYears</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">plusMonths</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+
+    <span class="n">YearMonth</span> <span class="n">moisAnneePlusTard</span> <span class="o">=</span> <span class="n">moisAnnee</span><span class="o">.</span><span class="na">plus</span><span class="o">(</span><span class="n">periode</span><span class="o">);</span> <span class="c1">// 06/2001</span>
+
+    <span class="n">Period</span> <span class="n">periode65Jours</span> <span class="o">=</span> <span class="n">Period</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">plusDays</span><span class="o">(</span><span class="mi">65</span><span class="o">));</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>La durée est représentée par une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>. Elle peut être
+obtenue à partir de deux instances de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html">Instant</a>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestDuree</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Instant</span> <span class="n">debut</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+
+    <span class="c1">// ... traitement à mesurer</span>
+
+    <span class="n">Duration</span> <span class="n">duree</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">debut</span><span class="o">,</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">());</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">duree</span><span class="o">.</span><span class="na">toMillis</span><span class="o">());</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="formatage-des-dates">
+<h2>Formatage des dates<a class="headerlink" href="#formatage-des-dates" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour formater une date pour l’affichage, il est possible d’utiliser la méthode
+<em>format</em> déclarée dans les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/YearMonth.html">YearMonth</a>.</p>
+<p>Le format de représentation d’une date et/ou du temps est défini par la classe
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html">DateTimeFormatter</a>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Month</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestDuree</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// 01/09/2010 16:30</span>
+    <span class="n">LocalDateTime</span> <span class="n">dateTime</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">2010</span><span class="o">,</span> <span class="n">Month</span><span class="o">.</span><span class="na">SEPTEMBER</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">16</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+
+    <span class="c1">// En utilisant des formats ISO de dates</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateTime</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">BASIC_ISO_DATE</span><span class="o">));</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateTime</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ISO_WEEK_DATE</span><span class="o">));</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateTime</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ISO_DATE_TIME</span><span class="o">));</span>
+
+    <span class="n">DateTimeFormatter</span> <span class="n">datePattern</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&quot;dd/MM/yyyy&quot;</span><span class="o">);</span>
+    <span class="c1">// 01/09/2010</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateTime</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">datePattern</span><span class="o">));</span>
+
+    <span class="n">DateTimeFormatter</span> <span class="n">dateTimePattern</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&quot;dd/MM/yyyy HH:mm&quot;</span><span class="o">);</span>
+    <span class="c1">// 01/09/2010 16:30</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateTime</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">dateTimePattern</span><span class="o">));</span>
+
+    <span class="c1">// 1 septembre 2010</span>
+    <span class="n">DateTimeFormatter</span> <span class="n">frenchDatePattern</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&quot;d MMMM yyyy&quot;</span><span class="o">,</span> <span class="n">Locale</span><span class="o">.</span><span class="na">FRANCE</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateTime</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">frenchDatePattern</span><span class="o">));</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Il est toujours possible d’utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> pour formater
+une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les dates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#date-la-classe-historique">Date : la classe historique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calendar">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-api-date-time">L’API Date/Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formatage-des-dates">Formatage des dates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

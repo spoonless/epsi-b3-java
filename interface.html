@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les classes internes" href="classe_interne.html" />
-    <link rel="prev" title="Les énumérations" href="enumeration.html" />
+    <link rel="next" title="Méthodes et classes génériques" href="generiques.html" />
+    <link rel="prev" title="Les classes abstraites" href="classe_abstraite.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -319,7 +319,7 @@ l’exemple ci-dessus, nous faisons apparaître la notion d’omnivore simplemen
 comme étant à la fois un carnivore et un herbivore.</p>
 </div>
 <div class="section" id="les-interfaces-marqueurs">
-<h2>Les interfaces marqueurs<a class="headerlink" href="#les-interfaces-marqueurs" title="Lien permanent vers ce titre">¶</a></h2>
+<span id="interface-marqeur"></span><h2>Les interfaces marqueurs<a class="headerlink" href="#les-interfaces-marqueurs" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme chaque interface introduit un nouveau type, il est possible de contrôler
 grâce au mot-clé <strong>instanceof</strong> qu’une variable, un paramètre ou un attribut
 est bien une instance compatible avec cette interface.</p>
@@ -484,20 +484,25 @@ judicieusement pour restreindre au type minimum nécessaire par le code.</li>
 </ol>
 <p>Le premier point implique qu’il est préférable de manipuler les objets à travers
 leurs interfaces plutôt que d’utiliser le type réel de l’objet. Un exemple
-classique en Java concerne l’API des collections. Un programme qui crée une
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour stocker un ensemble d’éléments n’utilisera jamais une variable
-de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> mais plutôt une variable ayant le type d’une interface
-implémentée par cette classe.</p>
+classique en Java concerne l’API des <a class="reference internal" href="les_collections.html"><span class="doc">collections</span></a>.
+Il s’agit de classes permettant de gérer un ensemble d’objets. Elles apportent
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
+permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
+l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
+et le parcours complet des éléments.</p>
+<p>Un programme qui crée une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour stocker un ensemble d’éléments
+n’utilisera jamais une variable de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> mais plutôt une variable
+ayant le type d’une interface implémentée par cette classe.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface List</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
 </pre></div>
 </div>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface Collection</span>
-<span class="n">Collection</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">Collection</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
 </pre></div>
 </div>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface Iterable</span>
-<span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">Iterable</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
 </pre></div>
 </div>
 <p>Plus une partie d’une application a recours à des interfaces pour interagir
@@ -544,8 +549,6 @@ chaque responsabilité.</p>
   <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
                                    <span class="n">CompteBloqueException</span><span class="o">;</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
-
   <span class="k">default</span> <span class="kt">void</span> <span class="nf">transferer</span><span class="o">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
                                                      <span class="n">CompteBloqueException</span> <span class="o">{</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">destination</span> <span class="o">==</span> <span class="k">this</span><span class="o">)</span> <span class="o">{</span>
@@ -569,18 +572,82 @@ chaque responsabilité.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">À faire</p>
-<ul class="last simple">
-<li>exemple de l’interface Comparable pour le tri et la recherche dans les tableaux</li>
-</ul>
 </div>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first admonition-title">À faire</p>
-<ul class="last simple">
-<li>inversion de dépendance</li>
-</ul>
+<div class="section" id="l-inversion-de-dependance">
+<h2>L’inversion de dépendance<a class="headerlink" href="#l-inversion-de-dependance" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsque nous avons vu les constructeurs, nous avons vu que nous pouvions réaliser
+de <a class="reference internal" href="cycle_de_vie.html#injection-des-dependances"><span class="std std-ref">l’injection de dépendance</span></a> en passant comme
+paramètres de constructeur les objets nécessaires au fonctionnement d’une classe
+plutôt que de laisser la nouvelle instance créer ces objets elle-même. Grâce à la notion
+d’interface, nous pouvons réaliser une injection de dépendance en découplant
+totalement l’utilisation de l’objet passé par injection de son implémentation.</p>
+<p>Si nous souhaitons créer une classe pour reprénsenter une transaction bancaire,
+nous pouvons réaliser l’implémentation suivante :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TransactionBancaire</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Compte</span> <span class="n">compte</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">montant</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Instant</span> <span class="n">date</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">TransactionBancaire</span><span class="o">(</span><span class="n">Compte</span> <span class="n">compte</span><span class="o">,</span> <span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">compte</span> <span class="o">=</span> <span class="n">compte</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">montant</span> <span class="o">=</span> <span class="n">montant</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">effectuer</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">isEffectuee</span><span class="o">())</span> <span class="o">{</span>
+      <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">compte</span><span class="o">.</span><span class="na">retirer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">annuler</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(!</span> <span class="n">isEffectuee</span><span class="o">())</span> <span class="o">{</span>
+      <span class="k">return</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">compte</span><span class="o">.</span><span class="na">deposer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEffectuee</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">date</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">Instant</span> <span class="nf">getDate</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">date</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 </div>
+<p>L’implémentation précédente permet d’effectuer une transaction pour un compte donné
+et un montant donné et mémorise la date. Elle permet également d’annuler la transaction.
+Dans cette implémentation, nous avons réalisé une inversion de contrôle.
+La transaction ne connaît pas la nature exacte de l’objet <em>Compte</em> qu’elle manipule.
+La classe <em>TransactionBancaire</em> fonctionnera quelle que soit l’implémentation
+sous-jacente de l’interface <em>Compte</em>.</p>
+<p>L’inversion de dépendance est un principe de programmation objet qui stipule que
+si une classe A est dépendante d’une classe B, alors il peut être souhaitable que
+que non seulement la classe A reçoive une instance de B par injection mais également
+que B ne soit connue qu’à travers une interface.</p>
+<p>L’inversion de dépendance est très souvent utilisée pour isoler les couches logicielles
+d’une architecture. Au sein d’une application, nous pouvons disposer par exemple d’un ensemble
+de classes pour gérer des opérations utilisateur et d’un ensemble de classes pour
+assurer la persistance des informations.</p>
+<img alt="_images/inversion_de_dependance.png" src="_images/inversion_de_dependance.png" />
+<p>L’architecture logicielle peut utiliser l’inversion de dépendance pour assurer que
+les opérations utilisateur qui ont besoin de réaliser des opérations persistantes
+réalisent des appels à travers des interfaces qui sont injectées. D’un côté, on peut
+imaginer implémenter différentes classes gérant la persistance pour sauver les informations
+dans des fichiers, dans des bases de données ou sur des serveurs distants (et même
+nulle part si on souhaite exécuter le code dans un environnement de test). D’un autre
+côté on peut créer et faire évoluer un système de persistance en ayant une dépendance
+minimale aux opérations utilisateurs puisque le système de persistance doit juste
+fournir des implémentations conformes aux interfaces.</p>
 </div>
 </div>
 
@@ -619,7 +686,6 @@ chaque responsabilité.</p>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les interfaces</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#declaration-d-un-interface">Déclaration d’un interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#implementation-d-une-interface">Implémentation d’une interface</a></li>
@@ -628,9 +694,18 @@ chaque responsabilité.</p>
 <li class="toctree-l2"><a class="reference internal" href="#les-interfaces-marqueurs">Les interfaces marqueurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#implementation-par-defaut">Implémentation par défaut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-segregation-d-interface">La ségrégation d’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-inversion-de-dependance">L’inversion de dépendance</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les énumérations" href="enumeration.html" />
+    <link rel="next" title="Les interfaces" href="interface.html" />
     <link rel="prev" title="Les exceptions" href="les_exceptions.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -193,10 +193,59 @@ une implémentation de la méthode <em>getNbRoues</em> pour pouvoir compiler.</p
 précédent, elle peut servir à gagner en abstraction dans notre modèle. Mais
 elle peut aussi permettre à une classe fille d’adapter le comportement
 d’un algorithme ou d’un composant logiciel.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">À faire</p>
-<p class="last">un exemple de composant logiciel avec une méthode abstraite.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.tableur</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Tableur</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">mettreAJour</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">tracerLignesEtColonnes</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">premiereLigne</span> <span class="o">=</span> <span class="n">getPremiereLigneAffichee</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">premiereColonne</span> <span class="o">=</span> <span class="n">getPremierColonneAffichee</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">derniereLigne</span> <span class="o">=</span> <span class="n">getDerniereLigneAffichee</span><span class="o">();</span>
+    <span class="kt">int</span> <span class="n">derniereColonne</span> <span class="o">=</span> <span class="n">getDerniereColonneAffichee</span><span class="o">();</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">ligne</span> <span class="o">=</span> <span class="n">premiereLigne</span><span class="o">;</span> <span class="n">ligne</span> <span class="o">&lt;=</span> <span class="n">derniereLigne</span><span class="o">;</span> <span class="o">++</span><span class="n">ligne</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">colonne</span> <span class="o">=</span> <span class="n">premiereColonne</span><span class="o">;</span> <span class="n">colonne</span> <span class="o">&lt;=</span> <span class="n">derniereColonne</span><span class="o">;</span> <span class="o">++</span><span class="n">colonne</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">contenu</span> <span class="o">=</span> <span class="n">getContenu</span><span class="o">(</span><span class="n">ligne</span><span class="o">,</span> <span class="n">colonne</span><span class="o">);</span>
+        <span class="n">afficherContenu</span><span class="o">(</span><span class="n">ligne</span><span class="o">,</span> <span class="n">colonne</span><span class="o">,</span> <span class="n">contenu</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">protected</span> <span class="kd">abstract</span> <span class="n">String</span> <span class="nf">getContenu</span><span class="o">(</span><span class="kt">int</span> <span class="n">ligne</span><span class="o">,</span> <span class="kt">int</span> <span class="n">colonne</span><span class="o">);</span>
+
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">afficherContenu</span><span class="o">(</span><span class="kt">int</span> <span class="n">ligne</span><span class="o">,</span> <span class="kt">int</span> <span class="n">colonne</span><span class="o">,</span> <span class="n">String</span> <span class="n">contenu</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getDerniereColonneAffichee</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getDerniereLigneAffichee</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getPremierColonneAffichee</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="nf">getPremiereLigneAffichee</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">tracerLignesEtColonnes</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
 </div>
+<p>Dans l’exemple ci-dessus, on imagine une classe <em>Tableur</em> qui permet d’afficher
+un tableau à l’écran en fonction des lignes et des colonnes visibles. Il s’agit
+d’une classe abstraite et les classes qui spécialisent cette classe doivent
+fournir une implémentation de la méthode abstraite <em>getContenu</em> afin de fournir
+le contenu de chaque cellule affichée par le tableur.</p>
 </div>
 </div>
 
@@ -239,9 +288,16 @@ d’un algorithme ou d’un composant logiciel.</p>
 <li class="toctree-l2"><a class="reference internal" href="#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

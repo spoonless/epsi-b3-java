@@ -257,12 +257,37 @@ en la rendant <strong>public</strong>.</p>
 de la méthode fournie par la classe <em>Vehicule</em>. Ainsi l’attribut <em>vitesse</em> peut
 rester de portée <strong>private</strong> et les classes filles de <em>Vehicule</em> peuvent ou non
 donner publiquement l’accès à la méthode <em>reculer</em>.</p>
-<p>Un méthode qui surcharge peut avoir un type de retour différent de la méthode
-surchargée à condition qu’il s’agisse d’une classe qui hérite du type de retour
-surchargé.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Exemple de surchage avec changement de type de retour</p>
+<p>Une méthode qui surcharge peut avoir un type de retour différent de la méthode
+surchargée à condition qu’il s’agisse d’une classe qui hérite du type de retour.
+Si nous reprenons l’exemple d’héritage des classes <em>Animal</em>, <em>Chien</em> et <em>Chat</em>,
+nous pouvons définir une classe <em>EleveurAnimal</em> qui permet de créer une instance
+de <em>Animal</em> quand on appelle la méthode <em>elever</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EleveurAnimal</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">Animal</span> <span class="nf">elever</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Si maintenant nous créons la classe <em>EleveurChien</em> qui hérite de la classe
+<em>EleveurAnimale</em>, la surcharge de la méthode
+<em>elever</em> peut déclarer qu’elle retourne un type <em>Chien</em>. Comme <em>Chien</em> hérite
+de <em>Animal</em>, la méthode qui surcharge se présente comme une spécialisation.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EleveurChien</span> <span class="kd">extends</span> <span class="n">EleveurAnimal</span> <span class="o">{</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">Chien</span> <span class="nf">elever</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Chien</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="le-mot-cle-super">
@@ -357,8 +382,8 @@ méthode d’une classe parente. Dans le cas contraire, la compilation échoue.<
 </div>
 <div class="section" id="les-methodes-de-classe">
 <h2>Les méthodes de classe<a class="headerlink" href="#les-methodes-de-classe" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les méthodes de classe (déclarées avec le mot-clé <strong>static</strong>) ne sont pas
-assujetties à la surcharge. Si une classe fille déclare une méthode <strong>static</strong>
+<p>Les méthodes de classe (déclarées avec le mot-clé <strong>static</strong>) ne supportent pas
+la surcharge. Si une classe fille déclare une méthode <strong>static</strong>
 avec la même signature que dans la classe parente, ces méthodes seront simplement
 vues par le compilateur comme deux méthodes distinctes.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
@@ -471,11 +496,7 @@ avec une vitesse minimale :</p>
 
   <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="n">vitesse</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
   <span class="o">}</span>
 
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
@@ -507,8 +528,8 @@ des méthodes privées soit des méthodes déclarées <strong>final</strong>.</p
 <div class="section" id="masquage-des-attributs-par-heritage">
 <h2>Masquage des attributs par héritage<a class="headerlink" href="#masquage-des-attributs-par-heritage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est possible de déclarer dans une classe fille un attribut portant
-le même nom que dans la classe parente. Cependant ceci ne correspond pas à une
-surcharge et n’a rien à voir avec le principe du polymorphisme. L’attribut de
+le même nom que dans la classe parente. Cependant ceci ne correspond ni à une
+surcharge et ni au principe du polymorphisme. L’attribut de
 la classe fille se contente de masquer l’attribut de la classe parente.</p>
 <p>Si l’attribut est de portée <strong>private</strong>, créer une attribut avec le même nom dans
 une classe fille n’a aucun impact particulier. Cela permet d’isoler l’état
@@ -623,9 +644,16 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

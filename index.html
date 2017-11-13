@@ -100,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="operateurs.html#l-operateur-ternaire">L’opérateur ternaire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operateurs.html#les-operateurs-bitwise">Les opérateurs <em>bitwise</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="operateurs.html#les-operateurs-de-decalage">Les opérateurs de décalage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operateurs.html#le-trans-typage-cast">Le trans-typage (cast)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html#le-transtypage-cast">Le transtypage (cast)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operateurs.html#operateur-et-assignation">Opérateur et assignation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operateurs.html#l-operateur">L’opérateur .</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operateurs.html#id1">L’opérateur ,</a></li>
@@ -171,6 +171,7 @@
 <li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a><ul>
@@ -226,6 +227,35 @@
 <li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#declaration-d-un-interface">Déclaration d’un interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#implementation-d-une-interface">Implémentation d’une interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#attributs-et-methodes-statiques">Attributs et méthodes statiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#heritage-d-interface">Héritage d’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#les-interfaces-marqueurs">Les interfaces marqueurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#implementation-par-defaut">Implémentation par défaut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#la-segregation-d-interface">La ségrégation d’interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interface.html#l-inversion-de-dependance">L’inversion de dépendance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#l-exemple-de-la-classe-arraylist">L’exemple de la classe ArrayList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#creation-et-assignation-d-une-classe-generique">Création et assignation d’une classe générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#notation-en-diamant">Notation en diamant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#substitution-et-type-generique">Substitution et type générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#ecrire-une-methode-generique">Écrire une méthode générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#ecrire-une-classe-generique">Écrire une classe générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generiques.html#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_collections.html#les-listes">Les listes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_collections.html#les-ensembles-set">Les ensembles (set)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_collections.html#copie-d-une-collection-dans-un-tableau">Copie d’une collection dans un tableau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_collections.html#les-tableaux-associatifs-maps">Les tableaux associatifs (maps)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_collections.html#la-classe-outil-collections">La classe outil Collections</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#les-methodes-d-une-enumeration">Les méthodes d’une énumération</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#egalite-entre-enumerations">Égalité entre énumérations</a></li>
@@ -235,19 +265,52 @@
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#ajout-de-constructeurs">Ajout de constructeurs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#declaration-d-un-interface">Déclaration d’un interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#implementation-d-une-interface">Implémentation d’une interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#attributs-et-methodes-statiques">Attributs et méthodes statiques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#heritage-d-interface">Héritage d’interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#les-interfaces-marqueurs">Les interfaces marqueurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#implementation-par-defaut">Implémentation par défaut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interface.html#la-segregation-d-interface">La ségrégation d’interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#date-la-classe-historique">Date : la classe historique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#calendar">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#l-api-date-time">L’API Date/Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#inputstream-et-classes-concretes">InputStream et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#outputstream-et-classes-concretes">OutputStream et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#flux-orientes-caracteres">Flux orientés caractères</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#reader-et-classes-concretes">Reader et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#writer-et-classes-concretes">Writer et classes concrètes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#les-decorateurs-de-flux">Les décorateurs de flux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#la-classe-scanner">La classe Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#fichiers-et-chemins">Fichiers et chemins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#acces-au-reseau">Accès au réseau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html#la-serialisation-d-objets">La sérialisation d’objets</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="classe_interne.html#les-classes-internes-static">Les classes internes static</a></li>
 <li class="toctree-l2"><a class="reference internal" href="classe_interne.html#id1">Les classes internes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="streams.html#creation-d-un-stream">Création d’un stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html#la-reduction">La réduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html#la-collecte">La collecte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations">Utilisation des annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
 </ul>
 </li>
 </ul>
@@ -291,9 +354,16 @@
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

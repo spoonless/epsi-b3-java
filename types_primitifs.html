@@ -175,7 +175,7 @@ alors le code caractère :</p>
 </div>
 <p>Affecter une variable de type entier à un variable de type <strong>char</strong> conduit à une erreur
 de compilation. En effet, le type <strong>char</strong> est un nombre signé sur 2 octets. Pour passer
-la compilation, il faut trans-typer (<strong>cast</strong>) la variable :</p>
+la compilation, il faut transtyper (<strong>cast</strong>) la variable :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">97</span><span class="o">;</span>
 <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// cast vers char obligatoire pour la compilation</span>
 </pre></div>
@@ -205,7 +205,7 @@ Par défaut, un attribut de type <strong>byte</strong>, <strong>short</strong>, 
 <span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
 </pre></div>
 </div>
-<p>Dans tous les autres cas, il faut réaliser un trans-typage avec un risque de perte
+<p>Dans tous les autres cas, il faut réaliser un transtypage avec un risque de perte
 de valeur :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="n">s</span><span class="o">;</span>
 <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">i</span><span class="o">;</span>
@@ -282,7 +282,7 @@ Par défaut, un attribut de type <strong>float</strong> ou <strong>double</stron
 <p><strong>float</strong> est dit en simple précision et est codé sur 4 octets (32 bits) tandis que
 <strong>double</strong> est dit en double précision et est codé sur 8 octets (64 bits).</p>
 <p>Il est possible d’ajouter une valeur entière à un type à virgule flottante mais l’inverse
-nécessite une trans-typage (<strong>cast</strong>) avec une perte éventuelle de valeur.</p>
+nécessite une transtypage (<strong>cast</strong>) avec une perte éventuelle de valeur.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
 <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">5.0</span><span class="o">;</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
@@ -500,9 +500,16 @@ de plusieurs centaines (milliers) de lignes de code.</p>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

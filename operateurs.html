@@ -442,13 +442,13 @@ Il est possible de conserver ou non la valeur du bit de poids fort qui représen
 </pre></div>
 </div>
 </div>
-<div class="section" id="le-trans-typage-cast">
-<h2>Le trans-typage (cast)<a class="headerlink" href="#le-trans-typage-cast" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="le-transtypage-cast">
+<h2>Le transtypage (cast)<a class="headerlink" href="#le-transtypage-cast" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est parfois nécessaire de signifier que l’on désire passer d’un type vers un autre
 au moment de l’affectation. Java étant un langage fortement typé, il autorise par défaut
-uniquement les opérations de trans-typage qui sont sûres. Par exemple : passer d’un entier
+uniquement les opérations de transtypage qui sont sûres. Par exemple : passer d’un entier
 à un entier long puisqu’il n’y aura de perte de données.</p>
-<p>Si on le désire, il est possible de forcer un trans-typage en indiquant explicitement
+<p>Si on le désire, il est possible de forcer un transtypage en indiquant explicitement
 le type attendu entre parenthèses :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
 <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// Ok</span>
@@ -459,14 +459,14 @@ le type attendu entre parenthèses :</p>
 que les classes aient un lien d’héritage entre elles.</p>
 <div class="admonition caution">
 <p class="first admonition-title">Prudence</p>
-<p class="last">Si Java impose de spécifier explicitement le trans-typage dans certaines situations alors
+<p class="last">Si Java impose de spécifier explicitement le transtypage dans certaines situations alors
 c’est qu’il s’agit de situations qui peuvent être problématiques (perte de données possible
 ou mauvais type d’objet). Il ne faut pas interpréter cela comme une limite du langage : il s’agit
 peut-être du symptôme d’une erreur de programmation ou d’une mauvaise conception.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Le trans-typage peut se faire également par un appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#cast-java.lang.Object-">Class.cast</a>.
+<p class="last">Le transtypage peut se faire également par un appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#cast-java.lang.Object-">Class.cast</a>.
 Il s’agit d’une utilisation avancée du langage puisqu’elle fait intervenir la notion
 de réflexivité.</p>
 </div>
@@ -603,7 +603,7 @@ et l’utilisation de l’opérateur virgule dans ce contexte est donc très rar
 <li class="toctree-l2"><a class="reference internal" href="#l-operateur-ternaire">L’opérateur ternaire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-operateurs-bitwise">Les opérateurs <em>bitwise</em></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-operateurs-de-decalage">Les opérateurs de décalage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#le-trans-typage-cast">Le trans-typage (cast)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-transtypage-cast">Le transtypage (cast)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#operateur-et-assignation">Opérateur et assignation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-operateur">L’opérateur .</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">L’opérateur ,</a></li>
@@ -620,9 +620,16 @@ et l’utilisation de l’opérateur virgule dans ce contexte est donc très rar
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

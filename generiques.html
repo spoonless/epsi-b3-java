@@ -1,0 +1,654 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Méthodes et classes génériques &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les collections" href="les_collections.html" />
+    <link rel="prev" title="Les interfaces" href="interface.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="methodes-et-classes-generiques">
+<h1>Méthodes et classes génériques<a class="headerlink" href="#methodes-et-classes-generiques" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Parfois, on souhaite créer une classe mais on ne souhaite pas préciser le type
+exact de tel ou tel attribut.
+C’est souvent le cas quand la classe sert de conteneur à un autre type de classe.
+En Java, il est possible de créer des méthodes et des classes dont certains
+types sont des paramètres qui seront résolus au moment de l’invocation et de
+l’instanciation. On parle alors de méthodes et de classes génériques.</p>
+<div class="section" id="l-exemple-de-la-classe-arraylist">
+<h2>L’exemple de la classe ArrayList<a class="headerlink" href="#l-exemple-de-la-classe-arraylist" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En Java, l’API standard fournit un ensemble de classes que l’on appelle couramment
+les <a class="reference internal" href="les_collections.html"><span class="doc">collections</span></a>. Ces classes permettent de gérer un ensemble d’objets. Elles apportent
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
+permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
+l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
+et le parcours complet des éléments.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestArrayList</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
+
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;bonjour le monde&quot;</span><span class="o">);</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// boxing ! list.add(Integer.valueOf(1));</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Object</span><span class="o">());</span>
+
+    <span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="hll">    <span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// ERREUR à l&#39;exécution : ClassCastException</span>
+</span><span class="hll">    <span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span> <span class="c1">// ERREUR à l&#39;exécution : ClassCastException</span>
+</span>  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Pour des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>, on peut ajouter des éléments avec la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#add-E-">ArrayList.add</a> et accéder à un élément selon son index avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#get-int-">ArrayList.get</a>.
+Dans l’exemple précédent, on voit que cela n’est pas sans risque. En effet, un objet de
+type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> peut contenir tout type d’objet. Donc quand le programme accède à un élément
+d’une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>, il doit réaliser explicitement un transtypage (<em>cast</em>) avec le risque
+que cela suppose de se tromper de type. Ce type de classe exige donc beaucoup de rigueur
+d’utilisation pour les développeurs.</p>
+<p>Une situation plus simple serait de pouvoir déclarer en tant que développeur qu’une instance
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> se limite à un type d’éléments : par exemple au type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>. Ainsi le
+compilateur pourrait signaler une erreur si le programme tente d’ajouter un élément qui n’est
+pas compatible avec le type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> ou s’il veut récupérer un élément dans une variable qui
+n’est pas d’un type compatible. Les classes et les méthodes génériques permettent
+de gérer ce type de situation. Elles sont une aide pour les développeurs afin
+d’écrire des programmes plus robustes.</p>
+</div>
+<div class="section" id="creation-et-assignation-d-une-classe-generique">
+<h2>Création et assignation d’une classe générique<a class="headerlink" href="#creation-et-assignation-d-une-classe-generique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> et l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> sont justement une classe générique
+et une interface générique supportant un type paramétré.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> est une interface implémentée notamment par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>.</p>
+</div>
+<p>Il est possible, par exemple, de déclarer qu’une instance est une liste de
+chaînes de caractères :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+</pre></div>
+</div>
+<p>On ajoute entre les signes <strong>&lt;</strong> et <strong>&gt;</strong> le paramètre de type géré par la liste.
+À partir de cette information, le compilateur va pouvoir nous aider à résoudre
+les ambiguïtés. Il peut maintenant déterminer si un élément peut être ajouté ou
+assigné à une variable sans nécessiter un transtypage explicite du développeur.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;bonjour&quot;</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// l&#39;opération de transtypage n&#39;est plus nécessaire</span>
+</pre></div>
+</div>
+<p>Par contre :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="hll"><span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// Erreur de compilation : type String attendu</span>
+</span>
+<span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="s">&quot;je suis une chaîne affectée à une variable de type Object&quot;</span><span class="o">;</span>
+<span class="hll"><span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">o</span><span class="o">);</span> <span class="c1">// Erreur de compilation : type String attendu</span>
+</span>
+<span class="hll"><span class="n">Voiture</span> <span class="n">v</span> <span class="o">=</span> <span class="o">(</span><span class="n">Voiture</span><span class="o">)</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// Erreur de compilation Voiture n&#39;hérite pas de String</span>
+</span></pre></div>
+</div>
+<p>Pour les types paramétrés, le principe de substitution s’applique. Comme la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>
+hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>, il est possible de récupérer un élément de la liste
+dans une variable de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// OK</span>
+</pre></div>
+</div>
+<p>Une classe générique peut permettre de déclarer plusieurs types paramétrés. Par exemple,
+la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">java.util.HashMap</a> permet de créer des tableaux associatifs (parfois
+appelés dictionnaires ou plus simplement <em>maps</em>) pour associer une clé à une valeur.
+La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a> permet de spécifier le type de la clé et le type de la valeur.
+Pour créer un tableau associatif entre le nom d’une personne (type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>) et
+une instance de la classe <em>Personne</em>, on peut écrire :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Personne</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Personne</span><span class="o">&gt;();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html">Map</a> est une interface implémentée notamment par la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>.</p>
+</div>
+</div>
+<div class="section" id="notation-en-diamant">
+<h2>Notation en diamant<a class="headerlink" href="#notation-en-diamant" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de l’initialisation, il n’est pas nécessaire de préciser le type des paramètres
+à droite de l’expression. Le compilateur peut réaliser une inférence de types
+à partir de la variable à gauche de l’expression :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Personne</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">listeDeNombres</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</pre></div>
+</div>
+<p>Il s’agit d’un raccourci d’écriture qui évite de se répéter. On appelle la notation
+<strong>&lt;&gt;</strong>, la notation en diamant.</p>
+</div>
+<div class="section" id="substitution-et-type-generique">
+<h2>Substitution et type générique<a class="headerlink" href="#substitution-et-type-generique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Avec l’héritage, nous avons vu que nous pouvons affecter à une variable, un
+paramètre ou un attribut une référence d’un objet du même type ou d’un type
+qui en hérite. On appelle cela le principe de substitution.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus, il est possible d’affecter un objet du type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>
+à une variable de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> car <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Avec les types
+génériques, le principe de substitution est possible mais devient un peu
+plus complexe. Par exemple :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="hll"><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">listeString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span></pre></div>
+</div>
+<p>Il n’est pas possible d’affecter une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> à une variable de type
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. En effet, si cela était autorisé, il serait alors possible
+d’ajouter avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#add-E-">ArrayList.add</a> n’importe quel objet de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> ou
+d’un type héritant de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Donc un développeur pourrait ajouter à cette liste
+une instance d’une classe <em>Voiture</em> par exemple sans que le compilateur puisse
+détecter le problème :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="hll"><span class="n">listeString</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span> <span class="c1">// Il vaut mieux ne pas pouvoir faire cela !</span>
+</span></pre></div>
+</div>
+<p>Pour les types génériques, il est nécessaire d’introduire la notion de type borné
+(<em>bounded type</em>) pour pouvoir gérer la substitution. Mais avant d’aller plus loin, il est
+important de comprendre qu’il existe deux cas fondamentaux. Prenons une exemple
+de classes qui héritent les unes des autres : <em>Vehicule</em>, <em>Voiture</em>, <em>VoitureDeCourse</em>.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">VoitureDeCourse</span> <span class="kd">extends</span> <span class="n">Voiture</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Si nous créons une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour le type <em>Voiture</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">listeVoitures</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</pre></div>
+</div>
+<p>Si on souhaite ajouter des objets dans cette liste, le principe de substitution
+nous assure que nous pouvons ajouter sans risque une instance de la classe <em>Voiture</em> ou
+une instance de la classe <em>VoitureDeCourse</em> (puisqu’une <em>VoitureDeCourse</em> est
+une <em>Voiture</em>).</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">listeVoitures</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span>
+<span class="n">listeVoitures</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">VoitureDeCourse</span><span class="o">());</span>
+</pre></div>
+</div>
+<p>Si on souhaite accéder à une élément de cette liste, le principe de substitution
+nous dit que nous pouvons affecter sans risque un élément de cette liste à une
+variable de type <em>Voiture</em> ou de type <em>Vehicule</em> (puisqu’une <em>Voiture</em> est un
+<em>Vehicule</em>).</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="n">listeVoitures</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="n">listeVoitures</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>Il y a donc une différence selon que nous souhaitons ajouter un élément à cette liste
+ou que nous souhaitons consulter un élément de cette liste. L’ajout s’apparente
+à utiliser le type paramétré comme paramètre d’entrée et la consultation
+s’apparente à utiliser le type paramétré comme paramètre de sortie.</p>
+<p>Une liste de <em>Voiture</em> peut donc aussi être considérée comme :</p>
+<ul class="simple">
+<li>une liste de quelque chose qui est au moins de type <em>Voiture</em> dans
+le cas où on ne souhaite qu’ajouter de nouveaux éléments à la liste.</li>
+<li>une liste de quelque chose qui au mieux de type <em>Voiture</em> dans le cas où l’on
+souhaite uniquement consulter les éléments de la liste.</li>
+</ul>
+<p>Il est possible d’exprimer cela en Java. Pour le premier cas, <em>Voiture</em>
+correspond à la borne supérieure (<em>upper bounded type</em>) et nous pouvons écrire
+l’expression suivante :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">listePourConsultation</span> <span class="o">=</span> <span class="n">listeVoitures</span><span class="o">;</span>
+<span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="n">listePourConsultation</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>L’expression <strong>&lt;? extends Voiture&gt;</strong> désigne une <strong>capture</strong> et permet au compilateur
+de déterminer l’ensemble des classes acceptables.</p>
+<p>Pour le second cas, <em>Voiture</em> correspond à la borne inférieure (<em>lower bounded
+type</em>) et nous pouvons écrire l’expression suivante :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">listePourAjout</span> <span class="o">=</span> <span class="n">listeVoitures</span><span class="o">;</span>
+<span class="n">listePourAjout</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span>
+<span class="n">listePourAjout</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">VoitureDeCourse</span><span class="o">());</span>
+</pre></div>
+</div>
+<p>Il est également possible d’utiliser uniquement le caractère de subsitution <strong>?</strong>
+dans la déclaration de la capture :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">listePourAjout</span> <span class="o">=</span> <span class="n">listeVoitures</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Dans ce cas, on ne fournit aucune information au compilateur sur le type paramétré
+de l’instance de la classe.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Pour une classe supportant plusieurs types génériques, on peut au besoin déclarer
+une capture pour chaque type :</p>
+<div class="last highlight-java"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;?,</span> <span class="o">?</span> <span class="kd">extends</span> <span class="n">Personne</span><span class="o">&gt;</span> <span class="n">tableauAssociatif</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Personne</span><span class="o">&gt;();</span>
+</pre></div>
+</div>
+</div>
+<p>La déclaration de capture est surtout utile pour la création de méthodes et classes
+supportant les types génériques.</p>
+</div>
+<div class="section" id="ecrire-une-methode-generique">
+<h2>Écrire une méthode générique<a class="headerlink" href="#ecrire-une-methode-generique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’utilisation des captures devient utile lorsque l’on veut écrire une méthode générique
+qui supporte les types paramétrés. Reprenons notre exemple ci-dessus des classes
+<em>Vehicule</em>, <em>Voiture</em> et <em>VoitureDeCourse</em>. La classe <em>Vehicule</em> définit la propriété
+<em>vitesse</em> accessible en lecture :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Nous voulons ajouter la méthode de classe <em>getPlusRapide</em> qui retourne le véhicule
+le plus rapide parmi une liste de véhicules :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Vehicule</span> <span class="nf">getPlusRapide</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Vehicule</span><span class="o">&gt;</span> <span class="n">vehicules</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Vehicule</span> <span class="n">plusRapide</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">:</span> <span class="n">vehicules</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">vehicule</span><span class="o">.</span><span class="na">getVitesse</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">plusRapide</span> <span class="o">=</span> <span class="n">vehicule</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">plusRapide</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Si nous nous contentons de cette implémentation, nous allons certainement
+rencontrer quelques problèmes lors de l’utilisation de la méthode
+<em>Vehicule.getPlusRapide</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">listeVoitures</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">listeVoitures</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span>
+<span class="n">listeVoitures</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">VoitureDeCourse</span><span class="o">());</span>
+
+<span class="hll"><span class="n">Vehicule</span> <span class="n">plusRapide</span> <span class="o">=</span> <span class="n">Vehicule</span><span class="o">.</span><span class="na">getPlusRapide</span><span class="o">(</span><span class="n">listeVoitures</span><span class="o">);</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span></pre></div>
+</div>
+<p>Le code ci-dessus ne compile pas. En effet, on tente de passer en paramètre à la méthode
+<em>Vehicule.getPlusRapide</em> une liste de <em>Voiture</em> alors que la méthode est écrite
+pour une liste de <em>Vehicule</em>. Nous pourrions utiliser la redéfinition en fournissant
+une implémentation pour chaque type de liste, mais la bonne solution est de déclarer
+<em>Vehicule.getPlusRapide</em> comme une méthode générique :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Vehicule</span><span class="o">&gt;</span> <span class="n">T</span> <span class="nf">getPlusRapide</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">vehicules</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="n">plusRapide</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">vehicule</span> <span class="o">:</span> <span class="n">vehicules</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">vehicule</span><span class="o">.</span><span class="na">getVitesse</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">plusRapide</span> <span class="o">=</span> <span class="n">vehicule</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">plusRapide</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Pour déclarer une méthode générique, il faut décrire le type ou les types
+paramétrés supportés entre <strong>&lt;</strong> <strong>&gt;</strong>. Pour l’exemple ci-dessus, on utilise
+la capture <strong>&lt;T extends Vehicule&gt;</strong>. T est le nom du type générique que l’on
+peut utiliser dans la signature et le code de la méthode. Dans notre exemple T
+représente donc le type <em>Vehicule</em> ou un type qui hérite de <em>Vehicule</em>. On peut
+donc parcourir les éléments de type <strong>T</strong> de la liste, lire leur propriété <em>vitesse</em>
+et retourner l’instance pour laquelle la vitesse est la plus élevée.</p>
+<p>Maintenant nous pouvons utiliser cette méthode en passant une liste de <em>Vehicule</em>,
+de <em>Voiture</em> ou de <em>VoitureDeCourse</em></p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">listeVoitures</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">listeVoitures</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span>
+<span class="n">listeVoitures</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">VoitureDeCourse</span><span class="o">());</span>
+
+<span class="n">Voiture</span> <span class="n">plusRapide</span> <span class="o">=</span> <span class="n">Vehicule</span><span class="o">.</span><span class="na">getPlusRapide</span><span class="o">(</span><span class="n">listeVoitures</span><span class="o">);</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</pre></div>
+</div>
+<p>Notez que la méthode <em>Voiture.getPlusRapide</em> retourne le type générique <strong>T</strong>. Donc
+le compilateur infère que si on appelle cette méthode avec une liste de <em>Voiture</em>
+en paramètre alors cette méthode retourne une instance assignable à une variable
+de type <em>Voiture</em>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Par convention un type paramétré s’écrit avec une seule lettre en majuscule :</p>
+<ul class="last simple">
+<li>T pour identifier un type générique en général</li>
+<li>E pour identifier un type générique qui représente un élément</li>
+<li>K pour identifier un type générique qui est utilisé comme clé (<em>key</em>)</li>
+<li>V pour identifier un type générique qui est utilisé comme une valeur</li>
+<li>U, V, W pour identifier une suite de types génériques si la méthode supporte
+plusieurs types génériques.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ecrire-une-classe-generique">
+<h2>Écrire une classe générique<a class="headerlink" href="#ecrire-une-classe-generique" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une classe peut également être générique et supporter un ou plusieurs types
+paramétrés. Par exemple, si nous voulons implémenter une classe <em>Paire</em> qui
+permet d’associer une instance d’une classe avec une instance d’une autre
+classe, il suffit d’utiliser des types paramétrés en les déclarant entre <strong>&lt;</strong>
+<strong>&gt;</strong> après le nom de la classe :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Paire</span><span class="o">&lt;</span><span class="n">U</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">U</span> <span class="n">valeurGauche</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">V</span> <span class="n">valeurDroite</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Paire</span><span class="o">(</span><span class="n">U</span> <span class="n">valeurGauche</span><span class="o">,</span> <span class="n">V</span> <span class="n">valeurDroite</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">valeurGauche</span> <span class="o">=</span> <span class="n">valeurGauche</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">valeurDroite</span> <span class="o">=</span> <span class="n">valeurDroite</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">U</span> <span class="nf">getValeurGauche</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeurGauche</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">V</span> <span class="nf">getValeurDroite</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeurDroite</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeurGauche</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">valeurDroite</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>La classe <em>Paire</em> peut maintenant être utilisée pour associer n’importe quel type
+d’instances :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Paire</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">paireStringInteger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paire</span><span class="o">&lt;&gt;(</span><span class="s">&quot;test&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+
+<span class="n">Paire</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">,</span> <span class="n">Voiture</span><span class="o">&gt;</span> <span class="n">paireVoitureVoiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paire</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Voiture</span><span class="o">(),</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">());</span>
+</pre></div>
+</div>
+<p>Comme pour les méthodes, il est possible de préciser une capture pour les types
+paramétrés :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Paire</span><span class="o">&lt;</span><span class="n">U</span> <span class="kd">extends</span> <span class="n">Number</span><span class="o">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">U</span> <span class="n">valeurGauche</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">V</span> <span class="n">valeurDroite</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Paire</span><span class="o">(</span><span class="n">U</span> <span class="n">valeurGauche</span><span class="o">,</span> <span class="n">V</span> <span class="n">valeurDroite</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">valeurGauche</span> <span class="o">=</span> <span class="n">valeurGauche</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">valeurDroite</span> <span class="o">=</span> <span class="n">valeurDroite</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">U</span> <span class="nf">getValeurGauche</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeurGauche</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">V</span> <span class="nf">getValeurDroite</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeurDroite</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">valeurGauche</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">valeurDroite</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>En précisant <strong>&lt;U extends Number, V&gt;</strong> dans la déclaration de la classe,
+nous limitons le premier type paramétré au type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html">Number</a> ou un type qui en hérite.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html">Number</a> est la classe parente des classes enveloppes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html">Long</a>,
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html">Short</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html">Byte</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html">Float</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html">Double</a>.</p>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Paire</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">paireIntegerString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paire</span><span class="o">&lt;&gt;(</span><span class="mi">1</span><span class="o">,</span> <span class="s">&quot;Test&quot;</span><span class="o">);</span>
+<span class="n">Paire</span><span class="o">&lt;</span><span class="n">Float</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">paireFloatString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paire</span><span class="o">&lt;&gt;(</span><span class="mf">1.3f</span><span class="o">,</span> <span class="s">&quot;Test&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les méthodes et classes génériques ont des limitations.</p>
+<p>Les types paramétrés ne s’appliquent que pour des classes. On ne peut pas spécifier
+un type primitif. Si on désire créer une instance
+de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> pour des nombres, alors on peut passer par la classe enveloppe
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html">Integer</a> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">listeDeNombres</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</pre></div>
+</div>
+<p>La déclaration d’un type paramétré ne fait pas partie du nom d’une classe.
+Donc il n’est pas possible de spécifier un type paramétré avec le mot-clé
+<strong>instanceof</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="hll"><span class="k">if</span> <span class="o">(</span><span class="n">listeVoiture</span> <span class="k">instanceof</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Voiture</span><span class="o">&gt;)</span> <span class="o">{</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span>  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il n’est pas possible d’instancier un type paramétré dans le corps d’une méthode
+générique :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll">   <span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">T</span><span class="o">());</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span> <span class="o">}</span>
+</pre></div>
+</div>
+<p>Il n’est pas possible de déclarer un attribut de classe (<strong>static</strong>) en utilisant un type
+paramétré :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+
+<span class="hll">  <span class="kd">private</span> <span class="kd">static</span> <span class="n">T</span> <span class="n">attribut</span><span class="o">;</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il n’est pas possible de créer des tableaux en spécifiant des types paramétrés :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="hll"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="k">new</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;[</span><span class="mi">10</span><span class="o">];</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span></pre></div>
+</div>
+<p>Il n’est pas possible d’utiliser un type paramétré dans une expression <strong>catch</strong> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span> <span class="kd">extends</span> <span class="n">Exception</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">()</span> <span class="o">{</span>
+  <span class="k">try</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+<span class="hll">  <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">T</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span>    <span class="c1">// ...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Il n’est pas possible de redéfinir (<em>overload</em>) une méthode en ne changeant que
+le type paramétré d’un paramètre :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+<span class="hll">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// ERREUR DE COMPILATION</span>
+</span>    <span class="c1">// ...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Beaucoup des limitations des classes et des méthodes génériques viennent de
+ce que l’on appelle <em>l’effacement du type</em> (<em>type erasure</em>). Les types paramétrés
+ne sont pas conservés dans le bytecode produit par le compilateur.</p>
+<p>Pour l’exemple ci-dessus, la suppression du type par le compilateur conduit à
+la classe suivante :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">List</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">List</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p class="last">Donc, le résultat de la compilation amènerait à déclarer une classe avec
+deux méthodes strictement identiques. Voilà pourquoi il n’est pas possible
+de redéfinir une méthode juste en changeant le type paramétré d’un paramètre.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Méthodes et classes génériques</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#l-exemple-de-la-classe-arraylist">L’exemple de la classe ArrayList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-et-assignation-d-une-classe-generique">Création et assignation d’une classe générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notation-en-diamant">Notation en diamant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#substitution-et-type-generique">Substitution et type générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ecrire-une-methode-generique">Écrire une méthode générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ecrire-une-classe-generique">Écrire une classe générique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

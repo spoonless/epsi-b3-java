@@ -52,8 +52,8 @@ deux relations fondamentales en programmation objet :</p>
 <dt><strong>est un</strong> (<em>is-a</em>)</dt>
 <dd>Cette relation permet de créer une chaîne de relation d’identité entre des
 classes. Elle indique qu’une classe peut être assimilée à une autre classe
-représentant une notion plus abstraite ou plus générale.
-On parle plus couramment <strong>d’héritage</strong> pour désigner ce type de relation.</dd>
+qui correspond à une notion plus abstraite ou plus générale.
+On parle <strong>d’héritage</strong> pour désigner le mécanisme qui permet d’implémenter ce type de relation.</dd>
 <dt><strong>a un</strong> (<em>has-a</em>)</dt>
 <dd>Cette relation permet de créer une relation de dépendance d’une classe envers
 une autre. Une classe a besoin des services d’une autre classe pour réaliser
@@ -118,7 +118,9 @@ exemple, il pourrait s’agir de la classe <em>Vehicule</em>. Les classes <em>Vo
 véhicule et une moto <strong>est un</strong> véhicule.</p>
 <img alt="_images/heritage_vehicule.png" src="_images/heritage_vehicule.png" />
 <p>En Java, l’héritage est indiqué par le mot clé <strong>extends</strong> après le nom de la
-classe. On dit donc qu’une classe en <em>étend</em> une autre.</p>
+classe. On dit donc qu’une classe en <em>étend</em> une autre. La classe qui est étendue
+est appelée <em>classe mère</em> ou <em>classe parente</em> et la classe qui étend est appelée
+<em>classe fille</em> ou <em>classe enfant</em>.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
@@ -342,7 +344,7 @@ génèrera une instruction d’appel au constructeur sans paramètre de la class
 <p>Si vous omettez d’appeler un constructeur, alors le compilateur part du principe
 qu’il en existe un de disponible dans la classe parente et que ce constructeur
 ne prend pas de paramètre. Ainsi, Java garantit qu’un constructeur de la classe
-parente est toujours appelé avant l’excution du constructeur courant. Cela signifie
+parente est toujours appelé avant l’exécution du constructeur courant. Cela signifie
 que, lors de la création d’un objet, on commence toujours par initialiser la
 classe la plus haute dans la hiérarchie d’héritage.</p>
 <p>Ce qui peut sembler surprenant dans l’exemple précédent est que la classe
@@ -353,8 +355,8 @@ un héritage.</p>
 <h2>Héritage simple : Object<a class="headerlink" href="#heritage-simple-object" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Java ne supporte pas l’héritage multiple. Soit le développeur déclare avec
 le mot-clé <strong>extends</strong> une seule classe parente, soit le compilateur part
-du principe que la classe hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Il n’est donc pas possible
-en Java de disposer d’une classe qui n’hériterait de rien. L’arbre d’héritage
+du principe que la classe hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>. Toutes les classes
+en Java ont une classe parente (hormis la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>). L’arbre d’héritage
 en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -366,7 +368,7 @@ sous forme de chaîne de caractères et qu’ils peuvent être comparés aux aut
 <div class="section" id="heritage-des-methodes-et-attributs-de-classe">
 <h2>Héritage des méthodes et attributs de classe<a class="headerlink" href="#heritage-des-methodes-et-attributs-de-classe" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme leur nom l’indique, les méthodes et les attributs de classe appartiennent
-à un classe. Il est possible d’accéder à une méthode de classe par la classe
+à une classe. Il est possible d’accéder à une méthode de classe par la classe
 dans laquelle la méthode a été déclarée ou par n’importe quelle classe qui en
 hérite. Il en va de même pour les attributs de classe. Attention cependant,
 si l’attribut de classe est modifiable, sa valeur est partagée par l’ensemble
@@ -444,15 +446,15 @@ de la programmation objet. La lettre L désigne le <a class="reference external"
 entre un type et son sous-type et les contraintes qui en découlent pour la
 conception objet.</p>
 </div>
-<p>Le principe de substituabilité est une application du trans-typage (<em>casting</em>).
+<p>Le principe de substituabilité est une application du transtypage (<em>casting</em>).
 Comme pour les types primitifs, il est possible d’affecter une référence d’un
 objet à une variable, attribut ou paramètre d’un type différent. Pour que cette
 affectation soit possible il faut que les deux types fassent partie de la même
 hiérarchie d’héritage.</p>
 <img alt="_images/heritage_downcasting_casting.png" src="_images/heritage_downcasting_casting.png" />
 <p>Si le type d’arrivée correspond à un type parent, on parle <em>d’upcasting</em>
-(trans-typage vers le haut). Si le type d’arrivée correspond à un type enfant,
-on parle de <em>downcasting</em> (trans-typage vers le bas).</p>
+(transtypage vers le haut). Si le type d’arrivée correspond à un type enfant,
+on parle de <em>downcasting</em> (transtypage vers le bas).</p>
 <p>À partir du moment où l’implémentation des classes respectent le
 <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_de_substitution_de_Liskov">principe de substitution de Liskov</a>, l’upcasting est une opération sûre en
 programmation objet. Voilà pourquoi, il est possible d’affecter des instances
@@ -478,7 +480,7 @@ Prenons l’exemple trivial suivant :</p>
 <p>La variable <em>vehicule</em> référence un objet de type Voiture, il n’est donc pas possible
 d’affecter cet objet à une variable de type <em>Moto</em>. Pour cette raison, le
 langage Java, n’autorise pas par défaut le downcasting : l’exemple ci-dessus
-ne compilera pas. Il est cependant possible de forcer le trans-typage en
+ne compilera pas. Il est cependant possible de forcer le transtypage en
 utilisant la même syntaxe que pour les types primitifs.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
 <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="o">(</span><span class="n">Voiture</span><span class="o">)</span> <span class="n">vehicule</span><span class="o">;</span>
@@ -488,8 +490,8 @@ utilisant la même syntaxe que pour les types primitifs.</p>
 <p>Le code précédent compile puisque le développeur déclare explicitement le downcasting.
 Cependant, l’affectation à la ligne 3 est erronée puisque la variable <em>vehicule</em>
 référence une instance de <em>Voiture</em> que l’on veut affecter à une variable de type
-<em>Moto</em>. Pour les types primitifs, un trans-typage invalide conduit à une possible
-perte de données. Par contre, pour des objets, un trans-typage invalide génère à
+<em>Moto</em>. Pour les types primitifs, un transtypage invalide conduit à une possible
+perte de données. Par contre, pour des objets, un transtypage invalide génère à
 l’exécution une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html">java.lang.ClassCastException</a>.</p>
 </div>
 <div class="section" id="le-mot-cle-instanceof">
@@ -641,7 +643,7 @@ significativement le comportement de la classe parente. Empêcher une sous-class
 de modifier l’état d’un attribut en le déclarant <strong>private</strong> est une bonne
 façon d’éviter aux développeurs d’une sous-classe de modifier involontairement
 le comportement d’une classe.</p>
-<p>Un règle simple consiste a systématiquement déclarer <strong>private</strong> les attributs
+<p>Un règle simple consiste à systématiquement déclarer <strong>private</strong> les attributs
 d’une classe sauf si une raison évidente nous suggère de déclarer la portée
 <strong>protected</strong>.</p>
 <div class="admonition note">
@@ -757,6 +759,35 @@ classe pour représenter des pneus.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice topic">
+<p class="topic-title first">Diplôme et examens</p>
+<p>On veut modéliser une système de remise de diplôme. Le système est constitué
+des classes <em>Diplome</em>, <em>Examen</em>, <em>Qcm</em> et <em>Projet</em>.</p>
+<dl class="docutils">
+<dt><em>Diplome</em></dt>
+<dd>Cette classe contient un ensemble d’examens. Sa méthode
+<em>isValide</em> retourne <strong>true</strong> si la moyenne des notes de tous les examens est
+supérieure à 10.</dd>
+<dt><em>Examen</em></dt>
+<dd>Une classe qui contient une note sur 20.</dd>
+<dt><em>Projet</em></dt>
+<dd>Le projet est un type spécialisé d’examen. Il est défini par une note d’écrit
+sur 10 et une note d’oral sur 10. La note finale est la somme de ces deux notes.</dd>
+<dt><em>Qcm</em></dt>
+<dd>Le QCM est un type spécialisé d’examen. Il est défini par un nombre de questions.
+On calcule la note sur 20 en faisant le rapport entre le nombre de réponses correctes
+et le nombre total de questions.</dd>
+</dl>
+<p>Les relations entre ces classes sont résumées par le diagramme
+de classes ci-dessous :</p>
+<img alt="_images/exercice_examen.png" src="_images/exercice_examen.png" />
+<p>Réalisez les implémentations de ces classes en Java. Écrivez une méthode <strong>main</strong>
+qui crée une instance de <em>Diplome</em>, y ajoute tous les types d’examen de manière
+à ce que le diplôme soit validé (la méthode <em>Diplome.isValide</em> retourne <strong>true</strong>).</p>
+</div>
+</div>
 </div>
 
 
@@ -798,6 +829,7 @@ classe pour représenter des pneus.</p>
 <li class="toctree-l2"><a class="reference internal" href="#la-portee-protected">La portée protected</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-et-final">Héritage et final</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
@@ -805,9 +837,16 @@ classe pour représenter des pneus.</p>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 

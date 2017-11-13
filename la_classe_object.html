@@ -88,9 +88,9 @@ héritant de la classe <a class="reference external" href="https://docs.oracle.c
 par une des classes les plus utilisée en Java, la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.</p>
 </div>
 <p>Parfois, l’implémentation par défaut peut suffire. C’est notamment le cas
-lorsque l’unicité en mémoire suffit à identifier un objet.
-Si nous ajoutons la notion de plaque d’immatriculation à notre classe
-<em>Vehicule</em>.</p>
+lorsque l’unicité en mémoire suffit à identifier un objet. Cepedant,
+si nous ajoutons la notion de plaque d’immatriculation à notre classe
+<em>Vehicule</em> :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
 
   <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="o">;</span>
@@ -149,7 +149,7 @@ qu’elle fonctionnera correctement, notamment lorsqu’elle est utilisée par
 l’API standard ou par des bibliothèques tierces.</p>
 <ul>
 <li><dl class="first docutils">
-<dt>Son implémentation doit être reflexive :</dt>
+<dt>Son implémentation doit être réflexive :</dt>
 <dd><p class="first last">Pour x non nul, x.equals(x) doit être vrai</p>
 </dd>
 </dl>
@@ -188,8 +188,8 @@ y est inchangé.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Le code ci-dessus ne teste pas la possibilité pour la variable <em>x</em> de n’avoir
-aucune référence, entraînant ainsi une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.
+<p>Le code ci-dessus ne teste pas la possibilité pour la variable <em>x</em> de valoir
+<strong>null</strong>, entraînant ainsi une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.
 Il ne faut donc pas oublier de tester la valeur <strong>null</strong> :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">y</span><span class="o">))</span> <span class="o">{</span>
   <span class="c1">// ...</span>
@@ -214,9 +214,9 @@ si les deux paramètres valent <strong>null</strong>.</p>
 </div>
 <div class="section" id="la-methode-hashcode">
 <h2>La méthode hashCode<a class="headerlink" href="#la-methode-hashcode" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashCode</a> est fournit pour l’utilisation de certains algorithme,
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--">hashCode</a> est fournie pour l’utilisation de certains algorithmes,
 notamment pour l’utilisation de table de hachage. Le principe d’un algorithme
-de hachage est d’associer un nombre à un objet. Cet identifiant doit être
+de hachage est d’associer un identifiant à un objet. Cet identifiant doit être
 le même pour la durée de vie de l’objet. De plus deux objets égaux doivent
 avoir le même code de hachage.</p>
 <p>L’implémentation de cette méthode peut se révéler assez technique. En général,
@@ -224,7 +224,7 @@ on se basera sur les attributs utilisés dans l’implémentation de la méthode
 <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-">equals</a> pour en déduire le code de hachage.</p>
 <p>Cette méthode ne doit être surchargée que si cela est réellement utile.
 Par exemple si une instance de cette classe doit servir de clé pour une
-<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>.</p>
+instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">HashMap</a>.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
@@ -299,11 +299,11 @@ Il suffit de surcharger cette méthode pour obtenir la représentation souhaité
 <div class="section" id="la-methode-finalize">
 <h2>La méthode finalize<a class="headerlink" href="#la-methode-finalize" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#finalize--">finalize</a> est appelée par le ramasse-miettes avant que l’objet ne soit
-supprimé est la mémoire récupérée. Surcharger cette méthode, donne donc l’opportunité
+supprimé et la mémoire récupérée. Surcharger cette méthode, donne donc l’opportunité
 au développeur de déclencher un traitement avant que l’objet ne disparaisse.
 Cependant, nous avons déjà vu dans le chapitre sur le <a class="reference internal" href="cycle_de_vie.html#cycle-de-vie-finalize"><span class="std std-ref">cycle de vie</span></a>
-que le fonctionnement du ramasse-miettes rendait cette méthode relativement
-difficile à utiliser.</p>
+que le fonctionnement du ramasse-miettes ne donne aucune garantie sur le fait
+que cette méthode sera appelée.</p>
 </div>
 <div class="section" id="la-methode-clone">
 <h2>La méthode clone<a class="headerlink" href="#la-methode-clone" title="Lien permanent vers ce titre">¶</a></h2>
@@ -313,16 +313,17 @@ classes ne désirent pas permettre de cloner une instance.</p>
 <p>Pour qu’un objet soit clonable, sa classe doit implémenter l’interface marqueur
 <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html">Cloneable</a>. L’implémentation par défaut de la méthode dans <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Object</a> consiste à jeter
 une exception <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html">Cloneable</a> n’est pas
-implémentée ou sinon, la méthode crée une nouvelle instance de la classe et affecte
+implémentée. Si l’interface est implémentée alors la méthode crée une nouvelle
+instance de la classe et affecte
 la même valeur que l’instance d’origine aux attributs de la nouvelle instance.
-L’implémentation par défaut de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--">clone</a> n’utilise pas les constructeurs pour créer
+L’implémentation par défaut de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--">clone</a> n’appelle pas les constructeurs pour créer
 la nouvelle instance.</p>
 <div class="admonition caution">
 <p class="first admonition-title">Prudence</p>
 <p class="last">L’implémentation par défaut de la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--">clone</a> ne réalise pas un clonage
 en profondeur. Cela signifie que si les attributs de la classe d’origine
-pointent sur des références d’objet, les attributs du clone pointeront sur
-les mêmes références. Si ce comportement n’est pas celui désiré, alors il
+référencent des objets, les attributs du clone référenceront les mêmes objets.
+Si ce comportement n’est pas celui désiré, alors il
 faut fournit une nouvelle implémentation de la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#clone--">clone</a> dans la classe.</p>
 </div>
 <div class="admonition note">
@@ -341,7 +342,7 @@ des tableaux en Java si on désire en obtenir une copie.</p>
 <p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#getClass--">getClass</a> permet d’accéder à l’objet représentant la classe de l’instance.
 Cela signifie qu’un programme Java peut accéder par programmation à la définition
 de la classe d’une instance. Cette méthode est notamment très utilisée dans des
-usages avancées impliquant la <em>réflexivité</em>.</p>
+usages avancés impliquant la <em>réflexivité</em>.</p>
 <p>L’exemple ci-dessous, affiche le nom complet (c’est-à-dire en incluant son package)
 de l’objet créé :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vehicule</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
@@ -402,9 +403,16 @@ de signaux dans la programmation concurrente. Il s’agit des méthodes <a class
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
 
