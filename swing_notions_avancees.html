@@ -1,0 +1,599 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Swing : notions avancées &#8212; documentation Le langage Java 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="swing-notions-avancees">
+<h1>Swing : notions avancées<a class="headerlink" href="#swing-notions-avancees" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Ce chapitre couvre quelques notions avancées pour la programmation d’applications
+graphiques avec Swing</p>
+<div class="section" id="principe-du-mvc">
+<h2>Principe du MVC<a class="headerlink" href="#principe-du-mvc" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur">MVC</a> (modèle-vue-contrôleur) est un modèle de conception adapté pour le
+développement d’interface graphique. Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur">MVC</a> découpe le traitement applicatif
+selon trois catégories :</p>
+<dl class="docutils">
+<dt>Le modèle</dt>
+<dd>Il contient les données applicatives ainsi que les logiques de traitement
+propres à l’application.</dd>
+<dt>La vue</dt>
+<dd>Elle gère la représentation graphique des données et l’interface utilisateur</dd>
+<dt>Le contrôleur</dt>
+<dd>Il est sollicité par les interactions de l’utilisateur ou les modifications
+des données. Il assure la cohérence entre le modèle et la vue.</dd>
+</dl>
+<p>Ce modèle se retrouve dans l’architecture des composants Swing. Ce modèle est
+particulièrement important à comprendre pour les composants graphiques les plus complexes
+comme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html">JList</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html">JTree</a>.</p>
+<p>Les interactions entre les trois éléments du modèles <a class="reference external" href="https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur">MVC</a> sont réalisées en Swing
+grâce à des <em>listeners</em>. Par exemple, la vue peut être prévenue par le modèle
+que des données ont évolué et que la représentation graphique doit être
+rafraîchie.</p>
+<p>Pour des composants graphiques comme le <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a>, la vue et le contrôleur sont
+très largement pris en charge par le composant Swing. Le développeur doit fournir
+la partie modèle en implémentant une classe qui joue le rôle du modèle de données
+(<em>data model</em>).</p>
+</div>
+<div class="section" id="la-classe-jtable">
+<h2>La classe JTable<a class="headerlink" href="#la-classe-jtable" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a> représente un tableau à deux dimensions (type tableur). Chaque
+cellule peut afficher une information. À la création de ce composant, il est
+possible de fournir une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html">TableModel</a>. Il s’agit d’une interface
+qui fournit les informations nécessaires au composant pour s’afficher avec notamment
+le nombre de lignes, le nombre de colonnes et le contenu de chaque cellule.
+Comme l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html">TableModel</a> peut s’avérer complexe à implémenter, la
+classe abstraite <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html">AbstractTableModel</a> fournit une partie de l’implémentation.</p>
+<p>Si nous disposons de la classe <em>Individu</em> :</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Individu</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">prenom</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Individu</span><span class="o">()</span> <span class="o">{</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="nf">Individu</span><span class="o">(</span><span class="n">String</span> <span class="n">prenom</span><span class="o">,</span> <span class="n">String</span> <span class="n">nom</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">prenom</span> <span class="o">=</span> <span class="n">prenom</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNom</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">nom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPrenom</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">prenom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNom</span><span class="o">(</span><span class="n">String</span> <span class="n">nom</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPrenom</span><span class="o">(</span><span class="n">String</span> <span class="n">prenom</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">prenom</span> <span class="o">=</span> <span class="n">prenom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">prenom</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">nom</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Nous pouvons créer une application Swing qui va afficher une liste d’individus
+à l’aide d’une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a>. Dans notre application, il est possible de :</p>
+<ul class="simple">
+<li>ajouter des individus à la liste</li>
+<li>modifier le nom et le prénom de chaque individu</li>
+<li>mettre automatiquement en majuscule la première lettre du nom et du prénom de
+chaque individu de la liste</li>
+</ul>
+<p>Nous créons une implémentation de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html">TableModel</a> que nous appelons <em>IndividuTableModel</em> :</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.gui</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.swing.table.AbstractTableModel</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">fr.epsi.b3.Individu</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndividuTableModel</span> <span class="kd">extends</span> <span class="n">AbstractTableModel</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">COLONNE_NOM</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">COLONNE_PRENOM</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+  <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Individu</span><span class="o">&gt;</span> <span class="n">individus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+  <span class="kd">public</span> <span class="nf">IndividuTableModel</span><span class="o">(</span><span class="n">Individu</span> <span class="o">...</span><span class="na">individus</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">individus</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">individus</span><span class="o">));</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getColumnName</span><span class="o">(</span><span class="kt">int</span> <span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">COLONNE_NOM</span><span class="o">:</span>
+      <span class="k">return</span> <span class="s">&quot;Nom&quot;</span><span class="o">;</span>
+    <span class="k">case</span> <span class="n">COLONNE_PRENOM</span><span class="o">:</span>
+      <span class="k">return</span> <span class="s">&quot;Prénom&quot;</span><span class="o">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getColumnCount</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRowCount</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">individus</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isCellEditable</span><span class="o">(</span><span class="kt">int</span> <span class="n">rowIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setValueAt</span><span class="o">(</span><span class="n">Object</span> <span class="n">aValue</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rowIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">COLONNE_NOM</span><span class="o">:</span>
+      <span class="n">individus</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">rowIndex</span><span class="o">).</span><span class="na">setNom</span><span class="o">(</span><span class="n">aValue</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+      <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="n">COLONNE_PRENOM</span><span class="o">:</span>
+      <span class="n">individus</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">rowIndex</span><span class="o">).</span><span class="na">setPrenom</span><span class="o">(</span><span class="n">aValue</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+      <span class="k">break</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="n">Object</span> <span class="nf">getValueAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">rowIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">COLONNE_NOM</span><span class="o">:</span>
+      <span class="k">return</span> <span class="n">individus</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">rowIndex</span><span class="o">).</span><span class="na">getNom</span><span class="o">();</span>
+    <span class="k">case</span> <span class="n">COLONNE_PRENOM</span><span class="o">:</span>
+      <span class="k">return</span> <span class="n">individus</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">rowIndex</span><span class="o">).</span><span class="na">getPrenom</span><span class="o">();</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addIndividu</span><span class="o">(</span><span class="n">Individu</span> <span class="n">u</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">individus</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">u</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">fireTableRowsInserted</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">individus</span><span class="o">.</span><span class="na">size</span><span class="o">()-</span><span class="mi">1</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">individus</span><span class="o">.</span><span class="na">size</span><span class="o">()-</span><span class="mi">1</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addIndividu</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">addIndividu</span><span class="o">(</span><span class="k">new</span> <span class="n">Individu</span><span class="o">());</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fixMajuscule</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">rowIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">Individu</span> <span class="n">individu</span> <span class="o">:</span> <span class="n">individus</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">individu</span><span class="o">.</span><span class="na">setNom</span><span class="o">(</span><span class="n">fixMajuscule</span><span class="o">(</span><span class="n">individu</span><span class="o">.</span><span class="na">getNom</span><span class="o">(),</span> <span class="n">rowIndex</span><span class="o">,</span> <span class="n">COLONNE_NOM</span><span class="o">));</span>
+      <span class="n">individu</span><span class="o">.</span><span class="na">setPrenom</span><span class="o">(</span><span class="n">fixMajuscule</span><span class="o">(</span><span class="n">individu</span><span class="o">.</span><span class="na">getPrenom</span><span class="o">(),</span> <span class="n">rowIndex</span><span class="o">,</span> <span class="n">COLONNE_PRENOM</span><span class="o">));</span>
+      <span class="o">++</span><span class="n">rowIndex</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Individu</span><span class="o">&gt;</span> <span class="nf">getIndividus</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">individus</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="n">String</span> <span class="nf">fixMajuscule</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rowIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">columnIndex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">value</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">Character</span><span class="o">.</span><span class="na">isLowerCase</span><span class="o">(</span><span class="n">value</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">)))</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">fireTableCellUpdated</span><span class="o">(</span><span class="n">rowIndex</span><span class="o">,</span> <span class="n">columnIndex</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">).</span><span class="na">toUpperCase</span><span class="o">()</span> <span class="o">+</span> <span class="n">value</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La classe <em>IndividuTableModel</em> hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html">AbstractTableModel</a> qui implémente déjà
+une bonne partie de l’interface <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html">TableModel</a>. Notre classe surcharge des méthodes
+comme <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html#getColumnName-int-">getColumnName</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html#getRowCount--">getColumnCount</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html#getRowCount--">getRowCount</a> pour fournir à la vue
+les informations nécessaires pour connaître le nom de chaque colonne, leur nombre
+et le nombre de lignes. Le modèle maintient en interne une liste d’instances
+de <em>Indidivu</em>. La seule méthode que nous devons impérativement implémenter est
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html#getRowCount--">getValueAt</a> (ligne 62). Elle permet à la vue de connaître la valeur d’une cellule
+du tableau à afficher. Afin d’autoriser la modification du nom et du prénom
+depuis la vue, nous devons également implémenter la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html#setValueAt-java.lang.Object-int-int-">setValueAt</a> (ligne 50)
+afin que de traiter les informations qui nous seront fournies à travers la vue.</p>
+<p>Le modèle fournit également ses propres méthodes pour modifier la liste des
+individus. Ainsi les méthodes <em>addIndividu</em> (lignes 73 et 82) permettent d’ajouter
+un individu à la liste. Quant à la méthode fixMajuscule (ligne 95), elle permet
+de corriger, si nécessaire, la première lettre du nom et du prénom pour la passer
+en majuscule. Ces méthodes modifient donc l’état du modèle. Lorsque le modèle
+change, il doit en avertir la vue afin que celle-ci puisse rafraîchir les
+données à l’écran. La classe abstraite <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html">AbstractTableModel</a> fournit une gestion
+de <em>listeners</em> spécialisés. Lorsqu’un objet implémentant <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/TableModel.html">TableModel</a> est associé à un composant
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a>, ce dernier enregistre plusieurs <em>listeners</em> auprès du modèle pour
+être prévenu des modifications éventuelles du modèle. Pour notifier de ces modifications
+une classe qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html">AbstractTableModel</a> doit appeler les méthodes
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableCellUpdated-int-int-">fireTableCellUpdated</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableDataChanged--">fireTableDataChanged</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableRowsDeleted-int-int-">fireTableRowsDeleted</a>, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableRowsInserted-int-int-">fireTableRowsInserted</a>
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableRowsUpdated-int-int-">fireTableRowsUpdated</a> ou <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableStructureChanged--">fireTableStructureChanged</a> selon le type de modifications
+qui ont eu lieu sur le modèle.</p>
+<p>Pour notre implémentation, à la ligne 75, nous appelons la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableRowsInserted-int-int-">fireTableRowsInserted</a>
+pour signaler à la vue qu’une nouvelle ligne a été ajoutée et à la ligne 101,
+nous appelons la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/table/AbstractTableModel.html#fireTableCellUpdated-int-int-">fireTableCellUpdated</a> pour signaler que le contenu
+d’une cellule a changé.</p>
+<p>Enfin, la classe <em>IndividuTableur</em> représente la fenêtre de l’application contenant
+le composant <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a> :</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.gui</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JMenu</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JMenuBar</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JMenuItem</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JScrollPane</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JTable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.WindowConstants</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">fr.epsi.b3.Individu</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndividuTableur</span> <span class="kd">extends</span> <span class="n">JFrame</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="n">IndividuTableModel</span> <span class="n">individuModel</span><span class="o">;</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">frameInit</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">frameInit</span><span class="o">();</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">setDefaultCloseOperation</span><span class="o">(</span><span class="n">WindowConstants</span><span class="o">.</span><span class="na">EXIT_ON_CLOSE</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;Table des individus&quot;</span><span class="o">);</span>
+
+    <span class="k">this</span><span class="o">.</span><span class="na">setJMenuBar</span><span class="o">(</span><span class="k">new</span> <span class="n">JMenuBar</span><span class="o">());</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">getJMenuBar</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">createMenu</span><span class="o">());</span>
+
+    <span class="k">this</span><span class="o">.</span><span class="na">individuModel</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IndividuTableModel</span><span class="o">();</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JScrollPane</span><span class="o">(</span><span class="k">new</span> <span class="n">JTable</span><span class="o">(</span><span class="n">individuModel</span><span class="o">)));</span>
+
+    <span class="k">this</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="mi">600</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="n">JMenu</span> <span class="nf">createMenu</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">JMenu</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JMenu</span><span class="o">(</span><span class="s">&quot;Individus&quot;</span><span class="o">);</span>
+    <span class="n">menu</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JMenuItem</span><span class="o">(</span><span class="s">&quot;Ajouter&quot;</span><span class="o">)).</span><span class="na">addActionListener</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="o">.</span><span class="na">individuModel</span><span class="o">.</span><span class="na">addIndividu</span><span class="o">());</span>
+    <span class="n">menu</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JMenuItem</span><span class="o">(</span><span class="s">&quot;Corriger Maj.&quot;</span><span class="o">)).</span><span class="na">addActionListener</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="o">.</span><span class="na">individuModel</span><span class="o">.</span><span class="na">fixMajuscule</span><span class="o">());</span>
+    <span class="n">menu</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JMenuItem</span><span class="o">(</span><span class="s">&quot;Imprimer&quot;</span><span class="o">)).</span><span class="na">addActionListener</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="o">.</span><span class="na">imprimer</span><span class="o">());</span>
+    <span class="n">menu</span><span class="o">.</span><span class="na">addSeparator</span><span class="o">();</span>
+    <span class="n">menu</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JMenuItem</span><span class="o">(</span><span class="s">&quot;Fermer&quot;</span><span class="o">)).</span><span class="na">addActionListener</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="k">this</span><span class="o">.</span><span class="na">dispose</span><span class="o">());;</span>
+    <span class="k">return</span> <span class="n">menu</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">imprimer</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">individuModel</span><span class="o">.</span><span class="na">getIndividus</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addIndividu</span><span class="o">(</span><span class="n">Individu</span> <span class="n">u</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">individuModel</span><span class="o">.</span><span class="na">addIndividu</span><span class="o">(</span><span class="n">u</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">IndividuTableur</span> <span class="n">window</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IndividuTableur</span><span class="o">();</span>
+
+    <span class="n">window</span><span class="o">.</span><span class="na">addIndividu</span><span class="o">(</span><span class="k">new</span> <span class="n">Individu</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Doe&quot;</span><span class="o">));</span>
+    <span class="n">window</span><span class="o">.</span><span class="na">addIndividu</span><span class="o">(</span><span class="k">new</span> <span class="n">Individu</span><span class="o">(</span><span class="s">&quot;Anabella&quot;</span><span class="o">,</span> <span class="s">&quot;Doe&quot;</span><span class="o">));</span>
+    <span class="n">window</span><span class="o">.</span><span class="na">addIndividu</span><span class="o">(</span><span class="k">new</span> <span class="n">Individu</span><span class="o">(</span><span class="s">&quot;jean&quot;</span><span class="o">,</span> <span class="s">&quot;dupond&quot;</span><span class="o">));</span>
+
+    <span class="n">window</span><span class="o">.</span><span class="na">setLocationRelativeTo</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+    <span class="n">window</span><span class="o">.</span><span class="na">setVisible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>À la ligne 26, nous créons l’instance de <em>IndividuTableModel</em> et nous l’associons
+à une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTable.html">JTable</a>. Aux lignes 34, 35 et 36, nous créons des entrées de menu
+pour permettre à l’utilisateur d’interagir. Certaines des actions appellent des
+méthodes du modèle qui le modifie et qui déclencherons un événement en direction
+de la vue qui n’aura plus qu’à se rafraîchir.</p>
+<p>Dans Swing, il existe d’autres composants de haut niveau qui reprennent le modèle
+du <a class="reference external" href="https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur">MVC</a> pour permettre de gérer des représentations complexes de données comme la
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html">JList</a> pour afficher une liste d’éléments ou le <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html">JTree</a> pour gérer des représentations
+arborescentes de données.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">À faire</p>
+<ul class="last simple">
+<li>Principe du Worker thread</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Le langage Java</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compilation &amp; exécution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure_fondamentale.html">La structure fondamentale du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premiere_classe.html">Une première classe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;
+<a ref="author" href="mailto:david.gayerie.epsi@mailoo.org">David Gayerie</a>
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/fr/80x15.png" /></a>
+.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

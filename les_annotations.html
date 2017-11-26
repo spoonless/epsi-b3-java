@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="prev" title="Streams" href="streams.html" />
+    <link rel="prev" title="Les classes internes" href="classe_interne.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -353,6 +353,94 @@ d’une classe avec la méthode <a class="reference external" href="https://docs
 </pre></div>
 </div>
 </div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice topic">
+<p class="topic-title first">Java et XML</p>
+<p>Java propose une API nommée JAXB qui permet de transformer un document XML
+en objets Java ou de transformer des objets Java en document XML. JAXB fournit
+des annotations qui indiquent la correspondance en XML des classes et de leurs
+attributs.</p>
+<p>Parmi ces annotations, il y a :</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlRootElement.html">XmlRootElement</a></li>
+<li><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlElement.html">XmlElement</a></li>
+<li><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/XmlAttribute.html">XmlAttribute</a></li>
+</ul>
+<p>Par ailleurs, JAXB permet de créer des instances de <em>Marshaller</em> et de <em>Unmarshaller</em>.
+Le premier type permet de passer de Java à un document XML et le second type
+réalise l’opération inverse.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Utilisation d’un Marshaller JAXB</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.xml</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.xml.bind.JAXBContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.bind.Marshaller</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">XmlMarshaller</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+
+    <span class="n">JAXBContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">JAXBContext</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">Personne</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Adresse</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="n">Marshaller</span> <span class="n">marshaller</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">createMarshaller</span><span class="o">();</span>
+    <span class="n">marshaller</span><span class="o">.</span><span class="na">marshal</span><span class="o">(</span><span class="n">createPersonne</span><span class="o">(),</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;personne.xml&quot;</span><span class="o">));</span>
+  <span class="o">}</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Personne</span> <span class="nf">createPersonne</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// TODO à implémenter</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Utilisation d’un Unmarshaller JAXB</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.xml</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.xml.bind.JAXBContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.bind.Unmarshaller</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">XmlUnmarshaller</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+
+    <span class="n">JAXBContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">JAXBContext</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">Personne</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Adresse</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="n">Unmarshaller</span> <span class="n">unmarshaller</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">createUnmarshaller</span><span class="o">();</span>
+    <span class="n">Personne</span> <span class="n">personne</span> <span class="o">=</span> <span class="o">(</span><span class="n">Personne</span><span class="o">)</span> <span class="n">unmarshaller</span><span class="o">.</span><span class="na">unmarshal</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;personne.xml&quot;</span><span class="o">));</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">personne</span><span class="o">);</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Étant donné le document XML suivant :</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;personne</span> <span class="na">id=</span><span class="s">&quot;0001&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;nom&gt;</span>Doe<span class="nt">&lt;/nom&gt;</span>
+  <span class="nt">&lt;prenom&gt;</span>John<span class="nt">&lt;/prenom&gt;</span>
+  <span class="nt">&lt;age&gt;</span>31<span class="nt">&lt;/age&gt;</span>
+  <span class="nt">&lt;adresse</span> <span class="na">type=</span><span class="s">&quot;personnelle&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rue&gt;</span>9 allée des vignes<span class="nt">&lt;/rue&gt;</span>
+    <span class="nt">&lt;codePostal&gt;</span>33000<span class="nt">&lt;/codePostal&gt;</span>
+    <span class="nt">&lt;ville&gt;</span>Bordeaux<span class="nt">&lt;/ville&gt;</span>
+  <span class="nt">&lt;/adresse&gt;</span>
+<span class="nt">&lt;/personne&gt;</span>
+</pre></div>
+</div>
+<p>Créez les classes <em>Personne</em> et <em>Adresse</em> et utilisez les annotations JAXB
+de manière à pouvoir passer d’un représentation Java à une représentation XML
+(et vice-versa).</p>
+</div>
+</div>
 </div>
 
 
@@ -380,8 +468,8 @@ d’une classe avec la méthode <a class="reference external" href="https://docs
 <li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
@@ -393,17 +481,18 @@ d’une classe avec la méthode <a class="reference external" href="https://docs
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les annotations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-des-annotations">Utilisation des annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
 </ul>

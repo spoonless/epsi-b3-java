@@ -365,61 +365,6 @@ Voilà pourquoi tous les objets Java peuvent avoir par défaut une représentati
 sous forme de chaîne de caractères et qu’ils peuvent être comparés aux autres.</p>
 </div>
 </div>
-<div class="section" id="heritage-des-methodes-et-attributs-de-classe">
-<h2>Héritage des méthodes et attributs de classe<a class="headerlink" href="#heritage-des-methodes-et-attributs-de-classe" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Comme leur nom l’indique, les méthodes et les attributs de classe appartiennent
-à une classe. Il est possible d’accéder à une méthode de classe par la classe
-dans laquelle la méthode a été déclarée ou par n’importe quelle classe qui en
-hérite. Il en va de même pour les attributs de classe. Attention cependant,
-si l’attribut de classe est modifiable, sa valeur est partagée par l’ensemble
-des classes qui font partie de la hiérarchie d’héritage.</p>
-<p>Un exemple classique est l’implémentation d’un compteur qui permet de savoir
-combien d’instances ont été créées. Il suffit de créer un compteur comme
-attribut de classe.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
-
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">nbInstances</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
-
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="o">++</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">nbInstances</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNbInstances</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">nbInstances</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="c1">// ...</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>Dans l’exemple précédent, nous avons ajouté l’attribut de classe <em>nbInstances</em>
-et la méthode de classe <em>getNbInstances</em>. L’attribut de classe est un compteur
-qui est incrémenté à chaque fois que le constructeur de <em>Vehicule</em> est appelé.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-
-<span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
-
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span> <span class="c1">// 2</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>  <span class="c1">// 2</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Moto</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>     <span class="c1">// 2</span>
-</pre></div>
-</div>
-<p>Dans l’exemple ci-dessus, la création d’une instance de <em>Voiture</em> et d’une
-instance de <em>Moto</em> incrémente le compteur <em>nbInstances</em>. L’appel à la méthode
-<em>getNbInstances</em> retournera le chiffre 2 quelle que soit la classe utilisée
-pour invoquer cette méthode. On voit ici, qu’il est parfois important, pour
-des raisons de lisibilité, d’utiliser la classe dans laquelle la méthode a été
-déclarée pour l’invoquer. En effet, une lecture rapide du code, pourrait nous
-faire croire que l’appel à <em>Voiture.getNbInstances</em> retourne le nombre
-d’instances de type <em>Voiture</em> créées alors qu’il s’agit du nombre d’instances
-de type <em>Vehicule</em> (donc incluant les instances de <em>Moto</em>).</p>
-</div>
 <div class="section" id="heritage-et-affectation">
 <h2>Héritage et affectation<a class="headerlink" href="#heritage-et-affectation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’héritage introduit la notion de <em>substituabilité</em> entre la classe enfant et la
@@ -661,6 +606,61 @@ l’acronyme <a class="reference external" href="https://fr.wikipedia.org/wiki/S
 la conception objet.</p>
 </div>
 </div>
+<div class="section" id="heritage-des-methodes-et-attributs-de-classe">
+<h2>Héritage des méthodes et attributs de classe<a class="headerlink" href="#heritage-des-methodes-et-attributs-de-classe" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme leur nom l’indique, les méthodes et les attributs de classe appartiennent
+à une classe. Il est possible d’accéder à une méthode de classe par la classe
+dans laquelle la méthode a été déclarée ou par n’importe quelle classe qui en
+hérite. Il en va de même pour les attributs de classe. Attention cependant,
+si l’attribut de classe est modifiable, sa valeur est partagée par l’ensemble
+des classes qui font partie de la hiérarchie d’héritage.</p>
+<p>Un exemple classique est l’implémentation d’un compteur qui permet de savoir
+combien d’instances ont été créées. Il suffit de créer un compteur comme
+attribut de classe.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">nbInstances</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">++</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">nbInstances</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNbInstances</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">nbInstances</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Dans l’exemple précédent, nous avons ajouté l’attribut de classe <em>nbInstances</em>
+et la méthode de classe <em>getNbInstances</em>. L’attribut de classe est un compteur
+qui est incrémenté à chaque fois que le constructeur de <em>Vehicule</em> est appelé.</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
+
+<span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span> <span class="c1">// 2</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>  <span class="c1">// 2</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Moto</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>     <span class="c1">// 2</span>
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus, la création d’une instance de <em>Voiture</em> et d’une
+instance de <em>Moto</em> incrémente le compteur <em>nbInstances</em>. L’appel à la méthode
+<em>getNbInstances</em> retournera le chiffre 2 quelle que soit la classe utilisée
+pour invoquer cette méthode. On voit ici, qu’il est parfois important, pour
+des raisons de lisibilité, d’utiliser la classe dans laquelle la méthode a été
+déclarée pour l’invoquer. En effet, une lecture rapide du code, pourrait nous
+faire croire que l’appel à <em>Voiture.getNbInstances</em> retourne le nombre
+d’instances de type <em>Voiture</em> créées alors qu’il s’agit du nombre d’instances
+de type <em>Vehicule</em> (donc incluant les instances de <em>Moto</em>).</p>
+</div>
 <div class="section" id="heritage-et-final">
 <h2>Héritage et final<a class="headerlink" href="#heritage-et-final" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En Java, il est possible de déclarer une classe <strong>final</strong>. Cela signifie
@@ -815,18 +815,18 @@ qui crée une instance de <em>Diplome</em>, y ajoute tous les types d’examen d
 <li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les relations entre objets</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#l-heritage-is-a">L’héritage (is-a)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-et-constructeur">Héritage et constructeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-simple-object">Héritage simple : Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-et-affectation">Héritage et affectation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-et-final">Héritage et final</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-composition-has-a">La composition (has-a)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
@@ -840,12 +840,12 @@ qui crée une instance de <em>Diplome</em>, y ajoute tous les types d’examen d
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 

@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les énumérations" href="enumeration.html" />
+    <link rel="next" title="Les entrées/sorties" href="entrees_sorties.html" />
     <link rel="prev" title="Méthodes et classes génériques" href="generiques.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -289,7 +289,7 @@ si on parcourt la file à l’aide d’un <strong>for</strong>.</p>
 <p>La version 1.0 de Java a d’abord inclus les classes <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">java.util.Vector</a> et <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">java.util.Stack</a>.
 La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a> permet de représenter une liste d’éléments comme la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a>.
 La classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">Stack</a> qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html">Vector</a> permet de représenter des piles de type
-LIFO (<em>Last In First Out</em>). Ces deux classes sont toujours présentent dans
+LIFO (<em>Last In First Out</em>). Ces deux classes sont toujours présentes dans
 l’API pour des raisons de compatibilité ascendante mais il ne faut <strong>surtout pas</strong>
 s’en servir. En effet, ces classes utilisent des mécanismes de synchronisation
 internes dans le cas où elles sont utilisées pour des accès concurrents
@@ -338,7 +338,7 @@ de données pour laquelle l’ordre des éléments est important mais les opéra
 des consultation, d’ajout et de suppression se font soit sur le premier élément
 soit sur le dernier élément.</dd>
 <dt><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/RandomAccess.html">RandomAccess</a></dt>
-<dd>Il s’agit d’une <a class="reference internal" href="interface.html#interface-marqeur"><span class="std std-ref">interface marqueur</span></a> qui signale que
+<dd>Il s’agit d’une <a class="reference internal" href="interface.html#interface-marqueur"><span class="std std-ref">interface marqueur</span></a> qui signale que
 l’implémentation associée supporte les accès aléatoire en un temps constant. Par
 exemple, <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> implémente <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/RandomAccess.html">RandomAccess</a> mais pas <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html">LinkedList</a>. Cette interface
 existe avant tout pour des raisons d’optimisation de parcours de liste.</dd>
@@ -774,8 +774,8 @@ un tableau associatif vides et immutables.</p>
 <li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
@@ -794,12 +794,12 @@ un tableau associatif vides et immutables.</p>
 <li class="toctree-l2"><a class="reference internal" href="#la-classe-outil-collections">La classe outil Collections</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 

@@ -103,9 +103,10 @@ le cri de l’animal sur la sortie standard.</p>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>Chaque classe fille change le comportement de la méthode <em>crier</em>. L’intérêt du
-polymorphisme vient du fait que maintenant, les instances des classes filles
-appelleront toujours la méthode <em>crier</em> surchargée par leur classe.</p>
+<p>Chaque classe fille change le comportement de la méthode <em>crier</em>. Cela signifie
+qu’un objet de type <em>Chien</em> pour lequel on invoque le méthode <em>crier</em> ne fournira
+pas le même comportement qu’un objet de type <em>Chat</em>. Et cela, quel que soit le
+type de la variable qui référence ces objets.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="o">();</span>
 <span class="n">animal</span><span class="o">.</span><span class="na">crier</span><span class="o">();</span> <span class="c1">// affiche &quot;un cri d&#39;animal&quot;</span>
 
@@ -281,7 +282,6 @@ de <em>Animal</em>, la méthode qui surcharge se présente comme une spécialisa
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">EleveurChien</span> <span class="kd">extends</span> <span class="n">EleveurAnimal</span> <span class="o">{</span>
 
-  <span class="nd">@Override</span>
   <span class="kd">public</span> <span class="n">Chien</span> <span class="nf">elever</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="n">Chien</span><span class="o">();</span>
   <span class="o">}</span>
@@ -459,13 +459,13 @@ signifie que le constructeur de <a class="reference external" href="https://docs
 <p>Cependant un constructeur peut appeler une méthode et dans ce cas le polymorphisme
 s’applique. Comme les constructeurs sont appelés dans l’ordre
 de la hiérarchie d’héritage, cela signifie qu’un constructeur invoque
-une méthode surchargée toujours avant que la classe fille qui l’implémente n’ait
+toujours une méthode surchargée avant que la classe fille qui l’implémente n’ait
 pu être initialisée.</p>
 <p>Par exemple, si nous disposons d’un classe <em>VehiculeMotorise</em> qui surcharge la
 méthode   <em>accelerer</em> pour prendre en compte la consommation d’essence :</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">VehiculeMotorise</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">VehiculeMotorise</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
 
   <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">;</span>
 
@@ -523,13 +523,13 @@ valeur est nulle et donc la création d’une instance de <em>VehiculeMotorise</
 <p>On voit par cet exemple que l’appel de méthode dans un constructeur peut amener
 à des situations complexes. Il est fortement recommandé d’appeler dans un constructeur
 des méthodes dont le comportement ne peut pas être modifié par la surcharge : soit
-des méthodes privées soit des méthodes déclarées <strong>final</strong>.</p>
+des méthodes déclarées <strong>private</strong> soit des méthodes déclarées <strong>final</strong>.</p>
 </div>
 <div class="section" id="masquage-des-attributs-par-heritage">
 <h2>Masquage des attributs par héritage<a class="headerlink" href="#masquage-des-attributs-par-heritage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est possible de déclarer dans une classe fille un attribut portant
 le même nom que dans la classe parente. Cependant ceci ne correspond ni à une
-surcharge et ni au principe du polymorphisme. L’attribut de
+surcharge ni au principe du polymorphisme. L’attribut de
 la classe fille se contente de masquer l’attribut de la classe parente.</p>
 <p>Si l’attribut est de portée <strong>private</strong>, créer une attribut avec le même nom dans
 une classe fille n’a aucun impact particulier. Cela permet d’isoler l’état
@@ -595,6 +595,32 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
 <strong>private</strong> et les méthodes jugées les plus critiques peuvent être déclarées
 <strong>final</strong>.</p>
 </div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice topic">
+<p class="topic-title first">Diplôme et examens (suite)</p>
+<p>On souhaite faire évoluer le système de remise de diplôme du chapitre précédente.</p>
+<p>Pour les classes <em>Examen</em>, <em>Qcm</em> et <em>Projet</em>, on doit pouvoir ajouter une appréciation.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Pour <em>Examen</em>, l’appréciation peut être positionnée par une méthode.</li>
+<li>Pour <em>Qcm</em>, l’appréciation est déterminée en fonction de la note :<ul>
+<li>&lt; 8 : insuffisant</li>
+<li>entre 8 et 12 : passable</li>
+<li>entre 12 et 15 : bien</li>
+<li>&gt;= 16 : très bien</li>
+</ul>
+</li>
+<li>Pour <em>Projet</em>, il doit y avoir une appréciation pour l’oral et une appréciation
+pour l’écrit, chacune positionnée par une méthode.</li>
+</ul>
+</div></blockquote>
+<p>Modifiez le système existant pour prendre en compte ces modifications. Ajoutez
+la méthode <em>afficherDetailDesNotes</em> dans la classe <em>Diplome</em> pour afficher la liste
+des notes et l’appréciation. On utilisera le polymorphisme pour réaliser cette nouvelle
+fonctionnalité.</p>
+</div>
+</div>
 </div>
 
 
@@ -622,8 +648,8 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
 <li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
@@ -638,6 +664,7 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
 <li class="toctree-l2"><a class="reference internal" href="#constructeur-et-polymorphisme">Constructeur et polymorphisme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#masquage-des-attributs-par-heritage">Masquage des attributs par héritage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a></li>
@@ -647,12 +674,12 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 

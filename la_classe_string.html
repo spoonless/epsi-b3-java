@@ -97,26 +97,26 @@ des méthodes.</p>
 <p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#equals-java.lang.Object-">String.equals</a></p>
 <blockquote>
 <div><p>Compare la chaîne de caractères avec une autre chaînes de caractères.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>      <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>     <span class="c1">// false</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// false</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// true</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>  <span class="c1">// false</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// false</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareToIgnoreCase-java.lang.String-">String.compareToIgnoreCase</a></p>
+<p>String.equalsIgnoreCase</p>
 <blockquote>
 <div><p>Comme la méthode précédente sauf que deux chaînes qui ne diffèrent que par
 la casse seront considérées comme identiques.</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>      <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>     <span class="c1">// false</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// true</span>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// true</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>  <span class="c1">// false</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareTo-java.lang.String-">String.compareTo</a></p>
 <blockquote>
 <div><p>Compare la chaîne de caractères avec une autre chaînes de caractères. La comparaison
-se fait en suivant l’ordre lexicographique et la taille des chaînes. Cette méthode
+se fait suivant la taille des chaînes et l’ordre lexicographique des caractères. Cette méthode
 retourne 0 si les deux chaînes sont identiques, une valeur négative si la première
 est inférieure à la seconde et une valeur positive si la première est plus grande
 que la seconde.</p>
@@ -201,7 +201,7 @@ paramètres.</p>
 </div></blockquote>
 <p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-">String.substring</a></p>
 <blockquote>
-<div><p>Crée une nouvelle sous-chaîne à partir à partir de l’index de début et jusqu’à
+<div><p>Crée une nouvelle sous-chaîne à partir de l’index de début et jusqu’à
 l’index de fin (non inclus).</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span> <span class="c1">// &quot;ll&quot;</span>
 <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>        <span class="c1">// &quot;Hello&quot;</span>
@@ -210,14 +210,14 @@ l’index de fin (non inclus).</p>
 </div></blockquote>
 <p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--">String.toLowerCase</a></p>
 <blockquote>
-<div><p>Crée une chaîne de caractères en minuscules.</p>
+<div><p>Crée une chaîne de caractères équivalente en minuscules.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span> <span class="c1">// &quot;hello world&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p><a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--">String.toUpperCase</a></p>
 <blockquote>
-<div><p>Crée une chaîne de caractères en majuscules.</p>
+<div><p>Crée une chaîne de caractères équivalente en majuscules.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span> <span class="c1">// &quot;HELLO WORLD&quot;</span>
 </pre></div>
 </div>
@@ -260,12 +260,11 @@ Cela signifie que des opérations intensives sur les chaînes de caractères peu
 toutes les opérations se font finalement par copie.</p>
 <p>Nous avons vu qu’il n’existe pas réellement de constante en Java mais
 uniquement des attributs déclarés avec <strong>static</strong> et <strong>final</strong>. Cette immutabilité
-permet de garantir qu’une instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> déclarée <strong>static</strong> et <strong>final</strong>
+permet de garantir qu’une variable de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a> déclarée <strong>static</strong> et <strong>final</strong>
 ne peut plus être modifié.</p>
 <p>La JVM tire également partie de cette immutabilité afin de réaliser
 des optimisations de place mémoire. Si par exemple vous écrivez plusieurs fois
-dans le code source la même chaîne de caractères, la JVM considérera qu’il s’agit
-de la même chaîne de caractères et ne créera pas une nouvelle emplacement mémoire
+dans le code source la même chaîne de caractères, la JVM ne créera pas un nouvel emplacement mémoire
 pour cette chaîne. Ainsi, il est possible d’avoir des comportements assez déroutants
 au premier abord en Java :</p>
 <div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -296,12 +295,12 @@ nouvelles références.</p>
 La quasi totalité des méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> retourne l’instance
 courante du <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html">StringBuilder</a> ce qui permet de chaîner les appels en une seule
 instruction.
-Pour obtenir la chaînes de caractère, il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#toString--">StringBuilder.toString</a>.</p>
+Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#toString--">StringBuilder.toString</a>.</p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
 <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">)</span>
   <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">)</span>
   <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;world&quot;</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="s">&quot; the&quot;</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="s">&quot; the&quot;</span><span class="o">)</span>    <span class="c1">// On insère la chaîne à l&#39;index 5</span>
   <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;!&#39;</span><span class="o">);</span>
 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span> <span class="c1">// &quot;Hello the world!&quot;</span>
 
@@ -372,7 +371,7 @@ reportez-vous à la documentation du <a class="reference external" href="https:/
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Il est également possible de formater des messages avec la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html">MessageFormat</a>.
-Il s’agit d’une classes plus ancienne qui offre une syntaxe différente pour décrire
+Il s’agit d’une classe plus ancienne qui offre une syntaxe différente pour décrire
 les paramètres dans la chaîne de formatage.</p>
 </div>
 </div>
@@ -536,8 +535,8 @@ expression régulière à l’aide de la méthode de classe <a class="reference 
 <li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
@@ -558,12 +557,12 @@ expression régulière à l’aide de la méthode de classe <a class="reference 
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 

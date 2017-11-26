@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les annotations" href="les_annotations.html" />
+    <link rel="next" title="Les classes internes" href="classe_interne.html" />
     <link rel="prev" title="Les lambdas" href="les_lambdas.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -301,6 +301,47 @@ entiers, vous constaterez que la sortie du programme est imprédictible.</p>
 somme puisque le calcul peut être réparti en sommes intermédiaires avant de réaliser
 la somme totale.</p>
 </div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice topic">
+<p class="topic-title first">Chaîne de caractères et streams</p>
+<p>Utilisez l’API des Streams pour compter le nombre de lettres dans une chaîne
+de caractères.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<ul class="last simple">
+<li>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html#chars--">chars</a> permet d’obtenir un stream de caractères depuis un objet
+de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.</li>
+<li>La méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#isAlphabetic-int-">Character.isAlphabetic</a> retourne <strong>true</strong> si le caractère passé
+en paramètre est une lettre.</li>
+</ul>
+</div>
+</div>
+<div class="exercice topic">
+<p class="topic-title first">Lecture d’un fichier CSV</p>
+<p>Ètant donné un fichier CSV contenant une liste de produits. Pour chaque
+ligne, on a le nom du produit, le montant HT du produit et la taxe en
+pourcentage pour ce produit :</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">produit1;12.3;20</div>
+<div class="line">produit2;5.3;5.5</div>
+<div class="line">produit4;123.23;20</div>
+</div>
+</div></blockquote>
+<p>En utilisant les streams, ecrivez deux programmes :</p>
+<ul class="simple">
+<li>Le premier programme doit retourner le prix TTC moyen de tous les produits</li>
+<li>Le second programme doit afficher la liste des produits taxés à 5,5% et qui
+coûtent moins de 100€ HT.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Vous pouvez créer une classe <em>Produit</em> pour représenter en interne chacun
+des produits.</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -328,8 +369,8 @@ la somme totale.</p>
 <li class="toctree-l1"><a class="reference internal" href="types_primitifs.html">Les types primitifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operateurs.html">Les opérateurs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_controle.html">Les structures de contrôle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tableau.html">Les tableaux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="attributs_et_methodes.html">Attributs &amp; méthodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cycle_de_vie.html">Cycle de vie d’un objet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Les packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a></li>
@@ -341,10 +382,9 @@ la somme totale.</p>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Streams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#creation-d-un-stream">Création d’un stream</a></li>
@@ -353,8 +393,10 @@ la somme totale.</p>
 <li class="toctree-l2"><a class="reference internal" href="#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#le-parallelisme">Le parallélisme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
 </ul>
 
