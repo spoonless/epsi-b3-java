@@ -48,7 +48,11 @@ et détailler les notions d’attributs et de méthodes.</p>
 <div class="section" id="les-attributs">
 <h2>Les attributs<a class="headerlink" href="#les-attributs" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les attributs représentent l’état interne d’un objet. Nous avons vu précédemment
-qu’un attribut a une portée, un type et un identifiant :</p>
+qu’un attribut a une portée, un type et un identifiant. Il est déclaré de la façon
+suivante dans le corps de la classe :</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>[portée] [type] [identifiant];
+</pre></div>
+</div>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
@@ -294,8 +298,14 @@ attributs de type primitif.</p>
 <h2>Les méthodes<a class="headerlink" href="#les-methodes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les méthodes permettent de définir le comportement des objets. nous avons vu précédemment
 qu’une méthode est définie pas sa <strong>signature</strong> qui spécifie sa portée, son type
-de retour, son nom et ses paramètres. La signature est suivie d’un bloc de code
-que l’on appelle le <strong>corps</strong> de méthode. Dans ce corps de méthode, il est possible
+de retour, son nom et ses paramètres entre parenthèses. La signature est suivie d’un bloc de code
+que l’on appelle le <strong>corps</strong> de méthode.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>[portée] [type de retour] [identifiant] ([liste des paramètres]) {
+  [code]
+}
+</pre></div>
+</div>
+<p>Dans ce corps de méthode, il est possible
 d’avoir accès au attribut de l’objet. Si la méthode modifie la valeur des attributs
 de l’objet, elle a un <em>effet de bord</em> qui change l’état interne de l’objet. C’est le
 cas dans l’exemple ci-dessous pour la méthode <em>accelerer</em> :</p>
@@ -967,16 +977,19 @@ on peut obtenir un tableau de caractères à partir d’une chaîne avec la mét
 <li class="toctree-l1"><a class="reference internal" href="la_classe_string.html">La classe String</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_exceptions.html">Les exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swing_interfaces_graphiques.html">Swing : les interfaces graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swing_interactions.html">Swing : les interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swing_notions_avancees.html">Swing : notions avancées</a></li>
 </ul>
 
 

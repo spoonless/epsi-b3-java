@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les interfaces" href="interface.html" />
+    <link rel="next" title="Les énumérations" href="enumeration.html" />
     <link rel="prev" title="Les exceptions" href="les_exceptions.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -247,6 +247,22 @@ d’une classe abstraite et les classes qui spécialisent cette classe doivent
 fournir une implémentation de la méthode abstraite <em>getContenu</em> afin de fournir
 le contenu de chaque cellule affichée par le tableur.</p>
 </div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Diplôme et classe abstraite</p>
+<p>Reprenez l’implémentation du système de gestion des diplômes des chapitres précédents.</p>
+<p>Si nous analysons notre hiérarchie d’héritage, nous voyons que toutes les classes
+qui héritent de <em>Examen</em> héritent également de la méthode <em>Examen.setNote</em>.
+Or les classes <em>Qcm</em> et <em>Projet</em> ont une façon particulière de positionner une note.
+Donc ces classes ne devraient pas posséder cette méthode.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Transformez la classe <em>Examen</em> en classe abstraite. Créez un classe concrète <em>Controle</em>
+pour remplacer la classe <em>Examen</em> comme classe concrète.</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -286,18 +302,22 @@ le contenu de chaque cellule affichée par le tableur.</p>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les classes abstraites</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_annotations.html">Les annotations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swing_interfaces_graphiques.html">Swing : les interfaces graphiques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swing_interactions.html">Swing : les interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swing_notions_avancees.html">Swing : notions avancées</a></li>
 </ul>
 
 
