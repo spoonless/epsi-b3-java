@@ -855,22 +855,6 @@ une exception si la note moyenne de tous les examens est inférieure à 10.</li>
 <p>Proposez une hiérarchie applicative de vos exceptions.</p>
 </div>
 </div>
-<div class="section" id="les-assertions">
-<h2>Les assertions<a class="headerlink" href="#les-assertions" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Java dispose du mot-clé <strong>assert</strong> qui permet d’ajouter des assertions dans le code
-source.</p>
-<p>Une assertion est une condition qui doit être vraie. Sinon une <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html">AssertionError</a> est jetée.
-La syntaxe est la suivante :</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">expression</span><span class="o">;</span>
-<span class="k">assert</span> <span class="n">expression</span> <span class="o">:</span> <span class="n">valeur</span><span class="o">;</span>
-</pre></div>
-</div>
-<p>L’expression doit être une expression booléenne, la valeur sera passée comme message
-à l’instance de <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html">AssertionError</a> si l’expression est fausse. Cela permet d’avoir
-une information de contexte d’erreur.</p>
-<p>Les assertions servent à vérifier les préconditions, les postconditions ou les
-invariants d’une classe.</p>
-</div>
 </div>
 
 
@@ -919,7 +903,6 @@ invariants d’une classe.</p>
 <li class="toctree-l2"><a class="reference internal" href="#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#les-assertions">Les assertions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
