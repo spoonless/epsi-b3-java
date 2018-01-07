@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les interfaces" href="interface.html" />
+    <link rel="next" title="Méthodes et classes génériques" href="generiques.html" />
     <link rel="prev" title="Les énumérations" href="enumeration.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -379,6 +379,30 @@ obtenue à partir de deux instances de <a class="reference external" href="https
 une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Date.html">java.util.Date</a>.</p>
 </div>
 </div>
+<div class="section" id="id2">
+<h2>Exercice<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice topic">
+<p class="topic-title first">Date des examens</p>
+<p>Reprenez l’implémentation du système de gestion des diplômes des chapitres
+précédents.</p>
+<p>Un <em>Examen</em> doit avoir une date. Attention, pour être valide, la date de l’examen
+doit être comprise entre le 1er octobre et le 30 juin.
+De plus, une date d’examen ne peut pas être un samedi ou un dimanche.</p>
+<p>Surchargez la méthode <em>toString</em> de manière à ce qu’un <em>Examen</em> (et toutes les
+classes qui en héritent) génère une chaîne de caractères de la forme :</p>
+<blockquote>
+<div>12,00/20 à l’examen du 07 janvier 2018</div></blockquote>
+<p>Affichez la note sur 20 et la date pour chaque examen d’un diplôme.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Pour la création de la chaîne de caractères, pensez à afficher correctement
+les notes avec des virgules en tronquant à deux décimales après la virgule.
+Il serait plus lisible d’aligner les notes en ajoutant des espaces à gauche.
+Vous pouvez vous reporter à la méthode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-">String.format</a> et aux motifs de formatage
+décrit dans la classe <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html">Formatter</a> pour produire cette chaîne de caractères.</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -422,11 +446,12 @@ une instance de la classe <a class="reference external" href="https://docs.oracl
 <li class="toctree-l2"><a class="reference internal" href="#calendar">Calendar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-api-date-time">L’API Date/Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#formatage-des-dates">Formatage des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
@@ -441,9 +466,9 @@ une instance de la classe <a class="reference external" href="https://docs.oracl
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
     
 </ul>
 

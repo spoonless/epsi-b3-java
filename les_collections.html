@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Les entrées/sorties" href="entrees_sorties.html" />
+    <link rel="next" title="Les interfaces" href="interface.html" />
     <link rel="prev" title="Méthodes et classes génériques" href="generiques.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -747,6 +747,26 @@ un tableau associatif vides et immutables.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="id1">
+<h2>Exercice<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Ajout d’examen dans un diplôme</p>
+<p>Reprenez l’implémentation du système de gestion des diplômes des chapitres
+précédents.</p>
+<p>Dans la représentation interne de la classe <em>Diplome</em>, remplacez le tableau
+des examens pour un attribut de type <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">List</a> et faites les modifications
+nécessaires dans le reste du projet.</p>
+<p>Pour la classe <em>Diplome</em>, ajoutez les méthodes suivantes :</p>
+<ul class="simple">
+<li>une méthode pour ajouter un examen à un diplôme</li>
+<li>une méthode pour retourner la liste des examens pour lesquels la note
+est inférieure à la valeur passée en paramètre.</li>
+<li>une méthode pour supprimer tous les examens antérieurs à une date passée
+en paramètre.</li>
+</ul>
+<p>Écrivez un programme qui utilise ces nouvelles méthodes.</p>
+</div>
+</div>
 </div>
 
 
@@ -786,7 +806,6 @@ un tableau associatif vides et immutables.</p>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les collections</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#les-listes">Les listes</a></li>
@@ -794,8 +813,10 @@ un tableau associatif vides et immutables.</p>
 <li class="toctree-l2"><a class="reference internal" href="#copie-d-une-collection-dans-un-tableau">Copie d’une collection dans un tableau</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#les-tableaux-associatifs-maps">Les tableaux associatifs (maps)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-classe-outil-collections">La classe outil Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Exercice</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
@@ -810,9 +831,9 @@ un tableau associatif vides et immutables.</p>
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
     
 </ul>
 

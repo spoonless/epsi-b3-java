@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Méthodes et classes génériques" href="generiques.html" />
-    <link rel="prev" title="Les dates" href="les_dates.html" />
+    <link rel="next" title="Les entrées/sorties" href="entrees_sorties.html" />
+    <link rel="prev" title="Les collections" href="les_collections.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -650,6 +650,33 @@ côté on peut créer et faire évoluer un système de persistance en ayant une 
 minimale aux opérations utilisateur puisque le système de persistance doit juste
 fournir des implémentations conformes aux interfaces.</p>
 </div>
+<div class="section" id="id2">
+<h2>Exercice<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Tri des notes</p>
+<p>Reprenez l’implémentation du système de gestion des diplômes des chapitres
+précédents.</p>
+<p>Faites évoluer la classe <em>Examen</em> afin d’ajouter un code pour un examen.
+Par exemple, un contrôle peut avoir le code «&nbsp;JAVA-LANG001&nbsp;» et un projet «&nbsp;PHP-PRJ&nbsp;».</p>
+<p>Ajoutez la méthode <em>getExamens</em> dans la classe <em>Diplome</em>. Cette méthode doit
+retourner un tableau des examens du diplôme trié selon un critère fourni en paramètre.</p>
+<p>Modifiez votre programme pour afficher successivement la liste des examens d’un diplôme
+triée suivant :</p>
+<ul class="simple">
+<li>le code des examens</li>
+<li>la note des examens</li>
+<li>la date des examens</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Pour trier un tableau en Java, vous devez utiliser la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-T:A-java.util.Comparator-">Arrays.sort(Object[], Comparator)</a>. Cette méthode prend en premier paramètre
+le tableau à trier et en deuxième paramètre une implémentation de l’interface générique
+<a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html">Comparator</a>. C’est l’implémentation de cette interface qui va être en charge
+de comparer les éléments deux à deux lors du tri.</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -689,6 +716,8 @@ fournir des implémentations conformes aux interfaces.</p>
 <li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les interfaces</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#declaration-d-un-interface">Déclaration d’un interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#implementation-d-une-interface">Implémentation d’une interface</a></li>
@@ -698,10 +727,9 @@ fournir des implémentations conformes aux interfaces.</p>
 <li class="toctree-l2"><a class="reference internal" href="#implementation-par-defaut">Implémentation par défaut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#la-segregation-d-interface">La ségrégation d’interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#l-inversion-de-dependance">L’inversion de dépendance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="generiques.html">Méthodes et classes génériques</a></li>
-<li class="toctree-l1"><a class="reference internal" href="les_collections.html">Les collections</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entrees_sorties.html">Les entrées/sorties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a></li>
@@ -716,9 +744,9 @@ fournir des implémentations conformes aux interfaces.</p>
 <hr />
 <ul>
     
-    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
-    
     <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/">Documentation Java</a></li>
+    
+    <li class="toctree-l1"><a href="http://docs.oracle.com/javase/8/docs/api/index.html?overview-summary.html">API Java</a></li>
     
 </ul>
 
