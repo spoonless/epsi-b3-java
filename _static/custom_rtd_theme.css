@@ -48,6 +48,14 @@ table.karnaugh tr td {
   border-left-width: 1px !important;
 }
 
+.rst-content .exercice {
+  background-color: #F0EBF5;
+}
+
+.rst-content .exercice > .admonition-title {
+  background-color: #AF81E3;
+}
+
 /* override table width restrictions */
 @media screen and (min-width: 600px) {
 

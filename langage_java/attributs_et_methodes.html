@@ -1330,8 +1330,8 @@ Dans Eclipse, faites un clic droit dans votre fichier de classe et choisissez
 </div>
 <div class="section" id="exercice">
 <h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="hint admonition">
-<p class="first admonition-title">La classe Phrase</p>
+<div class="exercice admonition">
+<p class="first admonition-title">Exercice - La classe Phrase</p>
 <p>Implémenter la classe <em>Phrase</em>. Cette classe permet de créer une chaîne de
 caractères en ajoutant des mots qui seront séparés par un séparateur.
 Par défaut, le séparateur est le caractère espace, mais il peut être changé.</p>
@@ -1371,17 +1371,23 @@ sous la forme d’une chaîne de caractères de l’objet</li>
 </div>
 <div class="last admonition hint">
 <p class="first admonition-title">Indication</p>
-<p class="last">On ne peut pas parcourir directement une chaîne de caractères, par contre
+<p>On ne peut pas parcourir directement une chaîne de caractères, par contre
 on peut obtenir un tableau de caractères à partir d’une chaîne avec la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">toCharArray</a>. Pour savoir si un caractère est une lettre, on utilise la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">toCharArray</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">helloWorld</span> <span class="o">=</span> <span class="s">&quot;Hello world!&quot;</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">helloWorld</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p class="last">Pour savoir si un caractère est une lettre, on utilise la méthode
 <strong>static</strong> <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html#isAlphabetic(int)">Character.isAlphabetic</a>.</p>
 </div>
 </div>
-<div class="hint admonition">
-<p class="first admonition-title">Méthode et attribut de classe</p>
-<blockquote class="last">
-<div>Ajoutez une méthode de classe à la classe <em>Phrase</em> qui retourne le nombre de mots
-de la plus grande phrase créée.</div></blockquote>
+<div class="exercice admonition">
+<p class="first admonition-title">Exercice - Méthode et attribut de classe</p>
+<p class="last">Ajoutez une méthode de classe à la classe <em>Phrase</em> qui retourne le nombre de lettres
+de la plus grande phrase créée.</p>
 </div>
 </div>
 </div>
