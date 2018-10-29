@@ -531,6 +531,248 @@
 <li class="toctree-l1"><a class="reference internal" href="langage_java/les_annotations.html">Les annotations</a></li>
 </ul>
 </div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP 1 - Gestionnaire de musique</p>
+<p>On souhaite réaliser une application de gestion de musique en ligne de commande.
+L’application doit permettre de réaliser les fonctionnalités suivantes :</p>
+<ol class="arabic simple">
+<li>Lister tous les albums de musique</li>
+<li>Lister le détail d’un album</li>
+<li>Lister tous les artistes</li>
+<li>Lister les albums d’un artiste</li>
+</ol>
+<p>Quelques exemples d’affichage de l’application :</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Accueil de l’application</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Bienvenue sur l&#39;application de gestion de musique.
+Que voulez-vous faire ?
+
+  1. Lister les albums
+  2. Lister les artistes
+  3. Quitter l&#39;application
+
+Votre choix ?
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Liste des albums</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Liste des albums
+
+  1. Are You Experienced
+  2. Electric Ladyland
+  3. Les quatre saisons
+  4. Push the sky Away
+  5. Skeleton tree
+
+
+Votre sélection (0 pour retourner à l&#39;accueil) ?
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Liste des artistes</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Liste des artistes
+
+  1. Antonio Vivaldi
+  2. Nick Cave &amp; the bad seeds
+  3. The Jimi Hendrix Experience
+
+Votre sélection (0 pour retourner à l&#39;accueil) ?
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Liste des albums après sélection d’un artiste</span><a class="headerlink" href="#id4" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Liste des albums de l&#39;artiste The Jimi Hendrix Experience
+
+  1. Are You Experienced
+  2. Electric Ladyland
+
+Votre sélection (0 pour retourner à l&#39;accueil) ?
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Détail d’un album</span><a class="headerlink" href="#id5" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Titre : Are You Experienced
+Durée : 40:04
+Artiste : The Jimi Hendrix Experience
+
+  1.  Purple Haze               2:46
+  2.  Manic Depression          3:46
+  3.  Hey Joe (Billy Roberts)   3:23
+  4.  Love or Confusion         3:15
+  5.  May This Be Love          3:14
+  6.  I Don&#39;t Live Today        3:55
+  7.  The Wind Cries Mary       3:21
+  8.  Fire                      2:34
+  9.  Third Stone from the Sun  6:40
+  10. Foxy Lady                 3:15
+  11. Are You Experienced?      3:55
+
+0 pour retourner à l&#39;accueil :
+</pre></div>
+</div>
+</div>
+<p>Une vue générale des classes principales est donnée dans le diagramme ci-dessous :</p>
+<div class="figure" id="id6">
+<img alt="_images/discotheque_classes_modele.png" src="_images/discotheque_classes_modele.png" />
+<p class="caption"><span class="caption-text">Les classes du modèle de l’application</span></p>
+</div>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Discotheque</span></code> contient la liste des albums disponibles. Pour simplifier,
+on considère que cette classe possède une méthode <code class="docutils literal notranslate"><span class="pre">charger()</span></code> qui crée <em>en dur</em>
+tous les objets représentant les albums, leurs artistes et leurs pistes musicales.
+De plus, la classe <code class="docutils literal notranslate"><span class="pre">Discotheque</span></code> peut donner accès à la liste des artistes et à la
+liste des albums qu’elle contient.</p>
+<p>Un artiste est représenté par la classe <code class="docutils literal notranslate"><span class="pre">Artiste</span></code>. Un artiste est désigné par son
+nom.</p>
+<p>Un album est représenté par la classe <code class="docutils literal notranslate"><span class="pre">Album</span></code>. Un album est défini par :</p>
+<ul class="simple">
+<li>son titre</li>
+<li>son année de sortie</li>
+<li>sa durée qui est la somme des durées des pistes musicales qu’il contient.</li>
+</ul>
+<p>Une piste musicale est représentée par la classe <code class="docutils literal notranslate"><span class="pre">Piste</span></code>. Une piste musicale
+est définie par :</p>
+<ul class="simple">
+<li>son titre</li>
+<li>sa durée</li>
+</ul>
+<p>En vous aidant du diagramme UML pour les relations entre classes ainsi que
+des indications ci-dessus, écrivez les classes Java correspondantes. Implémentez
+l’application de manière à ce qu’elle affiche les écrans donnés en exemple.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Vous devez également utiliser une approche objet pour réaliser le reste
+de l’application même si aucun diagramme UML ne vous est donné.</p>
+</div>
+<div class="last admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Pour permettre à l’utilisateur de saisir ses choix, utilisez
+la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Scanner.html">Scanner</a> en créant une instance pour le flux d’entrée standard <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#in">System.in</a>.
+Vous trouverez des exemples d’utilisation de cette classe dans
+le <a class="reference internal" href="langage_java/entrees_sorties.html#java-classe-scanner"><span class="std std-ref">chapitre sur les entrées / sorties</span></a>.</p>
+</div>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP 2 - Gestionnaire de musique</p>
+<p>On souhaite faire évoluer l’application de gestion de musique en ajoutant la
+possibilité de réaliser une recherche :</p>
+<ul class="simple">
+<li>soit selon le nom de l’artiste</li>
+<li>soit selon le titre de l’album</li>
+<li>soit selon l’année de l’album</li>
+</ul>
+<p>Les écrans de l’application doivent évoluer de la manière suivante :</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Nouvel accueil de l’application</span><a class="headerlink" href="#id7" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Bienvenue sur l&#39;application de gestion de musique.
+Que voulez-vous faire ?
+
+  1. Lister les albums
+  2. Lister les artistes
+  3. Rechercher des albums
+  4. Quitter l&#39;application
+
+Votre choix ?
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Écran de choix du type de recherche</span><a class="headerlink" href="#id8" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Quel type de recherche souhaitez-vous ?
+
+  1. par nom d&#39;artiste
+  2. par titre d&#39;album
+  3. par année d&#39;album
+
+Votre sélection (0 pour retourner à l&#39;accueil) ?
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Exemple pour la recherche par nom d’artiste</span><a class="headerlink" href="#id9" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Recherche par nom d&#39;artiste.
+
+Le nom à rechercher :
+</pre></div>
+</div>
+</div>
+<p>Ensuite, la recherche doit être faites et aboutir à l’affichage de la liste
+des albums correspondants.</p>
+<p class="last">Réalisez l’implémentation des recherches. Pour cela, <strong>créez des classes
+représentant chaque type de recherche</strong> (et d’autres si nécessaire).</p>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP 3 (optionnel) - Gestionnaire de musique</p>
+<p>On souhaite faire évoluer l’application de gestion de musique afin de lire
+les morceaux de musique.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Ce TP est optionnel.</p>
+</div>
+<p>On souhaite faire évoluer l’écran de détail de la façon suivante :</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Détail d’un album</span><a class="headerlink" href="#id10" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Titre : Are You Experienced
+Durée : 40:04
+Artiste : The Jimi Hendrix Experience
+
+  1.  Purple Haze               2:46
+  2.  Manic Depression          3:46
+  3.  Hey Joe (Billy Roberts)   3:23
+  4.  Love or Confusion         3:15
+  5.  May This Be Love          3:14
+  6.  I Don&#39;t Live Today        3:55
+  7.  The Wind Cries Mary       3:21
+  8.  Fire                      2:34
+  9.  Third Stone from the Sun  6:40
+  10. Foxy Lady                 3:15
+  11. Are You Experienced?      3:55
+
+Numéro de la piste à jouer (0 pour retourner à l&#39;accueil) :
+</pre></div>
+</div>
+</div>
+<p>Le comportement attendu est le suivant :</p>
+<ul class="simple">
+<li>Si l’utilisateur choisit un numéro de piste, la validation lance la lecture
+de la piste.</li>
+<li>Si une piste est déjà en cours de lecteur et que l’utilisateur choisit un
+numéro de piste, la lecture s’interrompt et la piste choisie est lue.</li>
+<li>Si une piste est déjà en cours de lecture et que l’utilisateur choisit
+0 (retour à l’accueil), la lecture s’interrompt et l’écran d’accueil est
+affiché.</li>
+</ul>
+<p>Ajouter la méthode <code class="docutils literal notranslate"><span class="pre">jouer()</span></code> et <code class="docutils literal notranslate"><span class="pre">arreter()</span></code> sur la classe <code class="docutils literal notranslate"><span class="pre">Piste</span></code> pour
+lancer et arrêter la lecture du fichier son. Ainsi la classe <code class="docutils literal notranslate"><span class="pre">Piste</span></code> doit
+contenir un attribut de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/File.html">File</a> représentant le fichier qui peut être lu. Faites
+évoluer la classe <code class="docutils literal notranslate"><span class="pre">Piste</span></code> ainsi que les autres classes pour réaliser les
+fonctionnalités demandées.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p>Pour lire un fichier son en Java, on peut utiliser l’API <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/sound/sampled/package-summary.html">javax.sound</a>.
+Ci-dessous, un exemple de code permettant de lire un fichier son avec cette API :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;monfichier.wav&quot;</span><span class="o">);</span>
+<span class="n">AudioInputStream</span> <span class="n">audioInputStream</span> <span class="o">=</span> <span class="n">AudioSystem</span><span class="o">.</span><span class="na">getAudioInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
+<span class="n">Clip</span> <span class="n">clip</span> <span class="o">=</span> <span class="n">AudioSystem</span><span class="o">.</span><span class="na">getClip</span><span class="o">();</span>
+<span class="n">clip</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">audioInputStream</span><span class="o">);</span>
+<span class="n">clip</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>Les imports nécessaires pour le code ci-dessus sont :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.sound.sampled.AudioInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.sound.sampled.AudioSystem</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.sound.sampled.Clip</span><span class="o">;</span>
+</pre></div>
+</div>
+<p class="last">Attention, selon votre environnement, l’API <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/sound/sampled/package-summary.html">javax.sound</a> peut ou non lire
+un format de fichier son. Le format WAV est normalement disponible pour tous
+les environnements.</p>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
