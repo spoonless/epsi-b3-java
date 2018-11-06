@@ -252,6 +252,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -284,11 +289,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -580,7 +580,7 @@ exemple, pour accèder à la classe <a class="reference external" href="https://
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
     <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
   <span class="o">}</span>

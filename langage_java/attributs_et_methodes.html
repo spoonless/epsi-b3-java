@@ -252,6 +252,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -284,11 +289,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -994,7 +994,7 @@ de classe à travers un objet. Même si l’effet est identique, il est plus lis
 d’invoquer une méthode de classe à partir de la classe elle-même.</p>
 <p>La méthode de classe la plus célèbre en Java est sans doute <strong>main</strong>. Elle permet
 de définir le point d’entrée d’une application dans une classe :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// ...</span>
 <span class="o">}</span>
 </pre></div>
@@ -1292,11 +1292,11 @@ km/s à l’attribut en m/s et inversement.</p>
   <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
 
   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="nf">convertirEnMetresSeconde</span><span class="o">(</span><span class="kt">float</span> <span class="n">valeur</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">valeur</span> <span class="o">*</span> <span class="mi">1000</span><span class="n">f</span> <span class="o">/</span> <span class="mi">3600</span><span class="n">f</span>
+    <span class="k">return</span> <span class="n">valeur</span> <span class="o">*</span> <span class="mi">1000</span><span class="n">f</span> <span class="o">/</span> <span class="mi">3600</span><span class="n">f</span><span class="o">;</span>
   <span class="o">}</span>
 
   <span class="kd">private</span> <span class="kd">static</span> <span class="kt">float</span> <span class="nf">convertirEnKilometresHeure</span><span class="o">(</span><span class="kt">float</span> <span class="n">valeur</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">valeur</span> <span class="o">/</span> <span class="mi">1000</span><span class="n">f</span> <span class="o">*</span> <span class="mi">3600</span><span class="n">f</span>
+    <span class="k">return</span> <span class="n">valeur</span> <span class="o">/</span> <span class="mi">1000</span><span class="n">f</span> <span class="o">*</span> <span class="mi">3600</span><span class="n">f</span><span class="o">;</span>
   <span class="o">}</span>
 
   <span class="cm">/**</span>
@@ -1339,7 +1339,7 @@ Par défaut, le séparateur est le caractère espace, mais il peut être changé
 <blockquote>
 <div><ul class="simple">
 <li>ajouter un mot</li>
-<li>ajouter une serie de mots</li>
+<li>ajouter une série de mots</li>
 <li>ajouter un mot en le répétant n fois</li>
 <li>changer le séparateur qui peut être soit une chaîne de caractères soit un seul
 caractère</li>

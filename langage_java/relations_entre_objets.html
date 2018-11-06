@@ -252,6 +252,11 @@
 <li class="toctree-l2"><a class="reference internal" href="polymorphisme.html#le-principe-du-ouvert-ferme">Le principe du ouvert/fermé</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="la_classe_object.html">La classe Object</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-equals">La méthode equals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la_classe_object.html#la-methode-hashcode">La méthode hashCode</a></li>
@@ -284,11 +289,6 @@
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#exception-cause">Exception cause</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#les-erreurs-et-les-exceptions-runtime">Les erreurs et les exceptions runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_exceptions.html#choix-entre-checked-et-unchecked">Choix entre checked et unchecked</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classe_abstraite.html">Les classes abstraites</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-classe-abstraite">Déclarer une classe abstraite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classe_abstraite.html#declarer-une-methode-abstraite">Déclarer une méthode abstraite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="enumeration.html">Les énumérations</a><ul>
@@ -781,7 +781,7 @@ génèrera une instruction d’appel au constructeur sans paramètre de la class
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="nf">MaClasse</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">()</span>
+    <span class="kd">super</span><span class="o">();</span>
   <span class="o">}</span>
 
 <span class="o">}</span>
