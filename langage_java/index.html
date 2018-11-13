@@ -684,7 +684,90 @@ des albums correspondants.</p>
 représentant chaque type de recherche</strong> (et d’autres si nécessaire).</p>
 </div>
 <div class="exercice admonition">
-<p class="first admonition-title">TP 3 (optionnel) - Gestionnaire de musique</p>
+<p class="first admonition-title">TP 3 - Gestionnaire de musique</p>
+<p class="last">Transformez la classe <code class="docutils literal notranslate"><span class="pre">Composition</span></code> en classe abstraite. Adaptez le code
+en conséquence (surtout pour la prise en compte de la durée).</p>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP 4 - Gestionnaire de musique</p>
+<p>On souhaite modifier la méthode <code class="docutils literal notranslate"><span class="pre">Discotheque.charger()</span></code> afin de charger les
+données depuis un fichier. Le fichier sera un fichier csv contenant une piste
+par ligne avec <strong>le titre de l’album, le titre de la piste et la durée de la piste</strong>.</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Exemple de fichier des pistes</span><a class="headerlink" href="#id10" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Are You Experienced;Purple Haze;2:46
+Are You Experienced;Manic Depression;3:46
+Are You Experienced;Hey Joe (Billy Roberts);3:23
+Are You Experienced;Love or Confusion;3:15
+Are You Experienced;May This Be Love;3:14
+Are You Experienced;I Don&#39;t Live Today;3:55
+Are You Experienced;The Wind Cries Mary;3:21
+Are You Experienced;Fire;2:34
+Are You Experienced;Third Stone from the Sun;6:40
+Are You Experienced;Foxy Lady;3:15
+Are You Experienced;Are You Experienced?;3:55
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Pour des raisons de simplification, le fichier ne contient pas le nom de
+l’artiste. Le fichier est trié dans l’ordre pour les pistes de chaque album.
+Vous pouvez adapter le format de la durée dans le fichier (par exemple
+le fichier peut contenir les durées en secondes si vous préférez).</p>
+</div>
+<p>La nouvelle méthode <code class="docutils literal notranslate"><span class="pre">Discotheque.charger</span></code> prend en paramètre le chemin du fichier.
+Cette méthode peut lancer les exceptions suivantes :</p>
+<ul class="simple">
+<li>java.io.IOException si le fichier n’existe pas ou ne peut pas être lu</li>
+<li>Une exception propre à l’application (que vous devez créer) pour signaler que le contenu d’une ligne
+n’est pas valide. Soit parce qu’il manque des champs, soit parce que la durée
+d’une piste est un nombre négatif.</li>
+</ul>
+<p>Modifier le programme pour qu’il demande au démarrage le chemin du fichier à charger.
+Si une exception survient, il faut afficher un message d’erreur clair à l’utilisateur
+et lui demander un nouveau chemin pour le fichier à charger.</p>
+<p>Pour réaliser le chargement, vous pouvez vous inspirer du bout de programme suivant
+qui utilise l’API d’entrée/sortie en Java :</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Programme d’exemple pour la lecture d’un fichier</span><a class="headerlink" href="#id11" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.io</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.LineNumberReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Reader</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestFileReader</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">fichier</span> <span class="o">=</span> <span class="s">&quot;/le/chemin/du/fichier.txt&quot;</span><span class="o">;</span>
+    <span class="n">Reader</span> <span class="n">inputStreamReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">fichier</span><span class="o">),</span> <span class="s">&quot;UTF-8&quot;</span><span class="o">);</span>
+    <span class="n">LineNumberReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LineNumberReader</span><span class="o">(</span><span class="n">inputStreamReader</span><span class="o">);</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">String</span> <span class="n">ligne</span><span class="o">;</span>
+      <span class="k">while</span> <span class="o">((</span><span class="n">ligne</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// on affiche la ligne</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ligne</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="n">reader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p>Pour analyser les lignes lues, vous pouvez utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#split(java.lang.String)">split</a> de la classe
+<code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
+<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">exemple</span> <span class="o">=</span> <span class="s">&quot;Hello;the;world&quot;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">resultat</span><span class="o">[]</span> <span class="o">=</span> <span class="n">exemple</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;;&quot;</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="exercice admonition">
+<p class="first admonition-title">TP 5 (optionnel) - Gestionnaire de musique</p>
 <p>On souhaite faire évoluer l’application de gestion de musique afin de lire
 les morceaux de musique.</p>
 <div class="admonition important">
@@ -692,8 +775,8 @@ les morceaux de musique.</p>
 <p class="last">Ce TP est optionnel.</p>
 </div>
 <p>On souhaite faire évoluer l’écran de détail de la façon suivante :</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Détail d’un album</span><a class="headerlink" href="#id10" title="Lien permanent vers ce code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Détail d’un album</span><a class="headerlink" href="#id12" title="Lien permanent vers ce code">¶</a></div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Titre : Are You Experienced
 Durée : 40:04
 Artiste : The Jimi Hendrix Experience
@@ -751,11 +834,6 @@ Ci-dessous, un exemple de code permettant de lire un fichier son avec cette API 
 un format de fichier son. Le format WAV est normalement disponible pour tous
 les environnements.</p>
 </div>
-</div>
-<div class="exercice admonition">
-<p class="first admonition-title">TP 4 - Gestionnaire de musique</p>
-<p class="last">Transformez la classe <code class="docutils literal notranslate"><span class="pre">Composition</span></code> en classe abstraite. Adaptez le code
-en conséquence (surtout pour la prise en compte de la durée).</p>
 </div>
 
 
