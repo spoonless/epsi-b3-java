@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Le polymorphisme &mdash; Documentation Langage Java 1.0</title>
+  <title>Le polymorphisme &mdash; Documentation Langage Java </title>
   
 
   
@@ -20,35 +20,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les classes abstraites" href="classe_abstraite.html" />
-    <link rel="prev" title="Les relations entre objets" href="relations_entre_objets.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="Héritage et composition" href="heritage_composition.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -227,16 +230,16 @@
 <li class="toctree-l2"><a class="reference internal" href="package.html#le-fichier-package-info-java">Le fichier package-info.java</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#l-heritage-is-a">L’héritage (is-a)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-constructeur">Héritage et constructeur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-simple-object">Héritage simple : Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-affectation">Héritage et affectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heritage_composition.html">Héritage et composition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#l-heritage-is-a">L’héritage (is-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-constructeur">Héritage et constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-simple-object">Héritage simple : Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-affectation">Héritage et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-final">Héritage et final</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-composition-has-a">La composition (has-a)</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Le polymorphisme</a><ul>
@@ -298,18 +301,6 @@
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#generation-d-une-enumeration">Génération d’une énumération</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#ajout-de-methodes-et-d-attributs">Ajout de méthodes et d’attributs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#ajout-de-constructeurs">Ajout de constructeurs</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#date-la-classe-historique">Date : la classe historique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#calendar">Calendar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#l-api-date-time">L’API Date/Time</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="les_dates.html#id1">Les Dates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="les_dates.html#la-classe-instant">La classe Instant</a></li>
-<li class="toctree-l3"><a class="reference internal" href="les_dates.html#periode-et-duree">Période et durée</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a><ul>
@@ -377,6 +368,20 @@
 <li class="toctree-l3"><a class="reference internal" href="entrees_sorties.html#identifiant-de-version-de-serialisation">Identifiant de version de sérialisation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#date-la-classe-historique">Date : la classe historique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#calendar">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#l-api-date-time">L’API Date/Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_dates.html#id1">Les Dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_dates.html#la-classe-instant">La classe Instant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_dates.html#periode-et-duree">Période et durée</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
@@ -478,7 +483,7 @@
         <a href="classe_abstraite.html" class="btn btn-neutral float-right" title="Les classes abstraites" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="relations_entre_objets.html" class="btn btn-neutral" title="Les relations entre objets" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="heritage_composition.html" class="btn btn-neutral" title="Héritage et composition" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -593,17 +598,17 @@ et mêmes paramètres.</p>
 si, celle-ci est plus permissive que celle de la méthode d’origine. Il est donc
 possible d’augmenter la portée de la méthode mais jamais de la réduire :</p>
 <ul class="simple">
-<li>Une méthode de portée package peut être redéfinie avec la portée package
-mais aussi <strong>protected</strong> ou <strong>public</strong>.</li>
-<li>Une méthode de portée <strong>protected</strong> peut être redéfinie avec la portée
-<strong>protected</strong> ou <strong>public</strong>.</li>
-<li>Une méthode de portée <strong>public</strong> ne peut être redéfinie qu’avec la portée
-<strong>public</strong>.</li>
+<li><p>Une méthode de portée package peut être redéfinie avec la portée package
+mais aussi <strong>protected</strong> ou <strong>public</strong>.</p></li>
+<li><p>Une méthode de portée <strong>protected</strong> peut être redéfinie avec la portée
+<strong>protected</strong> ou <strong>public</strong>.</p></li>
+<li><p>Une méthode de portée <strong>public</strong> ne peut être redéfinie qu’avec la portée
+<strong>public</strong>.</p></li>
 </ul>
 <p>Le changement de portée dans la redéfinition sert la plupart du temps à placer
 une implémentation dans la classe parente mais à laisser les classes filles
 qui le désirent offrir publiquement l’accès à cette méthode.</p>
-<p>Au <a class="reference internal" href="relations_entre_objets.html#portee-protected"><span class="std std-ref">chapitre précédent</span></a>, nous avions introduit les
+<p>Au <a class="reference internal" href="heritage_composition.html#portee-protected"><span class="std std-ref">chapitre précédent</span></a>, nous avions introduit les
 classes <em>Vehicule</em>, <em>Voiture</em> et <em>Moto</em>. En partant du principe que seules les
 instances de <em>Voiture</em> peuvent offrir la méthode <em>reculer</em>, nous avons ajouté
 cette méthode dans la classe <em>Voiture</em>. Pour cela, nous avions dû modifier
@@ -889,8 +894,8 @@ compilation. L’utilisation du mot-clé <strong>final</strong> pour une méthod
 qu’une méthode aura toujours le même comportement même dans les classes qui
 en héritent.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Même si les méthodes <strong>static</strong> n’autorisent pas la redéfinition, elles peuvent
+<p class="admonition-title">Note</p>
+<p>Même si les méthodes <strong>static</strong> n’autorisent pas la redéfinition, elles peuvent
 être déclarées <strong>final</strong>. Dans ce cas, il n’est pas possible d’ajouter une
 méthode de classe qui a la même signature dans les classes qui en héritent.</p>
 </div>
@@ -1054,7 +1059,7 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
         <a href="classe_abstraite.html" class="btn btn-neutral float-right" title="Les classes abstraites" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="relations_entre_objets.html" class="btn btn-neutral" title="Les relations entre objets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="heritage_composition.html" class="btn btn-neutral float-left" title="Héritage et composition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -1063,11 +1068,12 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -1081,27 +1087,16 @@ interdire de modifier le comportement d’une classe, on peut déclarer ses attr
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

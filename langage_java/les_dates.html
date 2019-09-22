@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les dates &mdash; Documentation Langage Java 1.0</title>
+  <title>Les dates &mdash; Documentation Langage Java </title>
   
 
   
@@ -20,35 +20,38 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Les interfaces" href="interface.html" />
-    <link rel="prev" title="Les énumérations" href="enumeration.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+    <link rel="next" title="Les lambdas" href="les_lambdas.html" />
+    <link rel="prev" title="Les entrées/sorties" href="entrees_sorties.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -227,16 +230,16 @@
 <li class="toctree-l2"><a class="reference internal" href="package.html#le-fichier-package-info-java">Le fichier package-info.java</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="relations_entre_objets.html">Les relations entre objets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#l-heritage-is-a">L’héritage (is-a)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-constructeur">Héritage et constructeur</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-simple-object">Héritage simple : Object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-affectation">Héritage et affectation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-portee-protected">La portée protected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#heritage-et-final">Héritage et final</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relations_entre_objets.html#la-composition-has-a">La composition (has-a)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heritage_composition.html">Héritage et composition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#l-heritage-is-a">L’héritage (is-a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-constructeur">Héritage et constructeur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-simple-object">Héritage simple : Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-affectation">Héritage et affectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#le-mot-cle-instanceof">Le mot-clé instanceof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-portee-protected">La portée protected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-des-methodes-et-attributs-de-classe">Héritage des méthodes et attributs de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#heritage-et-final">Héritage et final</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heritage_composition.html#la-composition-has-a">La composition (has-a)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="polymorphisme.html">Le polymorphisme</a><ul>
@@ -298,18 +301,6 @@
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#generation-d-une-enumeration">Génération d’une énumération</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#ajout-de-methodes-et-d-attributs">Ajout de méthodes et d’attributs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#ajout-de-constructeurs">Ajout de constructeurs</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Les dates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#date-la-classe-historique">Date : la classe historique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#calendar">Calendar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#l-api-date-time">L’API Date/Time</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Les Dates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#la-classe-instant">La classe Instant</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#periode-et-duree">Période et durée</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#formatage-des-dates">Formatage des dates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a><ul>
@@ -377,6 +368,20 @@
 <li class="toctree-l3"><a class="reference internal" href="entrees_sorties.html#identifiant-de-version-de-serialisation">Identifiant de version de sérialisation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Les dates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#date-la-classe-historique">Date : la classe historique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calendar">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#l-api-date-time">L’API Date/Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Les Dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#la-classe-instant">La classe Instant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#periode-et-duree">Période et durée</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#formatage-des-dates">Formatage des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lecture-des-dates">Lecture des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
@@ -475,10 +480,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="interface.html" class="btn btn-neutral float-right" title="Les interfaces" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="les_lambdas.html" class="btn btn-neutral float-right" title="Les lambdas" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="enumeration.html" class="btn btn-neutral" title="Les énumérations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="entrees_sorties.html" class="btn btn-neutral" title="Les entrées/sorties" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -499,10 +504,10 @@ Ainsi, il existe plusieurs façons de représenter les dates et le temps en Java
 <p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a> est la première classe a être apparue pour représenter
 une date. Elle comporte de nombreuses limitations :</p>
 <ul class="simple">
-<li>Il n’est pas possible de représenter des dates antérieures à 1900</li>
-<li>Elle ne supporte pas les fuseaux horaires</li>
-<li>Elle ne supporte que les dates pour le calendrier grégorien</li>
-<li>Elle ne permet pas d’effectuer des opérations (ajout d’un jour, d’une année…)</li>
+<li><p>Il n’est pas possible de représenter des dates antérieures à 1900</p></li>
+<li><p>Elle ne supporte pas les fuseaux horaires</p></li>
+<li><p>Elle ne supporte que les dates pour le calendrier grégorien</p></li>
+<li><p>Elle ne permet pas d’effectuer des opérations (ajout d’un jour, d’une année…)</p></li>
 </ul>
 <p>La quasi totalité des constructeurs et des méthodes de cette classe ont été
 dépréciés. Cela signifie qu’il ne faut pas les utiliser. Pourtant, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a>
@@ -541,16 +546,16 @@ depuis le 1er janvier 1970 à 00:00:00.000 (<em>l’epoch</em>). Il est égaleme
 une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html#setTime(long)">Date.setTime</a> en fournissant le nombre de
 millisecondes depuis le 1er janvier 1970 à 00:00:00.000.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Astuce</p>
+<p class="admonition-title">Astuce</p>
 <p>Pour connaître le nombre de millisecondes écoulées depuis le 1er janvier 1970
 à 00:00:00.000, il faut appeler la méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#currentTimeMillis()">System.currentTimeMillis</a>.</p>
-<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">nbMilliSecondes</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">nbMilliSecondes</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Depuis l’introduction en Java 8 de la nouvelle API des dates,
+<p class="admonition-title">Note</p>
+<p>Depuis l’introduction en Java 8 de la nouvelle API des dates,
 il est possible de convertir une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> en une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a> avec
 la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html#toInstant()">Date.toInstant</a>.</p>
 </div>
@@ -561,11 +566,11 @@ la méthode <a class="reference external" href="https://docs.oracle.com/javase/1
 la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a>. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> pallie les nombreux désavantages
 de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">Date</a> :</p>
 <ul class="simple">
-<li>Il est possible de représenter toutes les dates (y compris avant notre ère)</li>
-<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> supporte les fuseaux horaires (<em>timezone</em>)</li>
-<li>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> est une classe abstraite pour laquelle il est possible de
+<li><p>Il est possible de représenter toutes les dates (y compris avant notre ère)</p></li>
+<li><p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> supporte les fuseaux horaires (<em>timezone</em>)</p></li>
+<li><p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Calendar.html">Calendar</a> est une classe abstraite pour laquelle il est possible de
 fournir des classes concrètes pour gérer différents calendriers (le JDK ne propose
-que la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> comme implémentation concrète pour le calendrier grégorien).</li>
+que la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/GregorianCalendar.html">GregorianCalendar</a> comme implémentation concrète pour le calendrier grégorien).</p></li>
 </ul>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
 
@@ -661,8 +666,8 @@ le fuseau horaire pour lequel on désire la date et/ou l’heure actuelle.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Si vous avez besoin de représenter des dates avec le fuseau horaire, alors il faut
+<p class="admonition-title">Note</p>
+<p>Si vous avez besoin de représenter des dates avec le fuseau horaire, alors il faut
 utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>.</p>
 </div>
 <p>Les classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a> permettent de manipuler les dates et d’obtenir
@@ -717,8 +722,8 @@ précédentes qui permettent de représenter les dates pour les humains, la clas
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a>,
+<p class="admonition-title">Note</p>
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a>,
 <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Instant.html">Instant</a> implémentent toutes les interfaces <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/Temporal.html">Temporal</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/TemporalAccessor.html">TemporalAccessor</a>. Cela
 permet d’utiliser facilement des instances de ces classes les unes avec les autres
 puisque beaucoup de leurs méthodes attendent en paramètres des instances de type
@@ -726,7 +731,7 @@ puisque beaucoup de leurs méthodes attendent en paramètres des instances de ty
 </div>
 </div>
 <div class="section" id="periode-et-duree">
-<h3>Période et durée<a class="headerlink" href="#periode-et-duree" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="java-date-periode-duree"></span><h3>Période et durée<a class="headerlink" href="#periode-et-duree" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Il est possible de définir des périodes grâce à des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Period.html">Period</a>.
 Une période peut être construite directement ou à partir de la différence entre deux
 instances de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/temporal/Temporal.html">Temporal</a>. Il est ensuite possible de modifier une date en ajoutant ou soustrayant
@@ -781,7 +786,7 @@ obtenue à partir de deux instances de <a class="reference external" href="https
 <div class="section" id="formatage-des-dates">
 <h2>Formatage des dates<a class="headerlink" href="#formatage-des-dates" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour formater une date pour l’affichage, il est possible d’utiliser la méthode
-<em>format</em> déclarée dans les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>,
+<code class="docutils literal notranslate"><span class="pre">format</span></code> déclarée dans les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>,
 <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a>.</p>
 <p>Le format de représentation d’une date et/ou du temps est défini par la classe
 <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/format/DateTimeFormatter.html">DateTimeFormatter</a>.</p>
@@ -820,9 +825,67 @@ obtenue à partir de deux instances de <a class="reference external" href="https
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Il est toujours possible d’utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> pour formater
+<p class="admonition-title">Note</p>
+<p>Il est toujours possible d’utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> pour formater
 une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a>.</p>
+</div>
+</div>
+<div class="section" id="lecture-des-dates">
+<h2>Lecture des dates<a class="headerlink" href="#lecture-des-dates" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour transformer une chaîne de caractères en date (notamment pour obtenir une date
+à partir de la saisie d’un utilisateur ou de la lecture d’un fichier),
+il est possible d’utiliser la méthode <code class="docutils literal notranslate"><span class="pre">parse</span></code> déclarée dans les classes
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html">LocalDate</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalTime.html">LocalTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html">LocalDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/ZonedDateTime.html">ZonedDateTime</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/Year.html">Year</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/YearMonth.html">YearMonth</a>.</p>
+<p>Le format d’une date et/ou du temps est défini par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/time/format/DateTimeFormatter.html">DateTimeFormatter</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Year</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.YearMonth</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.format.DateTimeFormatter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SaisieLocalDateTime</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">String</span> <span class="n">exemple</span> <span class="o">=</span> <span class="s">&quot;02/06/2010 12:35&quot;</span><span class="o">;</span>
+
+    <span class="n">DateTimeFormatter</span> <span class="n">dtf</span> <span class="o">=</span> <span class="n">DateTimeFormatter</span><span class="o">.</span><span class="na">ofPattern</span><span class="o">(</span><span class="s">&quot;dd/MM/yyyy HH:mm&quot;</span><span class="o">);</span>
+
+    <span class="n">Year</span> <span class="n">year</span> <span class="o">=</span> <span class="n">Year</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">exemple</span><span class="o">,</span> <span class="n">dtf</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">year</span><span class="o">);</span>
+
+    <span class="n">YearMonth</span> <span class="n">yearMonth</span> <span class="o">=</span> <span class="n">YearMonth</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">exemple</span><span class="o">,</span> <span class="n">dtf</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">yearMonth</span><span class="o">);</span>
+
+    <span class="n">LocalDate</span> <span class="n">localDate</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">exemple</span><span class="o">,</span> <span class="n">dtf</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">localDate</span><span class="o">);</span>
+
+    <span class="n">LocalDateTime</span> <span class="n">localDateTime</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">exemple</span><span class="o">,</span> <span class="n">dtf</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">localDateTime</span><span class="o">);</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Il est toujours possible d’utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a> pour transformer
+une chaîne de caractères en une instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Date.html">java.util.Date</a>.</p>
+</div>
+</div>
+<div class="section" id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="exercice admonition">
+<p class="admonition-title">Calcul de l’âge</p>
+<p>Écrivez une application qui demande à l’utilisateur de saisir sa date de naissance
+au format jour/mois/année et qui affiche ensuite son âge. Pensez à gérer le cas
+où l’utilisateur ne saisit pas la date au format attendu.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Pour calculer l’âge, il faut utiliser <a class="reference internal" href="#java-date-periode-duree"><span class="std std-ref">la classe Periode</span></a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -835,10 +898,10 @@ une instance de la classe <a class="reference external" href="https://docs.oracl
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="interface.html" class="btn btn-neutral float-right" title="Les interfaces" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="les_lambdas.html" class="btn btn-neutral float-right" title="Les lambdas" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="enumeration.html" class="btn btn-neutral" title="Les énumérations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="entrees_sorties.html" class="btn btn-neutral float-left" title="Les entrées/sorties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -847,11 +910,12 @@ une instance de la classe <a class="reference external" href="https://docs.oracl
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -865,27 +929,16 @@ une instance de la classe <a class="reference external" href="https://docs.oracl
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

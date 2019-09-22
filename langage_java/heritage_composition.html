@@ -11,7 +11,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Les relations entre objets &mdash; Documentation Langage Java 1.0</title>
+  <title>Héritage et composition &mdash; Documentation Langage Java </title>
   
 
   
@@ -20,13 +20,21 @@
   
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
@@ -34,21 +42,16 @@
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Le polymorphisme" href="polymorphisme.html" />
     <link rel="prev" title="Les packages" href="package.html" /> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -227,7 +230,7 @@
 <li class="toctree-l2"><a class="reference internal" href="package.html#le-fichier-package-info-java">Le fichier package-info.java</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Les relations entre objets</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Héritage et composition</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#l-heritage-is-a">L’héritage (is-a)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-et-constructeur">Héritage et constructeur</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heritage-simple-object">Héritage simple : Object</a></li>
@@ -300,18 +303,6 @@
 <li class="toctree-l2"><a class="reference internal" href="enumeration.html#ajout-de-constructeurs">Ajout de constructeurs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#date-la-classe-historique">Date : la classe historique</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#calendar">Calendar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#l-api-date-time">L’API Date/Time</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="les_dates.html#id1">Les Dates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="les_dates.html#la-classe-instant">La classe Instant</a></li>
-<li class="toctree-l3"><a class="reference internal" href="les_dates.html#periode-et-duree">Période et durée</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="interface.html">Les interfaces</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="interface.html#declaration-d-une-interface">Déclaration d’une interface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interface.html#implementation-d-une-interface">Implémentation d’une interface</a></li>
@@ -377,6 +368,20 @@
 <li class="toctree-l3"><a class="reference internal" href="entrees_sorties.html#identifiant-de-version-de-serialisation">Identifiant de version de sérialisation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="les_dates.html">Les dates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#date-la-classe-historique">Date : la classe historique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#calendar">Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#l-api-date-time">L’API Date/Time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_dates.html#id1">Les Dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_dates.html#la-classe-instant">La classe Instant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_dates.html#periode-et-duree">Période et durée</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
@@ -461,7 +466,7 @@
     
       <li><a href="../index.html">Accueil</a> &raquo;</li>
         
-      <li>Les relations entre objets</li>
+      <li>Héritage et composition</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -487,24 +492,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="les-relations-entre-objets">
-<h1>Les relations entre objets<a class="headerlink" href="#les-relations-entre-objets" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="heritage-et-composition">
+<h1>Héritage et composition<a class="headerlink" href="#heritage-et-composition" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Une application Java est composée d’un ensemble d’objets. Un des intérêts de la
 programmation objet réside dans les relations que ces objets entretiennent les
 uns avec les autres. Ces relations sont construites par les développeurs et
 constituent ce que l’on appelle l’architecture d’une application. Il existe
 deux relations fondamentales en programmation objet :</p>
-<dl class="docutils">
-<dt><strong>est un</strong> (<em>is-a</em>)</dt>
-<dd>Cette relation permet de créer une chaîne de relation d’identité entre des
+<dl class="simple">
+<dt><strong>est un</strong> (<em>is-a</em>)</dt><dd><p>Cette relation permet de créer une chaîne de relation d’identité entre des
 classes. Elle indique qu’une classe peut être assimilée à une autre classe
 qui correspond à une notion plus abstraite ou plus générale.
-On parle <strong>d’héritage</strong> pour désigner le mécanisme qui permet d’implémenter ce type de relation.</dd>
-<dt><strong>a un</strong> (<em>has-a</em>)</dt>
-<dd>Cette relation permet de créer une relation de dépendance d’une classe envers
+On parle <strong>d’héritage</strong> pour désigner le mécanisme qui permet d’implémenter ce type de relation.</p>
+</dd>
+<dt><strong>a un</strong> (<em>has-a</em>)</dt><dd><p>Cette relation permet de créer une relation de dépendance d’une classe envers
 une autre. Une classe a besoin des services d’une autre classe pour réaliser
 sa fonction. On parle également de relation de <strong>composition</strong> pour désigner
-ce type de relation.</dd>
+ce type de relation.</p>
+</dd>
 </dl>
 <div class="section" id="l-heritage-is-a">
 <h2>L’héritage (is-a)<a class="headerlink" href="#l-heritage-is-a" title="Lien permanent vers ce titre">¶</a></h2>
@@ -704,8 +709,8 @@ déclaré dans la même classe grâce au mot-clé <em>this</em>. De la même man
 constructeur peut appeler un constructeur de sa classe parente grâce au mot-clé
 <strong>super</strong>. Il doit respecter les mêmes contraintes :</p>
 <ul class="simple">
-<li>Un constructeur ne peut appeler qu’un constructeur.</li>
-<li>L’appel au constructeur doit être la première instruction du constructeur.</li>
+<li><p>Un constructeur ne peut appeler qu’un constructeur.</p></li>
+<li><p>L’appel au constructeur doit être la première instruction du constructeur.</p></li>
 </ul>
 <p>Il est donc possible de déclarer un constructeur dans la classe <em>Vehicule</em> et
 d’appeler ce constructeur depuis les constructeurs de <em>Voiture</em> et <em>Moto</em>.</p>
@@ -805,8 +810,8 @@ du principe que la classe hérite de la classe <a class="reference external" hre
 en Java ont une classe parente (hormis la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>). L’arbre d’héritage
 en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">C’est la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a>.
+<p class="admonition-title">Note</p>
+<p>C’est la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a>.
 Voilà pourquoi tous les objets Java peuvent avoir par défaut une représentation
 sous forme de chaîne de caractères et qu’ils peuvent être comparés aux autres.</p>
 </div>
@@ -830,8 +835,8 @@ héritant directement ou indirectement de <em>Vehicule</em> peut être utilisée
 <p>Lorsqu’on crée une classe par héritage, cela signifie qu’il faut faire attention
 à ne pas altérer le comportement attendu par les utilisateurs de la classe parente.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">L’acronyme <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a> proposé par Robert Matin regroupe 5 principes importants
+<p class="admonition-title">Note</p>
+<p>L’acronyme <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a> proposé par Robert Matin regroupe 5 principes importants
 de la programmation objet. La lettre L désigne le <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_de_substitution_de_Liskov">Liskov substitution principle</a>
 (principe de substitution de Liskov) qui décrit ce principe de substitution
 entre un type et son sous-type et les contraintes qui en découlent pour la
@@ -851,11 +856,11 @@ on parle de <em>downcasting</em> (transtypage vers le bas).</p>
 programmation objet. Voilà pourquoi, il est possible d’affecter des instances
 de type <em>Voiture</em> à des variables de type <em>Vehicule</em>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Comme Java se base sur une hiérarchie à racine unique, toutes les classes
 héritent directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Donc, toute instance peut
 être affectée à une variable, un attribut ou un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
-<div class="last highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="s">&quot;ceci est une chaine de caractère&quot;</span><span class="o">;</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
@@ -922,8 +927,8 @@ downcasting devrait toujours être contrôlée par une expression <strong>instan
 le programme devrait être capable de se comporter correctement si l’instruction
 <strong>instanceof</strong> retourne <strong>false</strong>.</p>
 <div class="admonition caution">
-<p class="first admonition-title">Prudence</p>
-<p class="last">Si le recours à <strong>instanceof</strong> permet de rendre les applications plus robustes,
+<p class="admonition-title">Prudence</p>
+<p>Si le recours à <strong>instanceof</strong> permet de rendre les applications plus robustes,
 il n’en reste pas moins que les opérations de downcasting doivent rester
 l’exception dans un programme. Un recours systématique au downcasting est souvent
 le signe d’une mauvaise conception objet.</p>
@@ -991,35 +996,35 @@ la déclaration de la classe <em>Vehicule</em> :</p>
 <em>vitesse</em>.</p>
 <p>Le tableau ci-dessous résume toutes les portées en Java en les triant de la moins
 restrictive à la plus restrictive.</p>
-<table border="1" class="colwidths-given docutils" id="id1">
+<table class="colwidths-given docutils align-center" id="id1">
 <caption><span class="caption-text">Les portées en Java</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">type</th>
-<th class="head">mot-clé</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>mot-clé</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Publique</td>
-<td><strong>public</strong></td>
-<td>Accessible depuis n’importe quel point de l’application</td>
+<tbody>
+<tr class="row-even"><td><p>Publique</p></td>
+<td><p><strong>public</strong></p></td>
+<td><p>Accessible depuis n’importe quel point de l’application</p></td>
 </tr>
-<tr class="row-odd"><td>Protégée</td>
-<td><strong>protected</strong></td>
-<td>Accessible uniquement depuis les classes du même package et les classes filles</td>
+<tr class="row-odd"><td><p>Protégée</p></td>
+<td><p><strong>protected</strong></p></td>
+<td><p>Accessible uniquement depuis les classes du même package et les classes filles</p></td>
 </tr>
-<tr class="row-even"><td>Package</td>
-<td>&#160;</td>
-<td>Accessible uniquement depuis les classes du même package</td>
+<tr class="row-even"><td><p>Package</p></td>
+<td></td>
+<td><p>Accessible uniquement depuis les classes du même package</p></td>
 </tr>
-<tr class="row-odd"><td>Privée</td>
-<td><strong>private</strong></td>
-<td>Accessible uniquement dans la classe de déclaration et les classes internes</td>
+<tr class="row-odd"><td><p>Privée</p></td>
+<td><p><strong>private</strong></p></td>
+<td><p>Accessible uniquement dans la classe de déclaration et les classes internes</p></td>
 </tr>
 </tbody>
 </table>
@@ -1038,16 +1043,16 @@ le comportement d’une classe.</p>
 d’une classe sauf si une raison évidente nous suggère de déclarer la portée
 <strong>protected</strong>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Dans l’exemple précédent, la déclaration de l’attribut <em>vitesse</em> comme
+<p class="admonition-title">Note</p>
+<p>Dans l’exemple précédent, la déclaration de l’attribut <em>vitesse</em> comme
 <strong>protected</strong> est peu satisfaisante car toutes les classes filles ont maintenant
 accès à cet attribut : cela n’est pas conforme au <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_ouvert/ferm%C3%A9">principe du ouvert/fermé</a>.
 Nous verrons au <a class="reference internal" href="polymorphisme.html#redefinition-et-signature"><span class="std std-ref">chapitre suivant</span></a> qu’il existe une
 solution qui évite de modifier la portée de cet attribut.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_ouvert/ferm%C3%A9">principe du ouvert/fermé</a> (Open/close principle) représente le O dans
+<p class="admonition-title">Note</p>
+<p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_ouvert/ferm%C3%A9">principe du ouvert/fermé</a> (Open/close principle) représente le O dans
 l’acronyme <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a>. Cet acronyme rassemble cinq notions fondamentales dans
 la conception objet.</p>
 </div>
@@ -1218,7 +1223,7 @@ classe pour représenter des pneus.</p>
         <a href="polymorphisme.html" class="btn btn-neutral float-right" title="Le polymorphisme" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="package.html" class="btn btn-neutral" title="Les packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="package.html" class="btn btn-neutral float-left" title="Les packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
     </div>
   
@@ -1227,11 +1232,12 @@ classe pour représenter des pneus.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@epsi.fr - CC-BY-SA
+        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div><a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip"><code class="download docutils literal notranslate"><span class="pre">Télécharger ce cours</pre></code></a></div>
+    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </div>
 
 
 </footer>
@@ -1245,27 +1251,16 @@ classe pour représenter des pneus.</p>
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
