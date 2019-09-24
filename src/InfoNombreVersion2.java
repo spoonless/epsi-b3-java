@@ -13,7 +13,6 @@ public class InfoNombreVersion2 {
 		
 		ArrayList<Double> liste = new ArrayList<>();
 		
-		
 		for (nb = 0 ; nb < 10; ++nb) {
 			System.out.print("Un nombre : ");
 			double valeur = sc.nextDouble();
