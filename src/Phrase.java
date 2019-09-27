@@ -1,9 +1,22 @@
 public class Phrase {
 
 	public static final String SEPARATEUR_PAR_DEFAUT = " ";
+	public static final String DECLARATION = ".";
+	public static final String INTERROGATION = " ?";
+	public static final String EXCLAMATION = " !";
 
 	private String mots = "";
 	private String separateur = SEPARATEUR_PAR_DEFAUT;
+	private String mode;
+	
+	public Phrase() {
+		this.mode = DECLARATION;
+	}
+	
+	public Phrase(String mode, String... mots) {
+		this.mode = mode;
+		this.ajouter(mots);
+	}
 
 	public int getNbLettres() {
 		int nbLettres = 0;
@@ -23,6 +36,10 @@ public class Phrase {
 
 	public void ajouter(String premierMot, String... mots) {
 		this.ajouter(premierMot);
+		this.ajouter(mots);
+	}
+
+	private void ajouter(String... mots) {
 		for (String mot : mots) {
 			this.ajouter(mot);
 		}
@@ -44,23 +61,8 @@ public class Phrase {
 	}
 
 	public String toString() {
-		return this.mots + '.';
+		return this.mots + mode;
 	}
 
-	public static void main(String[] args) {
-		Phrase phrase = new Phrase();
-		phrase.ajouter("Une");
-		phrase.ajouter("classe");
-		phrase.ajouter("pour");
-		phrase.ajouter("ajouter");
-		phrase.ajouter("des mots");
-		phrase.setSeparateur(" et encore ");
-		phrase.ajouter("des mots", 3);
-		phrase.setSeparateur(' ');
-		phrase.ajouter("toujours", "et", "encore");
-
-		System.out.println(phrase);
-		System.out.println(phrase.getNbLettres());
-	}
 
 }
