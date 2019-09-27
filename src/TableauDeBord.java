@@ -3,38 +3,32 @@ import java.util.Scanner;
 public class TableauDeBord {
 
 	public static void main(String[] args) {
-		
 		Scanner sc = new Scanner(System.in);
-		BoiteDeVitesses boite = new BoiteDeVitesses();
-		int choix = 0;
+		BoiteDeVitesses boiteDeVitesses = new BoiteDeVitesses();
+		while(true) {
+			System.out.println("c) changer de vitesse");
+			System.out.println("r) retrograder");
+			System.out.println("p) point mort");
+			System.out.println("q) quitter");
+			String choix = sc.nextLine();
 
-		do {
-			System.out.println("1) Changer de vitesse");
-			System.out.println("2) Rétrograder");
-			System.out.println("3) Passer au point mort");
-			System.out.println("4) Quitter");
-
-			choix = sc.nextInt();
-
-			switch (choix) {
-			case 1:
-				boite.changerVitesse();
-				System.out.println("Vitesse courante " + boite);
+			switch(choix) {
+			case "c":
+				boiteDeVitesses.changerVitesse();
+				System.out.println(boiteDeVitesses);
 				break;
-			case 2:
-				boite.retrograder();
-				System.out.println("Vitesse courante " + boite);
+			case "r":
+				boiteDeVitesses.retrograder();
+				System.out.println(boiteDeVitesses);
 				break;
-			case 3:
-				boite.setPointMort();
-				System.out.println("Vitesse courante " + boite);
+			case "p":
+				boiteDeVitesses.setPointMort();
+				System.out.println(boiteDeVitesses);
 				break;
-			case 4:
+			case "q":
 				System.out.println("Merci");
-				break;
-			default:
-				System.out.println("Erreur de choix!");
+				return;
 			}
-		} while (choix != 4);
+		}
 	}
 }
