@@ -930,6 +930,59 @@ avec un for amélioré, on peut facilement parcourir le tableau de caractères :
 </div>
 </div>
 </div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice - La médiathèque</p>
+<p>On désire modéliser le système de gestion des prêts d’une médiathèque.</p>
+<p>Une médiathèque contient des exemplaires de documents. Un exemplaire a
+un code d’identification propre à la médiathèque. Parmi les documents,
+on trouve :</p>
+<ul class="simple">
+<li><p>les livres qui sont définis par un titre, un auteur, un éditeur et un ISBN</p></li>
+<li><p>les revues qui sont définies par un titre, un éditeur et un ISSN</p></li>
+<li><p>les films qui sont définis par un titre, un réalisateur, un distributeur et un ISBN.</p></li>
+</ul>
+<p>Créez les classes <code class="docutils literal notranslate"><span class="pre">Exemplaire</span></code>, <code class="docutils literal notranslate"><span class="pre">Document</span></code>, <code class="docutils literal notranslate"><span class="pre">Livre</span></code>, <code class="docutils literal notranslate"><span class="pre">Revue</span></code> et <code class="docutils literal notranslate"><span class="pre">Film</span></code>.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice - La médiathèque (suite)</p>
+<p>Nous allons mettre en place un système de recherche simplifié. Un document
+doit avoir la méthode <code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">correspond(String</span> <span class="pre">motCle)</span></code> qui permet de
+savoir si un document correspond au mot clé passé en paramètre.</p>
+<p>Selon le type de document, la méthode doit retourner <code class="docutils literal notranslate"><span class="pre">true</span></code> :</p>
+<ul class="simple">
+<li><p>pour un livre si le titre ou l’auteur ou l’éditeur contient le mot-clé</p></li>
+<li><p>pour une revue si le titre ou l’éditeur contient le mot-clé</p></li>
+<li><p>pour un film si le titre ou le réalisateur ou le distributeur contient le mot-clé</p></li>
+</ul>
+<p>Créez la classe <code class="docutils literal notranslate"><span class="pre">Mediatheque</span></code> qui contient l’ensemble des documents
+de la médiathèque. Pour simplifier, les exemplaires et les documents seront
+codés en dur dans une méthode d’initialisation de la médiathèque.</p>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Médiathèque</span></code> a la méthode <code class="docutils literal notranslate"><span class="pre">List&lt;Document&gt;</span> <span class="pre">rechercher(motCle)</span></code>
+qui permet de rechercher une liste de documents qui correspondent au mot clé.</p>
+<p>Créez un programme qui permet de saisir un mot-clé et qui retourne la liste
+des documents correspondant à ce mot-clé.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice - La médiathèque (suite)</p>
+<p>Les usagers empruntent des exemplaires dans la médiathèque. Un usager a
+un matricule et un nom. Un usager a également la liste de
+ses prêts en cours.</p>
+<p>Règles pour l’emprunt :</p>
+<ul class="simple">
+<li><p>Un usager ne peut pas emprunter plus de 6 exemplaires.</p></li>
+<li><p>Un usager ne peut pas emprunter plus de 3 films.</p></li>
+</ul>
+<p>Ajoutez les méthodes <code class="docutils literal notranslate"><span class="pre">emprunter(Exemplaire)</span></code> et <code class="docutils literal notranslate"><span class="pre">rendre(Exemplaire)</span></code>
+a la classe <code class="docutils literal notranslate"><span class="pre">Usager</span></code>.</p>
+<p>Si les règles ne sont pas respectées la méthode <code class="docutils literal notranslate"><span class="pre">emprunter(Exemplaire)</span></code>
+doit échouer avec une exception particulière.</p>
+<p>Créez un programme qui crée en mémoire un usager à partir d’un matricule
+et d’un nom saisis par l’utilisateur. Le programme permet ensuite
+d’effectuer un recherche par mot-clé et de choisir parmi la liste de
+résultats l’exemplaire que l’on souhaite emprunter.</p>
+<p>Le programme doit permettre également d’afficher la liste des prêts de
+l’usager.</p>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
