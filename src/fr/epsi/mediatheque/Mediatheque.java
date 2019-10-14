@@ -9,7 +9,7 @@ public class Mediatheque {
 	
 	public void init() {
 		Livre livre = new Livre("Don Quichotte", "1231326456-1321-54564");
-		livre.setAuteur("Cervantès");
+		livre.setAuteur("Cervantes");
 		Exemplaire exemplaire = new Exemplaire("123", livre);
 		exemplaires.add(exemplaire);
 		
