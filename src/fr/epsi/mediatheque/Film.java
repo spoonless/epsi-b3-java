@@ -10,6 +10,22 @@ public class Film extends Document {
 		super(titre);
 		this.isbn = isbn;
 	}
+	
+	@Override
+	public String getIdentifiant() {
+		return this.isbn;
+	}
+
+	public boolean correspond(String motCle) {
+		if (super.correspond(motCle)) {
+			return true;
+		} else if (this.realisateur != null && this.realisateur.contains(motCle)) {
+			return true;
+		} else if (this.distributeur != null && this.distributeur.contains(motCle)) {
+			return true;
+		}
+		return false;
+	}
 
 	public String getRealisateur() {
 		return realisateur;

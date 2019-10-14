@@ -3,7 +3,7 @@ package fr.epsi.mediatheque;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Document {
+public abstract class Document {
 	
 	private String titre;
 	private List<Exemplaire> exemplaires = new ArrayList<Exemplaire>();
@@ -11,7 +11,13 @@ public class Document {
 	public Document(String titre) {
 		this.titre = titre;
 	}
+	
+	public abstract String getIdentifiant();
 
+	public boolean correspond(String motCle) {
+		return this.titre.contains(motCle);
+	}
+	
 	public String getTitre() {
 		return titre;
 	}
