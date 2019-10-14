@@ -8,6 +8,7 @@ public class Exemplaire {
 	public Exemplaire(String code, Document document) {
 		this.code = code;
 		this.document = document;
+		this.document.getExemplaires().add(this);
 	}
 
 	public String getCode() {
