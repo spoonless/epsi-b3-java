@@ -26,5 +26,14 @@ public class Exemplaire {
 	public void setDocument(Document document) {
 		this.document = document;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Exemplaire) {
+			Exemplaire exemplaire = (Exemplaire) obj;
+			return this.code.equals(exemplaire.code);
+		}
+		return false;
+	}
 
 }
