@@ -944,7 +944,7 @@ on trouve :</p>
 <p>Créez les classes <code class="docutils literal notranslate"><span class="pre">Exemplaire</span></code>, <code class="docutils literal notranslate"><span class="pre">Document</span></code>, <code class="docutils literal notranslate"><span class="pre">Livre</span></code>, <code class="docutils literal notranslate"><span class="pre">Revue</span></code> et <code class="docutils literal notranslate"><span class="pre">Film</span></code>.</p>
 </div>
 <div class="exercice admonition">
-<p class="admonition-title">Exercice - La médiathèque (suite)</p>
+<p class="admonition-title">Exercice - La médiathèque - recherche de documents (suite)</p>
 <p>Nous allons mettre en place un système de recherche simplifié. Un document
 doit avoir la méthode <code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">correspond(String</span> <span class="pre">motCle)</span></code> qui permet de
 savoir si un document correspond au mot clé passé en paramètre.</p>
@@ -963,7 +963,7 @@ qui permet de rechercher une liste de documents qui correspondent au mot clé.</
 des documents correspondant à ce mot-clé.</p>
 </div>
 <div class="exercice admonition">
-<p class="admonition-title">Exercice - La médiathèque (suite)</p>
+<p class="admonition-title">Exercice - La médiathèque - application d’emprunt (suite)</p>
 <p>Les usagers empruntent des exemplaires dans la médiathèque. Un usager a
 un matricule et un nom. Un usager a également la liste de
 ses prêts en cours.</p>
@@ -982,6 +982,76 @@ d’effectuer une recherche par mot-clé et de choisir parmi la liste de
 résultats l’exemplaire que l’on souhaite emprunter.</p>
 <p>Le programme doit permettre également d’afficher la liste des prêts de
 l’usager.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice - La médiathèque - comparaison des documents (suite)</p>
+<p>On souhaite pouvoir trier une liste de documents en utilisant la méthode
+<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/List.html#sort(java.util.Comparator)">sort</a> qui accepte en paramètre un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a>.
+Il doit être possible de trier les documents :</p>
+<ul class="simple">
+<li><p>suivant leur titre</p></li>
+<li><p>suivant leur type (d’abord les livres, puis les revues puis les films)
+et ensuite suivant leur titre.</p></li>
+</ul>
+<p>Créer les classes nécessaires implémentant l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a> et écrivez
+un programme de test.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice - La médiathèque - date d’emprunt et de retour (suite)</p>
+<p>Un exemplaire possède comme propriétés une date d’emprunt et une date de
+retour lorsqu’il est emprunté. La date de retour est de deux semaines
+après la date d’emprunt. Attention, si l’emprunt est fait entre le
+15 août et la 31 août, la date de retour est le 1er septembre car la médiathèque
+est fermée à cette période.</p>
+<p>Ajoutez les propriétés de date d’emprunt et de date de retour à un <code class="docutils literal notranslate"><span class="pre">Exemplaire</span></code>.
+Modifiez le programme d’emprunt pour prendre en compte la date d’emprunt
+(qui correspond à la date du jour). Un exemplaire déjà emprunté ne peut
+pas être emprunté à nouveau (utilisez le mécanisme des exceptions pour
+signaler un problème dans ce cas là).</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Pour réaliser cet exercice, consultez le chapitre <a class="reference internal" href="langage_java/les_dates.html"><span class="doc">Les dates</span></a>.</p>
+</div>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice - La médiathèque - chargement depuis un fichier (suite)</p>
+<p>On souhaite modifier la classe <code class="docutils literal notranslate"><span class="pre">Mediatheque</span></code> afin de pouvoir charger le
+catalogue de la médiathèque depuis un fichier CSV.</p>
+<p>Un fichier CSV contient une information concernant un exemplaire pour chaque
+ligne. Sur une ligne, les colonnes sont séparées par un point-virgule.</p>
+<p>Une ligne contient les colonnes suivantes :</p>
+<ul class="simple">
+<li><p>le code de l’exemplaire</p></li>
+<li><p>une colonne donnant le type de document : L pour un livre, R pour une revue et F pour un film</p></li>
+<li><p>Pour un livre, les colonne suivantes contiennent le titre, l’ISBN, l’auteur et l’éditeur</p></li>
+<li><p>Pour une revue, les colonnes suivantes contiennent le titre, l’ISSN et l’éditeur</p></li>
+<li><p>Pour un film, les colonnes suivantes contiennent le titre, l’ISBN, le réalisateur et le distributeur</p></li>
+</ul>
+<p>S’il existe plusieurs exemplaires pour un même document, la ligne des exemplaires
+suivant le premier ne contient que le code.</p>
+<p>Ci-dessous un exemple de fichier :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1234;L;Le Seigneur des Anneaux;978-2266286268;J.R.R. Tolkien;Pocket
+1456
+1568
+2256;R;Les Cahiers du Cinéma;0008-011X;
+6842;F;Alien;B0041KWHU6;Ridley Scott;20th Century Fox
+6843
+6844
+</pre></div>
+</div>
+<p>Créez la classe <code class="docutils literal notranslate"><span class="pre">MediathequeLoader</span></code> capable de créer un objet de type
+<code class="docutils literal notranslate"><span class="pre">Mediatheque</span></code> contenant le catalogue chargé depuis un fichier.</p>
+<p>Modifiez le programme de recherche d’un document réalisé précédemment afin
+d’utiliser le <code class="docutils literal notranslate"><span class="pre">MediathequeLoader</span></code> pour charger le catalogue à partir d’un fichier.</p>
+<p>Pensez à gérer les cas d’erreur avec des exceptions spécifiques si le
+fichier est mal formé (par exemple si le nombre de colonnes n’est pas
+correct ou si le format des données n’est pas celui attendu).</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Pour réaliser cet exercice, consultez le chapitre <a class="reference internal" href="langage_java/entrees_sorties.html"><span class="doc">Les entrées/sorties</span></a>.</p>
+<p>Pour découper une ligne selon le séparateur point-virgule, vous pouvez utiliser
+la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#split(java.lang.String)">split</a> d’une chaîne de caractères.</p>
+</div>
 </div>
 </div>
 <div class="toctree-wrapper compound">
