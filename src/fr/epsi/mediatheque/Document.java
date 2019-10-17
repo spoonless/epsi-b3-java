@@ -34,4 +34,9 @@ public abstract class Document {
 		this.exemplaires = exemplaires;
 	}
 
+	@Override
+	public String toString() {
+		return titre;
+	}
+
 }

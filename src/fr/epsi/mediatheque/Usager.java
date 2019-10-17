@@ -22,8 +22,9 @@ public class Usager {
 		}
 		if (exemplaire.getDocument() instanceof Film 
 				&& getNbFilmsEmpruntes() == Usager.MAX_EMPRUNTS_FILM) {
-			throw new EmpruntMaxAtteintException(Usager.MAX_EMPRUNTS_FILM);
+			throw new EmpruntFilmMaxAtteintException(Usager.MAX_EMPRUNTS_FILM);
 		}
+		exemplaire.emprunter();
 		emprunts.add(exemplaire);
 	}
 
@@ -39,6 +40,7 @@ public class Usager {
 	
 	public void rendre(Exemplaire exemplaire) {
 		emprunts.remove(exemplaire);
+		exemplaire.rendre();
 	}
 
 	public String getMatricule() {

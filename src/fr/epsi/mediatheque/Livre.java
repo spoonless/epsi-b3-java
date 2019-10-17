@@ -31,7 +31,7 @@ public class Livre extends Document {
 	public String getAuteur() {
 		return auteur;
 	}
-
+	
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
 	}
@@ -60,4 +60,7 @@ public class Livre extends Document {
 		}
 		return false;
 	}
+	
+	
+	
 }
