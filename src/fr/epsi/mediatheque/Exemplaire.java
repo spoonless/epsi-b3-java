@@ -2,7 +2,6 @@ package fr.epsi.mediatheque;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.Period;
 import java.time.Year;
 import java.time.YearMonth;
 
@@ -23,18 +22,16 @@ public class Exemplaire {
 	}
 	
 	public LocalDate getDateRetour() {
-		if (this.dateEmprunt == null) {
+		if (dateEmprunt == null) {
 			return null;
 		}
 		YearMonth aout = Year.now().atMonth(Month.AUGUST);
-		LocalDate debutAout = aout.atDay(1);
-		LocalDate finAout = aout.atEndOfMonth();
-		LocalDate now = LocalDate.now();
-		if (debutAout.isAfter(now) || finAout.isBefore(now)) {
-			return this.dateEmprunt.plusWeeks(2);
-		} else {
+		LocalDate debutPeriodeVacances = aout.atDay(15);
+		LocalDate finPeriodeVacances = aout.atEndOfMonth();
+		if (dateEmprunt.compareTo(debutPeriodeVacances) >= 0 && dateEmprunt.compareTo(finPeriodeVacances) <= 0) {
 			return Year.now().atMonth(Month.SEPTEMBER).atDay(1);
 		}
+		return dateEmprunt.plusWeeks(2);
 	}
 	
 	public void emprunter() {
