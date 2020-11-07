@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="La classe String" href="la_classe_string.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>La classe Object</li>
     
@@ -478,7 +495,7 @@
         <a href="la_classe_string.html" class="btn btn-neutral float-right" title="La classe String" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="classe_abstraite.html" class="btn btn-neutral" title="Les classes abstraites" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="classe_abstraite.html" class="btn btn-neutral float-left" title="Les classes abstraites" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -490,16 +507,16 @@
   <div class="section" id="la-classe-object">
 <h1>La classe Object<a class="headerlink" href="#la-classe-object" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Java est un langage qui ne supporte que l’héritage simple. L’arborescence
-d’héritage est un arbre dont la racine est la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Si le développeur
+d’héritage est un arbre dont la racine est la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>. Si le développeur
 ne précise pas de classe parente dans la déclaration d’une classe, alors
-la classe hérite implicitement de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> fournit des méthodes communes à toutes les classes. Certaines
+la classe hérite implicitement de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>.</p>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> fournit des méthodes communes à toutes les classes. Certaines
 de ces méthodes doivent être redéfinies dans les classes filles pour fonctionner
 correctement.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Rien ne vous interdit de créer une instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">();</span>
+<p>Rien ne vous interdit de créer une instance de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -507,91 +524,91 @@ correctement.</p>
 <h2>La méthode equals<a class="headerlink" href="#la-methode-equals" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En Java, l’opérateur <strong>==</strong> sert à comparer les références. Il ne faut donc
 <strong>jamais</strong> l’utiliser pour comparer des objets. La comparaison d’objets se
-fait grâce à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a> héritée de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="n">Vehicule</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
+fait grâce à la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a> héritée de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+<span class="n">Vehicule</span> <span class="n">v2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="p">(</span><span class="s">&quot;Kaneda&quot;</span><span class="p">);</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">v1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">v1</span><span class="o">))</span> <span class="o">{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;v1 est identique à lui-même.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">v1</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;v1 est identique à lui-même.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">v1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">v2</span><span class="o">))</span> <span class="o">{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;v1 est identique à v2.&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">v2</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;v1 est identique à v2.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>L’implémentation par défaut de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a> fournie par <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> compare les références
+<p>L’implémentation par défaut de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a> fournie par <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> compare les références
 entre elles. L’implémentation par défaut est donc simplement :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">return</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Prudence</p>
 <p>Il ne faut pas déduire de l’implémentation par défaut qu’il est possible
 d’utiliser <strong>==</strong> pour comparer des objets. N’importe quelle classe
-héritant de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> peut modifier ce comportement : à commencer
-par une des classes les plus utilisée en Java, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.</p>
+héritant de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> peut modifier ce comportement : à commencer
+par une des classes les plus utilisée en Java, la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>.</p>
 </div>
 <p>Parfois, l’implémentation par défaut peut suffire. C’est notamment le cas
 lorsque l’unicité en mémoire suffit à identifier un objet. Cependant,
 si nous ajoutons la notion de plaque d’immatriculation à notre classe
 <em>Vehicule</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">immatriculation</span><span class="o">,</span> <span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span> <span class="o">=</span> <span class="n">immatriculation</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">immatriculation</span><span class="p">,</span> <span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span> <span class="o">=</span> <span class="n">immatriculation</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Alors l’attribut immatriculation introduit l’idée d’identification du véhicule.
 Il est donc judicieux de considérer que deux véhicules sont égaux s’ils
-ont la même immatriculation. Dans ce cas, il faut redéfinir la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+ont la même immatriculation. Dans ce cas, il faut redéfinir la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">immatriculation</span><span class="o">,</span> <span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span> <span class="o">=</span> <span class="n">immatriculation</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">immatriculation</span><span class="p">,</span> <span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span> <span class="o">=</span> <span class="n">immatriculation</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(!</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">Vehicule</span><span class="o">))</span> <span class="o">{</span>
-      <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="o">(</span><span class="n">Vehicule</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span>
-           <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">vehicule</span><span class="o">.</span><span class="na">immatriculation</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="p">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">Vehicule</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="p">(</span><span class="n">Vehicule</span><span class="p">)</span> <span class="n">obj</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span>
+           <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">vehicule</span><span class="p">.</span><span class="na">immatriculation</span><span class="p">);</span>
 
-  <span class="o">}</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple précédent, notez l’utilisation de <strong>instanceof</strong> pour vérifier
 que l’objet en paramètre est bien compatible avec le type <em>Vehicule</em> (sinon
-la méthode retourne <strong>false</strong>). En effet, la signature de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a> impose que
-le paramètre soit de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Il est donc important de commencer par
+la méthode retourne <strong>false</strong>). En effet, la signature de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a> impose que
+le paramètre soit de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>. Il est donc important de commencer par
 vérifier que le paramètre est d’un type acceptable pour la comparaison.
 Notez également, que l’implémentation est telle que deux véhicules n’ayant pas
 de plaque d’immatriculation ne sont pas identiques.</p>
-<p>L’implémentation de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a> doit être conforme à certaines règles pour s’assurer
+<p>L’implémentation de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a> doit être conforme à certaines règles pour s’assurer
 qu’elle fonctionnera correctement, notamment lorsqu’elle est utilisée par
 l’API standard ou par des bibliothèques tierces.</p>
 <ul>
@@ -625,122 +642,122 @@ y est inchangé.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Il est parfois facile d’introduire un bug en Java.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">y</span><span class="o">))</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le code ci-dessus ne teste pas la possibilité pour la variable <em>x</em> de valoir
-<strong>null</strong>, entraînant ainsi une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.
+<strong>null</strong>, entraînant ainsi une erreur de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a>.
 Il ne faut donc pas oublier de tester la valeur <strong>null</strong> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">y</span><span class="o">))</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Lorsque l’un des deux termes est une constante, alors il est plus simple
 de placer la constante à gauche de l’expression de façon à éviter le problème
-de la nullité. En effet, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a> doit retourner <strong>false</strong> si le paramètre
+de la nullité. En effet, <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a> doit retourner <strong>false</strong> si le paramètre
 vaut <strong>null</strong>. Cela est notamment très pratique pour comparer une chaîne
 de caractères avec une constante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="s">&quot;Message à comparer&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">msg</span><span class="o">))</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="s">&quot;Message à comparer&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>On peut aussi utiliser la classe outil <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html">java.util.Objects</a> qui fournit la méthode
-de classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)">equals(Object, Object)</a> pour prendre en charge le cas de la valeur
-<strong>null</strong>. Notez toutefois que <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)">equals(Object, Object)</a> retourne <strong>true</strong>
+<p>On peut aussi utiliser la classe outil <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html">java.util.Objects</a> qui fournit la méthode
+de classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)">equals(Object, Object)</a> pour prendre en charge le cas de la valeur
+<strong>null</strong>. Notez toutefois que <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Objects.html#equals(java.lang.Object,java.lang.Object)">equals(Object, Object)</a> retourne <strong>true</strong>
 si les deux paramètres valent <strong>null</strong>.</p>
 </div>
 </div>
 <div class="section" id="la-methode-hashcode">
 <h2>La méthode hashCode<a class="headerlink" href="#la-methode-hashcode" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#hashCode()">hashCode</a> est fournie pour l’utilisation de certains algorithmes,
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()">hashCode</a> est fournie pour l’utilisation de certains algorithmes,
 notamment pour l’utilisation de table de hachage. Le principe d’un algorithme
 de hachage est d’associer un identifiant à un objet. Cet identifiant doit être
 le même pour la durée de vie de l’objet. De plus, deux objets égaux doivent
 avoir le même code de hachage.</p>
 <p>L’implémentation de cette méthode peut se révéler assez technique. En général,
 on se basera sur les attributs utilisés dans l’implémentation de la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a> pour en déduire le code de hachage.</p>
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a> pour en déduire le code de hachage.</p>
 <p>Cette méthode ne doit être redéfinie que si cela est réellement utile.
 Par exemple si une instance de cette classe doit servir de clé pour une
-instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/HashMap.html">HashMap</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+instance de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMap</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">immatriculation</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">immatriculation</span><span class="o">,</span> <span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span> <span class="o">=</span> <span class="n">immatriculation</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(!</span> <span class="o">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">Vehicule</span><span class="o">))</span> <span class="o">{</span>
-      <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="o">(</span><span class="n">Vehicule</span><span class="o">)</span> <span class="n">obj</span><span class="o">;</span>
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span>
-           <span class="k">this</span><span class="o">.</span><span class="na">immatriculation</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">vehicule</span><span class="o">.</span><span class="na">immatriculation</span><span class="o">);</span>
-
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">immatriculation</span><span class="p">,</span> <span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span> <span class="o">=</span> <span class="n">immatriculation</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">immatriculation</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">immatriculation</span><span class="o">.</span><span class="na">hashCode</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="p">(</span><span class="n">obj</span> <span class="k">instanceof</span> <span class="n">Vehicule</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="p">(</span><span class="n">Vehicule</span><span class="p">)</span> <span class="n">obj</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span>
+           <span class="k">this</span><span class="p">.</span><span class="na">immatriculation</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">vehicule</span><span class="p">.</span><span class="na">immatriculation</span><span class="p">);</span>
+
+  <span class="p">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">immatriculation</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">immatriculation</span><span class="p">.</span><span class="na">hashCode</span><span class="p">();</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="la-methode-tostring">
 <h2>La méthode toString<a class="headerlink" href="#la-methode-tostring" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">toString</a> est une méthode très utile, notamment pour le débugage et
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()">toString</a> est une méthode très utile, notamment pour le débugage et
 la production de log. Elle permet d’obtenir une représentation sous forme
 de chaîne de caractères d’un objet. Elle est implicitement appelée par le
 compilateur lorsqu’on concatène une chaîne de caractères avec un objet.</p>
-<p>Par défaut l’implémentation de la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">toString</a> dans la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>
+<p>Par défaut l’implémentation de la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()">toString</a> dans la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>
 retourne le type de l’objet suivi de &#64; suivi du code de hachage de l’objet.
 Il suffit de redéfinir cette méthode pour obtenir la représentation souhaitée.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="s">&quot;Véhicule de marque &quot;</span> <span class="o">+</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;Véhicule de marque &quot;</span> <span class="o">+</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vehicule</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vehicule</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
 
-<span class="n">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Objet créé : &quot;</span> <span class="o">+</span> <span class="n">v</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="s">&quot;Objet créé : &quot;</span> <span class="o">+</span> <span class="n">v</span><span class="p">;</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span> <span class="c1">// &quot;Objet créé : Véhicule de marque DeLorean&quot;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span> <span class="c1">// &quot;Objet créé : Véhicule de marque DeLorean&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="la-methode-finalize">
 <h2>La méthode finalize<a class="headerlink" href="#la-methode-finalize" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#finalize()">finalize</a> est appelée par le ramasse-miettes avant que l’objet ne soit
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()">finalize</a> est appelée par le ramasse-miettes avant que l’objet ne soit
 supprimé et la mémoire récupérée. Redéfinir cette méthode donne donc l’opportunité
 au développeur de déclencher un traitement avant que l’objet ne disparaisse.
 Cependant, nous avons déjà vu dans le chapitre sur le <a class="reference internal" href="cycle_de_vie.html#cycle-de-vie-finalize"><span class="std std-ref">cycle de vie</span></a>
@@ -749,55 +766,55 @@ que cette méthode sera appelée.</p>
 </div>
 <div class="section" id="la-methode-clone">
 <h2>La méthode clone<a class="headerlink" href="#la-methode-clone" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> est utilisée pour cloner une instance, c’est-à-dire obtenir une
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()">clone</a> est utilisée pour cloner une instance, c’est-à-dire obtenir une
 copie d’un objet. Par défaut, elle est déclarée <strong>protected</strong> car toutes les
 classes ne désirent pas permettre de cloner une instance.</p>
 <p>Pour qu’un objet soit clonable, sa classe doit implémenter l’interface marqueur
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Cloneable.html">Cloneable</a>. L’implémentation par défaut de la méthode dans <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> consiste à jeter
-une exception <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Cloneable.html">Cloneable</a> n’est pas
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html">Cloneable</a>. L’implémentation par défaut de la méthode dans <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> consiste à jeter
+une exception <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si l’interface <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html">Cloneable</a> n’est pas
 implémentée. Si l’interface est implémentée, alors la méthode crée une nouvelle
 instance de la classe et affecte
 la même valeur que l’instance d’origine aux attributs de la nouvelle instance.
-L’implémentation par défaut de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> n’appelle pas les constructeurs pour créer
+L’implémentation par défaut de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()">clone</a> n’appelle pas les constructeurs pour créer
 la nouvelle instance.</p>
 <div class="admonition caution">
 <p class="admonition-title">Prudence</p>
-<p>L’implémentation par défaut de la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> ne réalise pas un clonage
+<p>L’implémentation par défaut de la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()">clone</a> ne réalise pas un clonage
 en profondeur. Cela signifie que si les attributs de la classe d’origine
 référencent des objets, les attributs du clone référenceront les mêmes objets.
 Si ce comportement n’est pas celui désiré, alors il
-faut fournir une nouvelle implémentation de la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> dans la classe.</p>
+faut fournir une nouvelle implémentation de la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()">clone</a> dans la classe.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Par défaut, tous les tableaux implémentent l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Cloneable.html">Cloneable</a> et redéfinissent
-la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> afin de la rendre <strong>public</strong>. On peut donc directement cloner
+<p>Par défaut, tous les tableaux implémentent l’interface <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html">Cloneable</a> et redéfinissent
+la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()">clone</a> afin de la rendre <strong>public</strong>. On peut donc directement cloner
 des tableaux en Java si on désire en obtenir une copie.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">tableauClone</span> <span class="o">=</span> <span class="n">tableau</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">tableauClone</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">.</span><span class="na">clone</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="la-methode-getclass">
 <h2>La méthode getClass<a class="headerlink" href="#la-methode-getclass" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#getClass()">getClass</a> permet d’accéder à l’objet représentant la classe de l’instance.
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()">getClass</a> permet d’accéder à l’objet représentant la classe de l’instance.
 Cela signifie qu’un programme Java peut accéder par programmation à la définition
 de la classe d’une instance. Cette méthode est notamment très utilisée dans des
 usages avancés impliquant la <em>réflexivité</em>.</p>
 <p>L’exemple ci-dessous, affiche le nom complet (c’est-à-dire en incluant son package)
 de la classe d’un objet :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vehicule</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vehicule</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getName</span><span class="o">());</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="les-methodes-de-concurrence">
 <h2>Les méthodes de concurrence<a class="headerlink" href="#les-methodes-de-concurrence" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> fournit un ensemble de méthodes qui sont utilisées pour l’échange
-de signaux dans la programmation concurrente. Il s’agit des méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#notify()">notify</a>,
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#notifyAll()">notifyAll</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#wait(long)">wait</a>.</p>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> fournit un ensemble de méthodes qui sont utilisées pour l’échange
+de signaux dans la programmation concurrente. Il s’agit des méthodes <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()">notify</a>,
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()">notifyAll</a> et <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)">wait</a>.</p>
 </div>
 </div>
 
@@ -821,12 +838,21 @@ de signaux dans la programmation concurrente. Il s’agit des méthodes <a class
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -838,7 +864,6 @@ de signaux dans la programmation concurrente. Il s’agit des méthodes <a class
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

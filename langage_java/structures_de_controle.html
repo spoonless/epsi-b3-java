@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les tableaux" href="tableau.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les structures de contrôle</li>
     
@@ -478,7 +495,7 @@
         <a href="tableau.html" class="btn btn-neutral float-right" title="Les tableaux" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="operateurs.html" class="btn btn-neutral" title="Les opérateurs" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="operateurs.html" class="btn btn-neutral float-left" title="Les opérateurs" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -494,37 +511,37 @@
 <h2>if-else<a class="headerlink" href="#if-else" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’expression <strong>if</strong> permet d’exécuter un bloc d’instructions uniquement si l’expression
 booléenne est évaluée à vrai :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter si i est pair</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’expression <strong>if</strong> peut être optionnellement suivie d’une expression <strong>else</strong> pour les
 cas où l’expression est évaluée à faux :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter si i est pair</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter si i est impair</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’expression <strong>else</strong> peut être suivie d’une nouvelle instruction <strong>if</strong> afin de réaliser
 des choix multiples :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter si i pair</span>
-<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter si i est impair et supérieur à 10</span>
-<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter dans tous les autres cas</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Si le bloc d’instruction d’un <strong>if</strong> ne comporte qu’une seule instruction,
 alors les accolades peuvent être omises :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-  <span class="n">i</span><span class="o">++;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Cependant, beaucoup de développeurs Java préfèrent utiliser systématiquement
@@ -537,17 +554,17 @@ les accolades.</p>
 d’une méthode et de retourner la valeur de l’expression spécifiée après ce mot-clé. Si la méthode
 ne retourne pas de valeur (<strong>void</strong>), alors on utilise le mot-clé <strong>return</strong> seul.
 L’exécution d’un <strong>return</strong> entraîne la fin d’une structure de contrôle.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Écrire des instructions immédiatement après une instruction <strong>return</strong> n’a pas de sens puisqu’elles
 ne seront jamais exécutées. Le compilateur Java le signalera par une erreur <em>unreachable code</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="n">i</span><span class="o">++;</span> <span class="c1">// Erreur de compilation : unreachable code</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="c1">// Erreur de compilation : unreachable code</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -555,9 +572,9 @@ ne seront jamais exécutées. Le compilateur Java le signalera par une erreur <e
 <h2>while<a class="headerlink" href="#while" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’expression <em>while</em> permet de définir un bloc d’instructions à répéter tant que l’expression
 booléenne est évaluée à vrai.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter tant que i est pair</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’expression booléenne est évaluée au départ et après chaque exécution du bloc d’instructions.</p>
@@ -565,7 +582,7 @@ booléenne est évaluée à vrai.</p>
 <p class="admonition-title">Note</p>
 <p>Si le bloc d’instruction d’un <strong>while</strong> ne comporte qu’une seule instruction,
 alors les accolades peuvent être omises :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
   <span class="c1">// instruction à exécuter tant que i est pair</span>
 </pre></div>
 </div>
@@ -576,9 +593,9 @@ les accolades.</p>
 <div class="section" id="do-while">
 <h2>do-while<a class="headerlink" href="#do-while" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il existe une variante de la structure précédente, nommée <strong>do-while</strong> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter</span>
-<span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">);</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Dans ce cas, le bloc d’instruction est exécuté une fois puis l’expression booléenne est évaluée.
@@ -594,26 +611,26 @@ bloc d’instructions est exécuté et un incrément est appelé.</p>
 }
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>il n’est pas possible d’omettre l’initialisation, l’expression booléenne ou l’incrément
 dans la déclaration d’une expression <em>for</em>. Par contre, il est possible de les laisser vide.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="k">for</span> <span class="o">(;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Il est ainsi possible d’écrire une expression <em>for</em> sans condition de sortie, la fameuse
 boucle infinie :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(;;)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter à l&#39;infini</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -621,7 +638,7 @@ boucle infinie :</p>
 <p class="admonition-title">Note</p>
 <p>Si le bloc d’instruction d’un <strong>for</strong> ne comporte qu’une seule instruction,
 alors les accolades peuvent être omises :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
   <span class="c1">// instruction à exécuter</span>
 </pre></div>
 </div>
@@ -633,20 +650,20 @@ les accolades.</p>
 <h2>for amélioré<a class="headerlink" href="#for-ameliore" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il existe une forme améliorée de l’expression <em>for</em> (souvent appelée <em>for-each</em>)
 qui permet d’exprimer plus succinctement un parcours d’une collection d’éléments.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">maCollection</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">:</span> <span class="n">maCollection</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// instructions à exécuter</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Pour que cette expression compile, il faut que la variable désignant la collection
-à droite de <strong>:</strong> implémente le type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a> ou qu’il s’agisse d’un tableau.
+à droite de <strong>:</strong> implémente le type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html">Iterable</a> ou qu’il s’agisse d’un tableau.
 Il faut également que la variable à gauche de <strong>:</strong> soit compatible pour l’assignation
 d’un élément de la collection.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">short</span> <span class="n">arrayOfShort</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">short</span> <span class="n">arrayOfShort</span><span class="o">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
 
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">:</span> <span class="n">arrayOfShort</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">k</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="p">:</span> <span class="n">arrayOfShort</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -656,22 +673,22 @@ d’un élément de la collection.</p>
 il est possible de contrôler le comportement à l’intérieur de la boucle grâce aux mots-clés
 <strong>break</strong> et <strong>continue</strong>.</p>
 <p><strong>break</strong> quitte la boucle sans exécuter le reste des instructions.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">k</span> <span class="o">*=</span> <span class="n">i</span>
-  <span class="nf">if</span> <span class="o">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">break</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="nf">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>continue</strong> arrête l’exécution de l’itération actuelle et commence l’exécution de l’itération suivante.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">continue</span><span class="o">;</span>
-  <span class="o">}</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">continue</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -681,19 +698,19 @@ il est possible de contrôler le comportement à l’intérieur de la boucle gr�
 raison d’utiliser un libellé est le cas d’une itération imbriquée dans une autre itération.
 Par défaut, <strong>break</strong> et <strong>continue</strong> n’agissent que sur le bloc d’itération dans lequel ils apparaissent.
 En utilisant un libellé, on peut arrêter ou continuer sur une itération de niveau supérieur :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
 <span class="nl">boucleDeCalcul:</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">k</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">m</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">k</span><span class="o">;</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">break</span> <span class="n">boucleDeCalcul</span><span class="o">;</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">k</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">break</span> <span class="n">boucleDeCalcul</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">m</span><span class="o">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, <em>boucleDeCalcul</em> est un libellé qui permet de signifier que l’instruction <strong>break</strong>
@@ -703,19 +720,19 @@ directement à l’affichage du résultat sur la sortie standard.</p>
 <div class="section" id="switch">
 <h2>switch<a class="headerlink" href="#switch" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un expression <strong>switch</strong> permet d’effectuer une sélection parmi plusieurs valeurs.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">case</span> <span class="s">&quot;valeur 1&quot;</span><span class="o">:</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="s">&quot;valeur 1&quot;</span><span class="p">:</span>
     <span class="c1">// instructions</span>
-    <span class="k">break</span><span class="o">;</span>
-  <span class="k">case</span> <span class="s">&quot;valeur 2&quot;</span><span class="o">:</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s">&quot;valeur 2&quot;</span><span class="p">:</span>
     <span class="c1">// instructions</span>
-    <span class="k">break</span><span class="o">;</span>
-  <span class="k">case</span> <span class="s">&quot;valeur 3&quot;</span><span class="o">:</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s">&quot;valeur 3&quot;</span><span class="p">:</span>
     <span class="c1">// instructions</span>
-    <span class="k">break</span><span class="o">;</span>
-  <span class="k">default</span><span class="o">:</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="p">:</span>
     <span class="c1">// instructions</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>switch</strong> évalue l’expression entre parenthèses et la compare dans l’ordre avec les valeurs des lignes <strong>case</strong>.
@@ -723,18 +740,18 @@ Si une est identique alors il commence à exécuter la ligne d’instruction qui
 représente un point à partir duquel l’exécution du code commencera. Si on veut isoler chaque cas, il faut
 utiliser une instruction <strong>break</strong>. Au contraire, l’omission de l’instruction <strong>break</strong>
 peut être pratique si on veut effectuer le même traitement pour un ensemble de cas :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;u&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;y&#39;</span><span class="o">:</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;u&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;y&#39;</span><span class="p">:</span>
     <span class="c1">// instruction pour un voyelle</span>
-    <span class="k">break</span><span class="o">;</span>
-  <span class="k">default</span><span class="o">:</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="p">:</span>
     <span class="c1">// instructions pour une consonne</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>On peut ajouter une cas <strong>default</strong> qui servira de point d’exécution si aucun <strong>case</strong> ne correspond.</p>
@@ -743,17 +760,17 @@ peut être pratique si on veut effectuer le même traitement pour un ensemble de
 <p>Par convention, on place souvent le cas <strong>default</strong> à la fin. Cependant, il agit plus comme
 un libellé indiquant la ligne à laquelle doit commencer l’exécution du code.
 Il peut donc être placé n’importe où :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">default</span><span class="o">:</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">default</span><span class="p">:</span>
     <span class="c1">// instructions pour une consonne</span>
-  <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;u&#39;</span><span class="o">:</span>
-  <span class="k">case</span> <span class="sc">&#39;y&#39;</span><span class="o">:</span>
+  <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;i&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;u&#39;</span><span class="p">:</span>
+  <span class="k">case</span> <span class="sc">&#39;y&#39;</span><span class="p">:</span>
     <span class="c1">// instructions pour les consonnes et les voyelles</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -785,12 +802,21 @@ que pour un type primitif, une énumération ou une chaîne de caractères.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -802,7 +828,6 @@ que pour un type primitif, une énumération ou une chaîne de caractères.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les annotations" href="les_annotations.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les classes internes</li>
     
@@ -478,7 +495,7 @@
         <a href="les_annotations.html" class="btn btn-neutral float-right" title="Les annotations" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="streams.html" class="btn btn-neutral" title="Streams" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="streams.html" class="btn btn-neutral float-left" title="Streams" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -498,38 +515,38 @@ pour les interfaces et les énumérations.</p>
 à l’intérieur du bloc de déclaration de la classe englobante. Les classes internes
 peuvent être ou non déclarées <strong>static</strong>. Ces deux cas correspondent à deux
 usages particuliers des classes internes.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseEnglobante</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseEnglobante</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ClasseInterneStatic</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ClasseInterneStatic</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseInterne</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseInterne</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="les-classes-internes-static">
 <h2>Les classes internes static<a class="headerlink" href="#les-classes-internes-static" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Les classes internes déclarées <strong>static</strong> sont des classes pour lesquelles
 l’espace de noms est celui de la classe englobante.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseEnglobante</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseEnglobante</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ClasseInterne</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ClasseInterne</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Pour une classe interne <strong>static</strong> :</p>
 <ul>
-<li><p>Son nom complet inclus le nom de la classe englobante (qui agit comme un package).
+<li><p>Son nom complet inclut le nom de la classe englobante (qui agit comme un package).
 Pour la classe ci-dessus, le nom complet de <em>ClasseInterne</em> est :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fr.epsi.b3</span><span class="o">.</span><span class="na">ClasseEnglobante</span><span class="o">.</span><span class="na">ClasseInterne</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">fr.epsi.b3</span><span class="p">.</span><span class="na">ClasseEnglobante</span><span class="p">.</span><span class="na">ClasseInterne</span>
 </pre></div>
 </div>
 </li>
@@ -546,57 +563,57 @@ dans des fichiers différents de petites classes utilitaires et ainsi de facilit
 la lecture du code. Dans l’exemple ci-dessous, plutôt que de créer un fichier
 spécifique pour l’implémentation d’un comparateur, on ajoute son implémentation
 comme une classe interne.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Comparator</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Individu</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Individu</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Comparateur</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Individu</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Comparateur</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Individu</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">Individu</span> <span class="n">i1</span><span class="o">,</span> <span class="n">Individu</span> <span class="n">i2</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">i1</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
-      <span class="o">}</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">i2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
-      <span class="o">}</span>
-      <span class="kt">int</span> <span class="n">cmp</span> <span class="o">=</span> <span class="n">i1</span><span class="o">.</span><span class="na">nom</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">i2</span><span class="o">.</span><span class="na">nom</span><span class="o">);</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">cmp</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">cmp</span> <span class="o">=</span> <span class="n">i1</span><span class="o">.</span><span class="na">prenom</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">i2</span><span class="o">.</span><span class="na">prenom</span><span class="o">);</span>
-      <span class="o">}</span>
-      <span class="k">return</span> <span class="n">cmp</span><span class="o">;</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="p">(</span><span class="n">Individu</span> <span class="n">i1</span><span class="p">,</span> <span class="n">Individu</span> <span class="n">i2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i1</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i2</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="kt">int</span> <span class="n">cmp</span> <span class="o">=</span> <span class="n">i1</span><span class="p">.</span><span class="na">nom</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">i2</span><span class="p">.</span><span class="na">nom</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">cmp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cmp</span> <span class="o">=</span> <span class="n">i1</span><span class="p">.</span><span class="na">prenom</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">i2</span><span class="p">.</span><span class="na">prenom</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="n">cmp</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">prenom</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">prenom</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">nom</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Individu</span><span class="o">(</span><span class="n">String</span> <span class="n">prenom</span><span class="o">,</span> <span class="n">String</span> <span class="n">nom</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">prenom</span> <span class="o">=</span> <span class="n">prenom</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Individu</span><span class="p">(</span><span class="n">String</span> <span class="n">prenom</span><span class="p">,</span> <span class="n">String</span> <span class="n">nom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">prenom</span> <span class="o">=</span> <span class="n">prenom</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nom</span> <span class="o">=</span> <span class="n">nom</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">prenom</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">nom</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">prenom</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Individu</span><span class="o">[]</span> <span class="n">individus</span> <span class="o">=</span> <span class="o">{</span>
-    <span class="k">new</span> <span class="n">Individu</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Eod&quot;</span><span class="o">),</span>
-    <span class="k">new</span> <span class="n">Individu</span><span class="o">(</span><span class="s">&quot;Annabel&quot;</span><span class="o">,</span> <span class="s">&quot;Doe&quot;</span><span class="o">),</span>
-    <span class="k">new</span> <span class="n">Individu</span><span class="o">(</span><span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Doe&quot;</span><span class="o">)</span>
-<span class="o">};</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Individu</span><span class="o">[]</span> <span class="n">individus</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">new</span> <span class="n">Individu</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="s">&quot;Eod&quot;</span><span class="p">),</span>
+    <span class="k">new</span> <span class="n">Individu</span><span class="p">(</span><span class="s">&quot;Annabel&quot;</span><span class="p">,</span> <span class="s">&quot;Doe&quot;</span><span class="p">),</span>
+    <span class="k">new</span> <span class="n">Individu</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span> <span class="s">&quot;Doe&quot;</span><span class="p">)</span>
+<span class="p">};</span>
 
-<span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">individus</span><span class="o">,</span> <span class="k">new</span> <span class="n">Individu</span><span class="o">.</span><span class="na">Comparateur</span><span class="o">());</span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">individus</span><span class="p">,</span> <span class="k">new</span> <span class="n">Individu</span><span class="p">.</span><span class="na">Comparateur</span><span class="p">());</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">individus</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">individus</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la classe <em>Individu</em> fournit publiquement une
-implémentation d’un <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Comparator.html">Comparator</a> qui permet de comparer deux instances en
+implémentation d’un <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Comparator.html">Comparator</a> qui permet de comparer deux instances en
 fonction de leur nom et de leur prénom. Notez que l’implémentation de la
 méthode <em>compare</em> peut accéder aux attributs privés <em>nom</em> et <em>prenom</em> des
 paramètres <em>i1</em> et <em>i2</em> car ils sont de type <em>Individu</em>.</p>
@@ -607,7 +624,7 @@ paramètres <em>i1</em> et <em>i2</em> car ils sont de type <em>Individu</em>.</
 <strong>static</strong> est liée au contexte d’exécution d’une instance de la classe
 englobante.</p>
 <p>Comme pour les classes internes <strong>static</strong>, le nom complet de classe interne
-inclus celui de la classe englobante et les deux classes partagent le même
+inclut celui de la classe englobante et les deux classes partagent le même
 espace privé. Mais surtout, une classe interne maintient une référence implicite
 sur un objet de la classe englobante. Cela signifie que :</p>
 <ul class="simple">
@@ -683,80 +700,80 @@ en Java avec l’API <a class="reference external" href="https://docs.oracle.com
 60
 61
 62
-63</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+63</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.awt.FlowLayout</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.awt.event.ActionEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.FlowLayout</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.ActionEvent</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">javax.swing.AbstractAction</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.swing.JButton</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.swing.JDialog</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">javax.swing.JLabel</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.AbstractAction</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JButton</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JDialog</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">javax.swing.JLabel</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BoiteDeDialogue</span> <span class="kd">extends</span> <span class="n">JDialog</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BoiteDeDialogue</span> <span class="kd">extends</span> <span class="n">JDialog</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">IncrementerAction</span> <span class="kd">extends</span> <span class="n">AbstractAction</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="nf">IncrementerAction</span><span class="o">()</span> <span class="o">{</span>
-      <span class="kd">super</span><span class="o">(</span><span class="s">&quot;Incrémenter&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actionPerformed</span><span class="o">(</span><span class="n">ActionEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">incrementer</span><span class="o">();</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-
-  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">DecrementerAction</span> <span class="kd">extends</span> <span class="n">AbstractAction</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="nf">DecrementerAction</span><span class="o">()</span> <span class="o">{</span>
-      <span class="kd">super</span><span class="o">(</span><span class="s">&quot;Décrémenter&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">IncrementerAction</span> <span class="kd">extends</span> <span class="n">AbstractAction</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">IncrementerAction</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">super</span><span class="p">(</span><span class="s">&quot;Incrémenter&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actionPerformed</span><span class="o">(</span><span class="n">ActionEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">decrementer</span><span class="o">();</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actionPerformed</span><span class="p">(</span><span class="n">ActionEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">incrementer</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">JLabel</span> <span class="n">label</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">valeur</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">class</span> <span class="nc">DecrementerAction</span> <span class="kd">extends</span> <span class="n">AbstractAction</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">DecrementerAction</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">super</span><span class="p">(</span><span class="s">&quot;Décrémenter&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actionPerformed</span><span class="p">(</span><span class="n">ActionEvent</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">decrementer</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="n">JLabel</span> <span class="n">label</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">valeur</span><span class="p">;</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">dialogInit</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">.</span><span class="na">dialogInit</span><span class="o">();</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">setLayout</span><span class="o">(</span><span class="k">new</span> <span class="n">FlowLayout</span><span class="o">());</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">label</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JLabel</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">valeur</span><span class="o">));</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">label</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JButton</span><span class="o">(</span><span class="k">new</span> <span class="n">IncrementerAction</span><span class="o">()));</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">JButton</span><span class="o">(</span><span class="k">new</span> <span class="n">DecrementerAction</span><span class="o">()));</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">pack</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">dialogInit</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">.</span><span class="na">dialogInit</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">setLayout</span><span class="p">(</span><span class="k">new</span> <span class="n">FlowLayout</span><span class="p">());</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">label</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JLabel</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">valeur</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">label</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">JButton</span><span class="p">(</span><span class="k">new</span> <span class="n">IncrementerAction</span><span class="p">()));</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">JButton</span><span class="p">(</span><span class="k">new</span> <span class="n">DecrementerAction</span><span class="p">()));</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">pack</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">incrementer</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">label</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(++</span><span class="k">this</span><span class="o">.</span><span class="na">valeur</span><span class="o">));</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">incrementer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">label</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="o">++</span><span class="k">this</span><span class="p">.</span><span class="na">valeur</span><span class="p">));</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">decrementer</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">label</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(--</span><span class="k">this</span><span class="o">.</span><span class="na">valeur</span><span class="o">));</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">decrementer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">label</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="o">--</span><span class="k">this</span><span class="p">.</span><span class="na">valeur</span><span class="p">));</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">BoiteDeDialogue</span> <span class="n">boiteDeDialogue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BoiteDeDialogue</span><span class="o">();</span>
-    <span class="n">boiteDeDialogue</span><span class="o">.</span><span class="na">setDefaultCloseOperation</span><span class="o">(</span><span class="n">DISPOSE_ON_CLOSE</span><span class="o">);</span>
-    <span class="n">boiteDeDialogue</span><span class="o">.</span><span class="na">setVisible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">BoiteDeDialogue</span> <span class="n">boiteDeDialogue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BoiteDeDialogue</span><span class="p">();</span>
+    <span class="n">boiteDeDialogue</span><span class="p">.</span><span class="na">setDefaultCloseOperation</span><span class="p">(</span><span class="n">DISPOSE_ON_CLOSE</span><span class="p">);</span>
+    <span class="n">boiteDeDialogue</span><span class="p">.</span><span class="na">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>L’exemple ci-dessus est un programme complet qui crée une boite de dialogue
 contenant deux boutons qui permettent respectivement d’incrémenter et de
-décrémenter un nombre qui est affiché. La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/swing/JButton.html">JButton</a> qui représente un
+décrémenter un nombre qui est affiché. La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/JButton.html">JButton</a> qui représente un
 bouton attend comme paramètre de construction une instance
-implémentant l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/swing/Action.html">Action</a>. Cette instance définit le libellé du bouton et l’action
+implémentant l’interface <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/Action.html">Action</a>. Cette instance définit le libellé du bouton et l’action
 à réaliser lorsque l’utilisateur clique sur le bouton. Les boutons sont créés
 aux lignes 44 et 45. Les classes d’action utilisées pour chaque bouton sont
 définies aux lignes 13 et 24. Ces classes sont
-des classes internes. Dans leur méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/javax/swing/Action.html">actionPerformed</a>, elles appellent soit
+des classes internes. Dans leur méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/swing/Action.html">actionPerformed</a>, elles appellent soit
 la méthode <em>incrementer</em> soit la méthode <em>decrementer</em>. Ces deux méthodes
 sont définies par la classe englobante BoiteDeDialogue. Donc les instances de
 ces classes d’action appellent ces méthodes sur l’instance de l’objet englobant
@@ -780,13 +797,13 @@ une autre classe ou qui implémente une interface. Pour déclarer une classe ano
 on déclare le bloc de la classe au moment de l’instantiation avec <strong>new</strong>.</p>
 <p>Imaginons que nous souhaitions créer une interface pour représenter un système
 de log :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Logger</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Logger</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">);</span>
+  <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">);</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>On peut fournir une classe <em>GenerateurLogger</em> qui crée des instances implémentant
@@ -818,34 +835,34 @@ l’interface <em>Logger</em>.</p>
 25
 26
 27
-28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="o">;</span>
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @param application Le nom de l&#39;application</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">application</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="p">(</span><span class="n">String</span> <span class="n">application</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                                         <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                                         <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>L’implémentation de la méthode <em>creerConsoleLogger</em> crée une instance
@@ -856,9 +873,9 @@ passé en paramètre. Le nom de l’application correspond à l’attribut <em>a
 de la classe <em>GenerateurLogger</em>. Comme pour les classes internes, les classes
 anonymes ont accès aux attributs et aux méthodes de l’objet englobant.</p>
 <p>Il est possible de récupérer un objet implémetant <em>Logger</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GenerateurLogger</span> <span class="n">generateur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GenerateurLogger</span><span class="o">(</span><span class="s">&quot;mon_appli&quot;</span><span class="o">);</span>
-<span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">generateur</span><span class="o">.</span><span class="na">creerConsoleLogger</span><span class="o">();</span>
-<span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="s">&quot;un message de log&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GenerateurLogger</span> <span class="n">generateur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GenerateurLogger</span><span class="p">(</span><span class="s">&quot;mon_appli&quot;</span><span class="p">);</span>
+<span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">generateur</span><span class="p">.</span><span class="na">creerConsoleLogger</span><span class="p">();</span>
+<span class="n">logger</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">&quot;un message de log&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Le code précédent affichera sur la sortie standard :</p>
@@ -926,65 +943,65 @@ dans un fichier.</p>
 56
 57
 58
-59</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="o">;</span>
+59</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.Writer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.StandardOpenOption</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Writer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.StandardOpenOption</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @param application Le nom de l&#39;application</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">application</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="p">(</span><span class="n">String</span> <span class="n">application</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                                         <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">));</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                                         <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerNoopLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerNoopLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="o">(</span><span class="n">Path</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="p">(</span><span class="n">Path</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="n">String</span> <span class="n">logMessage</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                                          <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-        <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
-          <span class="n">w</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">logMessage</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;\n&#39;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">logMessage</span><span class="o">);</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="n">String</span> <span class="n">logMessage</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                                          <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+        <span class="k">try</span><span class="p">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="p">.</span><span class="na">newBufferedWriter</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">CREATE</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">APPEND</span><span class="p">))</span> <span class="p">{</span>
+          <span class="n">w</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">logMessage</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">logMessage</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>La classe ci-dessus définit maintenant trois classes anonymes qui implémentent toutes
@@ -1004,22 +1021,22 @@ paramètre ou une variable déclaré dans la méthode et utilisé par une classe
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// on déclare le paramètre final pour signaler explicitement qu&#39;il n&#39;est</span>
 <span class="c1">// pas possible de modifier la référence de ce paramètre puisqu&#39;il est</span>
 <span class="c1">// utilisé par la classe anonyme.</span>
-<span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="o">(</span><span class="kd">final</span> <span class="n">Path</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="p">(</span><span class="kd">final</span> <span class="n">Path</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// Pour le format du message utilisé dans printf</span>
-      <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-      <span class="n">String</span> <span class="n">logMessage</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                                        <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-      <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
-        <span class="n">w</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">logMessage</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;\n&#39;</span><span class="o">);</span>
-      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">logMessage</span><span class="o">);</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">};</span>
-<span class="o">}</span>
+      <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+      <span class="n">String</span> <span class="n">logMessage</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                                        <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+      <span class="k">try</span><span class="p">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="p">.</span><span class="na">newBufferedWriter</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">CREATE</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">APPEND</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">w</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">logMessage</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">logMessage</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1031,65 +1048,65 @@ rendons compte que le formatage du message a été dupliqué pour le logger
 qui écrit sur la sortie standard et pour celui qui écrit dans un fichier. Afin
 de mutualiser le code, nous pouvons créer une méthode <em>genererLogMessage</em>
 dans la classe englobante qui pourra être appelée par chaque classe anonyme.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.Writer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.StandardOpenOption</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Writer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.StandardOpenOption</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @param application Le nom de l&#39;application</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">application</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="p">(</span><span class="n">String</span> <span class="n">application</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">genererLogMessage</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">genererLogMessage</span><span class="p">(</span><span class="n">message</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="o">(</span><span class="n">Path</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="p">(</span><span class="n">Path</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
-          <span class="n">w</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">genererLogMessage</span><span class="o">(</span><span class="n">message</span><span class="o">)).</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;\n&#39;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">genererLogMessage</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">try</span><span class="p">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="p">.</span><span class="na">newBufferedWriter</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">CREATE</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">APPEND</span><span class="p">))</span> <span class="p">{</span>
+          <span class="n">w</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">genererLogMessage</span><span class="p">(</span><span class="n">message</span><span class="p">)).</span><span class="na">append</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">genererLogMessage</span><span class="p">(</span><span class="n">message</span><span class="p">));</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerNoopLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerNoopLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="nf">genererLogMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                         <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="nf">genererLogMessage</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                         <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Mais nous voulons appeler cette nouvelle méthode <em>log</em>. Ce nom rentrera
@@ -1102,7 +1119,7 @@ le contexte de la classe englobante en utilisant :</p>
 <p>Ainsi nous pouvons renommer notre méthode <em>genererLogMessage</em> en <em>log</em>
 et nous pouvons l’invoquer explicitement dans les méthodes des classes anonymes avec la
 syntaxe :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GenerateurLogger</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1110,67 +1127,67 @@ syntaxe :</p>
 <p>Cette syntaxe permet d’accéder aux attributs et aux méthodes de l’instance de
 la classe englobante.</p>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.Writer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.nio.file.StandardOpenOption</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Writer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Files</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Path</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.Paths</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.nio.file.StandardOpenOption</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @param application Le nom de l&#39;application</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">application</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="p">(</span><span class="n">String</span> <span class="n">application</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">GenerateurLogger</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">message</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="o">(</span><span class="n">Path</span> <span class="n">path</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerFileLogger</span><span class="p">(</span><span class="n">Path</span> <span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="k">try</span><span class="o">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">CREATE</span><span class="o">,</span> <span class="n">StandardOpenOption</span><span class="o">.</span><span class="na">APPEND</span><span class="o">))</span> <span class="o">{</span>
-          <span class="n">w</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">)).</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;\n&#39;</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="k">try</span><span class="p">(</span><span class="n">Writer</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Files</span><span class="p">.</span><span class="na">newBufferedWriter</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">CREATE</span><span class="p">,</span> <span class="n">StandardOpenOption</span><span class="p">.</span><span class="na">APPEND</span><span class="p">))</span> <span class="p">{</span>
+          <span class="n">w</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">GenerateurLogger</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">message</span><span class="p">)).</span><span class="na">append</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">GenerateurLogger</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">message</span><span class="p">));</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerNoopLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerNoopLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Logger</span><span class="p">()</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-      <span class="o">}</span>
-    <span class="o">};</span>
-  <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                         <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                         <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1192,39 +1209,39 @@ dans laquelle elle est déclarée. Une classe déclarée dans une
 méthode peut fonctionner de la même manière qu’une classe anonyme : elle
 peut accéder aux paramètres et aux variables de la méthode qui la déclare (à
 condition qu’ils ne soient modifiés ni par la méthode ni par la classe).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.logger</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GenerateurLogger</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">application</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @param application Le nom de l&#39;application</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="o">(</span><span class="n">String</span> <span class="n">application</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">GenerateurLogger</span><span class="p">(</span><span class="n">String</span> <span class="n">application</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">application</span> <span class="o">=</span> <span class="n">application</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">class</span> <span class="nc">ConsoleLogger</span> <span class="kd">implements</span> <span class="n">Logger</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Logger</span> <span class="nf">creerConsoleLogger</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">class</span> <span class="nc">ConsoleLogger</span> <span class="kd">implements</span> <span class="n">Logger</span> <span class="p">{</span>
       <span class="nd">@Override</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Pour le format du message utilisé dans printf</span>
-        <span class="c1">// Cf. https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html#syntax</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">GenerateurLogger</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">message</span><span class="o">));</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="n">ConsoleLogger</span><span class="o">();</span>
-  <span class="o">}</span>
+        <span class="c1">// Cf. https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html#syntax</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">GenerateurLogger</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="n">message</span><span class="p">));</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">ConsoleLogger</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="nf">log</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="o">,</span>
-                         <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">(),</span> <span class="n">application</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="nf">log</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%1$tY-%1$tb-%1$ta %1$tH:%1$tM %2$s - %3$s&quot;</span><span class="p">,</span>
+                         <span class="n">LocalDateTime</span><span class="p">.</span><span class="na">now</span><span class="p">(),</span> <span class="n">application</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la méthode <em>creerConsoleLogger</em> déclare la classe
@@ -1241,17 +1258,17 @@ déclarer des constructeurs.</p>
 Il est même possible de déclarer des interfaces et des énumérations dans une
 interface. Dans ce cas, les interfaces et les énumérations sont traitées
 implicitement comme <strong>static</strong>. On peut ou non préciser le mot-clé.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseEnglobante</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClasseEnglobante</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">InterfaceInterne</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">InterfaceInterne</span> <span class="p">{</span>
 
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">EnumerationInterne</span><span class="o">{</span><span class="n">VALEUR1</span><span class="o">,</span> <span class="n">VALEUR2</span><span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">enum</span> <span class="n">EnumerationInterne</span><span class="p">{</span><span class="n">VALEUR1</span><span class="p">,</span> <span class="n">VALEUR2</span><span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1286,12 +1303,21 @@ chaque classe.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -1303,7 +1329,6 @@ chaque classe.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

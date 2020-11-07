@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les types primitifs" href="types_primitifs.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>La structure fondamentale du langage</li>
     
@@ -478,7 +495,7 @@
         <a href="types_primitifs.html" class="btn btn-neutral float-right" title="Les types primitifs" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="compilation.html" class="btn btn-neutral" title="Compilation &amp; exécution" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="compilation.html" class="btn btn-neutral float-left" title="Compilation &amp; exécution" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -498,8 +515,8 @@ sont familières.</p>
 <p>Java est un <a class="reference external" href="https://fr.wikipedia.org/wiki/Programmation_imp%C3%A9rative">langage de programmation impératif</a>. Cela signifie qu’un programme
 Java se compose d’instructions (<strong>statements</strong>) décrivant les opérations que la machine
 doit exécuter. En Java une instruction est délimitée par un <strong>point-virgule</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -509,7 +526,7 @@ doit exécuter. En Java une instruction est délimitée par un <strong>point-vir
 un paramètre ou un attribut. Java est un <a class="reference external" href="https://fr.wikipedia.org/wiki/Type_(informatique)">langage fortement typé</a>. Lorsque l’on
 déclare une variable un paramètre ou un attribut, il est <strong>obligatoire de préciser
 son type</strong>. Par exemple :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>L’instruction précédente est la déclaration d’une variable <em>i</em>. Le type est toujours
@@ -520,8 +537,8 @@ En déclarant le type, le programmeur restreint le type de données que peut rep
 cette variable. Ainsi, le compilateur va pouvoir signaler une erreur si jamais une
 instruction dans le reste du programme tente d’affecter une valeur qui n’est pas
 adéquate.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="hll"><span class="n">i</span> <span class="o">=</span> <span class="s">&quot;bonjour&quot;</span><span class="o">;</span> <span class="c1">// ERREUR : on tente d&#39;affecter une chaîne de caractères</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="hll"><span class="n">i</span> <span class="o">=</span> <span class="s">&quot;bonjour&quot;</span><span class="p">;</span> <span class="c1">// ERREUR : on tente d&#39;affecter une chaîne de caractères</span>
 </span>               <span class="c1">//          à une variable qui représente un nombre</span>
 </pre></div>
 </div>
@@ -534,7 +551,7 @@ de la compilation) et le typage dynamique (vérification réalisée au moment de
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Depuis Java 10, il est possible d’utiliser l’identifiant <code class="docutils literal notranslate"><span class="pre">var</span></code> à la place du type :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Lorsque que le compilateur rencontre une instruction comme la précédente, il
@@ -552,16 +569,16 @@ est évident.</p>
 <p>Java permet de structurer le code en bloc. Un bloc est délimité par des <strong>accolades</strong>.
 Un bloc permet d’isoler par exemple le code conditionnel à la suite d’un <strong>if</strong> mais
 il est également possible de créer des blocs anonymes.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">i</span> <span class="o">=</span>  <span class="o">-</span><span class="n">i</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">i</span> <span class="o">=</span>  <span class="o">-</span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="o">{</span>
-  <span class="kt">double</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Un bloc de code n’a pas besoin de se terminer par un point-virgule. Certains outils
@@ -571,13 +588,13 @@ il est également possible de créer des blocs anonymes.</p>
 <h2>Les commentaires<a class="headerlink" href="#les-commentaires" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un commentaire sur une ligne commence par <strong>//</strong> et continue jusqu’à la fin de la ligne :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// ceci est un commentaire</span>
-<span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span> <span class="c1">// ceci est également un commentaire</span>
+<span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span> <span class="c1">// ceci est également un commentaire</span>
 </pre></div>
 </div>
 <p>Un commentaire sur plusieurs lignes commence par <strong>/*</strong> et se termine par <strong>*/</strong> :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/* ceci est un commentaire</span>
 <span class="cm">   sur plusieurs lignes */</span>
-<span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Il existe un type spécial de commentaires utilisé par l’utilitaire <a class="reference external" href="https://en.wikipedia.org/wiki/Javadoc">javadoc</a>. Ces commentaires
@@ -592,9 +609,9 @@ appelés <strong>commentaires javadoc</strong>, commencent par <strong>/**</stro
 <span class="cm">* @author David Gayerie</span>
 <span class="cm">* @version 1.0</span>
 <span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -604,16 +621,16 @@ appelés <strong>commentaires javadoc</strong>, commencent par <strong>/**</stro
 où une instruction se termine par un point-virgule et que les blocs sont délimités
 par des accolades, il est possible de présenter du code de façon différente. Ainsi,
 le code suivant :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>est strictement identique pour le compilateur à celui-ci :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span><span class="o">=</span><span class="mf">0.0</span><span class="o">;</span><span class="n">i</span><span class="o">=</span><span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="mi">16</span><span class="o">);</span><span class="k">if</span><span class="o">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">){</span><span class="n">i</span><span class="o">=-</span><span class="n">i</span><span class="o">;}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">i</span><span class="o">=</span><span class="mf">0.0</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span><span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">){</span><span class="n">i</span><span class="o">=-</span><span class="n">i</span><span class="p">;}</span>
 </pre></div>
 </div>
 <p>Cependant, le code source est très souvent relu par les développeurs, il faut
@@ -623,30 +640,30 @@ permettent d’ailleurs de reformater le code
 (sous Eclipse avec le raccourci clavier <em>MAJ + CTRL + F</em>).
 Rappelez-vous des conventions suivantes :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// On revient à la ligne après une accolade (mais pas avant)</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 
 <span class="c1">// On revient systématiquement à la ligne après un point virgule</span>
 <span class="c1">// (sauf) dans le cas de l&#39;instruction for</span>
-<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
 
 <span class="c1">// Dans un bloc de code, on utilise une tabulation ou des espaces</span>
 <span class="c1">// pour mettre en valeur le bloc</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 <span class="c1">// On sépare les variables des opérateurs par des espaces</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// plutôt que i=i+10</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// plutôt que i=i+10</span>
 </pre></div>
 </div>
 </div>
@@ -658,7 +675,7 @@ pour le formatage de code, cela n’a pas d’impact sur le compilateur mais per
 de garantir une bonne lisibilité et donc une bonne compréhension de son code
 par ses pairs. Les développeurs Java sont particulièrement attachés au respect
 des conventions de nommage.</p>
-<table class="colwidths-given docutils align-center" id="id1">
+<table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Convention de nommage</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
@@ -767,12 +784,21 @@ dans le langage Java.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -784,7 +810,6 @@ dans le langage Java.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

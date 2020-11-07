@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Méthodes et classes génériques" href="generiques.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les interfaces</li>
     
@@ -478,7 +495,7 @@
         <a href="generiques.html" class="btn btn-neutral float-right" title="Méthodes et classes génériques" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="enumeration.html" class="btn btn-neutral" title="Les énumérations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="enumeration.html" class="btn btn-neutral float-left" title="Les énumérations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -498,11 +515,11 @@ forme simplifiée d’héritage multiple.</p>
 <div class="section" id="declaration-d-une-interface">
 <h2>Déclaration d’une interface<a class="headerlink" href="#declaration-d-une-interface" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une interface se déclare avec le mot-clé <strong>interface</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Comme pour une classe, une interface a une portée, un nom et un bloc de
@@ -511,19 +528,19 @@ nom que l’interface. Pour l’exemple ci-dessus, le fichier doit s’appeler
 <em>Compte.java</em>.</p>
 <p>Une interface décrit un ensemble de méthodes en fournissant uniquement leur
 signature.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                   <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                   <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                  <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                  <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">;</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une interface introduit un nouveau type d’abstraction qui définit à travers
@@ -533,23 +550,23 @@ Une classe peut ensuite implémenter une ou plusieurs interfaces.</p>
 <p class="admonition-title">Note</p>
 <p>Les méthodes d’une interface sont par défaut <strong>public</strong> et <strong>abstract</strong>. Il
 n’est pas possible de déclarer une autre portée que <strong>public</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Mobile</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Mobile</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">deplacer</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">deplacer</span><span class="p">();</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’interface ci-dessus est strictement identique à celle-ci :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Mobile</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Mobile</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">deplacer</span><span class="o">();</span>
+  <span class="kt">void</span> <span class="nf">deplacer</span><span class="p">();</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -559,40 +576,40 @@ n’est pas possible de déclarer une autre portée que <strong>public</strong>.
 <p>Une classe signale les interfaces qu’elle implémente grâce au mot-clé <strong>implements</strong>.
 Une classe concrète doit fournir une implémentation pour toutes les méthodes
 d’une interface, soit dans sa déclaration, soit parce qu’elle en hérite.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompteBancaire</span> <span class="kd">implements</span> <span class="n">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CompteBancaire</span> <span class="kd">implements</span> <span class="n">Compte</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">numero</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">balance</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">numero</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">balance</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">CompteBancaire</span><span class="o">(</span><span class="n">String</span> <span class="n">numero</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">numero</span> <span class="o">=</span> <span class="n">numero</span><span class="o">;</span>
-  <span class="o">}</span>
-
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">balance</span> <span class="o">+=</span> <span class="n">montant</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">CompteBancaire</span><span class="p">(</span><span class="n">String</span> <span class="n">numero</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">numero</span> <span class="o">=</span> <span class="n">numero</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">balance</span> <span class="o">&lt;</span> <span class="n">montant</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="n">OperationInterrompueException</span><span class="o">();</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">balance</span> <span class="o">-=</span> <span class="n">montant</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">balance</span> <span class="o">+=</span> <span class="n">montant</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">balance</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">balance</span> <span class="o">&lt;</span> <span class="n">montant</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">OperationInterrompueException</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">balance</span> <span class="o">-=</span> <span class="n">montant</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNumero</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">numero</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">balance</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getNumero</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">numero</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’implémentation des méthodes d’une interface suit les mêmes règles que la redéfinition.</p>
@@ -617,52 +634,52 @@ pour un compte bancaire, un porte-monnaie électronique, un compte en ligne…
 t
 Une classe peut implémenter plusieurs interfaces si nécessaire. Pour cela, il
 suffit de donner les noms des interfaces séparés par une virgule.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Carnivore</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Carnivore</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="o">);</span>
+  <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="p">);</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Herbivore</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Herbivore</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="o">);</span>
+  <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="p">);</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Humain</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Carnivore</span><span class="o">,</span> <span class="n">Herbivore</span> <span class="o">{</span>
-
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// ...</span>
-  <span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Humain</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Carnivore</span><span class="p">,</span> <span class="n">Herbivore</span> <span class="p">{</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple précédent, la classe <em>Humain</em> implémente les interfaces
 <em>Carnivore</em> et <em>Herbivore</em>. Donc une instance de la classe <em>Humain</em> peut
 être utilisée dans une application partout où les types <em>Carnivore</em> et <em>Herbivore</em>
 sont attendus.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Humain</span> <span class="n">humain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Humain</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Humain</span> <span class="n">humain</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Humain</span><span class="p">();</span>
 
-<span class="n">Carnivore</span> <span class="n">carnivore</span> <span class="o">=</span> <span class="n">humain</span><span class="o">;</span>
-<span class="n">carnivore</span><span class="o">.</span><span class="na">manger</span><span class="o">(</span><span class="k">new</span> <span class="n">Poulet</span><span class="o">());</span> <span class="c1">// Poulet hérite de Animal</span>
+<span class="n">Carnivore</span> <span class="n">carnivore</span> <span class="o">=</span> <span class="n">humain</span><span class="p">;</span>
+<span class="n">carnivore</span><span class="p">.</span><span class="na">manger</span><span class="p">(</span><span class="k">new</span> <span class="n">Poulet</span><span class="p">());</span> <span class="c1">// Poulet hérite de Animal</span>
 
-<span class="n">Herbivore</span> <span class="n">herbivore</span> <span class="o">=</span> <span class="n">humain</span><span class="o">;</span>
-<span class="n">herbivore</span><span class="o">.</span><span class="na">manger</span><span class="o">(</span><span class="k">new</span> <span class="n">Chou</span><span class="o">());</span>   <span class="c1">// Chou hérite de Vegetal</span>
+<span class="n">Herbivore</span> <span class="n">herbivore</span> <span class="o">=</span> <span class="n">humain</span><span class="p">;</span>
+<span class="n">herbivore</span><span class="p">.</span><span class="na">manger</span><span class="p">(</span><span class="k">new</span> <span class="n">Chou</span><span class="p">());</span>   <span class="c1">// Chou hérite de Vegetal</span>
 </pre></div>
 </div>
 </div>
@@ -672,30 +689,30 @@ sont attendus.</p>
 interface sont par défaut <strong>public</strong>, <strong>static</strong> et <strong>final</strong>. Il n’est
 pas possible de modifier la portée de ces attributs. Autrement
 dit, une interface ne peut déclarer que des constantes.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="p">{</span>
 
-  <span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="p">;</span>
 
-  <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span> <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span> <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">;</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On peut préciser <strong>public</strong>, <strong>static</strong> et <strong>final</strong> dans la déclaration d’un
 attribut d’interface :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Ceci est strictement équivalent à</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -703,28 +720,28 @@ attribut d’interface :</p>
 il s’agit de méthodes équivalentes aux méthodes de classe et l’interface doit
 fournir une implémentation pour ces méthodes. Ces méthodes doivent explicitement
 avoir le mot-clé <strong>static</strong> et elles ont une portée publique par défaut.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="p">{</span>
 
-  <span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">PLAFOND_DEPOT</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="p">;</span>
 
-  <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getBalanceTotale</span><span class="o">(</span><span class="n">Compte</span><span class="o">...</span> <span class="n">comptes</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">for</span> <span class="o">(</span><span class="n">Compte</span> <span class="n">c</span> <span class="o">:</span> <span class="n">comptes</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">total</span> <span class="o">+=</span> <span class="n">c</span><span class="o">.</span><span class="na">getBalance</span><span class="o">();</span>
+  <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getBalanceTotale</span><span class="p">(</span><span class="n">Compte</span><span class="p">...</span> <span class="n">comptes</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">Compte</span> <span class="n">c</span> <span class="p">:</span> <span class="n">comptes</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">total</span> <span class="o">+=</span> <span class="n">c</span><span class="p">.</span><span class="na">getBalance</span><span class="p">();</span>
 
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">total</span><span class="o">;</span>
-  <span class="o">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span> <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span> <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">;</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -734,31 +751,31 @@ avoir le mot-clé <strong>static</strong> et elles ont une portée publique par 
 ne peuvent avoir qu’une classe parente, une interface peut avoir autant d’interfaces
 parentes que nécessaire. Pour déclarer un héritage, on utilise le mot-clé
 <strong>extends</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Omnivore</span> <span class="kd">extends</span> <span class="n">Carnivore</span><span class="o">,</span> <span class="n">Herbivore</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Omnivore</span> <span class="kd">extends</span> <span class="n">Carnivore</span><span class="p">,</span> <span class="n">Herbivore</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une classe concrète qui implémente une interface doit donc disposer d’une implémentation
 pour les méthodes de cette interface mais également pour toutes les méthodes des
 interfaces dont cette dernière hérite.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Humain</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Omnivore</span> <span class="o">{</span>
-
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// ...</span>
-  <span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Humain</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Omnivore</span> <span class="p">{</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’héritage d’interface permet d’introduire de nouveaux types par agrégat. Dans
@@ -770,58 +787,58 @@ comme étant à la fois un carnivore et un herbivore.</p>
 <p>Comme chaque interface introduit un nouveau type, il est possible de contrôler
 grâce au mot-clé <strong>instanceof</strong> qu’une variable, un paramètre ou un attribut
 est bien une instance compatible avec cette interface.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Humain</span> <span class="n">bob</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Humain</span><span class="o">();</span>
-<span class="k">if</span> <span class="o">(</span><span class="n">bob</span> <span class="k">instanceof</span> <span class="n">Carnivore</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;bob mange de la viande&quot;</span><span class="o">);</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Humain</span> <span class="n">bob</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Humain</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">bob</span> <span class="k">instanceof</span> <span class="n">Carnivore</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;bob mange de la viande&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>En Java, on utilise cette possibilité pour créer des interfaces marqueurs. Une
 interface marqueur n’a généralement pas de méthode, elle sert juste à introduire
 un nouveau type. Il est ensuite possible de changer le comportement d’une méthode
 si une variable, un paramètre ou un attribut implémente cette interface.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Cannibale</span> <span class="o">{</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Cannibale</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Humain</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Omnivore</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Humain</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Omnivore</span> <span class="p">{</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(!(</span><span class="n">animal</span> <span class="k">instanceof</span> <span class="n">Humain</span><span class="o">)</span> <span class="o">||</span> <span class="k">this</span> <span class="k">instanceof</span> <span class="n">Cannibale</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Animal</span> <span class="n">animal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">animal</span> <span class="k">instanceof</span> <span class="n">Humain</span><span class="p">)</span> <span class="o">||</span> <span class="k">this</span> <span class="k">instanceof</span> <span class="n">Cannibale</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// ...</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="o">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">manger</span><span class="p">(</span><span class="n">Vegetal</span> <span class="n">vegetal</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, <em>Cannibale</em> agit comme une interface marqueur, elle
 permet à une classe héritant de <em>Humain</em> de manger une instance d’humain. Pour
 cela, il suffit de déclarer que cette nouvelle classe implémente <em>Cannibale</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.animal</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Anthropophage</span> <span class="kd">extends</span> <span class="n">Humain</span> <span class="kd">implements</span> <span class="n">Cannibale</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Anthropophage</span> <span class="kd">extends</span> <span class="n">Humain</span> <span class="kd">implements</span> <span class="n">Cannibale</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Même si la classe <em>Anthropophage</em> ne redéfinit aucune méthode de sa classe
 parente, le fait de déclarer l’interface marqueur <em>Cannibale</em> suffit a modifier
 son comportement.</p>
 <p>Le principe de l’interface marqueur est quelques fois utilisé dans l’API standard
-de Java. Par exemple, La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#clone()">clone</a> déclarée par <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> jette une
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si elle est appelée sur une instance qui n’implémente
-pas l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Cloneable.html">Cloneable</a>. Cela permet de fournir une méthode par défaut pour créer
+de Java. Par exemple, La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()">clone</a> déclarée par <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> jette une
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/CloneNotSupportedException.html">CloneNotSupportedException</a> si elle est appelée sur une instance qui n’implémente
+pas l’interface <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Cloneable.html">Cloneable</a>. Cela permet de fournir une méthode par défaut pour créer
 une copie d’un objet mais sans activer la fonctionnalité. Il faut
 que la classe déclare son intention d’être clonable grâce à l’interface
 marqueur.</p>
@@ -831,22 +848,22 @@ marqueur.</p>
 <p>Il est parfois difficile de faire évoluer une application qui utilise intensivement
 les interfaces. Reprenons notre exemple du <em>Compte</em>. Imaginons que nous souhaitions
 ajouter la méthode <em>transférer</em> qui consiste à transférer le solde d’un compte vers un autre.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                   <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                   <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                  <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                  <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">;</span>
 
-  <span class="kt">void</span> <span class="nf">transferer</span><span class="o">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                             <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">transferer</span><span class="p">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                             <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>En ajoutant une nouvelle méthode à notre interface, nous devons
@@ -865,40 +882,40 @@ par défaut de ses méthodes. Ainsi, si une classe concrète qui implémente cet
 n’implémente pas une méthode par défaut, c’est le code de l’interface qui
 s’exécutera. Une méthode par défaut doit obligatoirement avoir le mot-clé
 <strong>default</strong> dans sa signature.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                   <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                   <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                  <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                  <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">;</span>
 
-  <span class="k">default</span> <span class="kt">void</span> <span class="nf">transferer</span><span class="o">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                                     <span class="n">CompteBloqueException</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">destination</span> <span class="o">==</span> <span class="k">this</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kt">int</span> <span class="n">montant</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getBalance</span><span class="o">();</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">montant</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="n">destination</span><span class="o">.</span><span class="na">deposer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-    <span class="kt">boolean</span> <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="k">try</span> <span class="o">{</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">retirer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-      <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(!</span><span class="n">retraitOk</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">destination</span><span class="o">.</span><span class="na">retirer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+  <span class="k">default</span> <span class="kt">void</span> <span class="nf">transferer</span><span class="p">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                                     <span class="n">CompteBloqueException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">destination</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">montant</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">getBalance</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">montant</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">destination</span><span class="p">.</span><span class="na">deposer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+    <span class="kt">boolean</span> <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">retirer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+      <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">retraitOk</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">destination</span><span class="p">.</span><span class="na">retirer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une classe implémentant <em>Compte</em> n’a pas besoin de fournir une
@@ -933,23 +950,23 @@ judicieusement pour restreindre au type minimum nécessaire par le code.</p></li
 leurs interfaces plutôt que d’utiliser le type réel de l’objet. Un exemple
 classique en Java concerne l’API des <a class="reference internal" href="les_collections.html"><span class="doc">collections</span></a>.
 Il s’agit de classes permettant de gérer un ensemble d’objets. Elles apportent
-des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">java.util.ArrayList</a>
+des fonctionnalités plus avancées que les tableaux. Par exemple la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html">java.util.ArrayList</a>
 permet de gérer une liste d’objets. Cette classe autorise l’ajout en fin de liste,
 l’insertion, la suppression et bien évidemment l’accès à un élément selon son index
 et le parcours complet des éléments.</p>
-<p>Un programme qui crée une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> pour stocker un ensemble d’éléments
-n’utilisera jamais une variable de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/ArrayList.html">ArrayList</a> mais plutôt une variable
+<p>Un programme qui crée une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html">ArrayList</a> pour stocker un ensemble d’éléments
+n’utilisera jamais une variable de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html">ArrayList</a> mais plutôt une variable
 ayant le type d’une interface implémentée par cette classe.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface List</span>
-<span class="n">List</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
+<span class="n">List</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface Collection</span>
-<span class="n">Collection</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
+<span class="n">Collection</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Utilisation de l&#39;interface Iterable</span>
-<span class="n">Iterable</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
+<span class="n">Iterable</span> <span class="n">maListe</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Plus une partie d’une application a recours à des interfaces pour interagir
@@ -968,55 +985,55 @@ sous-système de retrait et d’un sous-système de gestion de comptes alors cet
 interface devrait probablement être séparée en plusieurs interfaces afin d’isoler
 chaque responsabilité.</p>
 <p>Une interface utilisée par le sous-système de consultation :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CompteConsultable</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CompteConsultable</span> <span class="p">{</span>
 
-  <span class="kt">int</span> <span class="nf">getBalance</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">getBalance</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">;</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une interface utilisée par le sous-système de retrait :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OperationDeRetrait</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OperationDeRetrait</span> <span class="p">{</span>
 
-  <span class="kt">int</span> <span class="nf">retirer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                  <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="nf">retirer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                  <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une interface plus complexe utilisée par le système de gestion de comptes :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="kd">extends</span> <span class="n">CompteConsultable</span><span class="o">,</span> <span class="n">OperationDeRetrait</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Compte</span> <span class="kd">extends</span> <span class="n">CompteConsultable</span><span class="p">,</span> <span class="n">OperationDeRetrait</span> <span class="p">{</span>
 
-  <span class="kt">void</span> <span class="nf">deposer</span><span class="o">(</span><span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                   <span class="n">CompteBloqueException</span><span class="o">;</span>
+  <span class="kt">void</span> <span class="nf">deposer</span><span class="p">(</span><span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                   <span class="n">CompteBloqueException</span><span class="p">;</span>
 
-  <span class="k">default</span> <span class="kt">void</span> <span class="nf">transferer</span><span class="o">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span>
-                                                     <span class="n">CompteBloqueException</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">destination</span> <span class="o">==</span> <span class="k">this</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kt">int</span> <span class="n">montant</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getBalance</span><span class="o">();</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">montant</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="n">destination</span><span class="o">.</span><span class="na">deposer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-    <span class="kt">boolean</span> <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="k">try</span> <span class="o">{</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">retirer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-      <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(!</span><span class="n">retraitOk</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">destination</span><span class="o">.</span><span class="na">retirer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="k">default</span> <span class="kt">void</span> <span class="nf">transferer</span><span class="p">(</span><span class="n">Compte</span> <span class="n">destination</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span>
+                                                     <span class="n">CompteBloqueException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">destination</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">montant</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">getBalance</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">montant</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">destination</span><span class="p">.</span><span class="na">deposer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+    <span class="kt">boolean</span> <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">retirer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+      <span class="n">retraitOk</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">retraitOk</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">destination</span><span class="p">.</span><span class="na">retirer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1030,45 +1047,45 @@ d’interface, nous pouvons réaliser une injection de dépendance en découplan
 totalement l’utilisation de l’objet passé par injection de son implémentation.</p>
 <p>Si nous souhaitons créer une classe pour représenter une transaction bancaire,
 nous pouvons réaliser l’implémentation suivante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.compte</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TransactionBancaire</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TransactionBancaire</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Compte</span> <span class="n">compte</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">montant</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="n">Instant</span> <span class="n">date</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">Compte</span> <span class="n">compte</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">montant</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="n">Instant</span> <span class="n">date</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">TransactionBancaire</span><span class="o">(</span><span class="n">Compte</span> <span class="n">compte</span><span class="o">,</span> <span class="kt">int</span> <span class="n">montant</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">compte</span> <span class="o">=</span> <span class="n">compte</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">montant</span> <span class="o">=</span> <span class="n">montant</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">TransactionBancaire</span><span class="p">(</span><span class="n">Compte</span> <span class="n">compte</span><span class="p">,</span> <span class="kt">int</span> <span class="n">montant</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">compte</span> <span class="o">=</span> <span class="n">compte</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">montant</span> <span class="o">=</span> <span class="n">montant</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">effectuer</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">isEffectuee</span><span class="o">())</span> <span class="o">{</span>
-      <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="n">compte</span><span class="o">.</span><span class="na">retirer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-    <span class="n">date</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">effectuer</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span> <span class="n">CompteBloqueException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isEffectuee</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">compte</span><span class="p">.</span><span class="na">retirer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">annuler</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="o">,</span> <span class="n">CompteBloqueException</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(!</span> <span class="n">isEffectuee</span><span class="o">())</span> <span class="o">{</span>
-      <span class="k">return</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="n">compte</span><span class="o">.</span><span class="na">deposer</span><span class="o">(</span><span class="n">montant</span><span class="o">);</span>
-    <span class="n">date</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">annuler</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">OperationInterrompueException</span><span class="p">,</span> <span class="n">CompteBloqueException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">isEffectuee</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">compte</span><span class="p">.</span><span class="na">deposer</span><span class="p">(</span><span class="n">montant</span><span class="p">);</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEffectuee</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">date</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEffectuee</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">date</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Instant</span> <span class="nf">getDate</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">date</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="n">Instant</span> <span class="nf">getDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">date</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>L’implémentation précédente permet d’effectuer une transaction pour un compte donné
@@ -1118,12 +1135,21 @@ fournir des implémentations conformes aux interfaces.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -1135,7 +1161,6 @@ fournir des implémentations conformes aux interfaces.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

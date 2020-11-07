@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les exceptions" href="les_exceptions.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>La classe String</li>
     
@@ -478,7 +495,7 @@
         <a href="les_exceptions.html" class="btn btn-neutral float-right" title="Les exceptions" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="la_classe_object.html" class="btn btn-neutral" title="La classe Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="la_classe_object.html" class="btn btn-neutral float-left" title="La classe Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -489,7 +506,7 @@
             
   <div class="section" id="la-classe-string">
 <h1>La classe String<a class="headerlink" href="#la-classe-string" title="Lien permanent vers ce titre">¶</a></h1>
-<p>En Java, les chaînes de caractères sont des instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.
+<p>En Java, les chaînes de caractères sont des instances de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>.
 Les chaînes de caractères écrites littéralement sont toujours délimitées par des
 guillemets :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;Hello World&quot;</span>
@@ -499,53 +516,53 @@ guillemets :</p>
 <h2>String et tableau de caractères<a class="headerlink" href="#string-et-tableau-de-caracteres" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Contrairement à d’autres langages de programmation, une chaîne de caractères
 ne peut pas être traitée comme un tableau. Si on souhaite accéder à un caractère
-de la chaîne à partir de son index, il faut utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#charAt(int)">String.charAt</a>.
+de la chaîne à partir de son index, il faut utiliser la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#charAt(int)">String.charAt</a>.
 On peut ainsi parcourir les caractères d’une chaîne :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
 
-<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-  <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#length()">String.length</a> permet de connaître le nombre de caractères dans la chaîne.
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#length()">String.length</a> permet de connaître le nombre de caractères dans la chaîne.
 Il n’est malheureusement pas possible d’utiliser un for amélioré pour parcourir
-les caractères d’une chaîne car la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> n’implémente pas l’interface
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Iterable.html">Iterable</a>. Par contre, il est possible d’obtenir un tableau des caractères avec
-la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">String.toCharArray</a>. On peut alors parcourir ce tableau avec un for amélioré.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
+les caractères d’une chaîne car la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> n’implémente pas l’interface
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html">Iterable</a>. Par contre, il est possible d’obtenir un tableau des caractères avec
+la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toCharArray()">String.toCharArray</a>. On peut alors parcourir ce tableau avec un for amélioré.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
 
-<span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">c</span> <span class="p">:</span> <span class="n">s</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">())</span> <span class="p">{</span>
+  <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toCharArray()">String.toCharArray</a> a l’inconvénient de créer un tableau de la même
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toCharArray()">String.toCharArray</a> a l’inconvénient de créer un tableau de la même
 longueur que la chaîne et de copier un à un les caractères. Si votre programme
 manipule intensivement des chaînes de caractères de taille importante, cela
 peut être pénalisant pour les performances. Depuis Java 8, il existe avec une
 nouvelle solution à ce problème avec un impact mémoire quasi nul :
 l’utilisation des streams et des lambdas.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
-<span class="n">s</span><span class="o">.</span><span class="na">chars</span><span class="o">().</span><span class="na">forEach</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="kt">char</span><span class="o">)</span><span class="n">c</span><span class="o">));</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="n">s</span><span class="p">.</span><span class="na">chars</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span><span class="n">c</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="quelques-methodes-utilitaires">
 <h2>Quelques méthodes utilitaires<a class="headerlink" href="#quelques-methodes-utilitaires" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Voici ci-dessous, quelques méthodes utiles fournies par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.
+<p>Voici ci-dessous, quelques méthodes utiles fournies par la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>.
 Reportez-vous à la documentation de la classe pour consulter la liste complète
 des méthodes.</p>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#equals(java.lang.Object)">String.equals</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)">String.equals</a></p>
 <blockquote>
 <div><p>Compare la chaîne de caractères avec une autre chaînes de caractères.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>  <span class="c1">// false</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// false</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span>   <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">));</span>  <span class="c1">// false</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;AB&quot;</span><span class="p">));</span> <span class="c1">// false</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -553,150 +570,150 @@ des méthodes.</p>
 <blockquote>
 <div><p>Comme la méthode précédente sauf que deux chaînes qui ne diffèrent que par
 la casse seront considérées comme identiques.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>  <span class="c1">// false</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">equalsIgnoreCase</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// true</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span>   <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">));</span>  <span class="c1">// false</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">(</span><span class="s">&quot;AB&quot;</span><span class="p">));</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#compareTo(java.lang.String)">String.compareTo</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#compareTo(java.lang.String)">String.compareTo</a></p>
 <blockquote>
 <div><p>Compare la chaîne de caractères avec une autre chaînes de caractères. La comparaison
 se fait suivant la taille des chaînes et l’ordre lexicographique des caractères. Cette méthode
 retourne 0 si les deux chaînes sont identiques, une valeur négative si la première
 est inférieure à la seconde et une valeur positive si la première est plus grande
 que la seconde.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>  <span class="c1">// &lt; 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>  <span class="c1">// &gt; 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;az&quot;</span><span class="o">));</span> <span class="c1">// &lt; 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// &gt; 0</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span>   <span class="c1">// 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">));</span>  <span class="c1">// &lt; 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span>  <span class="c1">// &gt; 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;az&quot;</span><span class="p">));</span> <span class="c1">// &lt; 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="s">&quot;AB&quot;</span><span class="p">));</span> <span class="c1">// &gt; 0</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#compareToIgnoreCase(java.lang.String)">String.compareToIgnoreCase</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#compareToIgnoreCase(java.lang.String)">String.compareToIgnoreCase</a></p>
 <blockquote>
 <div><p>Comme la méthode précédente sauf que deux chaînes qui ne diffèrent que par
 la casse seront considérées comme identiques.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">compareToIgnoreCase</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>   <span class="c1">// 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">.</span><span class="na">compareToIgnoreCase</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">));</span>  <span class="c1">// &lt; 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareToIgnoreCase</span><span class="o">(</span><span class="s">&quot;a&quot;</span><span class="o">));</span>  <span class="c1">// &gt; 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareToIgnoreCase</span><span class="o">(</span><span class="s">&quot;az&quot;</span><span class="o">));</span> <span class="c1">// &lt; 0</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ab&quot;</span><span class="o">.</span><span class="na">compareToIgnoreCase</span><span class="o">(</span><span class="s">&quot;AB&quot;</span><span class="o">));</span> <span class="c1">// 0</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">compareToIgnoreCase</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span>   <span class="c1">// 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">.</span><span class="na">compareToIgnoreCase</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">));</span>  <span class="c1">// &lt; 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">compareToIgnoreCase</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">));</span>  <span class="c1">// &gt; 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">compareToIgnoreCase</span><span class="p">(</span><span class="s">&quot;az&quot;</span><span class="p">));</span> <span class="c1">// &lt; 0</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">.</span><span class="na">compareToIgnoreCase</span><span class="p">(</span><span class="s">&quot;AB&quot;</span><span class="p">));</span> <span class="c1">// 0</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#concat(java.lang.String)">String.concat</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#concat(java.lang.String)">String.concat</a></p>
 <blockquote>
 <div><p>Concatène les deux chaînes dans une troisième. Cette méthode est équivalente
 à l’utilisation de l’opérateur <strong>+</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">).</span><span class="na">concat</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span> <span class="c1">// &quot;Hello World&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">.</span><span class="na">concat</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">concat</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span> <span class="c1">// &quot;Hello World&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#contains(java.lang.CharSequence)">String.contains</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#contains(java.lang.CharSequence)">String.contains</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne contient une séquence de caractères donnée.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span> <span class="c1">// true</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">&quot;Monde&quot;</span><span class="o">);</span>         <span class="c1">// false</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;Monde&quot;</span><span class="p">);</span>         <span class="c1">// false</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#endsWith(java.lang.String)">String.endsWith</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#endsWith(java.lang.String)">String.endsWith</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne se termine par une chaîne de caractères donnée.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span> <span class="c1">// true</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">);</span>         <span class="c1">// false</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>         <span class="c1">// false</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#startsWith(java.lang.String)">String.startsWith</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#startsWith(java.lang.String)">String.startsWith</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne commence par une chaîne de caractères donnée.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">);</span> <span class="c1">// true</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span>         <span class="c1">// false</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span>         <span class="c1">// false</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#isEmpty()">String.isEmpty</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#isEmpty()">String.isEmpty</a></p>
 <blockquote>
 <div><p>Retourne <strong>true</strong> si la chaîne est la chaîne vide (<em>length()</em> vaut 0)</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>    <span class="c1">// true</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span> <span class="c1">// false</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span>    <span class="c1">// true</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">();</span> <span class="c1">// false</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#length()">String.length</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#length()">String.length</a></p>
 <blockquote>
 <div><p>Retourne le nombre de caractères dans la chaîne.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="c1">// 11</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="c1">// 11</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replace(char,char)">String.replace</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replace(char,char)">String.replace</a></p>
 <blockquote>
 <div><p>Remplace un caractère par un autre dans une nouvelle chaîne de caractères.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="sc">&#39;l&#39;</span><span class="o">,</span> <span class="sc">&#39;x&#39;</span><span class="o">);</span> <span class="c1">// &quot;Hexxo Worxd&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;x&#39;</span><span class="p">);</span> <span class="c1">// &quot;Hexxo Worxd&quot;</span>
 </pre></div>
 </div>
 <p>Cette méthode est surchargée pour accepter des chaînes de caractères comme
 paramètres.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot; World&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">);</span> <span class="c1">// &quot;Hello&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="s">&quot; World&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span> <span class="c1">// &quot;Hello&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#substring(int,int)">String.substring</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring(int,int)">String.substring</a></p>
 <blockquote>
 <div><p>Crée une nouvelle sous-chaîne à partir de l’index de début et jusqu’à
 l’index de fin (non inclus).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span> <span class="c1">// &quot;ll&quot;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>        <span class="c1">// &quot;Hello&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// &quot;ll&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>        <span class="c1">// &quot;Hello&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toLowerCase()">String.toLowerCase</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase()">String.toLowerCase</a></p>
 <blockquote>
 <div><p>Crée une chaîne de caractères équivalente en minuscules.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span> <span class="c1">// &quot;hello world&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span> <span class="c1">// &quot;hello world&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toUpperCase()">String.toUpperCase</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toUpperCase()">String.toUpperCase</a></p>
 <blockquote>
 <div><p>Crée une chaîne de caractères équivalente en majuscules.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span> <span class="c1">// &quot;HELLO WORLD&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span> <span class="c1">// &quot;HELLO WORLD&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#trim()">String.trim</a></p>
+<p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#trim()">String.trim</a></p>
 <blockquote>
 <div><p>Crée une nouvelle chaîne de caractères en supprimant les espaces au début et
 à la fin.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;       Hello World      &quot;</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span> <span class="c1">// &quot;Hello World&quot;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;       Hello World      &quot;</span><span class="p">.</span><span class="na">trim</span><span class="p">();</span> <span class="c1">// &quot;Hello World&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="construction-d-une-instance-de-string">
 <h2>Construction d’une instance de String<a class="headerlink" href="#construction-d-une-instance-de-string" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> possède plusieurs constructeurs qui permettent de créer
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> possède plusieurs constructeurs qui permettent de créer
 une chaîne de caractères avec l’opérateur <strong>new</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">();</span> <span class="c1">// chaîne vide</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">();</span> <span class="c1">// chaîne vide</span>
 
-<span class="n">String</span> <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">hello</span><span class="o">);</span> <span class="c1">// copie d&#39;un chaîne</span>
+<span class="n">String</span> <span class="n">hello</span> <span class="o">=</span> <span class="s">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">hello</span><span class="p">);</span> <span class="c1">// copie d&#39;un chaîne</span>
 
-<span class="kt">char</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="sc">&#39;H&#39;</span><span class="o">,</span> <span class="sc">&#39;e&#39;</span><span class="o">,</span> <span class="sc">&#39;l&#39;</span><span class="o">,</span> <span class="sc">&#39;l&#39;</span><span class="o">,</span> <span class="sc">&#39;o&#39;</span><span class="o">,</span> <span class="sc">&#39; &#39;</span><span class="o">,</span> <span class="sc">&#39;W&#39;</span><span class="o">,</span> <span class="sc">&#39;o&#39;</span><span class="o">,</span> <span class="sc">&#39;r&#39;</span><span class="o">,</span> <span class="sc">&#39;l&#39;</span><span class="o">,</span> <span class="sc">&#39;d&#39;</span><span class="o">};</span>
-<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span> <span class="c1">// à partir d&#39;un tableau de caractères.</span>
+<span class="kt">char</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;H&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">,</span> <span class="sc">&#39;W&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;d&#39;</span><span class="p">};</span>
+<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">tableau</span><span class="p">);</span> <span class="c1">// à partir d&#39;un tableau de caractères.</span>
 
-<span class="kt">byte</span><span class="o">[]</span> <span class="n">tableauCode</span> <span class="o">=</span> <span class="o">{</span><span class="mi">72</span><span class="o">,</span> <span class="mi">101</span><span class="o">,</span> <span class="mi">108</span><span class="o">,</span> <span class="mi">108</span><span class="o">,</span> <span class="mi">111</span><span class="o">,</span> <span class="mi">32</span><span class="o">,</span> <span class="mi">87</span><span class="o">,</span> <span class="mi">111</span><span class="o">,</span> <span class="mi">114</span><span class="o">,</span> <span class="mi">108</span><span class="o">,</span> <span class="mi">100</span><span class="o">};</span>
-<span class="n">String</span> <span class="n">s4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">tableauCode</span><span class="o">);</span> <span class="c1">// à partir d&#39;un tableau de code UTF-16</span>
+<span class="kt">byte</span><span class="o">[]</span> <span class="n">tableauCode</span> <span class="o">=</span> <span class="p">{</span><span class="mi">72</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">100</span><span class="p">};</span>
+<span class="n">String</span> <span class="n">s4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">tableauCode</span><span class="p">);</span> <span class="c1">// à partir d&#39;un tableau de code UTF-16</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="immutabilite-des-chaines-de-caracteres">
 <h2>Immutabilité des chaînes de caractères<a class="headerlink" href="#immutabilite-des-chaines-de-caracteres" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les instances de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> sont immutables. Cela signifie qu’il est
+<p>Les instances de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> sont immutables. Cela signifie qu’il est
 impossible d’altérer le contenu de la chaîne de caractères une fois qu’elle
 a été créée. Si vous reprenez la liste des méthodes ci-dessus, vous verrez
 que toutes les méthodes qui <em>modifient</em> le contenu de la chaîne de caractères
@@ -706,7 +723,7 @@ Cela signifie que des opérations intensives sur les chaînes de caractères peu
 toutes les opérations se font finalement par copie.</p>
 <p>Nous avons vu qu’il n’existe pas réellement de constante en Java mais
 uniquement des attributs déclarés avec <strong>static</strong> et <strong>final</strong>. Cette immutabilité
-permet de garantir qu’une variable de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> déclarée <strong>static</strong> et <strong>final</strong>
+permet de garantir qu’une variable de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> déclarée <strong>static</strong> et <strong>final</strong>
 ne peut plus être modifié.</p>
 <p>La JVM tire également partie de cette immutabilité afin de réaliser
 des optimisations de place mémoire. Si par exemple vous écrivez plusieurs fois
@@ -717,128 +734,128 @@ au premier abord en Java :</p>
 2
 3
 4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span><span class="o">;</span>
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span><span class="p">;</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="s">&quot;test&quot;</span><span class="o">);</span>                  <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">));</span>      <span class="c1">// false</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="s">&quot;test&quot;</span><span class="o">)</span> <span class="o">==</span> <span class="s">&quot;test&quot;</span><span class="o">);</span> <span class="c1">// false</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="s">&quot;test&quot;</span><span class="p">);</span>                  <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">));</span>      <span class="c1">// false</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;test&quot;</span><span class="p">);</span> <span class="c1">// false</span>
 </pre></div>
 </td></tr></table></div>
 <p>Dans le code ci-dessus, on utilise l’opérateur <strong>==</strong> donc on ne compare pas
 le contenu des chaînes de caractères mais la référence des objets. La chaîne
 de caractères « test » apparaît plusieurs fois dans le code. Donc quand la JVM
 va charger la classe qui contient ce code, elle ne créera qu’une et une seule
-fois l’instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> pour « test ». Voilà pourquoi la ligne 3 affiche
+fois l’instance de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> pour « test ». Voilà pourquoi la ligne 3 affiche
 <strong>true</strong>. Le contenu de la variable <em>s</em> référence exactement la même instance
-de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>. Par contre, les lignes 4 et 5 créent explicitement une nouvelle instance
-de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> avec l’opérateur <strong>new</strong>. Il s’agit donc de nouveaux objets avec de
+de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>. Par contre, les lignes 4 et 5 créent explicitement une nouvelle instance
+de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> avec l’opérateur <strong>new</strong>. Il s’agit donc de nouveaux objets avec de
 nouvelles références.</p>
 </div>
 <div class="section" id="la-classe-stringbuilder">
 <h2>La classe StringBuilder<a class="headerlink" href="#la-classe-stringbuilder" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> permet de construire une chaîne de caractères par ajout
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a> permet de construire une chaîne de caractères par ajout
 (concaténation) ou insertion d’élements. Il est même possible de supprimer des portions.
-La quasi totalité des méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> retourne l’instance
-courante du <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> ce qui permet de chaîner les appels en une seule
+La quasi totalité des méthodes de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a> retourne l’instance
+courante du <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a> ce qui permet de chaîner les appels en une seule
 instruction.
-Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html#toString()">StringBuilder.toString</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
-<span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;world&quot;</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="s">&quot; the&quot;</span><span class="o">)</span>    <span class="c1">// On insère la chaîne à l&#39;index 5</span>
-  <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;!&#39;</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span> <span class="c1">// &quot;Hello the world!&quot;</span>
+Pour obtenir la chaîne de caractères, il suffit d’appeler la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder.toString</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+<span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+  <span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+  <span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">)</span>
+  <span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot; the&quot;</span><span class="p">)</span>    <span class="c1">// On insère la chaîne à l&#39;index 5</span>
+  <span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="sc">&#39;!&#39;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span> <span class="c1">// &quot;Hello the world!&quot;</span>
 
-<span class="n">sb</span><span class="o">.</span><span class="na">reverse</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span> <span class="c1">// &quot;!dlrow eht olleH&quot;</span>
+<span class="n">sb</span><span class="p">.</span><span class="na">reverse</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span> <span class="c1">// &quot;!dlrow eht olleH&quot;</span>
 
-<span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="na">reverse</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span> <span class="c1">// &quot;Hello the world&quot;</span>
+<span class="n">sb</span><span class="p">.</span><span class="na">deleteCharAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">reverse</span><span class="p">();</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span> <span class="c1">// &quot;Hello the world&quot;</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a> permet de pallier au fait que les instances de la
-classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> sont immutables. D’ailleurs, l’opérateur <strong>+</strong> de concaténation
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a> permet de pallier au fait que les instances de la
+classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> sont immutables. D’ailleurs, l’opérateur <strong>+</strong> de concaténation
 de chaînes n’est qu’un sucre syntaxique, le compilateur le remplace par une
-utilisation de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html">StringBuilder</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;the&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">s3</span><span class="o">;</span> <span class="c1">// &quot;Hello the world&quot;</span>
+utilisation de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html">StringBuilder</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;the&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">s3</span><span class="p">;</span> <span class="c1">// &quot;Hello the world&quot;</span>
 </pre></div>
 </div>
 <p>Le code ci-dessus sera en fait interprété par le compilateur comme ceci :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;the&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="n">s1</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">s2</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">s3</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">&quot;the&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">().</span><span class="na">append</span><span class="p">(</span><span class="n">s1</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">s2</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="n">s3</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="formatage-de-texte">
 <h2>Formatage de texte<a class="headerlink" href="#formatage-de-texte" title="Lien permanent vers ce titre">¶</a></h2>
-<p>La méthode de classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a> permet de passer une chaîne de caractères
+<p>La méthode de classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a> permet de passer une chaîne de caractères
 décrivant un formatage ainsi que plusieurs objets correspondant à des paramètres
 du formatage.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">who</span> <span class="o">=</span> <span class="s">&quot;the world&quot;</span><span class="o">;</span>
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;Hello %s!&quot;</span><span class="o">,</span> <span class="n">who</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">who</span> <span class="o">=</span> <span class="s">&quot;the world&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Hello %s!&quot;</span><span class="p">,</span> <span class="n">who</span><span class="p">);</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span> <span class="c1">// &quot;Hello the world!&quot;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span> <span class="c1">// &quot;Hello the world!&quot;</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la chaîne de formatage « Hello %s » contient un paramètre
-identifié par <em>%s</em> (s signifie que le paramètre attendu est de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a>.</p>
+identifié par <em>%s</em> (s signifie que le paramètre attendu est de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>.</p>
 <p>Un paramètre dans la chaîne de formatage peut contenir différente information :</p>
 <blockquote>
 <div><p>%[index$][flags][taille]conversion</p>
 </div></blockquote>
-<p>L’index est la place du paramètre dans l’appel à la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">quantite</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
-<span class="n">LocalDate</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<p>L’index est la place du paramètre dans l’appel à la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">quantite</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="n">LocalDate</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
 
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;quantité = %1$010d au %2$te %2$tB %2$tY&quot;</span><span class="o">,</span> <span class="n">quantite</span><span class="o">,</span> <span class="n">now</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;quantité = %1$010d au %2$te %2$tB %2$tY&quot;</span><span class="p">,</span> <span class="n">quantite</span><span class="p">,</span> <span class="n">now</span><span class="p">);</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span> <span class="c1">// &quot;quantité = 0000000012 au 5 septembre 2017&quot;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span> <span class="c1">// &quot;quantité = 0000000012 au 5 septembre 2017&quot;</span>
 </pre></div>
 </div>
-<p>Il existe également une définition de la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a> qui attend une
-instance de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Locale.html">Locale</a> en premier paramètre. La locale indique la langue du message
+<p>Il existe également une définition de la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a> qui attend une
+instance de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html">Locale</a> en premier paramètre. La locale indique la langue du message
 et permet de formater les nombres, les dates, etc comme attendu.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">quantite</span> <span class="o">=</span> <span class="mi">12</span><span class="o">;</span>
-<span class="n">LocalDate</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">quantite</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="n">LocalDate</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
 
-<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">Locale</span><span class="o">.</span><span class="na">ENGLISH</span><span class="o">,</span> <span class="s">&quot;quantity = %1$010d on %2$te %2$tB %2$tY&quot;</span><span class="o">,</span> <span class="n">quantite</span><span class="o">,</span> <span class="n">now</span><span class="o">);</span>
+<span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="n">Locale</span><span class="p">.</span><span class="na">ENGLISH</span><span class="p">,</span> <span class="s">&quot;quantity = %1$010d on %2$te %2$tB %2$tY&quot;</span><span class="p">,</span> <span class="n">quantite</span><span class="p">,</span> <span class="n">now</span><span class="p">);</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">message</span><span class="o">);</span> <span class="c1">// &quot;quantity = 0000000012 on 5 september 2017&quot;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span> <span class="c1">// &quot;quantity = 0000000012 on 5 september 2017&quot;</span>
 </pre></div>
 </div>
 <p>Pour mieux comprendre la syntaxe des paramètres dans une chaîne de formatage,
-reportez-vous à la documentation du <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Formatter.html">Formatter</a> qui est utilisé par la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a>.</p>
+reportez-vous à la documentation du <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html">Formatter</a> qui est utilisé par la méthode
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Il est également possible de formater des messages avec la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/text/MessageFormat.html">MessageFormat</a>.
+<p>Il est également possible de formater des messages avec la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/MessageFormat.html">MessageFormat</a>.
 Il s’agit d’une classe plus ancienne qui offre une syntaxe différente pour décrire
 les paramètres dans la chaîne de formatage.</p>
 </div>
 </div>
 <div class="section" id="les-expressions-regulieres">
 <h2>Les expressions régulières<a class="headerlink" href="#les-expressions-regulieres" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Certaines méthodes de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> acceptent comme paramètre une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html#sum">expression
+<p>Certaines méthodes de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> acceptent comme paramètre une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html#sum">expression
 régulière</a> (<em>regular expression</em> ou <em>regexp</em>). Une expression régulière permet
 d’exprimer avec des motifs un ensemble
-de chaînes de caractères possibles. Par exemple la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#matches(java.lang.String)">String.matches</a> prend
-un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> qui est interprété comme une expression régulière.
+de chaînes de caractères possibles. Par exemple la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#matches(java.lang.String)">String.matches</a> prend
+un paramètre de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> qui est interprété comme une expression régulière.
 Cette méthode retourne <strong>true</strong> si la chaîne de caractères est conforme à l’expression
 régulière passée en paramètre.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">match</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;hello&quot;</span><span class="o">);</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">match</span><span class="o">);</span> <span class="c1">// true</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">match</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">match</span><span class="p">);</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 <p>L’intérêt des expressions régulières est qu’elles peuvent contenir des classes
 de caractères, c’est-à-dire des caractères qui sont interprétés comme
 représentant un ensemble de caractères.</p>
-<table class="colwidths-given docutils align-center" id="id1">
+<table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Les classes de caractères dans une expression régulière</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 17%" />
@@ -877,16 +894,16 @@ représentant un ensemble de caractères.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;.....&quot;</span><span class="o">));</span>           <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;h[a-m]llo&quot;</span><span class="o">));</span>       <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;\\w\\w\\w\\w\\w&quot;</span><span class="o">));</span> <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;h\\D\\S.o&quot;</span><span class="o">));</span>       <span class="c1">// true</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;.....&quot;</span><span class="p">));</span>           <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;h[a-m]llo&quot;</span><span class="p">));</span>       <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;\\w\\w\\w\\w\\w&quot;</span><span class="p">));</span> <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;h\\D\\S.o&quot;</span><span class="p">));</span>       <span class="c1">// true</span>
 </pre></div>
 </div>
 <p>Une expression régulière peut contenir des quantificateurs qui permettent d’indiquer
 une séquence de caractères dans la chaîne.</p>
-<table class="colwidths-given docutils align-center" id="id2">
+<table class="colwidths-given docutils align-default" id="id2">
 <caption><span class="caption-text">Les quantificateurs dans une expression régulière</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 17%" />
@@ -913,46 +930,46 @@ une séquence de caractères dans la chaîne.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;.*&quot;</span><span class="o">));</span>                 <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;.+&quot;</span><span class="o">));</span>                 <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;X?hel+oW?&quot;</span><span class="o">));</span>          <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;.+l{2}o&quot;</span><span class="o">));</span>            <span class="c1">// true</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">&quot;[eh]{0,2}l{1,100}o&quot;</span><span class="o">));</span> <span class="c1">// true</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;.*&quot;</span><span class="p">));</span>                 <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;.+&quot;</span><span class="p">));</span>                 <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;X?hel+oW?&quot;</span><span class="p">));</span>          <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;.+l{2}o&quot;</span><span class="p">));</span>            <span class="c1">// true</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">matches</span><span class="p">(</span><span class="s">&quot;[eh]{0,2}l{1,100}o&quot;</span><span class="p">));</span> <span class="c1">// true</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Il existe beaucoup d’autres motifs qui peuvent être utilisés dans une expression
-régulière. Reportez-vous à la <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html#sum">documentation Java</a>.</p>
+régulière. Reportez-vous à la <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html#sum">documentation Java</a>.</p>
 </div>
-<p>Il est possible d’utiliser la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replaceFirst(java.lang.String,java.lang.String)">String.replaceFirst</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replaceAll(java.lang.String,java.lang.String)">String.replaceAll</a>
+<p>Il est possible d’utiliser la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replaceFirst(java.lang.String,java.lang.String)">String.replaceFirst</a> ou <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String)">String.replaceAll</a>
 pour remplacer respectivement la première ou toutes les occurrences d’une
 séquence de caractères définie par une expression régulière.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">;</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">&quot;[aeiouy]&quot;</span><span class="o">,</span> <span class="s">&quot;^_^&quot;</span><span class="o">));</span> <span class="c1">// h^_^ll^_^</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">(</span><span class="s">&quot;[aeiouy]&quot;</span><span class="p">,</span> <span class="s">&quot;^_^&quot;</span><span class="p">));</span> <span class="c1">// h^_^ll^_^</span>
 </pre></div>
 </div>
-<p>La méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#split(java.lang.String)">String.split</a> permet de découper une chaîne de caractères en tableau
+<p>La méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#split(java.lang.String)">String.split</a> permet de découper une chaîne de caractères en tableau
 de chaînes de caractère en utilisant une expression régulière pour identifier
 le séparateur.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello the world&quot;</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello the world&quot;</span><span class="p">;</span>
 
 <span class="c1">// [&quot;hello&quot;, &quot;the&quot;, &quot;world&quot;]</span>
-<span class="n">String</span><span class="o">[]</span> <span class="n">tab</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\W&quot;</span><span class="o">);</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">tab</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\\W&quot;</span><span class="p">);</span>
 
 <span class="c1">// [&quot;hello&quot;, &quot;world&quot;]</span>
-<span class="n">tab</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot; the &quot;</span><span class="o">);</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; the &quot;</span><span class="p">);</span>
 
 <span class="c1">// [&quot;he&quot;, &quot;&quot;, &quot;&quot;, &quot;the w&quot;, &quot;r&quot;, &quot;d&quot;]</span>
-<span class="n">tab</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;[ol]&quot;</span><span class="o">);</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;[ol]&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Les expressions régulières sont représentées en Java par la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html">Pattern</a>.
+<p>Les expressions régulières sont représentées en Java par la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">Pattern</a>.
 Il est possible de créer des instances de cette classe en compilant une
-expression régulière à l’aide de la méthode de classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">Pattern.compile</a>.</p>
+expression régulière à l’aide de la méthode de classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html#compile(java.lang.String)">Pattern.compile</a>.</p>
 </div>
 </div>
 </div>
@@ -977,12 +994,21 @@ expression régulière à l’aide de la méthode de classe <a class="reference 
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -994,7 +1020,6 @@ expression régulière à l’aide de la méthode de classe <a class="reference 
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

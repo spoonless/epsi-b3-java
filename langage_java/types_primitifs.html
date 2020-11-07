@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les opérateurs" href="operateurs.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les types primitifs</li>
     
@@ -478,7 +495,7 @@
         <a href="operateurs.html" class="btn btn-neutral float-right" title="Les opérateurs" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="structure_fondamentale.html" class="btn btn-neutral" title="La structure fondamentale du langage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="structure_fondamentale.html" class="btn btn-neutral float-left" title="La structure fondamentale du langage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -491,7 +508,7 @@
 <h1>Les types primitifs<a class="headerlink" href="#les-types-primitifs" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Java n’est pas complètement un langage orienté objet dans la mesure où il supporte
 ce que l’on nomme les <em>types primitifs</em>. Chaque type primitif est représenté par un mot-clé :</p>
-<table class="colwidths-given docutils align-center" id="id1">
+<table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Types primitifs</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -542,7 +559,7 @@ ce que l’on nomme les <em>types primitifs</em>. Chaque type primitif est repr�
 <p>Une variable de type primitif représente juste une valeur stockée dans un espace mémoire
 dont la taille dépend du type. À la différence des langages comme C ou C++, l’espace
 mémoire occupé par un primitif est fixé par la spécification du langage et non par la machine cible.</p>
-<table class="colwidths-given docutils align-center" id="id2">
+<table class="colwidths-given docutils align-default" id="id2">
 <caption><span class="caption-text">Taille mémoire</span><a class="headerlink" href="#id2" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -603,27 +620,27 @@ de type booléen (pas d’opération arithmétique autorisée).</p>
 interne des caractères est l’UTF-16. Cela signifie que la valeur va de 0 à 2^16 - 1.
 Par défaut, un attribut de type <strong>char</strong> vaut <strong>0</strong> (c’est-à-dire le caractère de terminaison).</p>
 <p>Pour représenter un littéral, on utilise l’apostrophe (<strong>simple quote</strong>) :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Même si les caractères ne sont pas des nombres, Java autorise les opérations
 arithmétiques sur les caractères en se basant sur le code caractère. Cela peut
 être pratique si l’on veut parcourir l’alphabet par exemple :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">char</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>On peut également affecter un nombre à une variable caractère. Ce nombre représente
 alors le code caractère :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">97</span><span class="o">;</span> <span class="c1">// 97 est le code caractère de la lettre a en UTF-16</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span> <span class="c1">// 97 est le code caractère de la lettre a en UTF-16</span>
 </pre></div>
 </div>
 <p>Affecter une variable de type entier à un variable de type <strong>char</strong> conduit à une erreur
 de compilation. En effet, le type <strong>char</strong> est un nombre signé sur 2 octets. Pour passer
 la compilation, il faut transtyper (<strong>cast</strong>) la variable :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">97</span><span class="o">;</span>
-<span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="kt">char</span><span class="o">)</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// cast vers char obligatoire pour la compilation</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// cast vers char obligatoire pour la compilation</span>
 </pre></div>
 </div>
 </div>
@@ -635,38 +652,38 @@ Ils sont tous des types signés.
 Par défaut, un attribut de type <strong>byte</strong>, <strong>short</strong>, <strong>int</strong> ou <strong>long</strong> vaut 0.</p>
 <p>La règle de conversion implicite est simple : on peut affecter une variable d’un type
 à une variable d’un autre type que si la taille mémoire est au moins assez grande.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">i</span>   <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-<span class="kt">long</span> <span class="n">l</span>  <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i</span>   <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">long</span> <span class="n">l</span>  <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
 <span class="c1">// conversion implicite ok</span>
 <span class="c1">// car la variable à droite de l&#39;expression</span>
 <span class="c1">// est d&#39;une taille mémoire inférieure</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
-<span class="n">l</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span>
-<span class="n">l</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
-<span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Dans tous les autres cas, il faut réaliser un transtypage avec un risque de perte
 de valeur :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="kt">byte</span><span class="o">)</span> <span class="n">s</span><span class="o">;</span>
-<span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="kt">short</span><span class="o">)</span> <span class="n">i</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">l</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span> <span class="n">s</span><span class="p">;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="kt">short</span><span class="p">)</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">l</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Lorsque vous affectez une valeur littérale à une variable, le compilateur contrôlera
 que la valeur est acceptable pour ce type :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">127</span><span class="o">;</span> <span class="c1">// ok</span>
-<span class="hll"><span class="n">b</span> <span class="o">=</span> <span class="mi">128</span><span class="o">;</span> <span class="c1">// ko car le type byte accepte des valeurs entre -128 et 127</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">127</span><span class="p">;</span> <span class="c1">// ok</span>
+<span class="hll"><span class="n">b</span> <span class="o">=</span> <span class="mi">128</span><span class="p">;</span> <span class="c1">// ko car le type byte accepte des valeurs entre -128 et 127</span>
 </span></pre></div>
 </div>
 <p>Les valeurs littérales peuvent s’écrire suivant plusieurs bases :</p>
-<table class="colwidths-given docutils align-center" id="id3">
+<table class="colwidths-given docutils align-default" id="id3">
 <caption><span class="caption-text">Écriture des valeurs entières littérales</span><a class="headerlink" href="#id3" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
@@ -694,11 +711,11 @@ que la valeur est acceptable pour ce type :</p>
 </table>
 <p>On peut forcer une valeur littérale à être interprétée comme un entier long en suffixant
 la valeur par <strong>L</strong> ou <strong>l</strong> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">100L</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">100L</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Pour plus de lisibilité, il est également possible de séparer les milliers par _ :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">1_000_000</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -715,7 +732,7 @@ Il est souvent plus lisible de faire apparaître l’opération plutôt que le r
 à un dépassement des valeurs maximales ou minimales (<em>buffer overflow</em> ou <em>buffer underflow</em>) .
 Il n’est donc pas judicieux d’utiliser ces types pour représenter
 des valeurs qui peuvent croître ou décroître sur une très grande échelle.
-Pour ces cas-là, on peut utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/math/BigInteger.html">BigInteger</a> qui utilise une représentation
+Pour ces cas-là, on peut utiliser la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html">BigInteger</a> qui utilise une représentation
 interne plus complexe.</p>
 </div>
 </div>
@@ -729,23 +746,23 @@ Par défaut, un attribut de type <strong>float</strong> ou <strong>double</stron
 <strong>double</strong> est dit en double précision et est codé sur 8 octets (64 bits).</p>
 <p>Il est possible d’ajouter une valeur entière à un type à virgule flottante mais l’inverse
 nécessite une transtypage (<strong>cast</strong>) avec une perte éventuelle de valeur.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
-<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">5.0</span><span class="o">;</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
-<span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">5.0</span><span class="p">;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Les valeurs littérales peuvent s’écrire avec un <strong>.</strong> pour signifier la virgule et/ou avec une
 notation scientifique en donnant l’exposant en base 10 :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">d1</span> <span class="o">=</span> <span class="mf">.0</span><span class="o">;</span> <span class="c1">// le 0 peut être omis à gauche de la virgule</span>
-<span class="kt">double</span> <span class="n">d2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span><span class="o">;</span>
-<span class="kt">double</span> <span class="n">d3</span> <span class="o">=</span> <span class="mf">1.5E1</span><span class="o">;</span> <span class="c1">// 1.5 * 10, c&#39;est-à-dire 15.0</span>
-<span class="kt">double</span> <span class="n">d4</span> <span class="o">=</span> <span class="mf">0.1234E-15</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">d1</span> <span class="o">=</span> <span class="mf">.0</span><span class="p">;</span> <span class="c1">// le 0 peut être omis à gauche de la virgule</span>
+<span class="kt">double</span> <span class="n">d2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">d3</span> <span class="o">=</span> <span class="mf">1.5E1</span><span class="p">;</span> <span class="c1">// 1.5 * 10, c&#39;est-à-dire 15.0</span>
+<span class="kt">double</span> <span class="n">d4</span> <span class="o">=</span> <span class="mf">0.1234E-15</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Une valeur littérale est toujours considérée en double précision. Pour l’affecter à une variable
 de type <strong>float</strong>, il faut suffixer la valeur par <strong>F</strong> ou <strong>f</strong> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">0.5f</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mf">0.5f</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition danger">
@@ -755,7 +772,7 @@ de type <strong>float</strong>, il faut suffixer la valeur par <strong>F</strong
 des valeurs pour lesquelles les approximations de calcul ne sont pas acceptables.</p>
 <p>Par exemple, les applications qui réalisent des calculs sur des montants financiers ne devraient
 <strong>jamais</strong> utiliser des nombres à virgule flottante. Soit il faut représenter l’information
-en interne toujours en entier (par exemple en centimes d’euro) soit il faut utiliser la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/math/BigDecimal.html">BigDecimal</a>
+en interne toujours en entier (par exemple en centimes d’euro) soit il faut utiliser la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a>
 qui utilise une représentation interne plus complexe mais sans approximation.</p>
 </div>
 </div>
@@ -763,7 +780,7 @@ qui utilise une représentation interne plus complexe mais sans approximation.</
 <h2>Les classes enveloppes<a class="headerlink" href="#les-classes-enveloppes" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme les types primitifs ne sont pas des classes, l’API standard de Java fournit également des classes
 qui permettent d’envelopper la valeur d’un type primitif : on parle de <strong>wrapper classes</strong>.</p>
-<table class="colwidths-given docutils align-center" id="id4">
+<table class="colwidths-given docutils align-default" id="id4">
 <caption><span class="caption-text">Wrapper classes</span><a class="headerlink" href="#id4" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
@@ -776,28 +793,28 @@ qui permettent d’envelopper la valeur d’un type primitif : on parle de <stro
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>boolean</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Boolean.html">java.lang.Boolean</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html">java.lang.Boolean</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>char</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html">java.lang.Character</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html">java.lang.Character</a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>int</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html">java.lang.Integer</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">java.lang.Integer</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>byte</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Byte.html">java.lang.Byte</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Byte.html">java.lang.Byte</a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>short</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Short.html">java.lang.Short</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Short.html">java.lang.Short</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>long</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Long.html">java.lang.Long</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html">java.lang.Long</a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>float</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Float.html">java.lang.Float</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Float.html">java.lang.Float</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>double</strong></p></td>
-<td><p><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Double.html">java.lang.Double</a></p></td>
+<td><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Double.html">java.lang.Double</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -809,34 +826,34 @@ le nom du package (<em>java.lang</em>).</p>
 <p>Il est possible de créer une instance d’une classe enveloppe soit en utilisant
 son constructeur soit en utilisant la méthode de classe <strong>valueOf</strong> (il s’agit
 de la méthode recommandée).</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Pour obtenir la valeur enveloppée, on fait appel à la méthode <em>xxxValue()</em>, xxx étant
 le type sous-jacent :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="p">.</span><span class="na">intValue</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Pourquoi avoir créé ces classes ? Cela permet d’offrir un emplacement facile à mémoriser
 à des méthodes utilitaires. Par exemple, toutes les classes enveloppes définissent une méthode
 de classe de la forme <em>parseXXX</em> qui permet de convertir une chaîne de caractères en un type
 primitif :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Boolean</span><span class="o">.</span><span class="na">parseBoolean</span><span class="o">(</span><span class="s">&quot;true&quot;</span><span class="o">);</span>
-<span class="kt">byte</span> <span class="n">by</span> <span class="o">=</span> <span class="n">Byte</span><span class="o">.</span><span class="na">parseByte</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
-<span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Short</span><span class="o">.</span><span class="na">parseShort</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
-<span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
-<span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Float</span><span class="o">.</span><span class="na">parseFloat</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
-<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Boolean</span><span class="p">.</span><span class="na">parseBoolean</span><span class="p">(</span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="kt">byte</span> <span class="n">by</span> <span class="o">=</span> <span class="n">Byte</span><span class="p">.</span><span class="na">parseByte</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Short</span><span class="p">.</span><span class="na">parseShort</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">Long</span><span class="p">.</span><span class="na">parseLong</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Float</span><span class="p">.</span><span class="na">parseFloat</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span>
 <span class="c1">// enfin presque toutes car Character n&#39;a pas cette méthode</span>
 </pre></div>
 </div>
 <p>Une variable de type d’une des classes enveloppes référence un objet donc elle peut avoir la valeur spéciale <strong>null</strong>.
 Ce cas permet de signifier l’absence de valeur.</p>
 <p>Les classes enveloppes contiennent des constantes pour donner des informations
-utiles. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html">java.lang.Integer</a> déclare les constantes
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html#MIN_VALUE">MIN_VALUE</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html#MAX_VALUE">MAX_VALUE</a> qui donnent respectivement la plus petite valeur
+utiles. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html">java.lang.Integer</a> déclare les constantes
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MIN_VALUE">MIN_VALUE</a> et <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE">MAX_VALUE</a> qui donnent respectivement la plus petite valeur
 et la plus grande valeur représentables par la primitive associée.</p>
 <p>Enfin les classes enveloppes sont conçues pour être
 non modifiables. Cela signifie que l’on ne peut pas modifier la valeur qu’elles enveloppent après
@@ -851,27 +868,27 @@ d’ajouter le code manquant. L’opération qui permet de passer d’un type pr
 à une instance de sa classe enveloppe s’appelle le <strong>boxing</strong> et l’opération inverse
 s’appelle <strong>l’unboxing</strong>.</p>
 <p>Le code suivant</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>est accepté par le compilateur et ce dernier lira à la place</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// boxing</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// boxing</span>
 </pre></div>
 </div>
 <p>De même, le code suivant</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>est également accepté par le compilateur et ce dernier lira à la place</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// boxing</span>
-<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span> <span class="c1">// unboxing</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// boxing</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="na">intValue</span><span class="p">();</span> <span class="c1">// unboxing</span>
 </pre></div>
 </div>
 <p>On peut ainsi réaliser des opérations arithmétiques sur des instances de classes enveloppes</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="n">Integer</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
-<span class="n">Integer</span> <span class="n">k</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">Integer</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">Integer</span> <span class="n">k</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Il faut bien comprendre que le code ci-dessus manipule en fait des objets et qu’il implique
@@ -882,18 +899,18 @@ il vaut mieux utiliser des types primitifs.</p>
 <p>L’autoboxing est parfois difficile à utiliser car il conduit à des expressions
 qui peuvent être ambiguës.
 Par exemple, alors que le code suivant utilisant des primitives compile :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="kt">float</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Ce code faisant appelle à l’autoboxing ne compile pas en l’état :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-<span class="hll"><span class="n">Float</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// ERREUR : i est de type Integer</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="hll"><span class="n">Float</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// ERREUR : i est de type Integer</span>
 </span></pre></div>
 </div>
 <p>Pire, l’autoboxing peut être source de bug. Le plus évident est l’unboxing d’une variable nulle :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-<span class="hll"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// ERREUR : unboxing de null !</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Integer</span> <span class="n">i</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="hll"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// ERREUR : unboxing de null !</span>
 </span></pre></div>
 </div>
 <p>Une variable de type <strong>Integer</strong> peut être <strong>null</strong>. Dans ce cas, l’unboxing
@@ -923,12 +940,21 @@ de plusieurs centaines (milliers) de lignes de code.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -940,7 +966,6 @@ de plusieurs centaines (milliers) de lignes de code.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="La structure fondamentale du langage" href="structure_fondamentale.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Compilation &amp; exécution</li>
     
@@ -478,7 +495,7 @@
         <a href="structure_fondamentale.html" class="btn btn-neutral float-right" title="La structure fondamentale du langage" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -498,24 +515,24 @@ d’un programme Java. Nous verrons également comment créer un projet dans Ecl
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * Ce programme n&#39;est pas très intéressant</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PremierProgramme</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PremierProgramme</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello World!&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>La syntaxe du langage nous importe peu pour l’instant. Ce programme Java va simplement écrire
 le message « Hello World! » sur la sortie standard.</p>
-<p>Téléchargez le fichier <a class="reference download internal" download="" href="../_downloads/33a4258ac5899d0c0da3d36f8106d9df/PremierProgramme.java"><code class="xref download docutils literal notranslate"><span class="pre">PremierProgramme.java</span></code></a>
+<p>Téléchargez le fichier <a class="reference download internal" download="" href="../_downloads/fa4d678b251fb16abb994777a2c2b419/PremierProgramme.java"><code class="xref download docutils literal notranslate"><span class="pre">PremierProgramme.java</span></code></a>
 contenant ce code.</p>
 </div>
 <div class="section" id="la-compilation">
 <h2>La compilation<a class="headerlink" href="#la-compilation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour pouvoir exécuter ce programme, nous allons devoir le compiler. Pour cela,
-nous devons utiliser le programme <a class="reference external" href="https://docs.oracle.com/javase/10/tools/javac.htm#JSWOR627">javac</a> (Java Compiler) dont c’est la fonction.
+nous devons utiliser le programme <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a> (Java Compiler) dont c’est la fonction.
 Dans un terminal, il suffit de se rendre dans le répertoire où se situe le fichier
 et de lancer la commande de compilation :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /home/david/Workspace/workspace-java/exemple
@@ -524,14 +541,14 @@ $ javac PremierProgramme.java
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Si votre système ne connaît pas la commande <a class="reference external" href="https://docs.oracle.com/javase/10/tools/javac.htm#JSWOR627">javac</a> cela signifie simplement
+<p>Si votre système ne connaît pas la commande <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a> cela signifie simplement
 que le répertoire contenant ce programme n’est pas déclaré dans le chemin d’exécution
 du système. Il vous suffit de le rajouter ou de donner le chemin complet menant à
 ce programme. Par exemple :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ /opt/bin/jdk1.8/bin/javac PremierProgramme.java
 </pre></div>
 </div>
-<p>Le programme <a class="reference external" href="https://docs.oracle.com/javase/10/tools/javac.htm#JSWOR627">javac</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
+<p>Le programme <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
 d’installation du JDK</p>
 </div>
 <p>La compilation devrait se passer sans problème et aboutir à la création du fichier
@@ -548,23 +565,23 @@ par la JVM.</p>
 <div class="section" id="l-execution">
 <h2>L’exécution<a class="headerlink" href="#l-execution" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’exécution d’un programme se fait par l’intermédiaire de la machine virtuelle. Pour invoquer cette
-dernière, on utilise tout simplement la commande <a class="reference external" href="https://docs.oracle.com/javase/10/tools/java.htm#JSWOR624">java</a> suivie du nom de la classe <strong>sans l’extension</strong> :</p>
+dernière, on utilise tout simplement la commande <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> suivie du nom de la classe <strong>sans l’extension</strong> :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ java PremierProgramme
 </pre></div>
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Si votre système ne connaît pas la commande <a class="reference external" href="https://docs.oracle.com/javase/10/tools/java.htm#JSWOR624">java</a> cela signifie simplement
+<p>Si votre système ne connaît pas la commande <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> cela signifie simplement
 que le répertoire contenant ce programme n’est pas déclaré dans le chemin d’exécution
 du système. Il vous suffit de le rajouter ou de donner le chemin complet menant à
 ce programme. Par exemple :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ /opt/bin/jdk-10/bin/java PremierProgramme
 </pre></div>
 </div>
-<p>Le programme <a class="reference external" href="https://docs.oracle.com/javase/10/tools/java.htm#JSWOR624">java</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
+<p>Le programme <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> est installé dans le sous-répertoire <strong>bin</strong> du répertoire
 d’installation du JDK</p>
 </div>
-<p>La commande <a class="reference external" href="https://docs.oracle.com/javase/10/tools/java.htm#JSWOR624">java</a> va chercher le fichier PremierProgramme.class pour l’exécuter.
+<p>La commande <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> va chercher le fichier PremierProgramme.class pour l’exécuter.
 Cela signifie qu’à ce stade, vous n’êtes pas obligé de disposer du fichier source
 PremierProgramme.java.</p>
 </div>
@@ -603,7 +620,7 @@ dynamique.</p>
 Ces fichiers peuvent se trouver à différents endroits dans le système de fichiers.
 Il faut donc un mécanisme pour permettre de les localiser. En Java, on utilise
 le <strong>classpath</strong> : le chemin des classes. On peut par exemple spécifier un
-ou plusieurs chemins avec le paramètre <strong>-classpath</strong> aux commandes <a class="reference external" href="https://docs.oracle.com/javase/10/tools/java.htm#JSWOR624">java</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/tools/javac.htm#JSWOR627">javac</a>
+ou plusieurs chemins avec le paramètre <strong>-classpath</strong> aux commandes <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> et <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a>
 indiquant les répertoires à partir desquels il est possible de trouver des fichiers
 class.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ java -classpath /home/david/Workspace/workspace-java/exemple PremierProgramme
@@ -635,11 +652,11 @@ qu’un programme ait besoin de centaines voire de milliers de ces fichiers alor
 compte qu’il n’est pas très facile de distribuer un programme Java sous cette forme.</p>
 <p>Pour palier à ce problème, on peut utiliser des fichiers jar. JAR signifie <em>Java ARchive</em> :
 il s’agit d’un fichier zip contenant un ensemble de fichiers class mais qui a l’extension <strong>.jar</strong>.
-Java fournit l’utilitaire <a class="reference external" href="https://docs.oracle.com/javase/10/tools/jar.htm#JSWOR614">jar</a> pour créer une archive :</p>
+Java fournit l’utilitaire <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/jar.html">jar</a> pour créer une archive :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ jar -cf monappli.jar PremierProgramme.class
 </pre></div>
 </div>
-<p>L’utilitaire <a class="reference external" href="https://docs.oracle.com/javase/10/tools/jar.htm#JSWOR614">jar</a> reprend la syntaxe de <strong>tar</strong> sous les systèmes *NIX.</p>
+<p>L’utilitaire <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/jar.html">jar</a> reprend la syntaxe de <strong>tar</strong> sous les systèmes *NIX.</p>
 <p>Un fichier JAR peut être ajouté au classpath rendant ainsi disponible l’ensemble
 des fichiers qu’il contient.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>/home/david/Workspace/workspace-java/exemple/monappli.jar
@@ -651,7 +668,7 @@ Java sont disponibles sous la forme d’un fichier JAR.</p>
 </div>
 <div class="section" id="creation-d-un-projet-dans-eclipse">
 <h2>Création d’un projet dans Eclipse<a class="headerlink" href="#creation-d-un-projet-dans-eclipse" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Il est utile de comprendre le fonctionnement des outils tels que <a class="reference external" href="https://docs.oracle.com/javase/10/tools/java.htm#JSWOR624">java</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/tools/javac.htm#JSWOR627">javac</a>
+<p>Il est utile de comprendre le fonctionnement des outils tels que <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> ou <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/tools/javac.html">javac</a>
 mais ils ne sont pas d’une utilisation très aisée pour de vrais projets. On
 préférera utiliser un outil de build comme <a class="reference external" href="http://ant.apache.org">Ant</a>, <a class="reference external" href="http://maven.apache.org">Maven</a> ou <a class="reference external" href="https://gradle.org">Gradle</a> pour automatiser
 la compilation et un environnement de développement intégré comme <a class="reference external" href="https://www.eclipse.org/">Eclipse</a>
@@ -663,7 +680,7 @@ possible d’avoir immédiatement un retour sur les éventuelles erreurs de synt
 <li><p>Eclipse offre un environnement riche pour manipuler et modifier les fichiers sources.</p></li>
 </ul>
 <p>Quelques raccourcis clavier utiles dans Eclipse :</p>
-<table class="docutils align-center" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Raccourcis clavier</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
@@ -718,7 +735,7 @@ adapté pour certaines tâches. Il existe par exemple une perspective Java adapt
 pour développer du code Java et une perspective Debug pour le debuggage du code.</p>
 <p>Un fois le projet créé, on voit que Eclipse a ajouté automatiquement un répertoire <code class="file docutils literal notranslate"><span class="pre">src</span></code>
 destiné à accueillir les sources du projet. Il suffit d’ajouter le fichier
-<a class="reference download internal" download="" href="../_downloads/33a4258ac5899d0c0da3d36f8106d9df/PremierProgramme.java"><code class="xref download docutils literal notranslate"><span class="pre">PremierProgramme.java</span></code></a> à cet endroit.</p>
+<a class="reference download internal" download="" href="../_downloads/fa4d678b251fb16abb994777a2c2b419/PremierProgramme.java"><code class="xref download docutils literal notranslate"><span class="pre">PremierProgramme.java</span></code></a> à cet endroit.</p>
 <p>Comme indiqué ci-dessus, toute modification dans ce fichier entraînera automatiquement
 sa compilation au moment de la sauvegarde.</p>
 <p>Si l’on souhaite distribuer son projet, on peut, par exemple, produire un fichier JAR.
@@ -732,7 +749,7 @@ et il sera créé en cliquant sur <span class="guilabel">Finish</span>.</p>
 <div class="exercice admonition">
 <p class="admonition-title">Utilisation d’une bibliothèque JAR</p>
 <p>Pour cet exercice, nous allons créer un document PDF grâce à la bibliothèque
-<a class="reference external" href="https://itextpdf.com/">iText</a>. Pour cela, téléchargez le fichier JAR suivant :</p>
+<a class="reference external" href="https://itextpdf.com/en">iText</a>. Pour cela, téléchargez le fichier JAR suivant :</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://central.maven.org/maven2/com/itextpdf/itextpdf/5.5.13/itextpdf-5.5.13.jar">http://central.maven.org/maven2/com/itextpdf/itextpdf/5.5.13/itextpdf-5.5.13.jar</a></p></li>
 </ul>
@@ -751,27 +768,27 @@ comme une bibliothèque de votre projet.</p>
 sur chaque fichier JAR et choisir <span class="menuselection">Build Path ‣ Add to Build Path</span>.</p>
 </div>
 <p>Créer ensuite la classe <em>PremierPdf</em> et ajoutez le code suivant :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">com.itextpdf.text.Document</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.itextpdf.text.Paragraph</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.itextpdf.text.pdf.PdfWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.itextpdf.text.Document</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.itextpdf.text.Paragraph</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.itextpdf.text.pdf.PdfWriter</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PremierPdf</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PremierPdf</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-    <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">();</span>
-    <span class="n">PdfWriter</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">document</span><span class="o">,</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&quot;premier-pdf.pdf&quot;</span><span class="o">));</span>
-    <span class="n">document</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
-    <span class="n">document</span><span class="o">.</span><span class="na">addTitle</span><span class="o">(</span><span class="s">&quot;Mon premier PDF&quot;</span><span class="o">);</span>
-    <span class="n">document</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Paragraph</span><span class="o">(</span><span class="s">&quot;Hello the world en PDF grâce à iText&quot;</span><span class="o">));</span>
-    <span class="n">document</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+    <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="p">();</span>
+    <span class="n">PdfWriter</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">document</span><span class="p">,</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="p">(</span><span class="s">&quot;premier-pdf.pdf&quot;</span><span class="p">));</span>
+    <span class="n">document</span><span class="p">.</span><span class="na">open</span><span class="p">();</span>
+    <span class="n">document</span><span class="p">.</span><span class="na">addTitle</span><span class="p">(</span><span class="s">&quot;Mon premier PDF&quot;</span><span class="p">);</span>
+    <span class="n">document</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">Paragraph</span><span class="p">(</span><span class="s">&quot;Hello the world en PDF grâce à iText&quot;</span><span class="p">));</span>
+    <span class="n">document</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>En exécutant cette classe, vous obtenez à la racine de votre projet le fichier
-<em>premier-pdf.pdf</em> créé grâce à la bibliothèque <a class="reference external" href="https://itextpdf.com/">iText</a>.</p>
+<em>premier-pdf.pdf</em> créé grâce à la bibliothèque <a class="reference external" href="https://itextpdf.com/en">iText</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Astuce</p>
 <p>Si vous ne voyez pas le fichier PDF apparaître dans le <em>Package Explorer</em>,
@@ -808,12 +825,21 @@ de votre projet et notamment de déclarer les dépendances logicielles.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -825,7 +851,6 @@ de votre projet et notamment de déclarer les dépendances logicielles.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

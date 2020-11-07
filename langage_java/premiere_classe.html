@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Attributs &amp; méthodes" href="attributs_et_methodes.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Une première classe</li>
     
@@ -478,7 +495,7 @@
         <a href="attributs_et_methodes.html" class="btn btn-neutral float-right" title="Attributs &amp; méthodes" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tableau.html" class="btn btn-neutral" title="Les tableaux" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="tableau.html" class="btn btn-neutral float-left" title="Les tableaux" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -504,12 +521,12 @@ que la classe avec l’extension <em>.java</em>. Il nous faut donc créer le fic
 <span class="cm">*</span>
 <span class="cm">* @author David Gayerie</span>
 <span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/a579f0c5a66c62e0db0c1c51c0c1cc5d/Voiture.java"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">le</span> <span class="pre">fichier</span> <span class="pre">Voiture.java</span></code></a>.
+<p>Vous pouvez <a class="reference download internal" download="" href="../_downloads/91a66989f1c68acf297ade1bc84ab523/Voiture.java"><code class="xref download docutils literal notranslate"><span class="pre">télécharger</span> <span class="pre">le</span> <span class="pre">fichier</span> <span class="pre">Voiture.java</span></code></a>.
 Vous pouvez également créer directement dans un projet sous Eclipse avec le menu <span class="menuselection">File ‣ New ‣ Class</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -552,26 +569,26 @@ la méthode <strong>getVitesse</strong> qui permet de connaître la vitesse actu
 <span class="cm">*</span>
 <span class="cm">* @author David Gayerie</span>
 <span class="cm">*/</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @return La vitesse en km/h de la voiture</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="p">()</span> <span class="p">{</span>
 
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une méthode est identifée par sa <strong>signature</strong>. La signature d’une méthode est de la forme :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">portée</span><span class="o">]</span> <span class="o">[</span><span class="n">type</span> <span class="n">de</span> <span class="n">retour</span><span class="o">]</span> <span class="o">[</span><span class="n">identifiant</span><span class="o">]</span> <span class="o">([</span><span class="n">liste</span> <span class="n">des</span> <span class="n">paramètres</span><span class="o">])</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">portée</span><span class="o">]</span> <span class="o">[</span><span class="n">type</span> <span class="n">de</span> <span class="n">retour</span><span class="o">]</span> <span class="o">[</span><span class="n">identifiant</span><span class="o">]</span> <span class="p">(</span><span class="o">[</span><span class="n">liste</span> <span class="n">des</span> <span class="n">paramètres</span><span class="o">]</span><span class="p">)</span> <span class="p">{</span>
   <span class="o">[</span><span class="n">code</span><span class="o">]</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Pour la méthode que nous venons de déclarer:</p>
-<table class="docutils align-center" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Signature de la méthode</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
@@ -602,22 +619,22 @@ de stocker cette information comme attribut de la classe :</p>
 <span class="cm"> *</span>
 <span class="cm"> * @author David Gayerie</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @return La vitesse en km/h de la voiture</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Un attribut est identifé par :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">portée</span><span class="o">]</span> <span class="o">[</span><span class="n">type</span><span class="o">]</span> <span class="o">[</span><span class="n">identifiant</span><span class="o">];</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="n">portée</span><span class="o">]</span> <span class="o">[</span><span class="n">type</span><span class="o">]</span> <span class="o">[</span><span class="n">identifiant</span><span class="o">]</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Pour l’attribut <em>vitesse</em>, nous spécifions le type de portée <strong>private</strong>. En Java, un attribut a
@@ -628,48 +645,48 @@ toujours une valeur par défaut qui dépend de son type. Pour le type <strong>fl
 <span class="cm"> *</span>
 <span class="cm"> * @author David Gayerie</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @return La vitesse en km/h de la voiture</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Pour accélérer la voiture</span>
 <span class="cm">   * @param deltaVitesse Le vitesse supplémentaire</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Pour décélérer la voiture</span>
 <span class="cm">   * @param deltaVitesse Le vitesse à soustraire</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Freiner la voiture.</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">freiner</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">freiner</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Représentation de l&#39;objet sous la forme</span>
 <span class="cm">   * d&#39;une chaîne de caractères.</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="s">&quot;La voiture roule actuellement à &quot;</span> <span class="o">+</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="s">&quot; km/h.&quot;</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;La voiture roule actuellement à &quot;</span> <span class="o">+</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="s">&quot; km/h.&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Les méthodes <em>Voiture.accelerer(float)</em> et <em>Voiture.decelerer(float)</em> prennent toutes les deux un paramètre de
@@ -693,8 +710,8 @@ en dehors d’une classe.</p>
 <p>Si nous voulons utiliser notre classe dans un programme, il nous faut déterminer un point d’entrée
 pour l’exécution du programme. Un point d’entrée est représenté par la méthode <strong>main</strong> qui doit avoir
 la signature suivante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Une classe ne peut déclarer qu’une seule méthode <strong>main</strong>. En revanche, toutes les classes peuvent
@@ -768,63 +785,63 @@ le nom d’une classe qui doit déclarer une méthode <strong>main</strong>.</p>
 <span class="cm"> *</span>
 <span class="cm"> * @author David Gayerie</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * @return La vitesse en km/h de la voiture</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getVitesse</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">vitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Pour accélérer la voiture</span>
 <span class="cm">   * @param deltaVitesse Le vitesse supplémentaire</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Pour décélérer la voiture</span>
 <span class="cm">   * @param deltaVitesse Le vitesse à soustraire</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Freiner la voiture.</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">freiner</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">freiner</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="cm">/**</span>
 <span class="cm">   * Représentation de l&#39;objet sous la forme</span>
 <span class="cm">   * d&#39;une chaîne de caractères.</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="s">&quot;La voiture roule actuellement à &quot;</span> <span class="o">+</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="s">&quot; km/h.&quot;</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;La voiture roule actuellement à &quot;</span> <span class="o">+</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="s">&quot; km/h.&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">();</span>
 
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">voiture</span><span class="o">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">voiture</span><span class="p">);</span>
 
-    <span class="n">voiture</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">110</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">voiture</span><span class="o">);</span>
+    <span class="n">voiture</span><span class="p">.</span><span class="na">accelerer</span><span class="p">(</span><span class="mi">110</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">voiture</span><span class="p">);</span>
 
-    <span class="n">voiture</span><span class="o">.</span><span class="na">decelerer</span><span class="o">(</span><span class="mi">20</span><span class="o">);</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">voiture</span><span class="o">);</span>
+    <span class="n">voiture</span><span class="p">.</span><span class="na">decelerer</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">voiture</span><span class="p">);</span>
 
-    <span class="n">voiture</span><span class="o">.</span><span class="na">freiner</span><span class="o">();</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">voiture</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="n">voiture</span><span class="p">.</span><span class="na">freiner</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">voiture</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>À la ligne 49, le code commence par créer une <strong>instance</strong> de la classe Voiture.
@@ -840,23 +857,23 @@ Créer une instance d’un objet se fait grâce au mot-clé <strong>new</strong>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Remarquez l’utilisation des parenthèses avec le mot-clé <strong>new</strong> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Ces parenthèses sont obligatoires.</p>
 </div>
 <p>En Java, l’opérateur <strong>.</strong> sert à accéder aux attributs ou aux méthodes d’un objet. Donc si on dispose
 d’une variable <em>voiture</em> de type <em>Voiture</em>, on peut appeler sa méthode <em>accelerer</em> grâce à cet opérateur :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">voiture</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">90</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">voiture</span><span class="p">.</span><span class="na">accelerer</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Aux lignes 51, 54, 57 et 60, nous utilisons la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html">System</a> pour afficher du texte sur la sortie
-standard. Notez que nous ne créons pas d’instance de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html">System</a> avec l’opérateur <strong>new</strong>.
+<p>Aux lignes 51, 54, 57 et 60, nous utilisons la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html">System</a> pour afficher du texte sur la sortie
+standard. Notez que nous ne créons pas d’instance de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html">System</a> avec l’opérateur <strong>new</strong>.
 Il s’agit d’un cas particulier sur lequel nous reviendrons lorsque nous aborderons les méthodes et
-les attributs de classe. Nous utilisons l’attribut de classe <strong>out</strong> de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html">System</a> qui
-représente la sortie standard et nous appelons sa méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html#println(java.lang.Object)">println</a> qui affiche le texte passé
+les attributs de classe. Nous utilisons l’attribut de classe <strong>out</strong> de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html">System</a> qui
+représente la sortie standard et nous appelons sa méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#println(java.lang.Object)">println</a> qui affiche le texte passé
 en paramètre suivi d’un saut de ligne. Cependant, nous ne passons pas une chaîne de caractères comme
-paramètre mais directement une instance de notre classe Voiture. Dans ce cas, la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/PrintStream.html#println(java.lang.Object)">println</a>
+paramètre mais directement une instance de notre classe Voiture. Dans ce cas, la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#println(java.lang.Object)">println</a>
 appellera la méthode <em>Voiture.toString()</em> pour obtenir une représentation textuelle de l’objet.</p>
 </div>
 <div class="section" id="executer-le-programme-en-ligne-de-commandes">
@@ -911,12 +928,21 @@ pour lancer l’exécution de la classe.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -928,7 +954,6 @@ pour lancer l’exécution de la classe.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Le polymorphisme" href="polymorphisme.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Héritage et composition</li>
     
@@ -478,7 +495,7 @@
         <a href="polymorphisme.html" class="btn btn-neutral float-right" title="Le polymorphisme" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="package.html" class="btn btn-neutral" title="Les packages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="package.html" class="btn btn-neutral float-left" title="Les packages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -511,38 +528,38 @@ ce type de relation.</p>
 <p>Imaginons que nous voulions développer un simulateur de conduite. Nous pouvons
 concevoir une classe <em>Voiture</em> qui sera la représentation d’une voiture dans
 notre application.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Mais nous pouvons également rendre possible la simulation d’une moto. Dans ce
 cas, nous aurons également besoin d’une classe <em>Moto</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Moto</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moto</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>On se rend vite compte qu’au stade de notre développement, une voiture et une
@@ -567,45 +584,45 @@ véhicule et une moto <strong>est un</strong> véhicule.</p>
 classe. On dit donc qu’une classe en <em>étend</em> une autre. La classe qui est étendue
 est appelée <em>classe mère</em> ou <em>classe parente</em> et la classe qui étend est appelée
 <em>classe fille</em> ou <em>classe enfant</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Moto</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moto</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le terme d’héritage vient du fait qu’une classe qui en étend une autre <em>hérite</em>
@@ -614,82 +631,82 @@ méthodes. Par exemple, les classes <em>Voiture</em> et <em>Moto</em> ont en com
 de l’attribut <em>vitesse</em>. Cet attribut semble donc faire partie de la généralisation
 commune de <em>Vehicule</em>.</p>
 <img alt="../_images/heritage_vehicule_attribut_vitesse.png" src="../_images/heritage_vehicule_attribut_vitesse.png" />
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Moto</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moto</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Il est maintenant possible d’ajouter les méthodes <em>accelerer</em> et <em>decelerer</em> à
 la classe Vehicule et les classes <em>Voiture</em> et <em>Moto</em> en hériteront.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="o">,</span> <span class="mf">0f</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="p">,</span> <span class="mf">0f</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Tous les véhicules de cette application peuvent maintenant accélérer et décélérer.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppliSimple</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppliSimple</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-    <span class="n">voiture</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">88</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+    <span class="n">voiture</span><span class="p">.</span><span class="na">accelerer</span><span class="p">(</span><span class="mi">88</span><span class="p">);</span>
 
-    <span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
-    <span class="n">moto</span><span class="o">.</span><span class="na">accelerer</span><span class="o">(</span><span class="mi">120</span><span class="o">);</span>
-  <span class="o">}</span>
+    <span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="p">(</span><span class="s">&quot;Kaneda&quot;</span><span class="p">);</span>
+    <span class="n">moto</span><span class="p">.</span><span class="na">accelerer</span><span class="p">(</span><span class="mi">120</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -709,54 +726,54 @@ constructeur peut appeler un constructeur de sa classe parente grâce au mot-cl�
 </ul>
 <p>Il est donc possible de déclarer un constructeur dans la classe <em>Vehicule</em> et
 d’appeler ce constructeur depuis les constructeurs de <em>Voiture</em> et <em>Moto</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="o">,</span> <span class="mf">0f</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="p">,</span> <span class="mf">0f</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">marque</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">marque</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Moto</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">marque</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moto</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">marque</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><em>Voiture</em> et <em>Moto</em> peuvent maintenant proposer leurs propres méthodes et attributs
@@ -767,24 +784,24 @@ génèrera une instruction d’appel au constructeur sans paramètre de la class
 <p>Si vous créez la classe suivante :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.simple.test</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">MaClasse</span><span class="o">()</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">MaClasse</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le compilateur génèrera le bytecode correspondant au code suivant :</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.simple.test</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">MaClasse</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">MaClasse</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">();</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Si vous omettez d’appeler un constructeur, alors le compilateur part du principe
@@ -801,12 +818,12 @@ un héritage.</p>
 <h2>Héritage simple : Object<a class="headerlink" href="#heritage-simple-object" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Java ne supporte pas l’héritage multiple. Soit le développeur déclare avec
 le mot-clé <strong>extends</strong> une seule classe parente, soit le compilateur part
-du principe que la classe hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Toutes les classes
-en Java ont une classe parente (hormis la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>). L’arbre d’héritage
-en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
+du principe que la classe hérite de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>. Toutes les classes
+en Java ont une classe parente (hormis la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>). L’arbre d’héritage
+en Java ne possède qu’une seule classe racine : la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>C’est la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#toString()">toString</a> et <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html#equals(java.lang.Object)">equals</a>.
+<p>C’est la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a> qui déclare notamment les méthodes <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()">toString</a> et <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a>.
 Voilà pourquoi tous les objets Java peuvent avoir par défaut une représentation
 sous forme de chaîne de caractères et qu’ils peuvent être comparés aux autres.</p>
 </div>
@@ -818,9 +835,9 @@ classe parente. Une classe enfant a son propre type mais partage également le
 même type que sa classe parente.</p>
 <p>Pour notre exemple, cela signifie que l’on peut affecter à une variable de type
 <em>Vehicule</em>, une instance de <em>Voiture</em> ou une instance de <em>Moto</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-<span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+<span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="p">(</span><span class="s">&quot;Kaneda&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Cette possibilité introduit une abstraction importante dans la programmation
@@ -853,19 +870,19 @@ de type <em>Voiture</em> à des variables de type <em>Vehicule</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Comme Java se base sur une hiérarchie à racine unique, toutes les classes
-héritent directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>. Donc, toute instance peut
-être affectée à une variable, un attribut ou un paramètre de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html">Object</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="s">&quot;ceci est une chaine de caractère&quot;</span><span class="o">;</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+héritent directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>. Donc, toute instance peut
+être affectée à une variable, un attribut ou un paramètre de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Object</span> <span class="n">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="s">&quot;ceci est une chaine de caractère&quot;</span><span class="p">;</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <p>À l’inverse, le downcasting n’est pas une opération sûre en programmation objet.
 Prenons l’exemple trivial suivant :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="hll"><span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="n">vehicule</span><span class="o">;</span> <span class="c1">// ERREUR</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+<span class="hll"><span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="n">vehicule</span><span class="p">;</span> <span class="c1">// ERREUR</span>
 </span></pre></div>
 </div>
 <p>La variable <em>vehicule</em> référence un objet de type Voiture, il n’est donc pas possible
@@ -873,9 +890,9 @@ d’affecter cet objet à une variable de type <em>Moto</em>. Pour cette raison,
 langage Java, n’autorise pas par défaut le downcasting : l’exemple ci-dessus
 ne compilera pas. Il est cependant possible de forcer le transtypage en
 utilisant la même syntaxe que pour les types primitifs.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="o">(</span><span class="n">Voiture</span><span class="o">)</span> <span class="n">vehicule</span><span class="o">;</span>
-<span class="hll"><span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="o">(</span><span class="n">Moto</span><span class="o">)</span> <span class="n">vehicule</span><span class="o">;</span> <span class="c1">// ERREUR</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+<span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="p">(</span><span class="n">Voiture</span><span class="p">)</span> <span class="n">vehicule</span><span class="p">;</span>
+<span class="hll"><span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="p">(</span><span class="n">Moto</span><span class="p">)</span> <span class="n">vehicule</span><span class="p">;</span> <span class="c1">// ERREUR</span>
 </span></pre></div>
 </div>
 <p>Le code précédent compile puisque le développeur déclare explicitement le downcasting.
@@ -883,7 +900,7 @@ Cependant, l’affectation à la ligne 3 est erronée puisque la variable <em>ve
 référence une instance de <em>Voiture</em> que l’on veut affecter à une variable de type
 <em>Moto</em>. Pour les types primitifs, un transtypage invalide conduit à une possible
 perte de données. Par contre, pour des objets, un transtypage invalide génère à
-l’exécution une erreur de type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/ClassCastException.html">java.lang.ClassCastException</a>.</p>
+l’exécution une erreur de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassCastException.html">java.lang.ClassCastException</a>.</p>
 </div>
 <div class="section" id="le-mot-cle-instanceof">
 <h2>Le mot-clé instanceof<a class="headerlink" href="#le-mot-cle-instanceof" title="Lien permanent vers ce titre">¶</a></h2>
@@ -902,17 +919,17 @@ retourne <strong>true</strong> si l’opérande à gauche est d’un type compat
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Vehicule</span> <span class="n">vehicule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">vehicule</span> <span class="k">instanceof</span> <span class="n">Voiture</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="o">(</span><span class="n">Voiture</span><span class="o">)</span> <span class="n">vehicule</span><span class="o">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">vehicule</span> <span class="k">instanceof</span> <span class="n">Voiture</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="p">(</span><span class="n">Voiture</span><span class="p">)</span> <span class="n">vehicule</span><span class="p">;</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 
-<span class="k">if</span> <span class="o">(</span><span class="n">vehicule</span> <span class="k">instanceof</span> <span class="n">Moto</span><span class="o">)</span> <span class="o">{</span>
-  <span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="o">(</span><span class="n">Moto</span><span class="o">)</span> <span class="n">vehicule</span><span class="o">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">vehicule</span> <span class="k">instanceof</span> <span class="n">Moto</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="p">(</span><span class="n">Moto</span><span class="p">)</span> <span class="n">vehicule</span><span class="p">;</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Le code ci-dessus s’exécutera sans erreur. À la ligne 8, comme la variable
@@ -940,21 +957,21 @@ privés des classes parentes. Imaginons maintenant que nous souhaitons ajouter
 la méthode <em>reculer</em>. Comme nous ne souhaitons pas fournir cette possibilité aux
 objets de la classe <em>Moto</em>, nous voulons ajouter cette méthode uniquement à la
 classe <em>Voiture</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">marque</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">marque</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reculer</span><span class="o">(</span><span class="kt">float</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
-<span class="hll">    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="o">-</span><span class="n">vitesse</span><span class="o">;</span>
-</span>  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reculer</span><span class="p">(</span><span class="kt">float</span> <span class="n">vitesse</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="o">-</span><span class="n">vitesse</span><span class="p">;</span>
+</span>  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le code précédent ne peut pas accéder à l’attribut <em>vitesse</em> déclaré dans la
@@ -963,35 +980,35 @@ classe parente car il a été déclaré avec une portée <strong>private</strong
 et les méthodes déclarés avec la portée <strong>protected</strong> sont accessibles par
 les membres du même package et par les classes filles. Ainsi en modifiant
 la déclaration de la classe <em>Vehicule</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">protected</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">protected</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="o">,</span> <span class="mf">0f</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="p">,</span> <span class="mf">0f</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>La classe <em>Voiture</em> pourra compiler car elle a maintenant accès à l’attribut
 <em>vitesse</em>.</p>
 <p>Le tableau ci-dessous résume toutes les portées en Java en les triant de la moins
 restrictive à la plus restrictive.</p>
-<table class="colwidths-given docutils align-center" id="id1">
+<table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Les portées en Java</span><a class="headerlink" href="#id1" title="Lien permanent vers ce tableau">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
@@ -1063,38 +1080,38 @@ des classes qui font partie de la hiérarchie d’héritage.</p>
 <p>Un exemple classique est l’implémentation d’un compteur qui permet de savoir
 combien d’instances ont été créées. Il suffit de créer un compteur comme
 attribut de classe.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">nbInstances</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">nbInstances</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="o">++</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">nbInstances</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">++</span><span class="n">Vehicule</span><span class="p">.</span><span class="na">nbInstances</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNbInstances</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">nbInstances</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNbInstances</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">nbInstances</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple précédent, nous avons ajouté l’attribut de classe <em>nbInstances</em>
 et la méthode de classe <em>getNbInstances</em>. L’attribut de classe est un compteur
 qui est incrémenté à chaque fois que le constructeur de <em>Vehicule</em> est appelé.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
 
-<span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="o">(</span><span class="s">&quot;Kaneda&quot;</span><span class="o">);</span>
+<span class="n">Moto</span> <span class="n">moto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moto</span><span class="p">(</span><span class="s">&quot;Kaneda&quot;</span><span class="p">);</span>
 
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Vehicule</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span> <span class="c1">// 2</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Voiture</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>  <span class="c1">// 2</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Moto</span><span class="o">.</span><span class="na">getNbInstances</span><span class="o">());</span>     <span class="c1">// 2</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Vehicule</span><span class="p">.</span><span class="na">getNbInstances</span><span class="p">());</span> <span class="c1">// 2</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Voiture</span><span class="p">.</span><span class="na">getNbInstances</span><span class="p">());</span>  <span class="c1">// 2</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Moto</span><span class="p">.</span><span class="na">getNbInstances</span><span class="p">());</span>     <span class="c1">// 2</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la création d’une instance de <em>Voiture</em> et d’une
@@ -1112,25 +1129,25 @@ de type <em>Vehicule</em> (donc incluant les instances de <em>Moto</em>).</p>
 <p>En Java, il est possible de déclarer une classe <strong>final</strong>. Cela signifie
 qu’il est impossible d’étendre cette classe.
 Elle représente un élément terminal dans l’arborescence d’héritage.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Moto</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">marque</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moto</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">marque</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la classe <em>Moto</em> est déclarée <strong>final</strong>. Donc il
 est maintenant impossible de déclarer une classe qui étende la classe <em>Moto</em>.</p>
 <p>En raison de son impact très fort, la déclaration d’une classe comme <strong>final</strong>
 est réservée à des cas très particuliers. Un exemple est la classe
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>. Cette classe est déclarée <strong>final</strong>. Il est donc impossible
-en Java de créer une classe qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>. Les développeurs de
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">java.lang.String</a>. Cette classe est déclarée <strong>final</strong>. Il est donc impossible
+en Java de créer une classe qui hérite de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">java.lang.String</a>. Les développeurs de
 l’API standard ont jugé qu’en raison de son importance, cette classe devait être
 fermée en extension afin d’éviter toute modification de comportement par héritage.</p>
 </div>
@@ -1143,65 +1160,65 @@ des attributs dans la classe.</p>
 <p>Dans notre application de simulation de conduite, si nous introduisons une
 classe pour représenter des pneus.</p>
 <img alt="../_images/composition_vehicule_pneu.png" src="../_images/composition_vehicule_pneu.png" />
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pneu</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pneu</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">coefficientAdherence</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">coefficientAdherence</span><span class="p">;</span>
 
   <span class="c1">// ..</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Alors, nous pouvons indiquer que les véhicules <strong>ont des</strong> pneus.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">protected</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
-  <span class="kd">protected</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="n">pneus</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">protected</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
+  <span class="kd">protected</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="n">pneus</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="nf">getPneus</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">pneus</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="nf">getPneus</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">pneus</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">marque</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">pneus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="o">{</span><span class="k">new</span> <span class="n">Pneu</span><span class="o">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">()};</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">marque</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">pneus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="p">{</span><span class="k">new</span> <span class="n">Pneu</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="p">()};</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moto</span> <span class="kd">extends</span> <span class="n">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Moto</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">marque</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">pneus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="o">{</span><span class="k">new</span> <span class="n">Pneu</span><span class="o">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">()};</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moto</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">marque</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">pneus</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pneu</span><span class="o">[]</span> <span class="p">{</span><span class="k">new</span> <span class="n">Pneu</span><span class="p">(),</span> <span class="k">new</span> <span class="n">Pneu</span><span class="p">()};</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1227,12 +1244,21 @@ classe pour représenter des pneus.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -1244,7 +1270,6 @@ classe pour représenter des pneus.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

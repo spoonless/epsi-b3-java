@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Installation" href="installation.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Introduction</li>
     
@@ -478,7 +495,7 @@
         <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Sommaire" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Sommaire" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -522,11 +539,11 @@ programmes Java. Il fournit entre-autres la machine virtuelle Java et la compila
 sous licence libre GNU <a class="reference external" href="https://fr.wikipedia.org/wiki/Licence_publique_g%C3%A9n%C3%A9rale_GNU">GPL</a>. Il existe une version de l’environnement Java incluant uniquement
 le code libre : <a class="reference external" href="http://openjdk.java.net/">Open JDK</a>. Depuis la version 11, Oracle distribue son propre JDK
 sous licence propriétaire (mais qui ne peut pas être utilisé en production) et une version sous
-licence GPL.</p>
+licence GPL v2 + CPE (<em>Classpath Exception</em>).</p>
 </div>
 <div class="section" id="un-bref-historique-des-versions">
 <h2>Un bref historique des versions<a class="headerlink" href="#un-bref-historique-des-versions" title="Lien permanent vers ce titre">¶</a></h2>
-<table class="colwidths-given docutils align-center">
+<table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 25%" />
@@ -590,8 +607,12 @@ statiques, foreach, types génériques, annotations.</p>
 </tr>
 <tr class="row-odd"><td><p>11</p></td>
 <td><p>septembre 2018</p></td>
-<td><p>Nouvelle licence : la version propriétaire de Oracle JDK n’est plus utilisable en production.
-Oracle fournit cependant une version libre sous licence GPL (<a class="reference external" href="http://jdk.java.net/">http://jdk.java.net/</a>)</p>
+<td><p>Nouvelle licence : la version propriétaire de Oracle JDK n’est plus
+utilisable gratuitement en production et requière une souscription
+payante. Oracle fournit cependant une distribution libre sous licence GPL v2 + CPE
+(<em>Classpath Exception</em>) disponible sur le site <a class="reference external" href="http://jdk.java.net/">http://jdk.java.net/</a> .
+L’utilisation de cette distribution n’implique pas une distribution libre
+du code de l’application.</p>
 <p>Suppression de certains modules dépréciés en Java 9 (CORBA, JAXB, JAX-WS…).</p>
 <p>Nouvelle API de client HTTP.</p>
 </td>
@@ -599,11 +620,59 @@ Oracle fournit cependant une version libre sous licence GPL (<a class="reference
 <tr class="row-even"><td><p>12</p></td>
 <td><p>mars 2019</p></td>
 <td><p>Shenandoah : le nouvel algorithme de ramasse-miettes (<em>Garbage collector</em>).</p>
-<p>Extension de l’expression <code class="docutils literal notranslate"><span class="pre">switch</span></code>.</p>
+<p>Extension de l’expression <code class="docutils literal notranslate"><span class="pre">switch</span></code> (<em>preview feature</em>) : support de la
+<em>arrow syntax</em> <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>, valeur de retour sur un <code class="docutils literal notranslate"><span class="pre">break</span></code> et possibilité de
+lister plusieurs constantes dans l’expression <code class="docutils literal notranslate"><span class="pre">case</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>septembre 2019</p></td>
+<td><p>Nouvelle implémentation de la couche <em>socket</em>.</p>
+<p>Extension de l’expression <code class="docutils literal notranslate"><span class="pre">switch</span></code> (<em>preview feature</em>) : introduction
+du mot-clé <code class="docutils literal notranslate"><span class="pre">yield</span></code> pour affecter le résultat d’une expression <code class="docutils literal notranslate"><span class="pre">switch</span></code>.</p>
+<p>Support des blocs de texte (<em>preview feature</em>) en utilisant le tripe
+guillemet <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>mars 2020</p></td>
+<td><p>Extension de l’expression <code class="docutils literal notranslate"><span class="pre">switch</span></code> (<em>standard feature</em>) : introduction
+du mot-clé <code class="docutils literal notranslate"><span class="pre">yield</span></code> pour affecter le résultat d’une expression <code class="docutils literal notranslate"><span class="pre">switch</span></code>.</p>
+<p>Nouveau type <code class="docutils literal notranslate"><span class="pre">record</span></code> (<em>preview feature</em>).</p>
+<p><em>Pattern matching</em> pour <em>instanceof</em> (<em>preview feature</em>).</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>septembre 2020</p></td>
+<td><p>Support des blocs de texte (<em>standard feature</em>) en utilisant le tripe
+guillemet <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Hidden</span> <span class="pre">classes</span></code> : création de classes à la volée qui ne peuvent pas
+être inspectées avec l’API de réflexion</p>
+<p>Implémentation de l’algorithme de signature Edwards-Curve (EdDSA)</p>
+<p><em>Sealed classes</em> (<em>preview feature</em>) : Les classes (ou les interfaces)
+scellées permettent de restreindre l’ensemble des classes pouvant les
+étendre (les implémenter).</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p>À partir de la version 12, les nouvelles évolutions dans la grammaire du langage
+passent par un état <em>preview</em>. Une <em>preview feature</em> est une évolution complète
+disponible dans une version mais qui doit être activée explicitement à la compilation.
+Une <em>preview feature</em> n’est donc pas considérée comme définitive, ni même
+officiellement intégrée au langage. Elle permet à la communauté des développeurs
+d’évaluer cette fonctionnalité. Dans une version ultérieure, cette fonctionnalité
+peut acquérir le statut de <em>standard feature</em>. Cela signifie qu’elle est
+pleinement intégrée au langage et qu’elle est disponible par défaut.</p>
+<p>Par exemple, pour activer les <em>preview features</em> disponibles dans la version 12,
+il faut passer les paramètres suivants à la compilation :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>javac --enable-preview --release <span class="m">12</span> MaClasse.java
+</pre></div>
+</div>
+<p>Il faut également spécifier l’activation des <em>preview features</em> à l’exécution :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>java --enable-preview MaClasse
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -627,12 +696,21 @@ Oracle fournit cependant une version libre sous licence GPL (<a class="reference
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -644,7 +722,6 @@ Oracle fournit cependant une version libre sous licence GPL (<a class="reference
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

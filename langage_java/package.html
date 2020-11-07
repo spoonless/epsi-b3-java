@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Héritage et composition" href="heritage_composition.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les packages</li>
     
@@ -478,7 +495,7 @@
         <a href="heritage_composition.html" class="btn btn-neutral float-right" title="Héritage et composition" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cycle_de_vie.html" class="btn btn-neutral" title="Cycle de vie d’un objet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="cycle_de_vie.html" class="btn btn-neutral float-left" title="Cycle de vie d’un objet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -511,11 +528,11 @@ commence par l’instruction :</p>
 </div>
 <p>Une classe ne peut appartenir qu’à un seul package. Les packages sont également
 représentés sur le disque par des répertoires. Donc pour la classe suivante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">monapplication</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">monapplication</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TextEditor</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Cette classe doit se trouver dans le fichier <em>TextEditor.java</em> et ce fichier
@@ -543,7 +560,7 @@ pas de package. Mais maintenant que cette notion a été introduite, les exemple
 <h2>Sous package<a class="headerlink" href="#sous-package" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme pour les répertoires, les packages suivent une organisation arborescente.
 Un package contenu dans un autre package est appelé un <strong>sous package</strong> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">monapplication.monsouspackage</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">monapplication.monsouspackage</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Sur le système de fichiers, on trouvera donc un répertoire <em>monapplication</em> avec
@@ -564,57 +581,57 @@ dans la bibliothèque standard fournie avec le JDK.</p>
 <h2>Nom complet d’une classe<a class="headerlink" href="#nom-complet-d-une-classe" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une classe est normalement désignée par son <em>nom complet</em>, c’est-à-dire par le
 chemin de packages suivi d’un <strong>.</strong> suivi du nom de la classe.</p>
-<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> s’appelle en fait <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a> car elle se
-trouve dans le package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité, si je le souhaite,
+<p>Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> s’appelle en fait <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">java.lang.String</a> car elle se
+trouve dans le package <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/package-summary.html">java.lang</a>. J’ai donc la possibilité, si je le souhaite,
 de créer ma propre classe String par exemple dans le package fr.epsi.b3 :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">String</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">String</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Il est possible d’accèder à une classe en spécifiant son nom complet. Par
-exemple, pour accèder à la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/util/Arrays.html">java.util.Arrays</a> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+exemple, pour accèder à la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html">java.util.Arrays</a> :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaClasse</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="o">{</span><span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
-    <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+    <span class="n">java</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">tableau</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Par défaut, une classe a accès à l’espace de nom de son propre package et du
-package <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/package-summary.html">java.lang</a>. Voilà pourquoi, il est possible d’utiliser directement
-les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">String</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Math.html">Math</a> sans avoir à donner leur nom complet :
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/String.html">java.lang.String</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Math.html">java.lang.Math</a>.</p>
+package <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/package-summary.html">java.lang</a>. Voilà pourquoi, il est possible d’utiliser directement
+les classes <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> ou <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html">Math</a> sans avoir à donner leur nom complet :
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">java.lang.String</a>, <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html">java.lang.Math</a>.</p>
 <p>Si nous créons deux classes : <em>Voiture</em> et <em>Conducteur</em>, toutes deux dans le
 package fr.epsi.b3 :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Conducteur</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Conducteur</span> <span class="p">{</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">Conducteur</span> <span class="n">conducteur</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Conducteur</span> <span class="n">conducteur</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setConducteur</span><span class="o">(</span><span class="n">Conducteur</span> <span class="n">conducteur</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">conducteur</span> <span class="o">=</span> <span class="n">conducteur</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setConducteur</span><span class="p">(</span><span class="n">Conducteur</span> <span class="n">conducteur</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">conducteur</span> <span class="o">=</span> <span class="n">conducteur</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>La classe <em>Voiture</em> et la classe <em>Conducteur</em> appartiennent toutes les deux
@@ -632,28 +649,28 @@ méthode.</p>
 <p>Le mot-clé <strong>import</strong> permet d’importer :</p>
 <ul>
 <li><p>Un nom de classe particulier</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Un nom de méthode de classe ou d’attribut de classe</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.abs</span><span class="o">;</span>
-<span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.abs</span><span class="p">;</span>
+<span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Un nom de classe interne (inner class)</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Map.Entry</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Map.Entry</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Tous les noms d’un package</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Tous les noms des méthodes et des attributs de classe</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math.*</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -669,32 +686,32 @@ classe. De plus, on peut demander à Eclipse à tout moment de réorganiser les
 importations (<em>CTRL + MAJ + O</em>). Ainsi, la gestion des importations est
 grandement automatisée et le recours à <strong>*</strong> comme facilité d’écriture n’est
 plus vraiment utile.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kn">import static</span> <span class="nn">java.lang.Math.random</span><span class="o">;</span>
-<span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="o">;</span>
-<span class="kn">import static</span> <span class="nn">java.util.Arrays.sort</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">java.lang.Math.random</span><span class="p">;</span>
+<span class="kn">import static</span> <span class="nn">java.lang.System.out</span><span class="p">;</span>
+<span class="kn">import static</span> <span class="nn">java.util.Arrays.sort</span><span class="p">;</span>
 
-<span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Duration</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BenchmarkTriTableau</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BenchmarkTriTableau</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">1_000_000</span><span class="o">];</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">tableau</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">1_000_000</span><span class="o">]</span><span class="p">;</span>
 
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tableau</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">tableau</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">random</span><span class="o">();</span>
-    <span class="o">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tableau</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">tableau</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">random</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    <span class="n">Instant</span> <span class="n">start</span> <span class="o">=</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
-    <span class="n">sort</span><span class="o">(</span><span class="n">tableau</span><span class="o">);</span>
-    <span class="n">Duration</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">());</span>
+    <span class="n">Instant</span> <span class="n">start</span> <span class="o">=</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">tableau</span><span class="p">);</span>
+    <span class="n">Duration</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">Duration</span><span class="p">.</span><span class="na">between</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">());</span>
 
-    <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Durée de l&#39;opération de tri du tableau : &quot;</span> <span class="o">+</span> <span class="n">duration</span><span class="o">);</span>
-  <span class="o">}</span>
+    <span class="n">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Durée de l&#39;opération de tri du tableau : &quot;</span> <span class="o">+</span> <span class="n">duration</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -721,35 +738,35 @@ pas nécessaire de rendre accessible à l’extérieur du package les classes
 représentant les algorithmes : on les déclare alors avec la portée package.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">CypherAlgorithm.java</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.cypher</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.cypher</span><span class="p">;</span>
 
-<span class="kd">class</span> <span class="nc">CypherAlgorithm</span> <span class="o">{</span>
+<span class="kd">class</span> <span class="nc">CypherAlgorithm</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">CypherAlgorithm</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="nf">CypherAlgorithm</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">CypherLibrary.java</span><a class="headerlink" href="#id2" title="Lien permanent vers ce code">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.cypher</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.cypher</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CypherLibrary</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CypherLibrary</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="nf">CypherLibrary</span><span class="o">()</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="nf">CypherLibrary</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">cypher</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">CypherAlgorithm</span> <span class="n">algo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CypherAlgorithm</span><span class="o">();</span>
-    <span class="k">return</span> <span class="n">algo</span><span class="o">.</span><span class="na">cypher</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">cypher</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">CypherAlgorithm</span> <span class="n">algo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CypherAlgorithm</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">algo</span><span class="p">.</span><span class="na">cypher</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -768,7 +785,7 @@ particulier permet d’ajouter un commentaire Javadoc pour documenter le package
 lui-même. Il peut également contenir des annotations pour le package.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">contenu du fichier package-info.java pour fr.epsi.b3</span><a class="headerlink" href="#id3" title="Lien permanent vers ce code">¶</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Ceci est le commentaire pour le package.</span>
@@ -799,12 +816,21 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -816,7 +842,6 @@ lui-même. Il peut également contenir des annotations pour le package.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les énumérations" href="enumeration.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Les exceptions</li>
     
@@ -478,7 +495,7 @@
         <a href="enumeration.html" class="btn btn-neutral float-right" title="Les énumérations" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="la_classe_string.html" class="btn btn-neutral" title="La classe String" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="la_classe_string.html" class="btn btn-neutral float-left" title="La classe String" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -509,63 +526,63 @@ On utilise alors le mécanisme des exceptions.</p>
 <div class="section" id="qu-est-ce-qu-une-exception">
 <h2>Qu’est-ce qu’une exception ?<a class="headerlink" href="#qu-est-ce-qu-une-exception" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Une exception est une classe Java qui représente un état particulier et qui
-hérite directement ou indirectement de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>. Par convention, le
+hérite directement ou indirectement de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a>. Par convention, le
 nom de la classe doit permettre de comprendre le type d’exception et doit
 se terminer par Exception.</p>
 <p>Exemple de classes d’exception fournies par l’API standard :</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a></dt><dd><p>Signale qu’une référence <strong>null</strong> est utilisée pour invoquer une méthode
+<dt><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a></dt><dd><p>Signale qu’une référence <strong>null</strong> est utilisée pour invoquer une méthode
 ou accéder à un attribut.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NumberFormatException.html">NumberFormatException</a></dt><dd><p>Signale qu’il n’est pas possible de convertir une chaîne de caractères en nombre
+<dt><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NumberFormatException.html">NumberFormatException</a></dt><dd><p>Signale qu’il n’est pas possible de convertir une chaîne de caractères en nombre
 car la chaîne de caractère ne correspond pas à un nombre valide.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/IndexOutOfBoundsException.html">IndexOutOfBoundsException</a></dt><dd><p>Signale que l’on tente d’accéder à un indice de tableau en dehors des valeurs
+<dt><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IndexOutOfBoundsException.html">IndexOutOfBoundsException</a></dt><dd><p>Signale que l’on tente d’accéder à un indice de tableau en dehors des valeurs
 permises.</p>
 </dd>
 </dl>
 <p>Pour créer sa propre exception, il suffit de créer une classe héritant
-de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">java.lang.Exception</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
+de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">java.lang.Exception</a>.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinDuMondeException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinDuMondeException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="o">()</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a> fournit plusieurs constructeurs que l’on peut ou non
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a> fournit plusieurs constructeurs que l’on peut ou non
 appeler depuis la classe fille.</p>
 </div>
 <p>Une exception étant un objet, elle possède son propre état et peut ainsi stocker
 des informations utiles sur les raisons de son apparition.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Instant</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinDuMondeException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FinDuMondeException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">Instant</span> <span class="n">date</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Instant</span> <span class="n">date</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">(</span><span class="n">Instant</span><span class="o">.</span><span class="na">now</span><span class="o">());</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">(</span><span class="n">Instant</span><span class="p">.</span><span class="na">now</span><span class="p">());</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="o">(</span><span class="n">Instant</span> <span class="n">instant</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="s">&quot;La fin du monde est survenue le &quot;</span> <span class="o">+</span> <span class="n">instant</span><span class="o">);</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">date</span> <span class="o">=</span> <span class="n">instant</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">FinDuMondeException</span><span class="p">(</span><span class="n">Instant</span> <span class="n">instant</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="s">&quot;La fin du monde est survenue le &quot;</span> <span class="o">+</span> <span class="n">instant</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">date</span> <span class="o">=</span> <span class="n">instant</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="n">Instant</span> <span class="nf">getDate</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">date</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="n">Instant</span> <span class="nf">getDate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">date</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -581,16 +598,16 @@ retournées par les fonctions ou les méthodes appelées</p>
 Cela permet d’améliorer la lisibilité du code source.</p>
 <p>Lorsqu’un programme détecte un état exceptionnel, il peut le signaler en <em>jetant</em>
 une exception grâce au mot-clé <strong>throw</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="o">(</span><span class="n">isPlanDiaboliqueReussi</span><span class="o">())</span> <span class="o">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="o">();</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">isPlanDiaboliqueReussi</span><span class="p">())</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a> hérite de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a>. Le mot-clé <strong>throw</strong>
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a> hérite de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">Throwable</a>. Le mot-clé <strong>throw</strong>
 peut en fait être utilisé avec n’importe quelle instance qui hérite
-directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a>.</p>
+directement ou indirectement de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">Throwable</a>.</p>
 </div>
 <p>Jeter une exception signifie que le flot d’exécution normal de la méthode
 est interrompu jusqu’au point de traitement de l’exception. Si aucun point
@@ -620,27 +637,27 @@ particulier.</p>
 14
 15
 16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
+  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
 
-  <span class="k">if</span> <span class="o">(!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Dans l’exemple ci-dessus, si la variable <em>heros</em> vaut <strong>null</strong> alors le traitement
-du bloc <strong>try</strong> est interrompu à la ligne 3 par une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>.
+du bloc <strong>try</strong> est interrompu à la ligne 3 par une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a>.
 Sinon le bloc continue à s’exécuter. La ligne 13 ne sera exécutée que si la condition
 à la ligne 9 est fausse. Par contre, si cette condition est vraie, le traitement
 du bloc est interrompu par le lancement d’une <em>FinDuMondeException</em> et le
@@ -668,28 +685,28 @@ ensuite à la fin des blocs <strong>catch</strong>.</p>
 14
 15
 16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
+  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
 
-  <span class="k">if</span> <span class="o">(!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Dans le code ci-dessus, le bloc <strong>catch</strong> est associé aux exceptions de type
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>. Comme toutes les exceptions en Java hérite directement ou indirectement
-de cette classe, ce bloc sera exécuté pour traité la <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a> à
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a>. Comme toutes les exceptions en Java hérite directement ou indirectement
+de cette classe, ce bloc sera exécuté pour traité la <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a> à
 la ligne 3 ou la <em>FinDuMondeException</em> à la ligne 10.</p>
 <p>Les blocs <strong>catch</strong> sont pris en compte à l’exécution dans l’ordre de leur
 déclaration. Déclarer un bloc <strong>catch</strong> pour une exception parente avant
@@ -712,28 +729,28 @@ un bloc <strong>catch</strong> pour une exception enfant est considéré comme u
 16
 17
 18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
+  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
 
-  <span class="k">if</span> <span class="o">(!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="hll"><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="o">)</span> <span class="o">{</span>
+<span class="hll"><span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="p">)</span> <span class="p">{</span>
 </span><span class="hll">  <span class="c1">// ERREUR DE COMPILATION</span>
-</span><span class="hll"><span class="o">}</span>
+</span><span class="hll"><span class="p">}</span>
 </span></pre></div>
 </td></tr></table></div>
-<p>Dans, l’exemple précédent, il faut bien comprendre que <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a> est la classe
+<p>Dans, l’exemple précédent, il faut bien comprendre que <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a> est la classe
 parente de <em>FinDuMondeException</em>. Donc si une exception de type <em>FinDuMondeException</em>
 est lancée, alors seul le premier bloc <strong>catch</strong> sera exécuté. Le second est
 donc simplement du code mort est générera une erreur de compilation. Pour
@@ -756,25 +773,25 @@ que cela fonctionne, il faut inverser l’ordre des blocs <strong>catch</strong>
 16
 17
 18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
+  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
 
-  <span class="k">if</span> <span class="o">(!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Maintenant, un premier bloc <strong>catch</strong> fournit un traitement particulier pour
@@ -783,9 +800,9 @@ bloc <strong>catch</strong> fournit un traitement pour les autres exceptions.</p
 <p>Parfois, le code du bloc <strong>catch</strong> est identique pour différents types d’exception.
 Si ces exceptions ont une classe parente commune, il est possible de déclarer
 un bloc <strong>catch</strong> simplement pour cette classe parente afin d’éviter la duplication
-de code. Dans notre exemple, la classe ancêtre commune entre <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a>
-et <em>FinDuMondeException</em> est la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>. Donc si nous déclarons un bloc
-<strong>catch</strong> pour le type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>, nous fournissons un bloc de traitement pour
+de code. Dans notre exemple, la classe ancêtre commune entre <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a>
+et <em>FinDuMondeException</em> est la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a>. Donc si nous déclarons un bloc
+<strong>catch</strong> pour le type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a>, nous fournissons un bloc de traitement pour
 tous les types d’exception, ce qui n’est pas vraiment le but recherché. Dans
 cette situation, il est possible de préciser plusieurs types d’exception dans
 le bloc <strong>catch</strong> en les séparant par <strong>|</strong> :</p>
@@ -805,23 +822,23 @@ le bloc <strong>catch</strong> en les séparant par <strong>|</strong> :</p>
 14
 15
 16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
+  <span class="kt">boolean</span> <span class="n">victoire</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="kt">boolean</span> <span class="n">planDejoue</span> <span class="o">=</span> <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
 
-  <span class="k">if</span> <span class="o">(!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="o">();</span>
-  <span class="o">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">victoire</span> <span class="o">||</span> <span class="o">!</span><span class="n">planDejoue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">FinDuMondeException</span><span class="p">();</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NullPointerException</span> <span class="o">|</span> <span class="n">FinDuMondeException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NullPointerException</span> <span class="o">|</span> <span class="n">FinDuMondeException</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// traitement commun aux deux types d&#39;exception...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition note">
@@ -845,18 +862,18 @@ En effet, les méthodes <em>combattre</em> et <em>desamorcer</em> devraient s’
 par une exception plutôt que de retourner un booléen. L’exception jetée
 porte une information plus riche qu’un simple booléen car elle dispose d’un type
 et d’un état interne.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FinDuMondeException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">FinDuMondeException</span> <span class="n">ex</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le code devient beaucoup plus lisible. On comprend que le bloc <strong>try</strong> peut
@@ -869,47 +886,47 @@ une des instructions du bloc <strong>try</strong> peut générer une <em>FinDuMo
 Cela permet au compilateur de détecter d’éventuel code mort. La déclaration des
 exceptions jetées par une méthode fait donc partie de sa signature et utilise
 le mot-clé <strong>throws</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Heros</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Heros</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">combattre</span><span class="o">(</span><span class="n">Vilain</span> <span class="n">vilain</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FinDuMondeException</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">combattre</span><span class="p">(</span><span class="n">Vilain</span> <span class="n">vilain</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">FinDuMondeException</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desamorcer</span><span class="o">(</span><span class="n">Piege</span> <span class="n">piege</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FinDuMondeException</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desamorcer</span><span class="p">(</span><span class="n">Piege</span> <span class="n">piege</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">FinDuMondeException</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPoseVictorieuse</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPoseVictorieuse</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Grâce aux exceptions, il est maintenant possible d’interrompre une méthode. Il
 est même possible d’interrompre un constructeur. Cela aura pour effet de stopper
 la construction de l’objet et ainsi d’empêcher d’avoir une instance dans un
 état invalide.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Heros</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Heros</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Heros</span><span class="o">(</span><span class="n">String</span> <span class="n">classePerso</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ClasseDePersoInvalideException</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">classePerso</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">classePerso</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="n">ClasseDePersoInvalideException</span><span class="o">();</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Heros</span><span class="p">(</span><span class="n">String</span> <span class="n">classePerso</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">ClasseDePersoInvalideException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">classePerso</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="s">&quot;&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">classePerso</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">ClasseDePersoInvalideException</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
 </pre></div>
 </div>
 <p>La déclaration des exceptions dans la signature d’une méthode permet à la fois
 de documenter dans le code lui-même le comportement de la méthode tout en
 contrôlant à la compilation que les cas d’exception sont gérés par le code.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">Marchandise</span> <span class="nf">acheter</span><span class="o">(</span><span class="kt">long</span> <span class="n">montant</span><span class="o">,</span> <span class="n">Currency</span> <span class="n">devise</span><span class="o">)</span>
-  <span class="kd">throws</span> <span class="n">CreditInsuffisantException</span><span class="o">,</span> <span class="n">DeviseRefuseeException</span><span class="o">,</span>
-         <span class="n">MarchandiseNonDisponibleException</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">Marchandise</span> <span class="nf">acheter</span><span class="p">(</span><span class="kt">long</span> <span class="n">montant</span><span class="p">,</span> <span class="n">Currency</span> <span class="n">devise</span><span class="p">)</span>
+  <span class="kd">throws</span> <span class="n">CreditInsuffisantException</span><span class="p">,</span> <span class="n">DeviseRefuseeException</span><span class="p">,</span>
+         <span class="n">MarchandiseNonDisponibleException</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, même sans avoir accès au code source, la signature
@@ -932,44 +949,44 @@ donc aux développeurs de s’assurer que les postconditions ne sont pas affaibl
 dans la sous-classe.</p>
 <p>Ainsi, si la classe <em>SuperHeros</em> hérite de la classe <em>Heros</em>, elle peut redéfinir
 les méthodes en ne déclarant pas d’exception.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SuperHeros</span> <span class="kd">extends</span> <span class="n">Heros</span> <span class="o">{</span>
-
-  <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">combattre</span><span class="o">(</span><span class="n">Vilain</span> <span class="n">vilain</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// ...</span>
-  <span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SuperHeros</span> <span class="kd">extends</span> <span class="n">Heros</span> <span class="p">{</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desamorcer</span><span class="o">(</span><span class="n">Piege</span> <span class="n">piege</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">combattre</span><span class="p">(</span><span class="n">Vilain</span> <span class="n">vilain</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="p">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desamorcer</span><span class="p">(</span><span class="n">Piege</span> <span class="n">piege</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Cette nouvelle classe peut aussi changer les types d’exception déclarés par
 les méthodes redéfinies à condition que ces types soient des classes filles
 des exceptions d’origine.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SuperHeros</span> <span class="kd">extends</span> <span class="n">Heros</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SuperHeros</span> <span class="kd">extends</span> <span class="n">Heros</span> <span class="p">{</span>
 
   <span class="nd">@Override</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desamorcer</span><span class="o">(</span><span class="n">Piege</span> <span class="n">piege</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">PlanMachiaveliqueException</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desamorcer</span><span class="p">(</span><span class="n">Piege</span> <span class="n">piege</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">PlanMachiaveliqueException</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le code précédent ne compile que si l’exception <em>PlanMachiaveliqueException</em>
 hérite directement ou indirectement de <em>FinDuMondeException</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.heroes</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PlanMachiaveliqueException</span> <span class="kd">extends</span> <span class="n">FinDuMondeException</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PlanMachiaveliqueException</span> <span class="kd">extends</span> <span class="n">FinDuMondeException</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -991,21 +1008,21 @@ terminé normalement ou par une exception.</p>
 de bloc <strong>catch</strong> approprié, alors le bloc <strong>finally</strong> est exécuté et ensuite
 l’exception est propagée.</p>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="o">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">heros</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NullPointerException</span><span class="p">(</span><span class="s">&quot;Le heros ne peut pas être nul !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="n">heros</span><span class="o">.</span><span class="na">combattre</span><span class="o">(</span><span class="n">espritDuMal</span><span class="o">);</span>
-  <span class="n">heros</span><span class="o">.</span><span class="na">desamorcer</span><span class="o">(</span><span class="n">machineInfernale</span><span class="o">);</span>
-  <span class="n">heros</span><span class="o">.</span><span class="na">setPoseVictorieuse</span><span class="o">();</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">combattre</span><span class="p">(</span><span class="n">espritDuMal</span><span class="p">);</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">desamorcer</span><span class="p">(</span><span class="n">machineInfernale</span><span class="p">);</span>
+  <span class="n">heros</span><span class="p">.</span><span class="na">setPoseVictorieuse</span><span class="p">();</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">FinDuMondeException</span> <span class="n">fdme</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
   <span class="c1">// Ce bloc sera systématiquement exécuté</span>
-  <span class="n">jouerGeneriqueDeFin</span><span class="o">();</span>
-<span class="o">}</span>
+  <span class="n">jouerGeneriqueDeFin</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1018,23 +1035,23 @@ l’instruction <strong>return</strong>.</p>
 que la mémoire. Si le programme ouvre une connexion, un fichier…, le traitement est
 effectué dans le bloc <strong>try</strong> puis le bloc <strong>finally</strong> se charge de libérer
 la ressource.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
-<span class="k">try</span> <span class="o">{</span>
-  <span class="kt">int</span> <span class="n">nbCharRead</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="kt">char</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
-  <span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">nbCharRead</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">char</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+  <span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
   <span class="c1">// L&#39;appel à reader.read peut lancer une java.io.IOException</span>
-  <span class="k">while</span> <span class="o">((</span><span class="n">nbCharRead</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">))</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">nbCharRead</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="k">while</span> <span class="p">((</span><span class="n">nbCharRead</span> <span class="o">=</span> <span class="n">reader</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">builder</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nbCharRead</span><span class="p">);</span>
+  <span class="p">}</span>
   <span class="c1">// le retour explicite n&#39;empêche pas l&#39;exécution du block finally.</span>
-  <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
-<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
   <span class="c1">// Ce block est obligatoirement exécuté après le block try.</span>
   <span class="c1">// Ainsi le flux de lecture sur le fichier est fermé</span>
   <span class="c1">// avant le retour de la méthode.</span>
-  <span class="n">reader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="o">}</span>
+  <span class="n">reader</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1042,40 +1059,40 @@ la ressource.</p>
 <h2>Le try-with-resources<a class="headerlink" href="#le-try-with-resources" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La gestion des ressources peut également être réalisée par la syntaxe
 du <a class="reference external" href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html">try-with-resources</a>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span><span class="o">(</span><span class="n">filename</span><span class="o">))</span> <span class="o">{</span>
-  <span class="kt">int</span> <span class="n">nbCharRead</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="kt">char</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
-  <span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
-  <span class="k">while</span> <span class="o">((</span><span class="n">nbCharRead</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">))</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">nbCharRead</span><span class="o">);</span>
-  <span class="o">}</span>
-  <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">nbCharRead</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">char</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+  <span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+  <span class="k">while</span> <span class="p">((</span><span class="n">nbCharRead</span> <span class="o">=</span> <span class="n">reader</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">builder</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nbCharRead</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Après le mot-clé <strong>try</strong>, on déclare entre parenthèses une ou plusieurs
 initialisations de variable. Ces variables doivent être d’un type qui implémente
-l’interface <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a> ou <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/Closeable.html">Closeable</a>. Ces interfaces ne déclarent qu’une
+l’interface <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AutoCloseable.html">AutoCloseable</a> ou <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Closeable.html">Closeable</a>. Ces interfaces ne déclarent qu’une
 seule méthode : <strong>close</strong>. Le compilateur ajoute automatiquement
 un bloc <strong>finally</strong> à la suite du bloc <strong>try</strong> pour appeler la méthode <strong>close</strong>
 sur chacune des variables qui ne valent pas <strong>null</strong>.</p>
 <p>Ainsi pour ce code :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span><span class="o">(</span><span class="n">filename</span><span class="o">))</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span> <span class="p">{</span>
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le compilateur générera le bytecode correspondant à :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-  <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">FileReader</span><span class="o">(</span><span class="n">filename</span><span class="o">)</span>
-  <span class="k">try</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileReader</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-  <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">reader</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">reader</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">reader</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">reader</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>La syntaxe <a class="reference external" href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html">try-with-resources</a> est à la fois simple à lire et évite
@@ -1087,27 +1104,27 @@ le code pour nous.</p>
 <p>Comme les exceptions sont des objets, il est possible de créer une hiérarchie
 d’exception par héritage. C’est par exemple le cas pour les exceptions d’entrée/sortie
 en Java.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-default" id="id2">
 <img alt="../_images/ioexception.png" src="../_images/ioexception.png" />
-<p class="caption"><span class="caption-text">Un extrait de la hiérarchie de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/IOException.html">java.io.IOException</a></span><a class="headerlink" href="#id2" title="Lien permanent vers cette image">¶</a></p>
+<p class="caption"><span class="caption-text">Un extrait de la hiérarchie de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html">java.io.IOException</a></span><a class="headerlink" href="#id2" title="Lien permanent vers cette image">¶</a></p>
 </div>
 <p>La hiérarchie d’exception permet de grouper des erreurs en concevant des types d’exception
 de plus en plus généraux. Une application pourra donc traiter à sa convenance des exceptions générales
-comme <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/IOException.html">IOException</a> mais pourra, au besoin, fournir une bloc <strong>catch</strong> pour
+comme <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html">IOException</a> mais pourra, au besoin, fournir une bloc <strong>catch</strong> pour
 traiter des exceptions plus spécifiques.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
 
   <span class="c1">// ... opérations sur des fichiers</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NoSuchFileException</span> <span class="n">nsfe</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NoSuchFileException</span> <span class="n">nsfe</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="o">)</span> <span class="o">{</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1116,32 +1133,32 @@ traiter des exceptions plus spécifiques.</p>
 <p>Il est souvent utile d’encapsuler une exception dans une autre exception.
 Par exemple, imaginons une méthode qui souhaite réaliser une opération distante
 sur un serveur. Se le serveur distant n’est pas joignable, le programme devra
-intercepter une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/IOException.html">IOException</a>. Mais cela n’a peut-être pas beaucoup de sens pour
+intercepter une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html">IOException</a>. Mais cela n’a peut-être pas beaucoup de sens pour
 le reste du programme, la méthode peut décider de jeter à la place une exception définie
 par l’application comme une <em>OperationNonDisponibleException</em>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperationNonDisponibleException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperationNonDisponibleException</span> <span class="kd">extends</span> <span class="n">Exception</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">OperationNonDisponibleException</span><span class="o">(</span><span class="n">Exception</span> <span class="n">cause</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kd">super</span><span class="o">(</span><span class="n">cause</span><span class="o">);</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">OperationNonDisponibleException</span><span class="p">(</span><span class="n">Exception</span> <span class="n">cause</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">cause</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette exception n’a pas de lien d’héritage avec une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/io/IOException.html">IOException</a>. Par contre, elle
+<p>Cette exception n’a pas de lien d’héritage avec une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html">IOException</a>. Par contre, elle
 expose un constructeur qui accepte en paramètre une exception. Cela permet d’indiquer
 que l’exception a été causée par une autre exception.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
 
  <span class="c1">// ... opérations d&#39;entrée / sortie vers le serveur</span>
 
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">throw</span> <span class="k">new</span> <span class="n">OperationNonDisponibleException</span><span class="o">(</span><span class="n">ioe</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="n">OperationNonDisponibleException</span><span class="p">(</span><span class="n">ioe</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a> fournit la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#getCause()">getCause</a> (qu’elle hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a>)
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a> fournit la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#getCause()">getCause</a> (qu’elle hérite de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">Throwable</a>)
 pour connaître l’exception qui est la cause du problème.</p>
 </div>
 <div class="section" id="les-erreurs-et-les-exceptions-runtime">
@@ -1149,41 +1166,41 @@ pour connaître l’exception qui est la cause du problème.</p>
 <p>En regardant plus en détail la hiérarchie à la base des exceptions, on découvre
 le modèle d’héritage suivant :</p>
 <img alt="../_images/hierarchie_exception.png" src="../_images/hierarchie_exception.png" />
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> est la classe indiquant qu’il est possible d’utiliser ce type
-avec le mot clé <strong>throw</strong>. De plus la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> fournit des méthodes utilitaires.
-Par exemple, la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#printStackTrace()">printStackTrace</a> permet d’afficher sur la sortie d’erreur
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">Throwable</a> est la classe indiquant qu’il est possible d’utiliser ce type
+avec le mot clé <strong>throw</strong>. De plus la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">Throwable</a> fournit des méthodes utilitaires.
+Par exemple, la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#printStackTrace()">printStackTrace</a> permet d’afficher sur la sortie d’erreur
 standard la pile d’appel de l’application.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
-  <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// produit une ArithmeticException</span>
-<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ArithmeticException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+  <span class="kt">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span> <span class="c1">// produit une ArithmeticException</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">ArithmeticException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Afficher la pile d&#39;appel sur la sortie d&#39;erreur standard</span>
-  <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-<span class="o">}</span>
+  <span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a> hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html">Throwable</a> comme <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a>. <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a> est la classe de base
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html">Error</a> hérite de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">Throwable</a> comme <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a>. <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html">Error</a> est la classe de base
 pour représenter les erreurs sérieuses que l’application ne devrait pas intercepter.
 Lorsqu’une erreur survient cela signifie souvent que l’environnement d’exécution
-est dans un état instable. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/OutOfMemoryError.html">OutOfMemoryError</a> hérite
+est dans un état instable. Par exemple, la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/OutOfMemoryError.html">OutOfMemoryError</a> hérite
 indirectement de cette classe. Cette erreur signale que la JVM ne dispose plus d’assez
 de mémoire (généralement pour allouer de l’espace pour les nouveaux objets).</p>
-<p>La classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> représente des problèmes d’exécution qui proviennent
+<p>La classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a> représente des problèmes d’exécution qui proviennent
 la plupart du temps de bug dans l’application. Parmi les classes filles de cette
 classe, on trouve :</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/ArithmeticException.html">ArithmeticException</a></dt><dd><p>signale une opération arithmetique invalide comme une division par zéro.</p>
+<dt><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ArithmeticException.html">ArithmeticException</a></dt><dd><p>signale une opération arithmetique invalide comme une division par zéro.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html">NullPointerException</a></dt><dd><p>signale que l’on tente d’accéder à une méthode ou un attribut à travers une
+<dt><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a></dt><dd><p>signale que l’on tente d’accéder à une méthode ou un attribut à travers une
 référence <strong>null</strong>.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/ClassCastException.html">ClassCastException</a></dt><dd><p>signale qu’un transtypage invalide a été réalisé.</p>
+<dt><a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassCastException.html">ClassCastException</a></dt><dd><p>signale qu’un transtypage invalide a été réalisé.</p>
 </dd>
 </dl>
-<p>Généralement, les exceptions qui héritent de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> ne sont pas
+<p>Généralement, les exceptions qui héritent de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a> ne sont pas
 interceptées ni traitées par l’application. Au mieux, elles sont interceptées
 au plus haut de la pile d’appel pour signaler une erreur à l’utilisateur ou dans
 les fichiers de log.</p>
-<p>Les classes <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a>, <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a> et toutes les classes qui en héritent
+<p>Les classes <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html">Error</a>, <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a> et toutes les classes qui en héritent
 sont appelées des <em>unchecked exceptions</em>. Cela signifie que le compilateur
 n’exige pas que ces exceptions apparaissent dans la signature des méthodes.
 En effet, elles représentent des problèmes internes graves de la JVM ou des
@@ -1191,38 +1208,38 @@ bugs. Donc virtuellement toutes les méthodes en Java sont susceptibles de
 lancer de telles exceptions.</p>
 <p>Si nous reprenons notre exemple des véhicules, les méthodes pour accélérer
 et décélerer devraient contrôler que le paramètre passé est bien un nombre
-positif. Si ce n’est pas le cas, elle peut jeter une <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/IllegalArgumentException.html">IllegalArgumentException</a>
+positif. Si ce n’est pas le cas, elle peut jeter une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html">IllegalArgumentException</a>
 qui est une exception runtime fournie par l’API standard et qui sert à signaler
 qu’un paramètre est invalide. Cette exception ne doit pas être obligatoirement
 déclarée dans la signature de la méthode.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">fr.epsi.b3.conduite</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">protected</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">protected</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">deltaVitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&quot;deltaVitesse doit être positif&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">deltaVitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;deltaVitesse doit être positif&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">deltaVitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&quot;deltaVitesse doit être positif&quot;</span><span class="o">);</span>
-    <span class="o">}</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="o">,</span> <span class="mf">0f</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">decelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">deltaVitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;deltaVitesse doit être positif&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">-</span> <span class="n">deltaVitesse</span><span class="p">,</span> <span class="mf">0f</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1236,12 +1253,12 @@ permet de documenter explicitement ces préconditions et ces postconditions.</p>
 <span class="cm"> * @param deltaVitesse la vitesse à ajouter à la vitesse courante.</span>
 <span class="cm"> * @throws IllegalArgumentException si deltaVitesse est un nombre négatif.</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="o">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IllegalArgumentException</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">deltaVitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&quot;deltaVitesse doit être positif&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="o">;</span>
-<span class="o">}</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">accelerer</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaVitesse</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IllegalArgumentException</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">deltaVitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;deltaVitesse doit être positif&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">+=</span> <span class="n">deltaVitesse</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1252,13 +1269,13 @@ doit le signaler dans sa signature à l’aide du mot-clé <strong>throws</stron
 <div class="section" id="choix-entre-checked-et-unchecked">
 <h2>Choix entre checked et unchecked<a class="headerlink" href="#choix-entre-checked-et-unchecked" title="Lien permanent vers ce titre">¶</a></h2>
 <p>En tant que développeurs, lorsque nous créons de nouvelles classes pour représenter
-des exceptions, nous avons le choix entre hériter de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Exception.html">Exception</a> ou
-de la classe <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a>. C’est-à-dire entre créer une <em>checked</em> ou
+des exceptions, nous avons le choix entre hériter de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html">Exception</a> ou
+de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a>. C’est-à-dire entre créer une <em>checked</em> ou
 une <em>unchecked</em> exception. La frontière entre les deux familles a évolué
 au cours des versions de Java.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Il ne faut jamais créer un classe qui hérite de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/Error.html">Error</a>. Les classes qui en héritent
+<p>Il ne faut jamais créer un classe qui hérite de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html">Error</a>. Les classes qui en héritent
 sont faites pour signaler un problème dans la JVM.</p>
 </div>
 <p>On considère généralement qu’il est préférable de créer une <em>unchecked exception</em>
@@ -1269,7 +1286,7 @@ traiter correctement à part signaler un problème aux utilisateurs ou aux admin
 Par exemple, si votre application se connecte à un service distant, vous
 pouvez avoir besoin de créer une exception <em>RemoteServiceUnavailableException</em>
 pour signaler que le service ne répond pas. Ce type d’exception est probablement
-une <em>unchecked exception</em> et devrait hériter de <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html">RuntimeException</a>.</p>
+une <em>unchecked exception</em> et devrait hériter de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html">RuntimeException</a>.</p>
 <p>Par contre, les exceptions qui peuvent avoir une valeur pour le domaine
 applicatif devraient être des <em>checked exception</em>. Généralement, elles
 traduisent des états particuliers identifiés par les analystes du domaine.</p>
@@ -1302,12 +1319,21 @@ vérifier qu’elle est correctement traitée.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -1319,7 +1345,6 @@ vérifier qu’elle est correctement traitée.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

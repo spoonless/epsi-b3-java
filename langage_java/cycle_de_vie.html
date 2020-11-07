@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
@@ -15,29 +14,31 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom_rtd_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Les packages" href="package.html" />
@@ -55,7 +56,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Langage Java
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Langage Java
           
 
           
@@ -75,6 +76,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -376,14 +378,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#formatage-des-dates">Formatage des dates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_dates.html#lecture-des-dates">Lecture des dates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_dates.html#exercice">Exercice</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Les lambdas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="les_lambdas.html">Programmation fonctionnelle et lambdas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#les-fonctions-anonymes-les-lambdas">Les fonctions anonymes : les lambdas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#syntaxe-des-lambdas">Syntaxe des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#usage-des-lambdas">Usage des lambdas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#lambda-et-closure">Lambda et closure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#les-interfaces-fonctionnelles">Les interfaces fonctionnelles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="les_lambdas.html#l-operateur-de-reference-de-methode">L’opérateur :: de référence de méthode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="les_lambdas.html#la-classe-optional">La classe Optional</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="streams.html">Streams</a><ul>
@@ -393,7 +399,6 @@
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-filtrage">Le filtrage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-mapping">Le mapping</a></li>
 <li class="toctree-l2"><a class="reference internal" href="streams.html#le-parallelisme">Le parallélisme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="streams.html#exercice">Exercice</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classe_interne.html">Les classes internes</a><ul>
@@ -411,7 +416,20 @@
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#declaration-d-une-annotation">Déclaration d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#retention-d-une-annotation">Rétention d’une annotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="les_annotations.html#utilisation-des-annotations-par-introspection">Utilisation des annotations par introspection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="les_annotations.html#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Les modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-ameliorer-la-securite">Des modules pour améliorer la sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#des-modules-pour-plus-de-modularite">Des modules pour plus de modularité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-descripteur-de-module-module-info-java">Le descripteur de module (module-info.java)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="module.html#dependance-a-d-autres-modules">Dépendance à d’autres modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#exposer-des-packages">Exposer des packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#utiliser-un-service">Utiliser un service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="module.html#fournir-un-service">Fournir un service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#le-module-anonyme">Le module anonyme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#la-notion-de-module-path">La notion de module path</a></li>
 </ul>
 </li>
 </ul>
@@ -419,6 +437,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -453,13 +472,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Accueil</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Cycle de vie d’un objet</li>
     
@@ -478,7 +495,7 @@
         <a href="package.html" class="btn btn-neutral float-right" title="Les packages" accesskey="n">Suivant <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="attributs_et_methodes.html" class="btn btn-neutral" title="Attributs &amp; méthodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
+        <a href="attributs_et_methodes.html" class="btn btn-neutral float-left" title="Attributs &amp; méthodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Précédent</a>
       
   </div>
   
@@ -505,18 +522,18 @@ utilisé.</p>
 </div>
 <p>Un constructeur se distingue d’une méthode car il n’a jamais de type de retour
 (pas même <strong>void</strong>). De plus un constructeur a obligatoirement <strong>le même nom que la classe</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// Le constructeur</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Lorsqu’une voiture est créée par l’application avec l’opérateur <strong>new</strong> comme
 avec l’instruction suivante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Alors, la JVM crée l’espace mémoire nécessaire pour le nouvel objet de type
@@ -529,21 +546,21 @@ initialisation complète de l’objet selon les besoins des développeurs.</p>
 les méthodes, les constructeurs supportent la surcharge (<em>overloading</em>).
 Une classe peut ainsi déclarer plusieurs constructeurs à condition que la liste
 des paramètres diffère par le nombre et/ou le type.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseInitiale</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesseInitiale</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vitesseInitiale</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesseInitiale</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, la classe <em>Voiture</em> déclare deux constructeurs avec
@@ -551,8 +568,8 @@ des paramètres différents. Il est maintenant nécessaire de passer des paramè
 au moment de la création d’une instance de cette classe. Pour cet exemple, on
 voit que le constructeur permet de forcer la création d’une instance de <em>Voiture</em>
 en fournissant au moins sa marque.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">);</span>
-<span class="n">Voiture</span> <span class="n">voiture2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;DeLorean&quot;</span><span class="o">,</span> <span class="mf">88.0f</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">voiture</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">);</span>
+<span class="n">Voiture</span> <span class="n">voiture2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;DeLorean&quot;</span><span class="p">,</span> <span class="mf">88.0f</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -562,27 +579,27 @@ en fournissant au moins sa marque.</p>
 explicitement à la déclaration. Dans le cas contraire, ils sont initialisés
 avec une valeur par défaut. Java garantit que cette initialisation a lieu avant
 l’appel au constructeur.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbRoues</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbRoues</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
     <span class="c1">// la vitesse vaudra 0 et nbRoues vaudra 4</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
     <span class="c1">// On ne peut créer que des véhicules avec au plus 4 roues</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span><span class="o">;</span>
-    <span class="o">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span><span class="p">;</span>
+    <span class="p">}</span>
     <span class="c1">// la vitesse vaudra 0</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Les attributs déclarés <strong>final</strong> sont traités un peu différemment. Ces attributs
@@ -595,28 +612,28 @@ contre, le compilateur génèrera une erreur si :</p>
 <li><p>un constructeur tente d’affecter une valeur à un attribut <strong>final</strong> qui a déjà été initialisé
 au moment de sa déclaration.</p></li>
 </ul>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">DEFAUT_NBROUES</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">DEFAUT_NBROUES</span><span class="p">;</span>
     <span class="c1">// la vitesse vaudra 0</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
     <span class="c1">// On ne peut créer que des véhicules avec au plus 4 roues</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">?</span> <span class="n">nbRoues</span> <span class="o">:</span> <span class="n">DEFAUT_NBROUES</span><span class="o">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">?</span> <span class="n">nbRoues</span> <span class="p">:</span> <span class="n">DEFAUT_NBROUES</span><span class="p">;</span>
     <span class="c1">// la vitesse vaudra 0</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -624,36 +641,36 @@ au moment de sa déclaration.</p></li>
 <h3>Constructeur par défaut<a class="headerlink" href="#constructeur-par-defaut" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Le compilateur Java garantit que toutes les classes ont au moins un constructeur.
 Si vous créez la classe suivante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Alors, le compilateur ajoutera le code nécessaire qui correspondrait à :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">()</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Ce constructeur est appelé le <strong>constructeur par défaut</strong>. Par contre si votre
 classe contient au moins un constructeur, quelle que soit sa signature, alors
 le compilateur n’ajoutera pas le <strong>constructeur par défaut</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
 
   <span class="cm">/* Le compilateur ne génèrera pas de constructeur par défaut.</span>
 <span class="cm">   * Pour créer une voiture, je suis obligé de fournir sa marque en paramètre</span>
 <span class="cm">   * de création.</span>
 <span class="cm">   */</span>
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition tip">
@@ -667,19 +684,19 @@ automatiquement.</p>
 <h3>Constructeur privé<a class="headerlink" href="#constructeur-prive" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Il est tout à fait possible d’interdire l’instantiation d’une classe en Java.
 Pour cela, il suffit de déclarer tous ses constructeurs avec une portée <strong>private</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calculatrice</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="nf">Calculatrice</span><span class="o">()</span> <span class="o">{</span>
-  <span class="o">}</span>
+  <span class="kd">private</span> <span class="nf">Calculatrice</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="o">:</span> <span class="n">valeurs</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">resultat</span><span class="o">;</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">additionner</span><span class="p">(</span><span class="kt">int</span><span class="p">...</span> <span class="n">valeurs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">resultat</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">valeur</span> <span class="p">:</span> <span class="n">valeurs</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">resultat</span> <span class="o">+=</span> <span class="n">valeur</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">resultat</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Comme montré dans l’exemple ci-dessus, un cas d’usage courant est la création
@@ -701,29 +718,29 @@ la lecture et éviter la duplication de code, un constructeur peut appeler un au
 constructeur en utilisant le mot-clé <strong>this</strong> comme nom du constructeur.
 Cependant, un constructeur ne peut appeler qu’un <strong>seul</strong> constructeur et,
 s’il le fait, cela doit être sa première instruction.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">(</span><span class="n">marque</span><span class="o">,</span> <span class="n">DEFAUT_NBROUES</span><span class="o">,</span> <span class="mf">0f</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">(</span><span class="n">marque</span><span class="p">,</span> <span class="n">DEFAUT_NBROUES</span><span class="p">,</span> <span class="mf">0f</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">(</span><span class="n">marque</span><span class="o">,</span> <span class="n">nbRoues</span><span class="o">,</span> <span class="mf">0f</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">(</span><span class="n">marque</span><span class="p">,</span> <span class="n">nbRoues</span><span class="p">,</span> <span class="mf">0f</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseInitiale</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">?</span> <span class="n">nbRoues</span> <span class="o">:</span> <span class="n">DEFAUT_NBROUES</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesseInitiale</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vitesseInitiale</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">?</span> <span class="n">nbRoues</span> <span class="p">:</span> <span class="n">DEFAUT_NBROUES</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesseInitiale</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>La classe <em>Vehicule</em> ci-dessus offre plusieurs possibilités d’initialisation, mais
@@ -738,24 +755,24 @@ Attention cependant au statut particulier des constructeurs. Tant qu’un constr
 n’a pas achevé son exécution, l’objet n’est pas totalement initialisé. Il peut
 donc y avoir des cas où l’appel à une méthode peut avoir des comportements inattendus.</p>
 <p>Prenons l’exemple suivant :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesse</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseInitiale</span><span class="o">)</span> <span class="o">{</span>
-<span class="hll">    <span class="n">faireQuelqueChoseDInattendue</span><span class="o">();</span>
-</span>    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">?</span> <span class="n">nbRoues</span> <span class="o">:</span> <span class="n">DEFAUT_NBROUES</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesseInitiale</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Vehicule</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vitesseInitiale</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">    <span class="n">faireQuelqueChoseDInattendue</span><span class="p">();</span>
+</span>    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span> <span class="o">=</span> <span class="n">nbRoues</span> <span class="o">&lt;</span> <span class="n">DEFAUT_NBROUES</span> <span class="o">?</span> <span class="n">nbRoues</span> <span class="p">:</span> <span class="n">DEFAUT_NBROUES</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesseInitiale</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">faireQuelqueChoseDInattendue</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">nbRoues</span><span class="o">);</span> <span class="c1">// 0</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">faireQuelqueChoseDInattendue</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">nbRoues</span><span class="p">);</span> <span class="c1">// 0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Le constructeur appelle la méthode <em>faireQuelqueChoseDInattendue</em> qui affiche
@@ -776,40 +793,40 @@ de ces méthodes est correctement initialisé avant par le constructeur.</p>
 objets. Parfois, ces objets peuvent eux-même avoir une représentation interne complexe
 qui nécessite des références vers d’autres objets… Par exemple, une classe
 <em>Voiture</em> peut nécessiter une instance d’une classe <em>Moteur</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moteur</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Moteur</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Moteur</span><span class="o">(</span><span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nbCylindres</span> <span class="o">=</span> <span class="n">nbCylindres</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">nbSoupapesParCylindre</span> <span class="o">=</span> <span class="n">nbSoupapesParCylindre</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">vitesseMax</span> <span class="o">=</span> <span class="n">vitesseMax</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Moteur</span><span class="p">(</span><span class="kt">int</span> <span class="n">nbCylindres</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nbCylindres</span> <span class="o">=</span> <span class="n">nbCylindres</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">nbSoupapesParCylindre</span> <span class="o">=</span> <span class="n">nbSoupapesParCylindre</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vitesseMax</span> <span class="o">=</span> <span class="n">vitesseMax</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>À partir de la classe <em>Moteur</em> ci-dessus, nous pouvons fournir l’implémentation
 suivante de la classe <em>Voiture</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="o">,</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">moteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moteur</span><span class="o">(</span><span class="n">nbCylindres</span><span class="o">,</span> <span class="n">nbSoupapesParCylindre</span><span class="o">,</span> <span class="n">vitesseMax</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbCylindres</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbSoupapesParCylindre</span><span class="p">,</span> <span class="kt">float</span> <span class="n">vitesseMax</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">moteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moteur</span><span class="p">(</span><span class="n">nbCylindres</span><span class="p">,</span> <span class="n">nbSoupapesParCylindre</span><span class="p">,</span> <span class="n">vitesseMax</span><span class="p">);</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Et créer une instance de la classe <em>Voiture</em> :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">clio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;Clio Williams&quot;</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">216</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Voiture</span> <span class="n">clio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;Clio Williams&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">216</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Cependant, si nous considérons le type de relation qui unit la classe <em>Voiture</em>
@@ -825,23 +842,23 @@ les classes qui sont dépendantes d’autres classes n’ont pas vocation à les
 créer car il n’y a pas vraiment de raison à ce qu’elles connaissent les
 informations nécessaires à leur création. Dans le cas de notre classe <em>Voiture</em>
 nous pouvons proposer simplement l’implémentation :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">String</span> <span class="n">marque</span><span class="p">;</span>
+  <span class="kd">private</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="p">;</span>
 
-  <span class="kd">public</span> <span class="nf">Voiture</span><span class="o">(</span><span class="n">String</span> <span class="n">marque</span><span class="o">,</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="o">;</span>
-    <span class="k">this</span><span class="o">.</span><span class="na">moteur</span> <span class="o">=</span> <span class="n">moteur</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">public</span> <span class="nf">Voiture</span><span class="p">(</span><span class="n">String</span> <span class="n">marque</span><span class="p">,</span> <span class="n">Moteur</span> <span class="n">moteur</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">marque</span> <span class="o">=</span> <span class="n">marque</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">moteur</span> <span class="o">=</span> <span class="n">moteur</span><span class="p">;</span>
+  <span class="p">}</span>
 
   <span class="c1">// ...</span>
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>La création d’une instance de <em>Voiture</em> se fait maintenant en deux étapes :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Moteur</span> <span class="n">moteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moteur</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">216</span><span class="o">);</span>
-<span class="n">Voiture</span> <span class="n">clio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="o">(</span><span class="s">&quot;Clio Williams&quot;</span><span class="o">,</span> <span class="n">moteur</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Moteur</span> <span class="n">moteur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Moteur</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">216</span><span class="p">);</span>
+<span class="n">Voiture</span> <span class="n">clio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Voiture</span><span class="p">(</span><span class="s">&quot;Clio Williams&quot;</span><span class="p">,</span> <span class="n">moteur</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>On dit qu’une instance de la classe <em>Moteur</em> est <strong>injectée</strong> par le constructeur
@@ -862,20 +879,20 @@ principes <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLI
 <h2>Le bloc d’initialisation<a class="headerlink" href="#le-bloc-d-initialisation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Il est possible d’écrirer un traitement d’initialisation s’effectuant avant l’appel
 au constructeur. Il suffit de déclarer un bloc anonyme dans la classe.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">nbRoues</span><span class="p">;</span>
 
-  <span class="o">{</span>
-    <span class="n">Configuration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">getConfiguration</span><span class="o">();</span>
-    <span class="n">nbRoues</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="na">nbRouesParVoiture</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="p">{</span>
+    <span class="n">Configuration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">getConfiguration</span><span class="p">();</span>
+    <span class="n">nbRoues</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">.</span><span class="na">nbRouesParVoiture</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="n">Configuration</span> <span class="nf">getConfiguration</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Configuration</span> <span class="nf">getConfiguration</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// le code ici pour consulter la configuration</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple précédent, on suppose qu’il existe une classe <em>Configuration</em> et qu’il
@@ -891,20 +908,20 @@ obtenir le même comportement en déclarant un constructeur.</p>
 ne sera effectué qu’une seule fois : au moment du chargement de la définition de la
 classe dans la mémoire de la JVM. Une initialisation de classe se fait à l’aide
 d’un bloc d’instructions <strong>static</strong>.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NB_ROUES</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NB_ROUES</span><span class="p">;</span>
 
-  <span class="kd">static</span> <span class="o">{</span>
-    <span class="n">Configuration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">getConfiguration</span><span class="o">();</span>
-    <span class="n">NB_ROUES</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="na">nbRouesParVoiture</span><span class="o">;</span>
-  <span class="o">}</span>
+  <span class="kd">static</span> <span class="p">{</span>
+    <span class="n">Configuration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="n">getConfiguration</span><span class="p">();</span>
+    <span class="n">NB_ROUES</span> <span class="o">=</span> <span class="n">cfg</span><span class="p">.</span><span class="na">nbRouesParVoiture</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Configuration</span> <span class="nf">getConfiguration</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Configuration</span> <span class="nf">getConfiguration</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// le code ici pour consulter la configuration</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple précédent, on suppose qu’il existe une classe <em>Configuration</em> et qu’il
@@ -913,15 +930,15 @@ de roues par voiture. Le bloc <strong>static</strong> donne la possibilité d’
 une constante à partir d’un traitement plus complexe.</p>
 <p>On peut obtenir un resultat similaire en initialisant la constante <em>NB_ROUES</em> à partir
 d’un appel à une méthode de classe :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="p">{</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NB_ROUES</span> <span class="o">=</span> <span class="n">getConfiguration</span><span class="o">().</span><span class="na">nbRouesParVoiture</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NB_ROUES</span> <span class="o">=</span> <span class="n">getConfiguration</span><span class="p">().</span><span class="na">nbRouesParVoiture</span><span class="p">;</span>
 
-  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Configuration</span> <span class="nf">getConfiguration</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="n">Configuration</span> <span class="nf">getConfiguration</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// le code ici pour consulter la configuration</span>
-  <span class="o">}</span>
+  <span class="p">}</span>
 
-<span class="o">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -995,7 +1012,7 @@ récupéré, il doit s’assurer que plus aucune référence n’existe vers cet
 Par exemple, il peut affecter la valeur <strong>null</strong> aux variables et aux attributs
 qui référencent cet objet.</p>
 <p>Il est également possible de forcer l’appel au ramasse-miettes gâce à la méthode
-<a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#gc()">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#gc()">java.lang.System.gc()</a>. Cependant, cette méthode ne donne aucune garantie quant au résultat.
 Vous ne pouvez pas vous baser sur son appel pour garantir la suppression d’un objet
 non référencé. Le ramasse-miettes utilise un algorithme complexe qui rend son
 comportement difficilement prédictible.</p>
@@ -1018,7 +1035,7 @@ Pour Java 9, vous pouvez vous reporter au
 l’espace mémoire que des objets non référencés. Si vous développez une application
 qui crée beaucoup d’objets sans donner la possibilité au ramasse-miettes de les collecter,
 votre application peut se retrouver à cours d’espace mémoire. Lors de la création d’un
-nouvel objet, vous obtiendrez alors une erreur du type <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/OutOfMemoryError.html">java.lang.OutOfMemoryError</a>.</p>
+nouvel objet, vous obtiendrez alors une erreur du type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/OutOfMemoryError.html">java.lang.OutOfMemoryError</a>.</p>
 <p>La mémoire n’est pas la seule ressource système avec laquelle les développeurs doivent
 composer. Si Java propose un mécanisme pour la gestion de la mémoire, il ne propose
 pas de mécanisme automatique pour réclamer les autres types de ressources,
@@ -1029,8 +1046,8 @@ notamment les descripteurs de fichier et de socket.</p>
 <span id="cycle-de-vie-finalize"></span><h2>La méthode finalize<a class="headerlink" href="#la-methode-finalize" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Si un objet souhaite effectuer un traitement avant sa destruction, il peut implémenter
 la méthode <em>finalize</em>. Cette méthode a la signature suivante :</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="o">()</span> <span class="o">{</span>
-<span class="o">}</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans la pratique cette méthode n’est utilisée que pour des cas d’implémentation très
@@ -1038,28 +1055,28 @@ avancés. En effet, la JVM ne donne strictement <strong>aucune</strong> garantie
 la méthode <strong>finalize</strong> est appelée. Elle peut même ne jamais être appelée si l’application se
 termine avant que le ramasse-miettes ne réclame l’espace mémoire de l’objet. Elle n’a donc
 pas le même statut ni la même importance qu’un destructeur dans le langage C++.</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjetCurieux</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjetCurieux</span> <span class="p">{</span>
 
-  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;je vais disparaître !&quot;</span><span class="o">);</span>
-  <span class="o">}</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">finalize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;je vais disparaître !&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
 
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">ObjetCurieux</span> <span class="n">objetCurieux</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjetCurieux</span><span class="o">();</span>
-    <span class="n">objetCurieux</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ObjetCurieux</span> <span class="n">objetCurieux</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjetCurieux</span><span class="p">();</span>
+    <span class="n">objetCurieux</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
-    <span class="n">System</span><span class="o">.</span><span class="na">gc</span><span class="o">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">gc</span><span class="p">();</span>
 
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="sc">&#39;.&#39;</span><span class="o">);</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-<span class="o">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, Un objet qui n’implémente que la méthode <em>finalize</em> est créé
 puis la variable qui le référence est mise à <strong>null</strong>. Ensuite, le programme appelle
-explicitement le ramasse-miettes avec la méthode <a class="reference external" href="https://docs.oracle.com/javase/10/docs/api/java/lang/System.html#gc()">java.lang.System.gc()</a>. Enfin,
+explicitement le ramasse-miettes avec la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#gc()">java.lang.System.gc()</a>. Enfin,
 une boucle se contente d’afficher mille points sur la sortie standard. Cette boucle <strong>for</strong>
 est utile car généralement le programme s’arrête trop vite et le ramasse-miettes
 n’a pas le temps d’appeler <em>finalize</em>. Si vous exécutez ce programme plusieurs fois,
@@ -1089,12 +1106,21 @@ Cela traduit bien le fait que le comportement du ramasse-miettes varie d’une e
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright David Gayerie - david.gayerie@reseau-cd.net - CC-BY-SA
 
     </p>
   </div>
-    <div>Téléchargez ce support au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
-    </div>
+  <div  role="contentinfo">
+    <p>
+    Par David Gayerie
+    - <script>!function(){function e(e){return e.replace(/[a-zA-Z]/g,function(e){return String.fromCharCode((e<="Z"?90:122)>=(e=e.charCodeAt(0)+13)?e:e-26)})}!function(e){document.write("<a href='mailto:"+e+"'>"+e+"</a>")}(e("qnivq.tnlrevr@erfrnh-pq.arg"))}();</script>
+    </p>
+    <p>Ce support est disponible en téléchargement au format <a class="reference download" href="https://github.com/spoonless/epsi-b3-java/archive/gh-pages.zip">HTML</a>
+    </p>
+    <p class="copyright">
+      <a class="reference external image-reference" href="https://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" src="https://i.creativecommons.org/l/by-sa/3.0/fr/88x31.png" /></a>
+      Cette œuvre est mise à disposition selon les termes de la <a class="reference external" href="https://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution</a> -  Partage dans les Mêmes Conditions 3.0 France
+    </p>
+  </div>
 
 
 </footer>
@@ -1106,7 +1132,6 @@ Cela traduit bien le fait que le comportement du ramasse-miettes varie d’une e
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
