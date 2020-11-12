@@ -914,21 +914,33 @@ un rectangle avec la même largeur et longueur que celui passé en paramètre.</
 <p class="admonition-title">Exercice à rendre - Gestion des formations</p>
 <p>On souhaite représenter un système de gestion des formations. Chaque formation
 est représentée par son nom et la liste des modules qui la composent.</p>
-<p>Créez la classe <code class="docutils literal notranslate"><span class="pre">Formation</span></code> et <code class="docutils literal notranslate"><span class="pre">ModuleFormation</span></code>. Un module de formation
-doit disposer d’un nom, d’une description, du nombre maximum de stagiaires acceptés et de sa
-durée en heures pleines. Une <code class="docutils literal notranslate"><span class="pre">Formation</span></code> dispose de la propriété <code class="docutils literal notranslate"><span class="pre">duree</span></code>
+<p>Créez les classes <code class="docutils literal notranslate"><span class="pre">Formation</span></code> et <code class="docutils literal notranslate"><span class="pre">ModuleFormation</span></code>. Un module de formation
+a un nom, une description, un nombre maximum de stagiaires acceptés et une
+durée en heures pleines. Une <code class="docutils literal notranslate"><span class="pre">Formation</span></code> a la propriété <code class="docutils literal notranslate"><span class="pre">duree</span></code>
 qui correspond à la somme des heures des modules qui la composent et la
 propriété <code class="docutils literal notranslate"><span class="pre">nbStagiaires</span></code> (minimum du nombre autorisé de stagiaires des modules
 qui la composent).</p>
 <p>Il existe différents types de module de formation :</p>
 <ul class="simple">
 <li><p>le type <code class="docutils literal notranslate"><span class="pre">Cours</span></code> qui dispose d’un numéro de salle</p></li>
-<li><p>le type <code class="docutils literal notranslate"><span class="pre">Tutoriel</span></code> qui est représenté par un lien sur une vidéo en ligne (il
-n’y pas de limite au nombre de stagiaires pouvant suivre un tutoriel).</p></li>
+<li><p>le type <code class="docutils literal notranslate"><span class="pre">Tutoriel</span></code> qui est représenté par un lien sur une vidéo en ligne. Il
+n’y pas de limite au nombre de stagiaires pouvant suivre un tutoriel. Pour
+simplifier, vous pouvez considérer que la limite est fixée arbitrairement
+à 1000 stagiaires.</p></li>
 <li><p>le type <code class="docutils literal notranslate"><span class="pre">Projet</span></code> qui est défini par le nombre de groupes et le nombre maximum
 de stagiaires dans un groupe. Le nombre de stagiaires maximum est donc
 le produit du nombre de groupes et du nombre de personnes par groupe.</p></li>
 </ul>
+<p>Par exemple, si la formation <em>Programmer en Java</em> comprend :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Un module de 20h accueillant 25 stagiaires maximum</p></li>
+<li><p>Un tutoriel en ligne de 4h</p></li>
+<li><p>Un projet de 30h avec 4 groupes de 5 personnes (soit 5 x 4 = 20 stagiaires)</p></li>
+</ul>
+</div></blockquote>
+<p>Alors la formation <em>Programmer en Java</em> dure 54h et est disponible pour
+20 stagiaires au maximum.</p>
 <p>Testez votre implémentation avec une classe <code class="docutils literal notranslate"><span class="pre">DemoFormation</span></code> contenant
 une méthode <code class="docutils literal notranslate"><span class="pre">main</span></code>. Vérifiez que vous obtenez bien la durée et
 le nombre de stagiaires attendus pour une formation.</p>
