@@ -5,13 +5,26 @@
 <head>
   <meta charset="utf-8">
   <meta content="David Gayerie" name="author" />
-<meta content="Support de formation" name="description" />
-<meta content="développement, informatique, formation, programmation" name="keywords" />
+<meta content="Cours de 3ième année EPSI Bordeaux : les fondamentaux du langage Java" name="description" />
+<meta content="EPSI, Java, programmation objet" name="keywords" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sommaire &mdash; Documentation Langage Java </title>
-  
+
+  <title>EPSI B3 - Java &mdash; David Gayerie</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "EPSI B3 - Java",
+    "description": "Cours de 3ième année EPSI Bordeaux : les fondamentaux du langage Java",
+    "provider": {
+      "@type": "Person",
+      "name": "David Gayerie"
+    }
+  }
+  </script>
+
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
@@ -55,7 +68,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> Langage Java
+            <a href="#" class="icon icon-home" alt="Documentation Home"> EPSI B3 - Java
           
 
           
@@ -446,7 +459,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Langage Java</a>
+          <a href="#">EPSI B3 - Java</a>
         
       </nav>
 
@@ -477,7 +490,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Sommaire</li>
+      <li>EPSI B3 - Java</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -501,8 +514,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sommaire">
-<h1>Sommaire<a class="headerlink" href="#sommaire" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="epsi-b3-java">
+<h1>EPSI B3 - Java<a class="headerlink" href="#epsi-b3-java" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Cours de 3ième année EPSI Bordeaux : les fondamentaux du langage Java</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Le langage Java</span></p>
 <ul>
@@ -536,14 +550,6 @@
 <li class="toctree-l1"><a class="reference internal" href="langage_java/les_annotations.html">Les annotations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="langage_java/module.html">Les modules</a></li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
 </div>
 <div class="admonition-liens-utiles admonition">
 <p class="admonition-title">Liens utiles</p>
@@ -666,13 +672,17 @@ suivantes :</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">void</span> <span class="pre">transpose()</span></code></p></li>
 </ul>
 <p>Pour rappel, le périmètre d’un rectangle est :</p>
-<div class="line-block">
-<div class="line">2 * (largeur + longueur)</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">périmètre = (longueur + largeur) x 2</div>
 </div>
+</div></blockquote>
 <p>Pour rappel, l’aire d’un rectangle est :</p>
-<div class="line-block">
-<div class="line">largeur * longueur</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">aire = longueur x largeur</div>
 </div>
+</div></blockquote>
 <p>Un rectangle est un carré si sa longueur est égale à sa largeur. La méthode
 <code class="docutils literal notranslate"><span class="pre">transponse</span></code> intervertit la largeur et la longueur.</p>
 <p>Un fois implémentée, votre classe doit pouvoir être utilisée dans le programme
@@ -836,6 +846,7 @@ ci-dessous :</p>
 <li><p><a class="reference internal" href="langage_java/premiere_classe.html"><span class="doc">Une première classe</span></a></p></li>
 <li><p><a class="reference internal" href="langage_java/attributs_et_methodes.html"><span class="doc">Attributs &amp; méthodes</span></a></p></li>
 <li><p><a class="reference internal" href="langage_java/cycle_de_vie.html"><span class="doc">Cycle de vie d’un objet</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/la_classe_string.html"><span class="doc">La classe String</span></a></p></li>
 </ul>
 </div>
 <div class="exercice admonition">
@@ -882,6 +893,124 @@ directement une <em>Phrase</em> selon son type :</p>
 <li><p><a class="reference internal" href="langage_java/premiere_classe.html"><span class="doc">Une première classe</span></a></p></li>
 <li><p><a class="reference internal" href="langage_java/attributs_et_methodes.html"><span class="doc">Attributs &amp; méthodes</span></a></p></li>
 <li><p><a class="reference internal" href="langage_java/cycle_de_vie.html"><span class="doc">Cycle de vie d’un objet</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Les constructeurs pour la classe Rectangle</p>
+<p>Reprenez la classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et ajoutez les constructeurs suivants :</p>
+<ul class="simple">
+<li><p>Un constructeur qui attend la largeur et la longueur en paramètre</p></li>
+<li><p>Un constructeur qui attend une seule valeur pour créer un carré</p></li>
+<li><p>Un constructeur qui attend un <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> en paramètre et qui crée
+un rectangle avec la même largeur et longueur que celui passé en paramètre.</p></li>
+</ul>
+<p>Testez vos implémentations en ajoutant du code de test dans la classe <code class="docutils literal notranslate"><span class="pre">DemoRectangle</span></code>.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/cycle_de_vie.html"><span class="doc">Cycle de vie d’un objet</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Gestion des formations</p>
+<p>On souhaite représenter un système de gestion des formations. Chaque formation
+est représentée par son nom et la liste des modules qui la composent.</p>
+<p>Créez la classe <code class="docutils literal notranslate"><span class="pre">Formation</span></code> et <code class="docutils literal notranslate"><span class="pre">ModuleFormation</span></code>. Un module de formation
+doit disposer d’un nom, d’une description, du nombre maximum de stagiaires acceptés et de sa
+durée en heures pleines. Une <code class="docutils literal notranslate"><span class="pre">Formation</span></code> dispose de la propriété <code class="docutils literal notranslate"><span class="pre">duree</span></code>
+qui correspond à la somme des heures des modules qui la composent et la
+propriété <code class="docutils literal notranslate"><span class="pre">nbStagiaires</span></code> (minimum du nombre autorisé de stagiaires des modules
+qui la composent).</p>
+<p>Il existe différents types de module de formation :</p>
+<ul class="simple">
+<li><p>le type <code class="docutils literal notranslate"><span class="pre">Cours</span></code> qui dispose d’un numéro de salle</p></li>
+<li><p>le type <code class="docutils literal notranslate"><span class="pre">Tutoriel</span></code> qui est représenté par un lien sur une vidéo en ligne (il
+n’y pas de limite au nombre de stagiaires pouvant suivre un tutoriel).</p></li>
+<li><p>le type <code class="docutils literal notranslate"><span class="pre">Projet</span></code> qui est défini par le nombre de groupes et le nombre maximum
+de stagiaires dans un groupe. Le nombre de stagiaires maximum est donc
+le produit du nombre de groupes et du nombre de personnes par groupe.</p></li>
+</ul>
+<p>Testez votre implémentation avec une classe <code class="docutils literal notranslate"><span class="pre">DemoFormation</span></code> contenant
+une méthode <code class="docutils literal notranslate"><span class="pre">main</span></code>. Vérifiez que vous obtenez bien la durée et
+le nombre de stagiaires attendus pour une formation.</p>
+<p><strong>Chapitres de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/attributs_et_methodes.html"><span class="doc">Attributs &amp; méthodes</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/cycle_de_vie.html"><span class="doc">Cycle de vie d’un objet</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/heritage_composition.html"><span class="doc">Héritage et composition</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques (1/3)</p>
+<p>On souhaite créer des classes Java qui permettent de représenter et de
+manipuler des figures géométriques.</p>
+<p>Une figure est une représentation abstraite d’une forme géométrique. Parmi
+les figures géométriques, on distingue :</p>
+<ul class="simple">
+<li><p>Le rectangle qui est défini par sa longueur et sa largeur</p></li>
+<li><p>Le disque qui est défini par son rayon</p></li>
+</ul>
+<p>Pour chaque type de figure, il est possible de connaître son périmètre et son aire.</p>
+<p>Pour un rectangle</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">périmètre = (longueur + largeur) x 2</div>
+<div class="line">aire = longueur x largeur</div>
+</div>
+</div></blockquote>
+<p>Pour un disque</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">périmètre = 2 x π x rayon</div>
+<div class="line">aire = π x rayon²</div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La valeur de π est donnée en Java par la constante <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#PI">Math.PI</a></p>
+</div>
+<p>Reprenez l’implémentation de la classe <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et implémentez les
+classes <code class="docutils literal notranslate"><span class="pre">Disque</span></code> et <code class="docutils literal notranslate"><span class="pre">Figure</span></code>. Utilisez le principe du polymorphisme et des
+classes abstraites pour fournir les méthodes <code class="docutils literal notranslate"><span class="pre">getPerimetre()</span></code> et <code class="docutils literal notranslate"><span class="pre">getAire()</span></code>
+pour ces classes.</p>
+<p>Créez une classe <code class="docutils literal notranslate"><span class="pre">DemoFiguresGeometrique</span></code> avec une méthode <code class="docutils literal notranslate"><span class="pre">main</span></code> pour
+tester votre implémentation.</p>
+<p><strong>Chapitres de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/heritage_composition.html"><span class="doc">Héritage et composition</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/polymorphisme.html"><span class="doc">Le polymorphisme</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/classe_abstraite.html"><span class="doc">Les classes abstraites</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques (2/3)</p>
+<p>Reprenez l’exercice précédent et ajoutez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>. Cette
+classe contient une liste de figures. Son périmètre vaut la somme des périmètres
+de toutes ses figures. Son aire vaut la somme des aires de toutes ses figures.</p>
+<p>Implémentez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>.</p>
+<p>Modifiez la classe <code class="docutils literal notranslate"><span class="pre">DemoFigureGeometrique</span></code> pour tester votre nouvelle classe.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Une <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code> doit aussi pouvoir être composée d’autres
+<code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>. Dans les modèles de conception (<em>design patterns</em>),
+on appelle ce type de classe un <strong>composite</strong>. On trouve souvent ce type
+de représentation : dans un système de fichiers, un répertoire peut être
+représenté comme un type de fichier particulier qui peut contenir des
+fichiers ou des répertoires.</p>
+</div>
+<p><strong>Chapitres de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/heritage_composition.html"><span class="doc">Héritage et composition</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/polymorphisme.html"><span class="doc">Le polymorphisme</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques (3/3)</p>
+<p>On veut pouvoir comparer deux objets <code class="docutils literal notranslate"><span class="pre">Figure</span></code> entre eux. Deux figures
+sont identiques si <strong>elles ont le même périmètre et la même aire</strong>.</p>
+<p>Modifiez la classe <code class="docutils literal notranslate"><span class="pre">DemoFigureGeometrique</span></code> pour tester vos ajouts.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/la_classe_object.html"><span class="doc">La classe Object</span></a></p></li>
 </ul>
 </div>
 </div>
