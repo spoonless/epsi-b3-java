@@ -834,9 +834,11 @@ tester votre implémentation.</p>
 <div class="exercice admonition">
 <p class="admonition-title">Exercice à rendre - Figures géométriques (2/3)</p>
 <p>Reprenez l’exercice précédent et ajoutez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>. Cette
-classe contient une liste de figures. Son périmètre vaut la somme des périmètres
-de toutes ses figures. Son aire vaut la somme des aires de toutes ses figures.</p>
-<p>Implémentez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>.</p>
+classe est une figure qui contient une liste de figures. Son périmètre vaut
+la somme des périmètres de toutes ses figures. Son aire vaut la somme des
+aires de toutes ses figures.</p>
+<p>Implémentez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>. Déclarez dans cette classe une méthode
+<code class="docutils literal notranslate"><span class="pre">ajouter</span></code> pour ajouter une nouvelle figure à cette figure composée.</p>
 <p>Modifiez la classe <code class="docutils literal notranslate"><span class="pre">DemoFigureGeometrique</span></code> pour tester votre nouvelle classe.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -863,6 +865,195 @@ sont identiques si <strong>elles ont le même périmètre et la même aire</stro
 <li><p><span class="xref std std-doc">langage_java/polymorphisme</span></p></li>
 <li><p><span class="xref std std-doc">langage_java/la_classe_object</span></p></li>
 </ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques / les exceptions (1/4)</p>
+<p>Modifier les classes <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Disque</span></code>. Il ne doit pas être possible
+de donner une valeur négative pour la longueur, la largeur et le rayon à
+la construction des objets et sur les méthodes <em>setter</em>.</p>
+<p>Utiliser l’exception <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html">IllegalArgumentException</a> pour signaler qu’une valeur
+négative est interdite. Il s’agit d’un <em>unchecked</em> exception utilisée pour
+signaler un paramètre invalide.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-doc">langage_java/les_exceptions</span></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques / les exceptions (2/4)</p>
+<p>Si ce n’est pas déjà le cas, déclarez une méthode <code class="docutils literal notranslate"><span class="pre">ajouter</span></code> dans la classe
+<code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code> pour ajouter une <code class="docutils literal notranslate"><span class="pre">Figure</span></code> dans la figure composée.
+Afin d’éviter une relation cyclique, il n’est pas possible d’ajouter
+une figure composée à elle-même. Dans ce cas, la méthode <code class="docutils literal notranslate"><span class="pre">ajouter</span></code> doit
+produire une exception du type <code class="docutils literal notranslate"><span class="pre">FigureInterditeException</span></code>.</p>
+<p>Créez la classe <code class="docutils literal notranslate"><span class="pre">FigureInterditeException</span></code> et modifiez la méthode <code class="docutils literal notranslate"><span class="pre">ajouter</span></code>
+de <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code> pour appliquer cette règle.</p>
+<p>Faites évoluer les classes existantes afin qu’elles compilent toujours.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-doc">langage_java/les_exceptions</span></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques / les exceptions (3/4)</p>
+<p>Étant donnée le programme suivant :</p>
+<p>Vous pouvez télécharger directement le fichier
+<code class="xref download docutils literal notranslate"><span class="pre">ApprentissageFiguresGeometriques.java</span></code></p>
+<p>Modifiez ce programme pour qu’il gère les exceptions de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html">IllegalArgumentException</a>
+si jamais l’utilisateur saisit une valeur négative pour la longueur, la
+largeur ou le rayon.</p>
+<p>Le programme ne doit pas planter. Il doit indiquer à l’utilisateur qu’il
+a fait une erreur et lui permettre de continuer à utiliser l’application.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-doc">langage_java/les_exceptions</span></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice bonus - Figures géométriques / les exceptions (4/4)</p>
+<p>Pour le programme précédent, si vous saisissez autre chose qu’un nombre, le
+programme plante car les méthodes <code class="docutils literal notranslate"><span class="pre">nextInt</span></code> et <code class="docutils literal notranslate"><span class="pre">nextDouble</span></code> de la classe
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">Scanner</a> lancent alors une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/InputMismatchException.html">InputMismatchException</a>.</p>
+<p>Modifiez le programme précédent pour qu’il gère élégamment les erreurs
+de saisie de l’utilisateur. Par exemple, il peut signaler que la saisie
+n’est pas correcte et proposer une nouvelle tentative à l’utilisateur.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Attention, lorsqu’un objet de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">Scanner</a> ne peut pas lire une
+donnée qui est au mauvais format, il jette une exception <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/InputMismatchException.html">InputMismatchException</a>
+<strong>et il conserve la valeur saisie dans une zone tampon</strong>. Cela signifie
+que les appels suivants aux méthodes de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">Scanner</a> vont relire la même valeur !
+Pour vider la zone tampon, il suffit de lire la donnée invalide sous
+la forme d’une chaîne de caractère en appelant la méthode <code class="docutils literal notranslate"><span class="pre">next()</span></code> :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">scanner</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Chapitres de référence :</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-doc">langage_java/les_exceptions</span></p></li>
+<li><p><span class="xref std std-doc">langage_java/entrees_sorties</span></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - La gestion d’un catalogue (1/3)</p>
+<p>On désire mettre en place un outil pour la gestion d’articles dans un catalogue.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>L’objectif de cet exercice et des suivants est de vous inciter à réaliser
+une conception objet d’une application. Il serait sans doute possible
+de réaliser ces exercices en codant une ou plusieurs méthodes avec
+des centaines de lignes de code. Mais ce type d’implémentation serait
+maladroite en Java et surtout absolument pas évolutive.</p>
+<p>Essayez de mettre en pratique le principe <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a> de la <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique">single
+responsability</a> : une classe doit avoir une responsabilité unique dans
+un programme. Pour vous guider, les éléments en gras dans le texte
+représentent des responsabilités différentes qui devaient très certainement
+être implémentées dans des classes différentes.</p>
+</div>
+<p>Un <strong>catalogue</strong> est composé d’un ensemble d’articles. Un <strong>article</strong> a
+un code, un titre et une note metascore (nombre entier sur 100). Mais il a
+aussi des caractéristiques qui dépendent du type de l’article :</p>
+<ul>
+<li><p>un <strong>film</strong> est un article qui a en plus un réalisateur et une
+affiche. Pour faire simple, l’affiche du film est représentée par une URI
+sur le web. Par exemple :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://static.cotecine.fr/tb/Affiches/450x450/ffffff/LES+7+SAMOURAIS.JPG
+</pre></div>
+</div>
+<p>Plutôt que de représenter l’adresse de l’affiche sur la forme d’une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>,
+vous pouvez utiliser les classes Java <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html">URL</a> ou <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html">URI</a>.</p>
+</li>
+<li><p>une <strong>série tv</strong> est un article qui a en plus un distributeur et un nombre de saisons.</p></li>
+<li><p>un <strong>jeu vidéo</strong> est un article qui a en plus un studio de développement et
+un niveau dans la classification <a class="reference external" href="https://fr.wikipedia.org/wiki/Pan_European_Game_Information">PEGI</a> : PEGI 3, PEGI 7, PEGI 12, PEGI 16
+et PEGI 18. Vous pouvez représenter la classification PEGI avec une énumération
+en Java (Cf. <span class="xref std std-doc">langage_java/enumeration</span>).</p></li>
+</ul>
+<p>Créez les classes pour représenter ce domaine. Placez ces classes dans le
+package <code class="docutils literal notranslate"><span class="pre">catalogue</span></code> de votre projet.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - La gestion d’un catalogue (2/3)</p>
+<p>On souhaite implémenter un module pour <strong>charger les données d’un catalogue</strong>.
+Les données seront chargées à partir d’un fichier texte dans un format proche
+du format CSV.</p>
+<p>Attention, nous souhaitons garantir une indépendance de ce module avec les
+autres modules que nous pourrions implémenter plus tard. Vous devez donc vous
+assurer que la classe responsable de charger le catalogue implémente
+l’interface <code class="docutils literal notranslate"><span class="pre">ImporteurCatalogue</span></code> :</p>
+<p>Vous pouvez télécharger directement le fichier
+<code class="xref download docutils literal notranslate"><span class="pre">ImporteurCatalogue.java</span></code></p>
+<p>Voici un exemple de fichier à traiter. Chaque ligne représente un article
+en séparant les informations par un point-virgule. La ligne indique, le
+code, le titre, la note metascore, le type de l’article (<strong>film</strong>, <strong>serie</strong>,
+<strong>jeu</strong>) puis les informations spécifiques à chaque type d’article.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">exemple de fichier de catalogue</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>F0001;Les sept samouraïs;98;film;Akira Kurosawa;https://static.cotecine.fr/tb/Affiches/450x450/ffffff/LES+7+SAMOURAIS.JPG
+S0012;The Strain;70;serie;FX;4
+JV010;Mass effect;89;jeu;Bioware;PEGI18
+</pre></div>
+</div>
+</div>
+<p>Pour lire un fichier, il existe plusieurs solutions en Java. La solution
+la moins performantes (mais la plus facile à coder) consiste à appeler
+la méthode de classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path)">Files.readAllLines</a>. Vous pouvez vous reporter au
+chapitre <span class="xref std std-doc">langage_java/entrees_sorties</span> pour en savoir plus.</p>
+<p>Pour l’analyse d’une ligne, vous pouvez utiliser la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#split(java.lang.String)">split</a> de la
+classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> pour découper la chaîne de caractères en tableau en utilisant
+le point-virgule comme séparateur :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">colonnes</span> <span class="o">=</span> <span class="n">ligne</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;;&quot;</span><span class="p">);</span>
+<span class="c1">// La première colonne est accessible part colonnes[0], la seconde</span>
+<span class="c1">// colonne par colonnes[1], etc.</span>
+</pre></div>
+</div>
+<p>Écrivez une programme qui demande un chemin de fichier à l’utilisateur pour
+ensuite charger le catalogue. Si le chargement échoue avec une exception,
+affichez vos excuses à l’utilisateur ainsi que le message de l’exception.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - La gestion d’un catalogue (3/3)</p>
+<p>On souhaite implémenter un module pour exporter le catalogue au format HTML.</p>
+<p>Pour l’exemple de catalogue donné à l’exercice précédent, le résultat de
+l’export HTML sera :</p>
+<p>Attention, nous souhaitons garantir une indépendance du module d’export.
+Vous devez donc vous assurer que la classe responsable d’exporter le catalogue
+au format HTML implémente l’interface <code class="docutils literal notranslate"><span class="pre">ExporteurCatalogue</span></code> :</p>
+<p>Vous pouvez télécharger directement le fichier
+<code class="xref download docutils literal notranslate"><span class="pre">ExporteurCatalogue.java</span></code></p>
+<p>L’export consiste à écrire le début du fichier HTML puis, pour chaque article
+d’écrire une balise <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> avec les informations de l’article et enfin,
+écrire la fin du fichier HTML.</p>
+<p>Nous ne pouvons pas inclure une méthode <code class="docutils literal notranslate"><span class="pre">toHTML</span></code> dans notre classe <code class="docutils literal notranslate"><span class="pre">Article</span></code>
+ou une de ces sous-classes pour réaliser l’écriture de la balise <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code>.
+Cela ne serait pas conforme au principe de <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique">single responsability</a>. Nous ne
+pouvons pas non plus nous contenter de coder la procédure d’export dans une
+seule méthode : ce code ne serait pas très évolutif.</p>
+<p>Pour réaliser l’export, vous devrez créer une interface <code class="docutils literal notranslate"><span class="pre">ExporteurArticle</span></code>.
+Cette interface sera implémentée par trois classes spécialisées : une pour l’export
+de film, une pour l’export de série et une pour l’export de jeu.</p>
+<p>Créez également une classe <code class="docutils literal notranslate"><span class="pre">ExporteurArticleFabrique</span></code>. Cette classe
+agira comme une fabrique.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Une fabrique est un modèle de conception (<em>design patterns</em>) couramment
+utilisé dans la programmation orientée objet. Il s’agit d’une classe dont
+la responsabilité est de créer des objets sans que le reste de
+l’application ne connaisse le type exact des objets créés.</p>
+<p>Pour en savoir plus, vous pouvez consulter l’article Wikipedia dédié à
+ce modèle de conception :</p>
+<p><a class="reference external" href="https://fr.wikipedia.org/wiki/Fabrique_(patron_de_conception">https://fr.wikipedia.org/wiki/Fabrique_(patron_de_conception</a>)</p>
+</div>
+<p>L’architecture générale de l’export peut être schématisée de la manière
+suivante :</p>
+<img alt="langage_java/langage_java/exercices/exporteur_article.png" src="langage_java/langage_java/exercices/exporteur_article.png" />
+<p>Ce schéma n’est pas complet, par exemple, il manque certainement des méthodes.
+À vous de vous inspirer de ce schéma pour développer le module d’export.</p>
+<p>Écrivez un programme qui demande à l’utilisateur d’indiquer le chemin d’un
+fichier de catalogue à charger et le chemin d’un fichier HTML à produire.
+Le programme doit alors charger le catalogue et produire le fichier HTML
+d’export.</p>
 </div>
 </div>
 

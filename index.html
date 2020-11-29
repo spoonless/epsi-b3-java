@@ -1006,9 +1006,11 @@ tester votre implémentation.</p>
 <div class="exercice admonition">
 <p class="admonition-title">Exercice à rendre - Figures géométriques (2/3)</p>
 <p>Reprenez l’exercice précédent et ajoutez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>. Cette
-classe contient une liste de figures. Son périmètre vaut la somme des périmètres
-de toutes ses figures. Son aire vaut la somme des aires de toutes ses figures.</p>
-<p>Implémentez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>.</p>
+classe est une figure qui contient une liste de figures. Son périmètre vaut
+la somme des périmètres de toutes ses figures. Son aire vaut la somme des
+aires de toutes ses figures.</p>
+<p>Implémentez la classe <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code>. Déclarez dans cette classe une méthode
+<code class="docutils literal notranslate"><span class="pre">ajouter</span></code> pour ajouter une nouvelle figure à cette figure composée.</p>
 <p>Modifiez la classe <code class="docutils literal notranslate"><span class="pre">DemoFigureGeometrique</span></code> pour tester votre nouvelle classe.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1035,6 +1037,414 @@ sont identiques si <strong>elles ont le même périmètre et la même aire</stro
 <li><p><a class="reference internal" href="langage_java/polymorphisme.html"><span class="doc">Le polymorphisme</span></a></p></li>
 <li><p><a class="reference internal" href="langage_java/la_classe_object.html"><span class="doc">La classe Object</span></a></p></li>
 </ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques / les exceptions (1/4)</p>
+<p>Modifier les classes <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> et <code class="docutils literal notranslate"><span class="pre">Disque</span></code>. Il ne doit pas être possible
+de donner une valeur négative pour la longueur, la largeur et le rayon à
+la construction des objets et sur les méthodes <em>setter</em>.</p>
+<p>Utiliser l’exception <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html">IllegalArgumentException</a> pour signaler qu’une valeur
+négative est interdite. Il s’agit d’un <em>unchecked</em> exception utilisée pour
+signaler un paramètre invalide.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/les_exceptions.html"><span class="doc">Les exceptions</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques / les exceptions (2/4)</p>
+<p>Si ce n’est pas déjà le cas, déclarez une méthode <code class="docutils literal notranslate"><span class="pre">ajouter</span></code> dans la classe
+<code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code> pour ajouter une <code class="docutils literal notranslate"><span class="pre">Figure</span></code> dans la figure composée.
+Afin d’éviter une relation cyclique, il n’est pas possible d’ajouter
+une figure composée à elle-même. Dans ce cas, la méthode <code class="docutils literal notranslate"><span class="pre">ajouter</span></code> doit
+produire une exception du type <code class="docutils literal notranslate"><span class="pre">FigureInterditeException</span></code>.</p>
+<p>Créez la classe <code class="docutils literal notranslate"><span class="pre">FigureInterditeException</span></code> et modifiez la méthode <code class="docutils literal notranslate"><span class="pre">ajouter</span></code>
+de <code class="docutils literal notranslate"><span class="pre">FigureComposee</span></code> pour appliquer cette règle.</p>
+<p>Faites évoluer les classes existantes afin qu’elles compilent toujours.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/les_exceptions.html"><span class="doc">Les exceptions</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - Figures géométriques / les exceptions (3/4)</p>
+<p>Étant donnée le programme suivant :</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">geometrie</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ApprentissageFiguresGeometriques</span> <span class="p">{</span>
+
+	<span class="kd">private</span> <span class="n">FigureComposee</span> <span class="n">figure</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FigureComposee</span><span class="p">();</span>
+	<span class="kd">private</span> <span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">new</span> <span class="n">ApprentissageFiguresGeometriques</span><span class="p">().</span><span class="na">start</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">while</span><span class="p">(</span><span class="n">afficherMenu</span><span class="p">())</span> <span class="p">{</span>
+			<span class="n">print</span><span class="p">();</span>
+			<span class="n">print</span><span class="p">(</span><span class="s">&quot;Votre nouveau choix&quot;</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">afficherMenu</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;1) Ajouter un rectangle&quot;</span><span class="p">);</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;2) Ajouter un disque&quot;</span><span class="p">);</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;3) Afficher le perimetre et l&#39;aire&quot;</span><span class="p">);</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;Autre chiffre pour quitter&quot;</span><span class="p">);</span>
+		<span class="k">switch</span> <span class="p">(</span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">())</span> <span class="p">{</span>
+		<span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="n">creerRectangle</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+		<span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="n">creerDisque</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+		<span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+			<span class="n">afficherPerimetreEtAire</span><span class="p">();</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+		<span class="k">default</span><span class="p">:</span>
+			<span class="n">print</span><span class="p">(</span><span class="s">&quot;Au revoir&quot;</span><span class="p">);</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">creerRectangle</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;Quelle est la largeur du rectangle ?&quot;</span><span class="p">);</span>
+		<span class="kt">double</span> <span class="n">longueur</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;Quelle est la longueur du rectangle ?&quot;</span><span class="p">);</span>
+		<span class="kt">double</span> <span class="n">largeur</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+
+		<span class="n">Rectangle</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">largeur</span><span class="p">,</span> <span class="n">longueur</span><span class="p">);</span>
+		<span class="n">figure</span><span class="p">.</span><span class="na">ajouter</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Rectange de largeur %.04f et de longueur %f&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="na">getLargeur</span><span class="p">(),</span> <span class="n">r</span><span class="p">.</span><span class="na">getLongueur</span><span class="p">());</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ce rectangle a un perimetre de %.04f et une aire de %.04f&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">.</span><span class="na">getPerimetre</span><span class="p">(),</span> <span class="n">r</span><span class="p">.</span><span class="na">getAire</span><span class="p">());</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">creerDisque</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">print</span><span class="p">(</span><span class="s">&quot;Quel est le rayon du disque ?&quot;</span><span class="p">);</span>
+		<span class="kt">double</span> <span class="n">rayon</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+
+		<span class="n">Disque</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Disque</span><span class="p">(</span><span class="n">rayon</span><span class="p">);</span>
+		<span class="n">figure</span><span class="p">.</span><span class="na">ajouter</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Disque de rayon %.04f&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="na">getRayon</span><span class="p">());</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ce disque a un perimetre de %.04f et une aire de %.04f&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">.</span><span class="na">getPerimetre</span><span class="p">(),</span> <span class="n">d</span><span class="p">.</span><span class="na">getAire</span><span class="p">());</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">afficherPerimetreEtAire</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Perimetre total : %.04f&quot;</span><span class="p">,</span> <span class="n">figure</span><span class="p">.</span><span class="na">getPerimetre</span><span class="p">());</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Aire totale : %.04f&quot;</span><span class="p">,</span> <span class="n">figure</span><span class="p">.</span><span class="na">getAire</span><span class="p">());</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">printf</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">,</span> <span class="n">Object</span> <span class="p">...</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
+		<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Vous pouvez télécharger directement le fichier
+<a class="reference download internal" download="" href="_downloads/3034661acf26365baecee9c1e32bfba0/ApprentissageFiguresGeometriques.java"><code class="xref download docutils literal notranslate"><span class="pre">ApprentissageFiguresGeometriques.java</span></code></a></p>
+<p>Modifiez ce programme pour qu’il gère les exceptions de type <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html">IllegalArgumentException</a>
+si jamais l’utilisateur saisit une valeur négative pour la longueur, la
+largeur ou le rayon.</p>
+<p>Le programme ne doit pas planter. Il doit indiquer à l’utilisateur qu’il
+a fait une erreur et lui permettre de continuer à utiliser l’application.</p>
+<p><strong>Chapitre de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/les_exceptions.html"><span class="doc">Les exceptions</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice bonus - Figures géométriques / les exceptions (4/4)</p>
+<p>Pour le programme précédent, si vous saisissez autre chose qu’un nombre, le
+programme plante car les méthodes <code class="docutils literal notranslate"><span class="pre">nextInt</span></code> et <code class="docutils literal notranslate"><span class="pre">nextDouble</span></code> de la classe
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">Scanner</a> lancent alors une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/InputMismatchException.html">InputMismatchException</a>.</p>
+<p>Modifiez le programme précédent pour qu’il gère élégamment les erreurs
+de saisie de l’utilisateur. Par exemple, il peut signaler que la saisie
+n’est pas correcte et proposer une nouvelle tentative à l’utilisateur.</p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Attention, lorsqu’un objet de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">Scanner</a> ne peut pas lire une
+donnée qui est au mauvais format, il jette une exception <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/InputMismatchException.html">InputMismatchException</a>
+<strong>et il conserve la valeur saisie dans une zone tampon</strong>. Cela signifie
+que les appels suivants aux méthodes de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html">Scanner</a> vont relire la même valeur !
+Pour vider la zone tampon, il suffit de lire la donnée invalide sous
+la forme d’une chaîne de caractère en appelant la méthode <code class="docutils literal notranslate"><span class="pre">next()</span></code> :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">scanner</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Chapitres de référence :</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="langage_java/les_exceptions.html"><span class="doc">Les exceptions</span></a></p></li>
+<li><p><a class="reference internal" href="langage_java/entrees_sorties.html"><span class="doc">Les entrées/sorties</span></a></p></li>
+</ul>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - La gestion d’un catalogue (1/3)</p>
+<p>On désire mettre en place un outil pour la gestion d’articles dans un catalogue.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>L’objectif de cet exercice et des suivants est de vous inciter à réaliser
+une conception objet d’une application. Il serait sans doute possible
+de réaliser ces exercices en codant une ou plusieurs méthodes avec
+des centaines de lignes de code. Mais ce type d’implémentation serait
+maladroite en Java et surtout absolument pas évolutive.</p>
+<p>Essayez de mettre en pratique le principe <a class="reference external" href="https://fr.wikipedia.org/wiki/SOLID_(informatique)">SOLID</a> de la <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique">single
+responsability</a> : une classe doit avoir une responsabilité unique dans
+un programme. Pour vous guider, les éléments en gras dans le texte
+représentent des responsabilités différentes qui devaient très certainement
+être implémentées dans des classes différentes.</p>
+</div>
+<p>Un <strong>catalogue</strong> est composé d’un ensemble d’articles. Un <strong>article</strong> a
+un code, un titre et une note metascore (nombre entier sur 100). Mais il a
+aussi des caractéristiques qui dépendent du type de l’article :</p>
+<ul>
+<li><p>un <strong>film</strong> est un article qui a en plus un réalisateur et une
+affiche. Pour faire simple, l’affiche du film est représentée par une URI
+sur le web. Par exemple :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://static.cotecine.fr/tb/Affiches/450x450/ffffff/LES+7+SAMOURAIS.JPG
+</pre></div>
+</div>
+<p>Plutôt que de représenter l’adresse de l’affiche sur la forme d’une <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a>,
+vous pouvez utiliser les classes Java <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html">URL</a> ou <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html">URI</a>.</p>
+</li>
+<li><p>une <strong>série tv</strong> est un article qui a en plus un distributeur et un nombre de saisons.</p></li>
+<li><p>un <strong>jeu vidéo</strong> est un article qui a en plus un studio de développement et
+un niveau dans la classification <a class="reference external" href="https://fr.wikipedia.org/wiki/Pan_European_Game_Information">PEGI</a> : PEGI 3, PEGI 7, PEGI 12, PEGI 16
+et PEGI 18. Vous pouvez représenter la classification PEGI avec une énumération
+en Java (Cf. <a class="reference internal" href="langage_java/enumeration.html"><span class="doc">Les énumérations</span></a>).</p></li>
+</ul>
+<p>Créez les classes pour représenter ce domaine. Placez ces classes dans le
+package <code class="docutils literal notranslate"><span class="pre">catalogue</span></code> de votre projet.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - La gestion d’un catalogue (2/3)</p>
+<p>On souhaite implémenter un module pour <strong>charger les données d’un catalogue</strong>.
+Les données seront chargées à partir d’un fichier texte dans un format proche
+du format CSV.</p>
+<p>Attention, nous souhaitons garantir une indépendance de ce module avec les
+autres modules que nous pourrions implémenter plus tard. Vous devez donc vous
+assurer que la classe responsable de charger le catalogue implémente
+l’interface <code class="docutils literal notranslate"><span class="pre">ImporteurCatalogue</span></code> :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">catalogue.io</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">catalogue.Catalogue</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ImporteurCatalogue</span> <span class="p">{</span>
+
+	<span class="n">Catalogue</span> <span class="nf">importer</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vous pouvez télécharger directement le fichier
+<a class="reference download internal" download="" href="_downloads/bcf1873e1729485e3868f3fe06a21fd3/ImporteurCatalogue.java"><code class="xref download docutils literal notranslate"><span class="pre">ImporteurCatalogue.java</span></code></a></p>
+<p>Voici un exemple de fichier à traiter. Chaque ligne représente un article
+en séparant les informations par un point-virgule. La ligne indique, le
+code, le titre, la note metascore, le type de l’article (<strong>film</strong>, <strong>serie</strong>,
+<strong>jeu</strong>) puis les informations spécifiques à chaque type d’article.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">exemple de fichier de catalogue</span><a class="headerlink" href="#id1" title="Lien permanent vers ce code">¶</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>F0001;Les sept samouraïs;98;film;Akira Kurosawa;https://static.cotecine.fr/tb/Affiches/450x450/ffffff/LES+7+SAMOURAIS.JPG
+S0012;The Strain;70;serie;FX;4
+JV010;Mass effect;89;jeu;Bioware;PEGI18
+</pre></div>
+</div>
+</div>
+<p>Pour lire un fichier, il existe plusieurs solutions en Java. La solution
+la moins performantes (mais la plus facile à coder) consiste à appeler
+la méthode de classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path)">Files.readAllLines</a>. Vous pouvez vous reporter au
+chapitre <a class="reference internal" href="langage_java/entrees_sorties.html"><span class="doc">Les entrées/sorties</span></a> pour en savoir plus.</p>
+<p>Pour l’analyse d’une ligne, vous pouvez utiliser la méthode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#split(java.lang.String)">split</a> de la
+classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">String</a> pour découper la chaîne de caractères en tableau en utilisant
+le point-virgule comme séparateur :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="o">[]</span> <span class="n">colonnes</span> <span class="o">=</span> <span class="n">ligne</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;;&quot;</span><span class="p">);</span>
+<span class="c1">// La première colonne est accessible part colonnes[0], la seconde</span>
+<span class="c1">// colonne par colonnes[1], etc.</span>
+</pre></div>
+</div>
+<p>Écrivez une programme qui demande un chemin de fichier à l’utilisateur pour
+ensuite charger le catalogue. Si le chargement échoue avec une exception,
+affichez vos excuses à l’utilisateur ainsi que le message de l’exception.</p>
+</div>
+<div class="exercice admonition">
+<p class="admonition-title">Exercice à rendre - La gestion d’un catalogue (3/3)</p>
+<p>On souhaite implémenter un module pour exporter le catalogue au format HTML.</p>
+<p>Pour l’exemple de catalogue donné à l’exercice précédent, le résultat de
+l’export HTML sera :</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Catalogue<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Catalogue<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Les sept samouraïs<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Un film de Akira Kurosawa (metascore : 98)<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://static.cotecine.fr/tb/Affiches/450x450/ffffff/LES+7+SAMOURAIS.JPG&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;affiche&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>The Strain<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Une série FX en 4 saisons (metascore : 70)<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Mass effect<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Un jeu vidéo de Bioware (PEGI-18 et metascore : 89)<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Attention, nous souhaitons garantir une indépendance du module d’export.
+Vous devez donc vous assurer que la classe responsable d’exporter le catalogue
+au format HTML implémente l’interface <code class="docutils literal notranslate"><span class="pre">ExporteurCatalogue</span></code> :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">catalogue.io</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">catalogue.Catalogue</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ExporteurCatalogue</span> <span class="p">{</span>
+
+	<span class="kt">void</span> <span class="nf">exporter</span><span class="p">(</span><span class="n">Catalogue</span> <span class="n">catalogue</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vous pouvez télécharger directement le fichier
+<a class="reference download internal" download="" href="_downloads/503070ea7699fb27a9ebe835a684b27d/ExporteurCatalogue.java"><code class="xref download docutils literal notranslate"><span class="pre">ExporteurCatalogue.java</span></code></a></p>
+<p>L’export consiste à écrire le début du fichier HTML puis, pour chaque article
+d’écrire une balise <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code> avec les informations de l’article et enfin,
+écrire la fin du fichier HTML.</p>
+<p>Nous ne pouvons pas inclure une méthode <code class="docutils literal notranslate"><span class="pre">toHTML</span></code> dans notre classe <code class="docutils literal notranslate"><span class="pre">Article</span></code>
+ou une de ces sous-classes pour réaliser l’écriture de la balise <code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code>.
+Cela ne serait pas conforme au principe de <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_de_responsabilit%C3%A9_unique">single responsability</a>. Nous ne
+pouvons pas non plus nous contenter de coder la procédure d’export dans une
+seule méthode : ce code ne serait pas très évolutif.</p>
+<p>Pour réaliser l’export, vous devrez créer une interface <code class="docutils literal notranslate"><span class="pre">ExporteurArticle</span></code>.
+Cette interface sera implémentée par trois classes spécialisées : une pour l’export
+de film, une pour l’export de série et une pour l’export de jeu.</p>
+<p>Créez également une classe <code class="docutils literal notranslate"><span class="pre">ExporteurArticleFabrique</span></code>. Cette classe
+agira comme une fabrique.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Une fabrique est un modèle de conception (<em>design patterns</em>) couramment
+utilisé dans la programmation orientée objet. Il s’agit d’une classe dont
+la responsabilité est de créer des objets sans que le reste de
+l’application ne connaisse le type exact des objets créés.</p>
+<p>Pour en savoir plus, vous pouvez consulter l’article Wikipedia dédié à
+ce modèle de conception :</p>
+<p><a class="reference external" href="https://fr.wikipedia.org/wiki/Fabrique_(patron_de_conception">https://fr.wikipedia.org/wiki/Fabrique_(patron_de_conception</a>)</p>
+</div>
+<p>L’architecture générale de l’export peut être schématisée de la manière
+suivante :</p>
+<img alt="_images/exporteur_article.png" src="_images/exporteur_article.png" />
+<p>Ce schéma n’est pas complet, par exemple, il manque certainement des méthodes.
+À vous de vous inspirer de ce schéma pour développer le module d’export.</p>
+<p>Écrivez un programme qui demande à l’utilisateur d’indiquer le chemin d’un
+fichier de catalogue à charger et le chemin d’un fichier HTML à produire.
+Le programme doit alors charger le catalogue et produire le fichier HTML
+d’export.</p>
 </div>
 </div>
 </div>
